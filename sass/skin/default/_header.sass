@@ -1,0 +1,20 @@
+.header.container
+  background-color: $header-color
+
+header
+  +gradient(lighten($header-color, 10%), $header-color)
+  h1, h2
+    padding: $base-size
+    +letterpress($header-color)
+  h1
+    font-family: $hed
+    font-size: 3em
+    color: $article-color
+  h2
+    padding-top: 0
+    margin-top: -$base-size
+    font-size: 1.5em
+    color: mix($article-color, mix($article-color, $header-color))
+  a, a:hover
+    color: inherit
+    border: none

@@ -1,0 +1,19 @@
+// Normalize pixels to the W3C refrence pixel on problem devices.
+// THIS SCALES EMS, PIXELS WILL NOT BE NORMALIZED
+
+$normalize-pixel: true !default
+
+// 7" tablets
+$tab7-pixel-ratio: (6/5) !default
+
+@if $normalize-pixel
+  // 7" 1024x600 tablet with no pixel scaling.
+  @media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (orientation: portrait)
+    html
+      font-size: $base-size * $tab7-pixel-ratio
+  // 7" 1024x600 tablet with pixel ratio of 1.5 (Original Galaxy Tab)
+  @media screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 683px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 400px) and (orientation: portrait)
+    html
+      font-size: $base-size * (2/3) * $tab7-pixel-ratio
+
+$normalize-pixel-loaded: true

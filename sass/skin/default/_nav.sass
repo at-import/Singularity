@@ -1,0 +1,31 @@
+nav
+  background-color: $nav-color
+  +box-shadow(0 0 4px rgba(#000, .7))
+  position: fixed
+  top: 0
+  height: $nav-height
+  width: 100%
+  ol
+    padding: 0
+    height: $nav-height
+    list-style: none
+  li
+    float: left
+    margin-right: 1px
+  a
+    display: block
+    height: $nav-height
+    padding: 0 .6em
+    font-family: $subhed
+    color: $body-color
+    background-color: darken($nav-color, 10%)
+    line-height: $nav-height
+    border-top: 0px solid $tertiary
+    +letterpress($nav-color)
+    +transition(all .2s)
+    border-bottom: none
+    &:hover
+      border-top: .3em solid $tertiary
+      border-bottom: none
+      color: $body-color
+      height: $nav-height - .3em

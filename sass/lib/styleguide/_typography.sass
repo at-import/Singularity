@@ -1,0 +1,58 @@
+=typography
+  p
+    text-indent: $text-indent
+    font-family: $text
+  
+  .no-indent
+    text-indent: 0
+  
+  h1, h2, h3, h4, h5, h6
+    font-family: $subhed
+    line-height: $line-height
+  
+  article
+    h1
+      font-size: 3em
+      margin-top: 0
+    h2, h3, h4
+      border-top: 1px solid $tertiary
+      margin-top: 1em
+    h2
+      font-size: 2em
+      border-top-width: 3px
+    h3
+      font-size: 1.6em
+    h4
+      font-size: 1.2em
+      +caps
+    h5
+      font-size: 1.2em
+      +caps
+    h6
+      font-size: 1em
+  
+  ul, ol
+    padding-left: $line-height
+  
+  ul
+  
+  li
+  
+  pre, code
+    font-family: monospace
+    
+  
+  quote
+  
+  blockquote, q
+  
+  section
+    border-top: 1px solid $tertiary
+    border-bottom: 1px solid $tertiary
+    margin: $line-height/2 0
+    padding: $line-height/2 $text-indent
+  
+  small
+    font-size: .75em
+    opacity: .75
+    font-weight: bold
