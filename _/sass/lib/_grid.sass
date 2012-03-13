@@ -1,0 +1,154 @@
+// MEASUREMENTS
+
+// Grid types to work on -- column, scale
+$grid-type: column !default
+
+$base-size: 16px !default
+$line-height: 1.3em !default
+
+$grid-width: 90% !default
+$columns: 12 !default
+$wrapper-align: center !default
+$gutter: 0% !default
+$padding: 0 1em !default
+
+$max-width: dp(1400) !default
+
+// DEFATULTS TO OOSASS WITH @EXTEND
+$oocss-grid: false !default
+
+// BUILD GRID OBJECTS
+$object-type: "%" !default
+@if $oocss-grid
+  $grid-placeholder: "." !default
+$width-prefix: "w-" !default
+$column-prefix: "c-" !default
+
+html
+  font-size: $base-size
+  line-height: $line-height
+
+#{$object-type}wrapper
+  width: $grid-width
+  max-width: $max-width
+  position: relative
+  @if $wrapper-align == "center"
+    margin-left: auto
+    margin-right: auto
+  @if $wrapper-align == "right"
+    margin-left: auto
+    margin-right: 0
+
+// Add padding to items on the grid.
+#{$object-type}padded
+  padding: $padding
+  // box sizing to make sure padding doesn't effect grid.
+  +prefix(box-sizing, border-box, -webkit- -moz-)
+  .html.no-box-sizing &
+    // Remove padding if box-sizing isn't supported via modernizer
+    padding: 0
+
+// COLUMN GRID
+$calculated-gutter: $gutter
+@if unit($gutter) != "%"
+  $calculated-gutter: percentage($gutter / $grid-width)
+$calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
+@function grid($units: 1)
+  @return ($calculated-column * $units) + ($calculated-gutter * ($units - 1))
+
+// For the next column in a series. It floats and spaces to sit on the grid next to the one before it.
+#{$object-type}next-column
+  margin-left: $calculated-gutter
+  float: left
+
+// Grid widths
+@for $i from 1 through $columns
+  // Writes classes or placeholders depending on the $object-type variable.
+  // You may also like a more semantic prefix, like "width-". You can chage it by changing the $width-prefix variable.
+  #{$object-type}#{$width-prefix+$i}
+    width:  grid($i)
+
+// Column locations in absolute positions. Use next-col in a series.
+@for $i from 0 through $columns
+  // Writes classes or placeholders depending on the $object-type variable.
+  // You may also like a more semantic prefix, like "column-". You can chage it by changing the $column-prefix variable.
+  #{$object-type}#{$column-prefix+$i}
+    position: absolute
+    left:  grid($i) + $calculated-gutter
+
+
+// Scale grid math
+// Requires modular-scale (https://github.com/scottkellum/modular-scale)
+$modular-scale-loaded: false !default
+$scale-grid-direction: ltr !default
+
+@if $grid-type == "scale"
+  @if $modular-scale-loaded
+    $counter: 0 // counter that knows how many columns are used for placement
+
+    // Calculate the units on the grid
+    @function grid($units)
+      $half-gutter: false
+      @if $counter == 0
+        $half-gutter: true
+      @if $scale-grid-direction == ltr
+        @if $counter == $columns
+          $half-gutter: true
+        @if $counter > ($columns)
+          $counter: 1
+        @if $counter < 1
+          $counter: ($columns)
+      @if $scale-grid-direction == rtl
+        @if $counter > ($columns - 1)
+          $counter: 0
+        @if $counter < 0
+          $counter: 0
+      $grid-return: 0
+
+      // Left to right grid
+      @if $scale-grid-direction == ltr
+        @for $i from 1 through $units
+          $grid-return: $grid-return + ms($counter - $columns - 1, 100%)
+          $counter: $counter - 1
+          @if $i == $units
+            @if $counter == 0
+              $half-gutter: true
+            @if $half-gutter
+              @return $grid-return - ($calculated-gutter / 2)
+            @return $grid-return - $calculated-gutter
+
+
+      // Right to left grid
+      @if $scale-grid-direction == rtl
+        @for $i from 1 through $units
+          $grid-return: $grid-return + ms($counter - $columns, 100%)
+          // the only difference between rtl and ltr is this
+          $counter: $counter + 1
+          @if $counter == $columns
+            $grid-remainder: 0
+            $counter: 0
+            @for $j from 1 through $columns
+              $grid-remainder: $grid-remainder + ms($counter - $columns, 100%)
+              $counter: $counter + 1
+          @if $i == $units
+            @if $counter == $columns
+              $half-gutter: true
+            @if $half-gutter
+              @return $grid-return - ($calculated-gutter / 2)
+            @return $grid-return - $calculated-gutter
+  @if $modular-scale-loaded == false
+    @warn "Modular-Scale needs to be loaded to use a scale grid"
+    @warn "https://github.com/scottkellum/modular-scale"
+
+// Simple mixin that figures it all out.
+$grid-mixin-counter: 0
+
+=grid($units)
+  @if $grid-mixin-counter > $columns
+    $grid-mixin-counter: 0
+  width: grid($units)
+  @if $grid-mixin-counter == 0
+    float: left
+  @else
+    @extend #{$object-type}next-column
+  $grid-mixin-counter: $grid-mixin-counter + $units

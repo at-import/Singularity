@@ -1,0 +1,30 @@
+// VARIABLES
+
+$base-size: 16px
+//$line-height: 1.3em
+
+$grid-width: 90%
+$columns: 12
+//$wrapper-align: center // left, center or right
+$gutter: 2%
+$grid-type: scale // column, scale
+$scale-grid-direction: ltr // rtl, ltr
+
+// FRAMEWORK
+@import lib/tools
+@import lib/normalize
++margin-reset
+@import lib/grid
++debug
+
+$ratio: $octave
+
+// STYLEGUIDE
+@import lib/styleguide
+
+// SKIN
+@import skin/skin
+
+// PLUGNINS
+@import lib/plugin/pixel-normalize
+//@import lib/plugin/transition-all

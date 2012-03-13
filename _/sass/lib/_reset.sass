@@ -1,0 +1,187 @@
+$reset: true !default
+@if $reset
+  //  RESET MOSTLY LIFTED FROM THE HTML5RESET :: http://html5reset.org
+  
+  //  HTML5 RESET....................http://html5reset.org
+  //  Eric Meyer.....................http://ericmeyer.com
+  //  HTML5 Doctor...................http://html5doctor.com
+  //  and the HTML5 Boilerplate......http://html5boilerplate.com
+  
+  html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video
+    margin: 0
+    padding: 0
+    border: 0
+    outline: 0
+    vertical-align: baseline
+    background: transparent
+    cursor: default
+  
+  article, aside, figure, footer, header, hgroup, nav, section
+    display: block
+  
+  blockquote, q
+    quotes: none
+  
+  blockquote:before, blockquote:after, q:before, q:after
+    content: ''
+    content: none
+  
+  a
+    margin: 0
+    padding: 0
+    font-size: 1em
+    vertical-align: baseline
+    background: transparent
+    color: inherit
+    text-decoration: inherit
+  
+  del
+    text-decoration: line-through
+  
+  abbr[title], dfn[title]
+    border-bottom: 1px dotted #000
+    cursor: help
+  
+  .zoomable, .zoomable *
+    cursor: -webkit-zoom-in
+    cursor: -moz-zoom-in
+    cursor: -ms-zoom-in
+    cursor: -o-zoom-in
+    cursor: zoom-in
+  
+  .lightbox, .lightbox *
+    cursor: -webkit-zoom-out
+    cursor: -moz-zoom-out
+    cursor: -ms-zoom-out
+    cursor: -o-zoom-out
+    cursor: zoom-out
+  
+  
+  //  tables still need cellspacing="0" in the markup
+  
+  table
+    border-collapse: collapse
+    border-spacing: 0
+  th
+    font-weight: bold
+    vertical-align: bottom
+  td
+    font-weight: normal
+    vertical-align: top
+  
+  hr
+    display: block
+    height: 1px
+    border: 0
+    margin: 1em 0
+    padding: 0
+  
+  input, select
+    vertical-align: middle
+  
+  pre
+    white-space: pre /* CSS2 */
+    white-space: pre-wrap /* CSS 2.1 */
+    white-space: pre-line /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word /* IE */
+  
+  
+  input[type="radio"]
+    vertical-align: text-bottom
+  input[type="checkbox"]
+    vertical-align: bottom
+    *vertical-align: baseline
+  .ie6 input
+    vertical-align: text-bottom
+  
+  select, input, textarea
+    font: .99em sans-serif
+  
+  table
+    font-size: inherit
+    font: 1em
+  
+  
+  //  Accessible focus treatment
+  //  people.opera.com/patrickl/experiments/keyboard/test
+  
+  a:hover, a:active
+    outline: none
+  
+  small
+    font-size: .75em
+  
+  strong, th
+    font-weight: bold
+  
+  td, td img
+    vertical-align: top 
+  
+  
+  //  Make sure sup and sub don't screw with your line-heights
+  //  gist.github.com/413930
+  
+  sub, sup
+    font-size: .75em
+    line-height: 0
+    position: relative
+  sup
+    top: -0.5em
+  sub
+    bottom: -0.25em
+  
+  
+  //  standardize any monospaced elements
+  
+  pre, code, kbd, samp
+    font-family: monospace, sans-serif
+  
+  // hand cursor on clickable elements, text on editable text only, default on everything else.
+  input
+    cursor: auto
+  textarea
+    cursor: text
+  a, a *, .clickable, label, input[type=button], input[type=submit], input[type=reset], button, #nextPage, #previousPage, #nextPage *, #previousPage *
+    cursor: pointer
+  
+  
+  //  Webkit browsers add a 2px margin outside the chrome of form elements
+  
+  button, input, select, textarea
+    margin: 0
+  
+  
+  //  make buttons play nice in IE
+  
+  button
+    width: auto
+    overflow: visible
+  
+  
+  //  scale images in IE7 more attractively
+  
+  .ie7 img
+    -ms-interpolation-mode: bicubic
+  
+  
+  //  prevent BG image flicker upon hover
+  
+  .ie6 html
+    filter: expression(document.execCommand("BackgroundImageCache", false, true))
+  
+  
+  // clearfix
+  @if $clearfix-loaded
+    .clearfix
+      +clearfix
+  
+  
+  ins
+    background-color: #fcd700
+    color: #000
+    text-decoration: none
+  mark
+    background-color: #fcd700
+    color: #000
+    font-style: italic
+    font-weight: bold
