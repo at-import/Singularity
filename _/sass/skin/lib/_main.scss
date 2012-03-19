@@ -41,12 +41,12 @@ header {
 	float: none;
 }
 
-//@for $i from 1 through $columns {
-//	.c#{$i} {
-//		@include grid(1);
-//		height: 200px;
-//	}
-//}
+@for $i from 1 through $columns {
+	.c#{$i} {
+		@include grid(1);
+		height: 200px;
+	}
+}
 
 article {
 	@include grid(2);
