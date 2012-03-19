@@ -92,10 +92,10 @@ $scale-grid-direction: ltr !default
       @if $counter == 0
         $half-gutter: true
       @if $scale-grid-direction == ltr
-        @if $counter == $columns
+        @if $counter > $columns
           $half-gutter: true
-        @if $counter > ($columns)
           $counter: 1
+          $previous-return: 100%
         @if $counter < 1
           $counter: ($columns)
       @if $scale-grid-direction == rtl
@@ -110,12 +110,13 @@ $scale-grid-direction: ltr !default
         @for $i from 1 through $units
           $grid-return: $grid-return + ms($counter - $columns - 1, 100%)
           $counter: $counter - 1
+          $previous-return: $grid-return
           @if $i == $units
             @if $counter == 0
               $half-gutter: true
             @if $half-gutter
-              @return $grid-return - ($calculated-gutter / 2)
-            @return $grid-return - $calculated-gutter
+              @return $previous-return - ($calculated-gutter / 2)
+            @return $previous-return - $calculated-gutter
 
 
       // Right to left grid
