@@ -1,0 +1,7 @@
+// @FONT-FACE (FONTSPRING SYNTAX)
+=font($name, $url, $weight: normal, $style: normal)
+  @font-face
+    font-family: '$name'
+    font-weight: $weight
+    font-style: $style
+    src: url('#{$url}.eot?') format('eot'), url('#{$url}.woff') format('woff'), url('#{$url}.ttf')  format('truetype')

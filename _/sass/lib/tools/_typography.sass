@@ -1,0 +1,15 @@
+// TYPOGRAPHIC TOOLS
+=type($size, $line-height)
+  font-size: $size
+  line-height: $line-height
+
+=solid($lineheight)
+  font-size: $lineheight
+  line-height: 1em
+
+=caps($letterspace: 0.1em)
+  text-transform: uppercase
+  letter-spacing: $letterspace
+
+=letterpress($color)
+  text-shadow: 0 -1px 0 darken($color, 15%), 0 1px 0 lighten($color, 15%)

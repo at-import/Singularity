@@ -1,0 +1,36 @@
+// Android uses Density Independent Pixels (dip or dp) as the units defined in the W3C spec for pixels and pixels (px) as hardware defined units.
+// This project aims to bring these two units to CSS using Sass functions and mixins.
+
+// Base size should be the em height on the html element
+$base-size: 16px !default
+
+// Convert dips to em, rem, or px
+$dip-conversion: em !default
+
+// Context offset
+$em-offset: 1 !default
+
+// Convert dips to em or rem (px will not work because the W3C spec considers px to be density independent pixels)
+$px-conversion: em !default
+
+@function dip($number, $em-offset, $dip-conversion)
+  $unitless-em-offset: $em-offset / 1em
+  @if unitless($em-offset)
+    $unitless-em-offset: $em-offset
+  @if $dip-conversion == px
+    @return $number * 1px
+  @if $dip-conversion == em
+    @return ($number / ($base-size / 1px)) * (1 / $unitless-em-offset) * 1em
+  @if $dip-conversion == rem
+    @return $number / ($base-size / 1px) * 1rem
+
+@function dp($number, $em-offset, $dip-conversion)
+  @return dip($number, $em-offset, $dip-conversion)
+
+// Simple px => em conversion
+@function em($number, $em-offset)
+  @return dip($number, $em-offset, em)
+
+// Simple px => rem conversion
+@function em($number, $em-offset)
+  @return dip($number, $em-offset, rem)
