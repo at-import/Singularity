@@ -1,0 +1,180 @@
+// Define color schemes quickly
+
+// Color schemes to choose from
+//    mono
+//    complement
+//    triad
+//    tetrad
+//    analogic
+//    accented-analogic
+
+$color-location: primary !default
+$base-color: #f00 !default
+$color-scheme: mono !default
+$hue-offset: 20 !default
+$brightness-offset: 10% !default
+$color-theory: rgb !default
+$equalize: false !default
+
+// Normalizer credit to Mason Wendell: https://github.com/canarymason/The-Coding-Designers-Survival-Kit/blob/master/sass/partials/lib/variables/_color_schemes.sass
+@function equalize($color)
+  @return hsl(hue($color), 100%, 50%)
+
+// Complement based on RYB theory
+@function ryb($color)
+  $hue: round(hue($color)/ 10) // find and round hue
+  // Manually adjusted values until these can be mathmatically explained.
+  @if $hue == 0
+    @return adjust-hue(invert($color), -60) // Start with red
+  @if $hue == 1
+    @return adjust-hue(invert($color), -50)
+  @if $hue == 2
+    @return adjust-hue(invert($color), -40)
+  @if $hue == 3
+    @return adjust-hue(invert($color), -25)
+  @if $hue == 4
+    @return adjust-hue(invert($color), 0)
+  @if $hue == 5
+    @return adjust-hue(invert($color), 25)
+  @if $hue == 6
+    @return adjust-hue(invert($color), 38)
+  @if $hue == 7
+    @return adjust-hue(invert($color), 44)
+  @if $hue == 8
+    @return adjust-hue(invert($color), 52)
+  @if $hue == 9
+    @return adjust-hue(invert($color), 58)
+  @if $hue == 10
+    @return adjust-hue(invert($color), 59)
+  @if $hue == 11
+    @return adjust-hue(invert($color), 60)
+  @if $hue == 12
+    @return adjust-hue(invert($color), 60) // Green is halfway through the Boutet scale.
+  @if $hue == 13
+    @return adjust-hue(invert($color), 55)
+  @if $hue == 14
+    @return adjust-hue(invert($color), 50)
+  @if $hue == 15
+    @return adjust-hue(invert($color), 45)
+  @if $hue == 16
+    @return adjust-hue(invert($color), 40)
+  @if $hue == 17
+    @return adjust-hue(invert($color), 35)
+  @if $hue == 18
+    @return adjust-hue(invert($color), 30)
+  @if $hue == 19
+    @return adjust-hue(invert($color), 25)
+  @if $hue == 20
+    @return adjust-hue(invert($color), 20)
+  @if $hue == 21
+    @return adjust-hue(invert($color), 15)
+  @if $hue == 22
+    @return adjust-hue(invert($color), -5)
+  @if $hue == 23
+    @return adjust-hue(invert($color), -8)
+  @if $hue == 24
+    @return adjust-hue(invert($color), -17)
+  @if $hue == 25
+    @return adjust-hue(invert($color), -25)
+  @if $hue == 26
+    @return adjust-hue(invert($color), -30)
+  @if $hue == 27
+    @return adjust-hue(invert($color), -35)
+  @if $hue == 28
+    @return adjust-hue(invert($color), -40)
+  @if $hue == 29
+    @return adjust-hue(invert($color), -43)
+  @if $hue == 30
+    @return adjust-hue(invert($color), -46)
+  @if $hue == 31
+    @return adjust-hue(invert($color), -49)
+  @if $hue == 32
+    @return adjust-hue(invert($color), -52)
+  @if $hue == 33
+    @return adjust-hue(invert($color), -54)
+  @if $hue == 34
+    @return adjust-hue(invert($color), -57)
+  @if $hue == 35
+    @return adjust-hue(invert($color), -60)
+
+// Add percentage of white to a color
+@function tint($color, $percent)
+  @return mix(white, $color, $percent)
+
+// Add percentage of black to a color
+@function shade($color, $percent)
+  @return mix(black, $color, $percent)
+
+@function color-schemer($color-location, $base-color, $color-scheme, $hue-offset)
+  // Primary, just return the base-color.
+  @if $equalize
+    $base-color: equalize($base-color)
+  @if $color-location == primary
+    @return $base-color
+  // Secondary colors
+  @if $color-location == secondary
+    @if $color-scheme == mono
+      @return lighten($base-color, $brightness-offset)
+    @if $color-scheme == complement
+      @if $color-theory == ryb
+        @return ryv($base-color)
+      @return complement($base-color)
+    @if $color-scheme == triad
+      @if $color-theory == ryb
+        @return adjust-hue(ryb($base-color), $hue-offset)
+      @return adjust-hue(complement($base-color), $hue-offset)
+    @if $color-scheme == tetrad
+      @return adjust-hue($base-color, $hue-offset)
+    @if $color-scheme == analogic
+      @return adjust-hue($base-color, $hue-offset)
+    @if $color-scheme == accented-analogic
+      @return adjust-hue($base-color, $hue-offset)
+    @warn "Oops! You didn’t properly define $color-scheme (complement, triad...)"
+  // Tertiary colors
+  @if $color-location == tertiary
+    @if $color-scheme == mono
+      @return lighten($base-color, $brightness-offset * 2)
+    @if $color-scheme == complement
+      @return lighten($base-color, $brightness-offset)
+    @if $color-scheme == triad
+      @if $color-theory == ryb
+        @return adjust-hue(ryb($base-color), -$hue-offset)
+      @return adjust-hue(complement($base-color), -$hue-offset)
+    @if $color-scheme == tetrad
+      @if $color-theory == ryb
+        @return ryb($base-color)
+      @return complement($base-color)
+    @if $color-scheme == analogic
+      @return adjust-hue($base-color, -$hue-offset)
+    @if $color-scheme == accented-analogic
+      @return adjust-hue($base-color, -$hue-offset)
+    @warn "Oops! You didn’t properly define $color-scheme (complement, triad...)"
+  // Quadrary colors
+  @if $color-location == quadrary
+    @if $color-scheme == mono
+      @return darken($base-color, $brightness-offset)
+    @if $color-scheme == complement
+      @return darken($base-color, $brightness-offset)
+    @if $color-scheme == triad
+      @return darken($base-color, $brightness-offset)
+    @if $color-scheme == tetrad
+      @if $color-theory == ryb
+        @return adjust-hue(ryb($base-color), $hue-offset)
+      @return adjust-hue(complement($base-color), $hue-offset)
+    @if $color-scheme == analogic
+      @return darken($base-color, $brightness-offset)
+    @if $color-scheme == accented-analogic
+      @if $color-theory == ryb
+        @return ryb($base-color)
+      @return complement($base-color)
+    @warn "Oops! You didn’t properly define $color-scheme (complement, triad...)"
+  @warn "Oops! You didn’t properly define $color-location (primary, secondary...)"
+
+// Write your basic color scheme
+$primary: color-schemer(primary) !default
+$secondary: color-schemer(secondary) !default
+$tertiary: color-schemer(tertiary) !default
+$quadrary: color-schemer(quadrary) !default
+
+// Tell other files that this is loaded.
+$color-schemer-loaded: true

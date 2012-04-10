@@ -1,0 +1,78 @@
+$nav-height: 3em
+$nav-padding: 0.15em
+
+body
+  margin-top: $nav-height
+
+body, footer
+  height: 100% !important
+
+nav
+  position: absolute
+  top: 0
+  width: 100%
+  height: $nav-height
+  background: #444
+  ol, #global-actions-bar
+    @extend %wrapper
+    position: absolute
+    left: (100% - $grid-width) / 2
+  ol
+    padding: ($nav-height / 2) 0 0 0
+    list-style: none
+    bottom: 0
+    a
+      display: block
+      float: left
+      height: ($nav-height / 2) - ($nav-padding * 2)
+      padding: $nav-padding .4em
+      border: none
+      background: #000
+      color: #fff
+      margin-right: 1px
+      &:hover
+        border: none
+        color: #fff
+  #global-actions-bar
+    top: 0
+    text-align: right
+    font-size: .7em
+    color: #ddd
+
+header
+  @extend %wrapper
+
+.content
+  @extend %wrapper
+
+
+article, aside
+  padding: 1em 0
+
+article
+  +grid(9)
+
+aside
+  +grid(3)
+
+body.no-aside
+  article, aside
+    +grid(12)
+
+@media all and (max-width: 40em)
+  article, aside
+    +grid(12)
+  nav
+    height: $nav-height + ($nav-height / 2)
+  body
+    margin-top: $nav-height + ($nav-height / 2)
+
+footer
+  @extend %wrapper
+  background-color: #444
+  clear: both
+  position: relative
+  padding: 1em ((100% - $grid-width) / 2)
+  color: #ddd
+  span
+    display: block

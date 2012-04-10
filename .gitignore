@@ -1,2 +1,4 @@
 .DS_Store
 *.sassc
+*.scssc
+.sass-cache/0a2de2bf6bab08d15192c06bd05f924327d6dae4/_main.scssc

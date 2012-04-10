@@ -9,7 +9,7 @@ $line-height: 1.3em !default
 $grid-width: 90% !default
 $columns: 12 !default
 $wrapper-align: center !default
-$gutter: 0% !default
+$gutter: 2% !default
 $padding: 0 1em !default
 
 $max-width: dp(1400) !default
@@ -84,6 +84,31 @@ $scale-grid-direction: ltr !default
 
 @if $grid-type == "scale"
   @if $modular-scale-loaded
+
+    // Core logic function
+    @function ms-grid($units, $ratio)
+      $column-sum: 100%
+      $grid-sum: 0%
+      $column-ratio: $ratio
+      $return: 0
+      @if $ratio > 1
+        $column-ratio: 1 / $ratio
+      @for $i from 1 through $units
+        $column-sum: ms($i, 100%, $column-ratio)
+        $grid-sum: $column-sum + $grid-sum
+        $return: $column-sum
+        @if $grid-sum > 100%
+          $return: 0%
+        @if $i == $columns
+          @if $grid-sum < 100%
+            $return: 100% - $grid-sum + $column-sum
+      @return $return
+
+    // Create array of all columns on the grid
+    $ms-grid-list: ms-grid(1)
+    @for $i from 2 through $columns
+      $ms-grid-list: join($ms-grid-list, ms-grid($i))
+
     $counter: 0 // counter that knows how many columns are used for placement
 
     // Calculate the units on the grid
@@ -145,7 +170,7 @@ $scale-grid-direction: ltr !default
 $grid-mixin-counter: 0
 
 =grid($units)
-  @if $grid-mixin-counter > $columns
+  @if $grid-mixin-counter >= $columns
     $grid-mixin-counter: 0
   width: grid($units)
   @if $grid-mixin-counter == 0
