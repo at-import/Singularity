@@ -53,7 +53,7 @@ $calculated-gutter: $gutter
 @if unit($gutter) != "%"
   $calculated-gutter: percentage($gutter / $grid-width)
 $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
-@function grid($units: 1)
+@function grid($units, $grid-width)
   @return ($calculated-column * $units) + ($calculated-gutter * ($units - 1))
 
 // For the next column in a series. It floats and spaces to sit on the grid next to the one before it.
@@ -84,13 +84,13 @@ $scale-grid-direction: ltr !default
 
 @if $grid-type == "scale"
   @if $modular-scale-loaded
-
     // Core logic function
     @function ms-grid($units, $ratio)
       $column-sum: 100%
       $grid-sum: 0%
       $column-ratio: $ratio
       $return: 0
+      $column-short: false
       @if $ratio > 1
         $column-ratio: 1 / $ratio
       @for $i from 1 through $units
@@ -99,20 +99,24 @@ $scale-grid-direction: ltr !default
         $return: $column-sum
         @if $grid-sum > 100%
           $return: 0%
+          @if $column-short == false
+            $column-short: $i
         @if $i == $columns
           @if $grid-sum < 100%
             $return: 100% - $grid-sum + $column-sum
+        @if $column-short == $i
+          $return: 100% - $grid-sum + $column-sum
       @return $return
 
     // Create array of all columns on the grid
     $ms-grid-list: ms-grid(1)
     @for $i from 2 through $columns
       $ms-grid-list: join($ms-grid-list, ms-grid($i))
-
+    
     $counter: 0 // counter that knows how many columns are used for placement
 
     // Calculate the units on the grid
-    @function grid($units)
+    @function grid($units, $counter)
       $half-gutter: false
       @if $counter == 0
         $half-gutter: true
@@ -124,44 +128,39 @@ $scale-grid-direction: ltr !default
         @if $counter < 1
           $counter: ($columns)
       @if $scale-grid-direction == rtl
-        @if $counter > ($columns - 1)
-          $counter: 0
-        @if $counter < 0
-          $counter: 0
-      $grid-return: 0
+        @if $counter > $columns
+          $counter: 1
+        @if $counter < 1
+          $counter: 1
+      
+      $grid-return: 0 // zero out grid return
 
       // Left to right grid
       @if $scale-grid-direction == ltr
         @for $i from 1 through $units
-          $grid-return: $grid-return + ms($counter - $columns - 1, 100%)
+          $grid-return: $grid-return + nth($ms-grid-list, $counter)
           $counter: $counter - 1
-          $previous-return: $grid-return
           @if $i == $units
             @if $counter == 0
               $half-gutter: true
             @if $half-gutter
-              @return $previous-return - ($calculated-gutter / 2)
-            @return $previous-return - $calculated-gutter
+              @return $grid-return - ($calculated-gutter / 2)
+            @return $grid-return - $calculated-gutter
 
 
       // Right to left grid
       @if $scale-grid-direction == rtl
         @for $i from 1 through $units
-          $grid-return: $grid-return + ms($counter - $columns, 100%)
+          $grid-return: $grid-return + nth($ms-grid-list, $counter)
           // the only difference between rtl and ltr is this
           $counter: $counter + 1
-          @if $counter == $columns
-            $grid-remainder: 0
-            $counter: 0
-            @for $j from 1 through $columns
-              $grid-remainder: $grid-remainder + ms($counter - $columns, 100%)
-              $counter: $counter + 1
           @if $i == $units
-            @if $counter == $columns
+            @if $counter == 0
               $half-gutter: true
             @if $half-gutter
               @return $grid-return - ($calculated-gutter / 2)
             @return $grid-return - $calculated-gutter
+  
   @if $modular-scale-loaded == false
     @warn "Modular-Scale needs to be loaded to use a scale grid"
     @warn "https://github.com/scottkellum/modular-scale"
@@ -169,12 +168,17 @@ $scale-grid-direction: ltr !default
 // Simple mixin that figures it all out.
 $grid-mixin-counter: 0
 
-=grid($units)
+=grid($units, $grid-override: false)
   @if $grid-mixin-counter >= $columns
     $grid-mixin-counter: 0
-  width: grid($units)
+  @if $grid-override == false
+    width: grid($units, $grid-mixin-counter)
+  @if $grid-override != false
+    width: grid($units, $grid-mixin-counter)
   @if $grid-mixin-counter == 0
     float: left
   @else
     @extend #{$object-type}next-column
+  @warn $grid-mixin-counter
   $grid-mixin-counter: $grid-mixin-counter + $units
+  @warn $grid-mixin-counter

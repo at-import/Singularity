@@ -439,7 +439,7 @@ nav ol, nav #global-actions-bar, header, .content, footer {
   margin-right: auto; }
 
 aside {
-  margin-left: 2%;
+  margin-left: 0%;
   float: left; }
 
 a {
@@ -516,19 +516,21 @@ article, aside {
   padding: 1em 0; }
 
 article {
-  width: 102199%;
-  float: left; }
+  width: 66.394%;
+  float: left;
+  background: #ff9999 !important; }
 
 aside {
-  width: 716799%; }
+  width: 0.68%;
+  background: #99ff99 !important; }
 
 body.no-aside article, body.no-aside aside {
-  width: 818999%;
+  width: 100%;
   float: left; }
 
 @media all and (max-width: 40em) {
   article, aside {
-    width: 818999%;
+    width: 100%;
     float: left; }
 
   nav {
