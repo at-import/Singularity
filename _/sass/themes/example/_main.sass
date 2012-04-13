@@ -57,6 +57,12 @@ aside
   +grid(6)
   +g
 
+@for $i from 1 through $columns
+  .c#{$i}
+    +grid(1, $i)
+    height: 100px
+    
+
 body.no-aside
   article, aside
     +grid(12)

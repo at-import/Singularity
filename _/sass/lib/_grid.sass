@@ -61,6 +61,9 @@ $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
   margin-left: $calculated-gutter
   float: left
 
+#{$object-type}first-column
+  float: left
+
 // Grid widths
 @for $i from 1 through $columns
   // Writes classes or placeholders depending on the $object-type variable.
@@ -171,14 +174,12 @@ $grid-mixin-counter: 0
 =grid($units, $grid-override: false)
   @if $grid-mixin-counter >= $columns
     $grid-mixin-counter: 0
-  @if $grid-override == false
-    width: grid($units, $grid-mixin-counter)
-  @if $grid-override != false
-    width: grid($units, $grid-mixin-counter)
+  @if $grid-override == false or $grid-override != false
+    width: grid($units, $grid-mixin-counter + 1)
+    @warn grid($units, $grid-mixin-counter)
+    @warn $grid-mixin-counter
   @if $grid-mixin-counter == 0
-    float: left
+    @extend #{$object-type}first-column
   @else
     @extend #{$object-type}next-column
-  @warn $grid-mixin-counter
   $grid-mixin-counter: $grid-mixin-counter + $units
-  @warn $grid-mixin-counter

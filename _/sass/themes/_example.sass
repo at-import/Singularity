@@ -1,13 +1,18 @@
 // SETTINGS //
++margin-reset
++debug
 
-// metrics
-//$base-size: 16px
+$base-size: 16px
 //$line-height: 1.3em
 
-//$grid-width: 90%
-//$columns: 12
-//$wrapper-align: center // left, center or right
-//$gutter: 2%
+$grid-width: 90%
+// $columns: 12
+// $wrapper-align: center // left, center or right
+$gutter: 0%
+$grid-type: scale // column, scale
+$ratio: .5
+$scale-grid-direction: rtl // rtl, ltr
+
 
 // colors
 $primary: #0cf
@@ -23,8 +28,11 @@ $text-color: #222
 //+styleguide-table(#777)
 +typography
 
+@import ../lib/grid
+
+
 // FILES //
-@import lib/main
+@import example/main
 
 // @import lib/media/screen
 // @import lib/media/print

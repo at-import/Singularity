@@ -419,14 +419,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  vertical-align: baseline;
-  background: transparent; }
-
 html {
   font-size: 16px;
   line-height: 1.3em; }
@@ -438,9 +430,38 @@ nav ol, nav #global-actions-bar, header, .content, footer {
   margin-left: auto;
   margin-right: auto; }
 
-aside {
-  margin-left: 0%;
+aside, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 {
+  margin-left: 2%;
   float: left; }
+
+article, .c1, body.no-aside article, body.no-aside aside, aside {
+  float: left; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent; }
+
+.r {
+  background: #ff9999 !important; }
+
+.g {
+  background: #99ff99 !important; }
+
+.b {
+  background: #9999ff !important; }
+
+.c {
+  background: #99ffff !important; }
+
+.m {
+  background: #ff99ff !important; }
+
+.y {
+  background: #ffff99 !important; }
 
 a {
   text-decoration: none;
@@ -474,6 +495,24 @@ small {
   font-size: 0.75em;
   opacity: 0.75;
   font-weight: bold; }
+
+html {
+  font-size: 16px;
+  line-height: 1.3em; }
+
+nav ol, nav #global-actions-bar, header, .content, footer {
+  width: 90%;
+  max-width: 87.5em;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto; }
+
+aside, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 {
+  margin-left: 0%;
+  float: left; }
+
+article, .c1, body.no-aside article, body.no-aside aside, aside {
+  float: left; }
 
 body {
   margin-top: 3em; }
@@ -516,22 +555,67 @@ article, aside {
   padding: 1em 0; }
 
 article {
-  width: 66.394%;
-  float: left;
+  width: 98.438%;
   background: #ff9999 !important; }
 
 aside {
-  width: 0.68%;
+  width: 1.563%;
   background: #99ff99 !important; }
 
+.c1 {
+  width: 50%;
+  height: 100px; }
+
+.c2 {
+  width: 25%;
+  height: 100px; }
+
+.c3 {
+  width: 12.5%;
+  height: 100px; }
+
+.c4 {
+  width: 6.25%;
+  height: 100px; }
+
+.c5 {
+  width: 3.125%;
+  height: 100px; }
+
+.c6 {
+  width: 1.563%;
+  height: 100px; }
+
+.c7 {
+  width: 0.781%;
+  height: 100px; }
+
+.c8 {
+  width: 0.391%;
+  height: 100px; }
+
+.c9 {
+  width: 0.195%;
+  height: 100px; }
+
+.c10 {
+  width: 0.098%;
+  height: 100px; }
+
+.c11 {
+  width: 0.049%;
+  height: 100px; }
+
+.c12 {
+  width: 0.049%;
+  height: 100px; }
+
 body.no-aside article, body.no-aside aside {
-  width: 100%;
-  float: left; }
+  width: 100%; }
 
 @media all and (max-width: 40em) {
   article, aside {
-    width: 100%;
-    float: left; }
+    width: 100%; }
 
   nav {
     height: 4.5em; }
