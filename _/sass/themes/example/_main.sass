@@ -51,16 +51,16 @@ article, aside
 
 article
   +grid(6)
-  //+r
+  +r
 
 aside
   +grid(6)
-  //+g
+  +g
 
-//@for $i from 1 through $columns
-//  .c#{$i}
-//    +grid(1, $i)
-//    height: 100px
+@for $i from 1 through $columns
+  .c#{$i}
+    +grid(1, $i)
+    height: 100px
     
 
 body.no-aside
