@@ -123,26 +123,19 @@ $scale-grid-direction: ltr !default
       $half-gutter: false
       @if $counter == 0
         $half-gutter: true
-      @if $scale-grid-direction == ltr
-        @if $counter > $columns
-          $half-gutter: true
-          $counter: 1
-          $previous-return: 100%
-        @if $counter < 1
-          $counter: ($columns)
-      @if $scale-grid-direction == rtl
-        @if $counter > $columns
-          $counter: 1
-        @if $counter < 1
-          $counter: 1
+      @if $counter > $columns
+        $counter: 1
+      @if $counter < 1
+        $counter: 1
       
       $grid-return: 0 // zero out grid return
 
       // Left to right grid
       @if $scale-grid-direction == ltr
         @for $i from 1 through $units
-          $grid-return: $grid-return + nth($ms-grid-list, $counter)
-          $counter: $counter - 1
+          $grid-return: $grid-return + nth($ms-grid-list, abs($columns - $counter) + 1)
+          // the only difference between rtl and ltr is this
+          $counter: $counter + 1
           @if $i == $units
             @if $counter == 0
               $half-gutter: true
@@ -176,8 +169,6 @@ $grid-mixin-counter: 0
     $grid-mixin-counter: 0
   @if $grid-override == false or $grid-override != false
     width: grid($units, $grid-mixin-counter + 1)
-    @warn grid($units, $grid-mixin-counter)
-    @warn $grid-mixin-counter
   @if $grid-mixin-counter == 0
     @extend #{$object-type}first-column
   @else
