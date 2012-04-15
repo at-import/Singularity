@@ -50,26 +50,32 @@ article, aside
   padding: 1em 0
 
 article
-  +grid(6)
+  +grid($columns)
   +r
 
 aside
-  +grid(6)
+  +grid($columns)
   +g
 
+.content, body, html
+  height: 100%
 @for $i from 1 through $columns
   .c#{$i}
     +grid(1, $i)
-    height: 100px
+    height: 100%
+    @if ($i / 2) == round($i / 2)
+      background-color: #f66
+    @else
+      background-color: #f99
     
 
 body.no-aside
   article, aside
-    +grid(12)
+    +grid($columns)
 
 @media all and (max-width: 40em)
   article, aside
-    +grid(12)
+    +grid($columns)
   nav
     height: $nav-height + ($nav-height / 2)
   body
