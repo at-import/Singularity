@@ -47,26 +47,24 @@ header
 
 
 article, aside
-  padding: 1em 0
-
-article
-  +grid($columns)
-  +r
-
-aside
-  +grid($columns)
-  +g
+  padding-top: 1em
+  padding-bottom: 1em
 
 .content, body, html
   height: 100%
 @for $i from 1 through $columns
   .c#{$i}
+    word-wrap: break-word
+    @if $i == 1
+      background-color: #6f6 !important
     +grid(1, $i)
     height: 100%
     @if ($i / 2) == round($i / 2)
       background-color: #f66
     @else
       background-color: #f99
+    @if $i == $columns
+      background-color: #66f
     
 
 body.no-aside

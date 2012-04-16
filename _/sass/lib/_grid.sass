@@ -11,7 +11,7 @@ $grid-width: 90% !default
 $columns: 12 !default
 $wrapper-align: center !default
 $gutter: 2% !default
-$padding: 0 1em !default
+$padding: 1em !default
 
 $max-width: dp(1400) !default
 
@@ -88,6 +88,7 @@ $scale-grid-direction: ltr !default
 
 @if $grid-type == "scale"
   @if $modular-scale-loaded
+    
     // Core logic function
     @function ms-grid($units, $ratio)
       $column-sum: 100%
@@ -122,7 +123,7 @@ $scale-grid-direction: ltr !default
     // Calculate the units on the grid
     @function grid($units, $counter)
       $half-gutter: false
-      @if $counter == 0
+      @if $counter == 1 or ($counter + $units) == $columns
         $half-gutter: true
       @if $counter > $columns
         $counter: 1
