@@ -51,6 +51,8 @@ html
 
 // COLUMN GRID
 $calculated-gutter: $gutter
+@if $gutter == 0
+  $gutter: 0%
 @if unit($gutter) != "%"
   $calculated-gutter: percentage($gutter / $grid-width)
 $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
