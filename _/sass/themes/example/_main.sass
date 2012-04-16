@@ -4,9 +4,6 @@ $nav-padding: 0.15em
 body
   margin-top: $nav-height
 
-body, footer
-  height: 100% !important
-
 nav
   position: absolute
   top: 0
@@ -50,15 +47,21 @@ article, aside
   padding-top: 1em
   padding-bottom: 1em
 
-.content, body, html
-  height: 100%
+.test
+  display: none
+  > .inner
+    background-color: rgba(#fff, .5)
+    height: 20em
+
 @for $i from 1 through $columns
   .c#{$i}
+    display: block
     word-wrap: break-word
+    overflow: hidden
     @if $i == 1
       background-color: #6f6 !important
     +grid(1, $i)
-    height: 100%
+    height: 20em
     @if ($i / 2) == round($i / 2)
       background-color: #f66
     @else
@@ -67,24 +70,17 @@ article, aside
       background-color: #66f
     
 
-body.no-aside
-  article, aside
-    +grid($columns)
-
-@media all and (max-width: 40em)
-  article, aside
-    +grid($columns)
-  nav
-    height: $nav-height + ($nav-height / 2)
-  body
-    margin-top: $nav-height + ($nav-height / 2)
+nav
+  height: $nav-height + ($nav-height / 2)
+body
+  margin-top: $nav-height + ($nav-height / 2)
 
 footer
   @extend %wrapper
   background-color: #444
   clear: both
   position: relative
-  padding: 1em ((100% - $grid-width) / 2)
+  padding: 1em (100% - $grid-width) / 2
   color: #ddd
   span
     display: block

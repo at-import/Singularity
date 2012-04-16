@@ -11,7 +11,7 @@ $grid-width: 90% !default
 $columns: 12 !default
 $wrapper-align: center !default
 $gutter: 2% !default
-$padding: 1em !default
+$padding: 0 !default
 
 $max-width: dp(1400) !default
 
@@ -40,15 +40,6 @@ html
     margin-left: auto
     margin-right: 0
 
-// Add padding to items on the grid.
-#{$object-type}padded
-  padding: $padding
-  // box sizing to make sure padding doesn't effect grid.
-  +prefix(box-sizing, border-box, -webkit- -moz-)
-  .html.no-box-sizing &
-    // Remove padding if box-sizing isn't supported via modernizer
-    padding: 0
-
 // COLUMN GRID
 $calculated-gutter: $gutter
 @if $gutter == 0
@@ -60,12 +51,18 @@ $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
   @return ($calculated-column * $units) + ($calculated-gutter * ($units - 1))
 
 // For the next column in a series. It floats and spaces to sit on the grid next to the one before it.
+#{$object-type}column
+  float: left
+  @if $padding != 0
+    padding: 0 $padding
+    // box sizing to make sure padding doesn't effect grid.
+    +prefix(box-sizing, border-box, -webkit- -moz-)
+    .html.no-box-sizing &
+      // Remove padding if box-sizing isn't supported via modernizer
+      padding: 0
+
 #{$object-type}next-column
   margin-left: $calculated-gutter
-  float: left
-
-#{$object-type}first-column
-  float: left
 
 // Grid widths
 @for $i from 1 through $columns
@@ -134,33 +131,22 @@ $scale-grid-direction: ltr !default
       
       $grid-return: 0 // zero out grid return
 
-      // Left to right grid
-      @if $scale-grid-direction == ltr
-        @for $i from 1 through $units
+      // Add up the columns
+      @for $i from 1 through $units
+        @if $scale-grid-direction == ltr
           $grid-return: $grid-return + nth($ms-grid-list, abs($columns - $counter) + 1)
-          // the only difference between rtl and ltr is this
-          $counter: $counter + 1
-          @if $i == $units
-            @if $counter == 0
-              $half-gutter: true
-            @if $half-gutter
-              @return $grid-return - ($calculated-gutter / 2)
-            @return $grid-return - $calculated-gutter
-
-
-      // Right to left grid
-      @if $scale-grid-direction == rtl
-        @for $i from 1 through $units
+        @if $scale-grid-direction == rtl
           $grid-return: $grid-return + nth($ms-grid-list, $counter)
-          // the only difference between rtl and ltr is this
-          $counter: $counter + 1
-          @if $i == $units
-            @if $counter == 0
-              $half-gutter: true
-            @if $half-gutter
-              @return $grid-return - ($calculated-gutter / 2)
-            @return $grid-return - $calculated-gutter
-  
+        // the only difference between rtl and ltr is this
+        $counter: $counter + 1
+        @if $i == $units
+          @if $counter == 0
+            $half-gutter: true
+          @if $half-gutter
+            @return $grid-return - ($calculated-gutter / 2)
+          @return $grid-return - $calculated-gutter
+
+
   @if $modular-scale-loaded == false
     @warn "Modular-Scale needs to be loaded to use a scale grid"
     @warn "https://github.com/scottkellum/modular-scale"
@@ -169,12 +155,11 @@ $scale-grid-direction: ltr !default
 $grid-mixin-counter: 0
 
 =grid($units, $grid-override: false)
+  // Add padding to items on the grid.
+  width: grid($units, $grid-mixin-counter + 1)
+  @extend #{$object-type}column
   @if $grid-mixin-counter >= $columns
     $grid-mixin-counter: 0
-  @if $grid-override == false or $grid-override != false
-    width: grid($units, $grid-mixin-counter + 1)
-  @if $grid-mixin-counter == 0
-    @extend #{$object-type}first-column
-  @else
+  @if $grid-mixin-counter != 0
     @extend #{$object-type}next-column
   $grid-mixin-counter: $grid-mixin-counter + $units
