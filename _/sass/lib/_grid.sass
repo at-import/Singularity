@@ -78,12 +78,15 @@ $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
 +grid-widths
 
 // Column locations in absolute positions. Use next-col in a series.
-@for $i from 0 through $columns
-  // Writes classes or placeholders depending on the $object-type variable.
-  // You may also like a more semantic prefix, like "column-". You can chage it by changing the $column-prefix variable.
-  #{$object-type}#{$column-prefix+$i}
-    position: absolute
-    left:  grid($i) + $calculated-gutter
+=grid-columns
+  @for $i from 0 through $columns
+    // Writes classes or placeholders depending on the $object-type variable.
+    // You may also like a more semantic prefix, like "column-". You can chage it by changing the $column-prefix variable.
+    #{$object-type}#{$column-prefix+$i}
+      position: absolute
+      left:  grid($i) + $calculated-gutter
+
++grid-columns
 
 
 // Scale grid math
