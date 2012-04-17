@@ -53,23 +53,29 @@ $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
 // For the next column in a series. It floats and spaces to sit on the grid next to the one before it.
 #{$object-type}column
   float: left
+  margin-left: $calculated-gutter
   @if $padding != 0
     padding: 0 $padding
     // box sizing to make sure padding doesn't effect grid.
     +prefix(box-sizing, border-box, -webkit- -moz-)
-    .html.no-box-sizing &
-      // Remove padding if box-sizing isn't supported via modernizer
-      padding: 0
+    // Polyfill for old IE https://github.com/Schepp/box-sizing-polyfill
+    *behavior: url(../js/boxsizing.htc)
 
-#{$object-type}next-column
-  margin-left: $calculated-gutter
+#{$object-type}all-columns
+  width: 100%
+
+#{$object-type}first-column
+  margin-left: 0
 
 // Grid widths
-@for $i from 1 through $columns
-  // Writes classes or placeholders depending on the $object-type variable.
-  // You may also like a more semantic prefix, like "width-". You can chage it by changing the $width-prefix variable.
-  #{$object-type}#{$width-prefix+$i}
-    width:  grid($i)
+=grid-widths
+  @for $i from 1 through $columns
+    // Writes classes or placeholders depending on the $object-type variable.
+    // You may also like a more semantic prefix, like "width-". You can chage it by changing the $width-prefix variable.
+    #{$object-type}#{$width-prefix+$i}
+      width:  grid($i)
+
++grid-widths
 
 // Column locations in absolute positions. Use next-col in a series.
 @for $i from 0 through $columns
@@ -155,11 +161,21 @@ $scale-grid-direction: ltr !default
 $grid-mixin-counter: 0
 
 =grid($units, $grid-override: false)
-  // Add padding to items on the grid.
-  width: grid($units, $grid-mixin-counter + 1)
-  @extend #{$object-type}column
-  @if $grid-mixin-counter >= $columns
-    $grid-mixin-counter: 0
-  @if $grid-mixin-counter != 0
-    @extend #{$object-type}next-column
-  $grid-mixin-counter: $grid-mixin-counter + $units
+  // If object spans all columns
+  @if $units == $columns
+    @extend #{$object-type}all-columns
+    @extend #{$object-type}column
+  @else
+    @extend #{$object-type}column
+    @if $grid-type == "scale"
+      // Width objects for Modular Scales are tricky, write width directly.
+      width: grid($units, $grid-mixin-counter + 1)
+    @else
+      // extend width objects
+      @extend #{$object-type}#{$width-prefix+$units}
+    // reset counters
+    @if $grid-mixin-counter >= $columns
+      $grid-mixin-counter: 0
+    @if $grid-mixin-counter == 0
+      @extend #{$object-type}first-column
+    $grid-mixin-counter: $grid-mixin-counter + $units

@@ -10,7 +10,7 @@ nav
   width: 100%
   height: $nav-height
   background: #444
-  ol, #global-actions-bar
+  ol
     @extend %wrapper
     position: absolute
     left: (100% - $grid-width) / 2
@@ -30,16 +30,8 @@ nav
       &:hover
         border: none
         color: #fff
-  #global-actions-bar
-    top: 0
-    text-align: right
-    font-size: .7em
-    color: #ddd
 
-header
-  @extend %wrapper
-
-.content
+header, .content
   @extend %wrapper
 
 
@@ -56,16 +48,14 @@ article, aside
 @for $i from 1 through $columns
   .c#{$i}
     display: block
-    word-wrap: break-word
-    overflow: hidden
-    @if $i == 1
-      background-color: #6f6 !important
-    +grid(1, $i)
-    height: 20em
     @if ($i / 2) == round($i / 2)
       background-color: #f66
     @else
       background-color: #f99
+    @if $i == 1
+      background-color: #6f6
+    +grid(1, $i)
+    height: 20em
     @if $i == $columns
       background-color: #66f
     
