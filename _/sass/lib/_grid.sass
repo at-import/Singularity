@@ -40,13 +40,28 @@ html
     margin-left: auto
     margin-right: 0
 
-// COLUMN GRID
-$calculated-gutter: $gutter
-@if $gutter == 0
-  $gutter: 0%
-@if unit($gutter) != "%"
-  $calculated-gutter: percentage($gutter / $grid-width)
-$calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
+=wrapper
+  @extend #{$object-type}wrapper
+
+// Seed variables
+$calculated-gutter: 0
+$calculated-column: 0
+
+// Calculate grid metrics
+=calculate-grid($columns, $gutter, $grid-width)
+  $columns: $columns
+  $gutter: $gutter
+  $grid-width: $grid-width
+  // COLUMN GRID
+  $calculated-gutter: $gutter
+  @if $gutter == 0
+    $gutter: 0%
+  @if unit($gutter) != "%"
+    $calculated-gutter: percentage($gutter / $grid-width)
+  $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
++calculate-grid
+
+// Define grid funciton
 @function grid($units, $grid-width)
   @return ($calculated-column * $units) + ($calculated-gutter * ($units - 1))
 
@@ -60,12 +75,18 @@ $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
     +prefix(box-sizing, border-box, -webkit- -moz-)
     // Polyfill for old IE https://github.com/Schepp/box-sizing-polyfill
     *behavior: url(../js/boxsizing.htc)
+=column
+  @extend #{$object-type}column
 
 #{$object-type}all-columns
   width: 100%
+=all-columns
+  @extend #{$object-type}all-columns
 
 #{$object-type}first-column
   margin-left: 0
+=first-column
+  @extend #{$object-type}first-column
 
 // Grid widths
 =grid-widths
@@ -74,7 +95,6 @@ $calculated-column: (100% - ($calculated-gutter * ($columns - 1))) / $columns
     // You may also like a more semantic prefix, like "width-". You can chage it by changing the $width-prefix variable.
     #{$object-type}#{$width-prefix+$i}
       width:  grid($i)
-
 +grid-widths
 
 // Column locations in absolute positions. Use next-col in a series.
@@ -182,3 +202,26 @@ $grid-mixin-counter: 0
     @if $grid-mixin-counter == 0
       @extend #{$object-type}first-column
     $grid-mixin-counter: $grid-mixin-counter + $units
+
+
+// Mixin to test grid
+=test-grid($prefix: g)
+  .test
+    display: none
+    height: 6em
+    > .inner
+      background-color: rgba(#fff, .5)
+      height: 6em
+  
+  @for $i from 1 through $columns
+    .#{$prefix}#{$i}
+      display: block
+      @if ($i / 2) == round($i / 2)
+        background-color: #f66
+      @else
+        background-color: #f99
+      @if $i == 1
+        background-color: #6f6
+      +grid(1)
+      @if $i == $columns
+        background-color: #66f

@@ -1,76 +1,7 @@
 $nav-height: 3em
 $nav-padding: 0.15em
 
-body
-  margin-top: $nav-height
+.content
+  +wrapper
 
-nav
-  position: absolute
-  top: 0
-  width: 100%
-  height: $nav-height
-  background: #444
-  ol
-    @extend %wrapper
-    position: absolute
-    left: (100% - $grid-width) / 2
-  ol
-    padding: ($nav-height / 2) 0 0 0
-    list-style: none
-    bottom: 0
-    a
-      display: block
-      float: left
-      height: ($nav-height / 2) - ($nav-padding * 2)
-      padding: $nav-padding .4em
-      border: none
-      background: #000
-      color: #fff
-      margin-right: 1px
-      &:hover
-        border: none
-        color: #fff
-
-header, .content
-  @extend %wrapper
-
-
-article, aside
-  padding-top: 1em
-  padding-bottom: 1em
-
-.test
-  display: none
-  > .inner
-    background-color: rgba(#fff, .5)
-    height: 20em
-
-@for $i from 1 through $columns
-  .c#{$i}
-    display: block
-    @if ($i / 2) == round($i / 2)
-      background-color: #f66
-    @else
-      background-color: #f99
-    @if $i == 1
-      background-color: #6f6
-    +grid(1)
-    height: 20em
-    @if $i == $columns
-      background-color: #66f
-    
-
-nav
-  height: $nav-height + ($nav-height / 2)
-body
-  margin-top: $nav-height + ($nav-height / 2)
-
-footer
-  @extend %wrapper
-  background-color: #444
-  clear: both
-  position: relative
-  padding: 1em (100% - $grid-width) / 2
-  color: #ddd
-  span
-    display: block
++test-grid
