@@ -3,6 +3,7 @@
 // Grid types to work on -- column, scale
 $grid-type: column !default
 $scale-grid-direction: rtl !default
+$scale-grid-style: incremental !default
 
 $base-size: 16px !default
 $line-height: 1.3em !default
@@ -126,19 +127,34 @@ $scale-grid-direction: ltr !default
       $column-short: false
       @if $ratio > 1
         $column-ratio: 1 / $ratio
-      @for $i from 1 through $units
-        $column-sum: ms($i, 100%, $column-ratio)
-        $grid-sum: $column-sum + $grid-sum
-        $return: $column-sum
-        @if $grid-sum > 100%
-          $return: 0%
-          @if $column-short == false
-            $column-short: $i
-        @if $i == $columns
-          @if $grid-sum < 100%
+      @if $scale-grid-style == traditional
+        @for $i from 1 through $units
+          $column-sum: ms($i, 100%, $column-ratio)
+          $grid-sum: $column-sum + $grid-sum
+          $return: $column-sum
+          @if $grid-sum > 100%
+            $return: 0%
+            @if $column-short == false
+              $column-short: $i
+          @if $i == $columns
+            @if $grid-sum < 100%
+              $return: 100% - $grid-sum + $column-sum
+          @if $column-short == $i
             $return: 100% - $grid-sum + $column-sum
-        @if $column-short == $i
-          $return: 100% - $grid-sum + $column-sum
+      @if $scale-grid-style == incremental
+        @for $i from 1 through $units
+          $return: ms(-1, $column-sum)
+          $column-sum: $column-sum - $return
+          $grid-sum: $return + $grid-sum
+          @if $grid-sum > 100%
+            $return: 0%
+            @if $column-short == false
+              $column-short: $i
+          @if $i == $columns
+            @if $grid-sum < 100%
+              $return: $column-sum
+          @if $column-short == $i
+            $return: $column-sum
       @return $return
 
     // Create array of all columns on the grid
@@ -146,6 +162,10 @@ $scale-grid-direction: ltr !default
     @for $i from 2 through $columns
       $ms-grid-list: join($ms-grid-list, ms-grid($i))
     
+    $ms-grid-list-sum: 0
+    @for $i from 1 through $columns
+      $ms-grid-list-sum: $ms-grid-list-sum + nth($ms-grid-list, $i)
+        
     $counter: 0 // counter that knows how many columns are used for placement
 
     // Calculate the units on the grid
@@ -169,6 +189,8 @@ $scale-grid-direction: ltr !default
         // the only difference between rtl and ltr is this
         $counter: $counter + 1
         @if $i == $units
+          @if $counter > ($columns) and $ms-grid-list-sum < 100%
+            $grid-return: $grid-return - ($ms-grid-list-sum - 100%)
           @if $counter == 0
             $half-gutter: true
           @if $half-gutter
