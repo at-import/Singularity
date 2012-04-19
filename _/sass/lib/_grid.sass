@@ -166,17 +166,17 @@ $scale-grid-direction: ltr !default
     @for $i from 1 through $columns
       $ms-grid-list-sum: $ms-grid-list-sum + nth($ms-grid-list, $i)
         
-    $counter: 0 // counter that knows how many columns are used for placement
+    $counter: 1 // counter that knows how many columns are used for placement
 
     // Calculate the units on the grid
     @function grid($units, $counter)
       $half-gutter: false
-      @if $counter == 1 or ($counter + $units) == $columns
-        $half-gutter: true
       @if $counter > $columns
         $counter: 1
       @if $counter < 1
         $counter: 1
+      @if $counter == 1 or ($counter + $units) == $columns
+        $half-gutter: true
       
       $grid-return: 0 // zero out grid return
 
@@ -191,8 +191,6 @@ $scale-grid-direction: ltr !default
         @if $i == $units
           @if $counter > ($columns) and $ms-grid-list-sum < 100%
             $grid-return: $grid-return - ($ms-grid-list-sum - 100%)
-          @if $counter == 0
-            $half-gutter: true
           @if $half-gutter
             @return $grid-return - ($calculated-gutter / 2)
           @return $grid-return - $calculated-gutter
@@ -227,7 +225,7 @@ $grid-mixin-counter: 0
 
 
 // Mixin to test grid
-=test-grid($prefix: g)
+=test-grid($prefix: a)
   .test
     display: none
     height: 6em
@@ -237,7 +235,7 @@ $grid-mixin-counter: 0
   
   @for $i from 1 through $columns
     .#{$prefix}#{$i}
-      display: block
+      display: block !important
       @if ($i / 2) == round($i / 2)
         background-color: #f66
       @else
