@@ -148,7 +148,7 @@ $scale-grid-direction: ltr !default
             $return: 100% - $grid-sum + $column-sum
       @if $scale-grid-style == incremental
         @for $i from 1 through $units
-          $return: ms(-1, $column-sum)
+          $return: ms(-1, $column-sum, (1 / $column-ratio))
           $column-sum: $column-sum - $return
           $grid-sum: $return + $grid-sum
           @if $grid-sum > 100%
