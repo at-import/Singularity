@@ -16,6 +16,8 @@ $padding: 0 !default
 
 $max-width: dp(1400) !default
 
+$breakpoint: ""
+
 // DEFATULTS TO OOSASS WITH @EXTEND
 $oocss-grid: false !default
 
@@ -29,20 +31,6 @@ $column-prefix: "c-" !default
 html
   font-size: $base-size
   line-height: $line-height
-
-#{$object-type}wrapper
-  width: $grid-width
-  max-width: $max-width
-  position: relative
-  @if $wrapper-align == "center"
-    margin-left: auto
-    margin-right: auto
-  @if $wrapper-align == "right"
-    margin-left: auto
-    margin-right: 0
-
-=wrapper
-  @extend #{$object-type}wrapper
 
 // Seed variables
 $calculated-gutter: 0
@@ -66,38 +54,54 @@ $calculated-column: 0
 @function grid($units, $grid-width)
   @return ($calculated-column * $units) + ($calculated-gutter * ($units - 1))
 
-// For the next column in a series. It floats and spaces to sit on the grid next to the one before it.
-#{$object-type}column
-  float: left
-  margin-left: $calculated-gutter
-  @if $padding != 0
-    padding: 0 $padding
-    // box sizing to make sure padding doesn't effect grid.
-    +prefix(box-sizing, border-box, -webkit- -moz-)
-    // Polyfill for old IE https://github.com/Schepp/box-sizing-polyfill
-    *behavior: url(../js/boxsizing.htc)
-=column
-  @extend #{$object-type}column
-
-#{$object-type}all-columns
-  width: 100%
-=all-columns
-  @extend #{$object-type}all-columns
-
-#{$object-type}first-column
-  margin-left: 0
-  clear: both
-=first-column
-  @extend #{$object-type}first-column
-
-// Grid widths
-=grid-widths
+=write-objects($breakpoint)
+  #{$object-type}wrapper#{$breakpoint}
+    width: $grid-width
+    max-width: $max-width
+    position: relative
+    @if $wrapper-align == "center"
+      margin-left: auto
+      margin-right: auto
+    @if $wrapper-align == "right"
+      margin-left: auto
+      margin-right: 0
+  
+  #{$object-type}column#{$breakpoint}
+    float: left
+    margin-left: $calculated-gutter
+    @if $padding != 0
+      padding: 0 $padding
+      // box sizing to make sure padding doesn't effect grid.
+      +prefix(box-sizing, border-box, -webkit- -moz-)
+      // Polyfill for old IE https://github.com/Schepp/box-sizing-polyfill
+      *behavior: url(../js/boxsizing.htc)
+  
+  #{$object-type}all-columns#{$breakpoint}
+    width: 100%
+  
+  #{$object-type}first-column#{$breakpoint}
+    margin-left: 0
+    clear: both
+  
+  // Grid widths
   @for $i from 1 through $columns
-    // Writes classes or placeholders depending on the $object-type variable.
-    // You may also like a more semantic prefix, like "width-". You can chage it by changing the $width-prefix variable.
-    #{$object-type}#{$width-prefix+$i}
+    #{$object-type}#{$width-prefix+$i}#{$breakpoint}
       width:  grid($i)
-+grid-widths
+
++write-objects($breakpoint)
+
+=wrapper
+  @extend #{$object-type}wrapper#{$breakpoint}
+
+// For the next column in a series. It floats and spaces to sit on the grid next to the one before it.
+=column
+  @extend #{$object-type}column#{$breakpoint}
+
+=all-columns
+  @extend #{$object-type}all-columns#{$breakpoint}
+
+=first-column
+  @extend #{$object-type}first-column#{$breakpoint}
 
 // Column locations in absolute positions. Use next-col in a series.
 =grid-columns
@@ -206,23 +210,30 @@ $grid-mixin-counter: 0
 
 =grid($units, $grid-override: false)
   // If object spans all columns
+  @if $grid-override
+    $grid-mixin-counter: $grid-override - 1
   @if $units == $columns
-    @extend #{$object-type}all-columns
-    @extend #{$object-type}column
+    @extend #{$object-type}column#{$breakpoint}
+    @extend #{$object-type}all-columns#{$breakpoint}
   @else
-    @extend #{$object-type}column
+    @extend #{$object-type}column#{$breakpoint}
     @if $grid-type == "scale"
       // Width objects for Modular Scales are tricky, write width directly.
       width: grid($units, $grid-mixin-counter + 1)
     @else
       // extend width objects
-      @extend #{$object-type}#{$width-prefix+$units}
+      @extend #{$object-type}#{$width-prefix+$units}#{$breakpoint}
     // reset counters
     @if $grid-mixin-counter >= $columns
       $grid-mixin-counter: 0
     @if $grid-mixin-counter == 0
-      @extend #{$object-type}first-column
+      @extend #{$object-type}first-column#{$breakpoint}
     $grid-mixin-counter: $grid-mixin-counter + $units
+
+=recalculate($breakpoint)
+  $breakpoint: $breakpoint
+  +calculate-grid
+  +write-objects
 
 
 // Mixin to test grid
@@ -243,6 +254,6 @@ $grid-mixin-counter: 0
         background-color: #f99
       @if $i == 1
         background-color: #6f6
-      +grid(1)
+      +grid(1, $i)
       @if $i == $columns
         background-color: #66f

@@ -1,13 +1,16 @@
-$nav-height: 3em
-$nav-padding: 0.15em
-
 .content
   +wrapper
 
-+test-grid
++test-grid(a)
 
-//+calculate-grid(12, 2%)
-
-+test-grid(b)
-
-+test-grid(c)
+//$columns: 3
+//$gutter: 4%
+//$breakpoint: 20em
+//+recalculate
+//+test-grid(b)
+//
+//$columns: 2
+//$gutter: 6%
+//$breakpoint: 10em
+//+recalculate
+//+test-grid(c)
