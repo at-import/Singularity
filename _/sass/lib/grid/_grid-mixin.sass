@@ -1,0 +1,24 @@
+// Simple mixin that figures it all out.
+$grid-mixin-counter: 0
+
+=grid($units, $grid-override: false)
+  // If object spans all columns
+  @if $grid-override
+    $grid-mixin-counter: $grid-override - 1
+  @if $units == $columns
+    @extend #{$object-type}column#{$breakpoint}
+    @extend #{$object-type}all-columns#{$breakpoint}
+  @else
+    @extend #{$object-type}column#{$breakpoint}
+    @if $grid-type == "scale"
+      // Width objects for Modular Scales are tricky, write width directly.
+      width: grid($units, $grid-mixin-counter + 1)
+    @else
+      // extend width objects
+      @extend #{$object-type}#{$width-prefix+$units}#{$breakpoint}
+    // reset counters
+    @if $grid-mixin-counter >= $columns
+      $grid-mixin-counter: 0
+    @if $grid-mixin-counter == 0
+      @extend #{$object-type}first-column#{$breakpoint}
+    $grid-mixin-counter: $grid-mixin-counter + $units

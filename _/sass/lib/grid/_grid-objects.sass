@@ -1,0 +1,64 @@
+// Define grid funciton
+@function grid($units, $grid-width)
+  @return ($calculated-column * $units) + ($calculated-gutter * ($units - 1))
+
+=write-objects($breakpoint)
+  #{$object-type}wrapper#{$breakpoint}
+    width: $grid-width
+    max-width: $max-width
+    position: relative
+    @if $wrapper-align == "left"
+      margin-left: 0
+    @if $wrapper-align == "center"
+      margin-left: auto
+      margin-right: auto
+    @if $wrapper-align == "right"
+      margin-right: 0
+  
+  #{$object-type}column#{$breakpoint}
+    float: left
+    margin-left: $calculated-gutter
+    @if $padding != 0
+      padding: 0 $padding
+      // box sizing to make sure padding doesn't effect grid.
+      +prefix(box-sizing, border-box, -webkit- -moz-)
+      // Polyfill for old IE https://github.com/Schepp/box-sizing-polyfill
+      *behavior: url(../js/boxsizing.htc)
+  
+  #{$object-type}all-columns#{$breakpoint}
+    width: 100%
+  
+  #{$object-type}first-column#{$breakpoint}
+    margin-left: 0
+    clear: both
+  
+  // Grid widths
+  @for $i from 1 through $columns
+    #{$object-type}#{$width-prefix+$i}#{$breakpoint}
+      width:  grid($i)
+
++write-objects($breakpoint)
+
+=wrapper
+  @extend #{$object-type}wrapper#{$breakpoint}
+
+// For the next column in a series. It floats and spaces to sit on the grid next to the one before it.
+=column
+  @extend #{$object-type}column#{$breakpoint}
+
+=all-columns
+  @extend #{$object-type}all-columns#{$breakpoint}
+
+=first-column
+  @extend #{$object-type}first-column#{$breakpoint}
+
+// Column locations in absolute positions. Use next-col in a series.
+=grid-columns
+  @for $i from 0 through $columns
+    // Writes classes or placeholders depending on the $object-type variable.
+    // You may also like a more semantic prefix, like "column-". You can chage it by changing the $column-prefix variable.
+    #{$object-type}#{$column-prefix+$i}
+      position: absolute
+      left:  grid($i) + $calculated-gutter
+
++grid-columns

@@ -1,0 +1,89 @@
+// Scale grid math
+// Requires modular-scale (https://github.com/scottkellum/modular-scale)
+$modular-scale-loaded: false !default
+$scale-grid-direction: ltr !default
+
+@if $grid-type == "scale"
+  @if $modular-scale-loaded
+    
+    // Core logic function
+    @function ms-grid($units, $ratio)
+      $column-sum: 100%
+      $grid-sum: 0%
+      $column-ratio: $ratio
+      $return: 0
+      $column-short: false
+      @if $ratio > 1
+        $column-ratio: 1 / $ratio
+      @if $scale-grid-style == traditional
+        @for $i from 1 through $units
+          $column-sum: ms($i, 100%, $column-ratio)
+          $grid-sum: $column-sum + $grid-sum
+          $return: $column-sum
+          @if $grid-sum > 100%
+            $return: 0%
+            @if $column-short == false
+              $column-short: $i
+          @if $i == $columns
+            @if $grid-sum < 100%
+              $return: 100% - $grid-sum + $column-sum
+          @if $column-short == $i
+            $return: 100% - $grid-sum + $column-sum
+      @if $scale-grid-style == incremental
+        @for $i from 1 through $units
+          $return: ms(-1, $column-sum, (1 / $column-ratio))
+          $column-sum: $column-sum - $return
+          $grid-sum: $return + $grid-sum
+          @if $grid-sum > 100%
+            $return: 0%
+            @if $column-short == false
+              $column-short: $i
+          @if $i == $columns
+            @if $grid-sum < 100%
+              $return: $column-sum
+          @if $column-short == $i
+            $return: $column-sum
+      @return $return
+
+    // Create array of all columns on the grid
+    $ms-grid-list: ms-grid(1)
+    @for $i from 2 through $columns
+      $ms-grid-list: join($ms-grid-list, ms-grid($i))
+    
+    $ms-grid-list-sum: 0
+    @for $i from 1 through $columns
+      $ms-grid-list-sum: $ms-grid-list-sum + nth($ms-grid-list, $i)
+        
+    $counter: 1 // counter that knows how many columns are used for placement
+
+    // Calculate the units on the grid
+    @function grid($units, $counter)
+      $half-gutter: false
+      @if $counter > $columns
+        $counter: 1
+      @if $counter < 1
+        $counter: 1
+      @if $counter == 1 or ($counter + $units) == $columns
+        $half-gutter: true
+      
+      $grid-return: 0 // zero out grid return
+
+      // Add up the columns
+      @for $i from 1 through $units
+        @if $scale-grid-direction == ltr
+          $grid-return: $grid-return + nth($ms-grid-list, abs($columns - $counter) + 1)
+        @if $scale-grid-direction == rtl
+          $grid-return: $grid-return + nth($ms-grid-list, $counter)
+        // the only difference between rtl and ltr is this
+        $counter: $counter + 1
+        @if $i == $units
+          @if $counter > ($columns) and $ms-grid-list-sum < 100%
+            $grid-return: $grid-return - ($ms-grid-list-sum - 100%)
+          @if $half-gutter
+            @return $grid-return - ($calculated-gutter / 2)
+          @return $grid-return - $calculated-gutter
+
+
+  @if $modular-scale-loaded == false
+    @warn "Modular-Scale needs to be loaded to use a scale grid"
+    @warn "https://github.com/scottkellum/modular-scale"
