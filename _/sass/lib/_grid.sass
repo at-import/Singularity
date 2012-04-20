@@ -59,11 +59,12 @@ $calculated-column: 0
     width: $grid-width
     max-width: $max-width
     position: relative
+    @if $wrapper-align == "left"
+      margin-left: 0
     @if $wrapper-align == "center"
       margin-left: auto
       margin-right: auto
     @if $wrapper-align == "right"
-      margin-left: auto
       margin-right: 0
   
   #{$object-type}column#{$breakpoint}

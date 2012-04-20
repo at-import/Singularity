@@ -1,16 +1,30 @@
 .content
   +wrapper
 
-+test-grid(a)
+article
+  +grid(3)
+  height: 100px
+  +r
 
-//$columns: 3
-//$gutter: 4%
+aside
+  +grid(2)
+  height: 100px
+  +g
+
+//@media all and (min-width: 600px)
+//  aside
+//    +grid(4)
+
+//+test-grid(a)
+
+//$columns: 4
+//$gutter: 6%
 //$breakpoint: 20em
 //+recalculate
 //+test-grid(b)
 //
-//$columns: 2
-//$gutter: 6%
+//$columns: 3
+//$gutter: 10%
 //$breakpoint: 10em
 //+recalculate
 //+test-grid(c)
