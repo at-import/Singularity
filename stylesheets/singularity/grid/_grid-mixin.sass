@@ -1,0 +1,19 @@
+// Simple mixin that figures it all out.
+$grid-mixin-counter: 0
+
+=grid($units, $grid-override: false)
+  // If object spans all columns
+  @if $grid-override
+    $grid-mixin-counter: $grid-override - 1
+  @if $units == $columns
+    +column
+    +all-columns
+  @else
+    +column
+    width: grid($units, $grid-mixin-counter + 1)
+    // reset counters
+    @if $grid-mixin-counter >= $columns
+      $grid-mixin-counter: 0
+    @if $grid-mixin-counter == 0
+      +first-column
+    $grid-mixin-counter: $grid-mixin-counter + $units

@@ -19,16 +19,16 @@ $max-width: dp(1400) !default
 $breakpoint: ""
 
 // DEFATULTS TO OOSASS WITH @EXTEND
-$oocss-grid: false !default
+$oosass-grid: false !default
 
 // Seed variables
 $calculated-gutter: 0
 $calculated-column: 0
 
 // BUILD GRID OBJECTS
-$object-type: "%" !default
-@if $oocss-grid
-  $grid-placeholder: "." !default
+$object-type: "." !default
+@if $oosass-grid
+  $object-type: "%" !default
 $width-prefix: "w-" !default
 $column-prefix: "c-" !default
 
