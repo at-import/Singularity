@@ -1,0 +1,12 @@
+@mixin gradient($start-color, $end-color, $start-position : top) {
+  @include background(
+    mix($start-color, $end-color),
+    linear-gradient($start-position, $start-color, $end-color)
+  );
+}
+
+// Depreciated
+@mixin v-gradient-bg($top, $bottom) {
+  @include gradient($top, $bottom);
+  @warn "The mixin v-gradient-bg is deprecaited. Please use gradient($start-color, $end-color, $start-position) instead"
+}
