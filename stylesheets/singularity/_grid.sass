@@ -1,44 +1,37 @@
-// MEASUREMENTS
+$columns: false !default
 
-// Grid types to work on -- column, scale
-$grid-type: column !default
-$scale-grid-direction: rtl !default
-$scale-grid-style: incremental !default
+// calculate the total sum of a list (context)
+@function list-sum($list)
+  // zero out the initial sum
+  $sum: 0
+  // loop through each value in the list adding it to $list-sum
+  @for $i from 1 through length($list)
+    $sum: $sum + nth($list, $i)
+  @return $sum
 
-$base-size: 16px !default
-$line-height: 1.3em !default
 
-$grid-width: 90% !default
-$columns: 12 !default
-$wrapper-align: center !default
-$gutter: 2% !default
-$padding: 0 !default
+// calculate the width of individual columns
+@function list-column-width($location, $columns)
+  // send a warning if this is used when $columns is not a list
+  @if type-of($columns) != list
+    @warn "The column-list-sum function requires the variable $columns to be a list."
+  @else
+    // divide the column from its context
+    @return nth($columns, $location) / list-sum($columns)
 
-$max-width: dp(1400) !default
 
-$breakpoint: ""
+// Calculate the width spanning multiple columns
+@function span($span, $location: 1, $columns: $columns)
+  // zero out initial sum
+  $sum: 0
+  // from start point to end point
+  @for $i from $location to ($location + $span)
+    $sum: $sum + list-column-width($i, $columns)
+  @return percentage($sum)
 
-// DEFATULTS TO OOSASS WITH @EXTEND
-$oosass-grid: false !default
 
-// Seed variables
-$calculated-gutter: 0
-$calculated-column: 0
 
-// BUILD GRID OBJECTS
-$object-type: "." !default
-@if $oosass-grid
-  $object-type: "%" !default
-$width-prefix: "w-" !default
-$column-prefix: "c-" !default
+// TEST
 
-@import grid/base
-@import grid/calculate
-
-+calculate-grid
-
-@import grid/grid-objects
-@import grid/modular-scale-grid
-@import grid/grid-mixin
-@import grid/recalculate-grid
-@import grid/grid-test
+$columns: 1, 2, 4, 8, 16, 32
+@debug span(3, 4)
