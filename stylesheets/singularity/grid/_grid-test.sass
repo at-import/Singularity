@@ -1,11 +1,21 @@
 // Mixin to test grid
 =test-grid($prefix: a)
+  .testgroup
+    opacity: .333
+    position: fixed
+    width: $grid-width
+    height: 100%
+    left: (100% - $grid-width) / 2
+    top: 0
+    z-index: 9999
+    pointer-events: none
   .test
     display: none
-    height: 6em
+    height: 100%
+    position: relative
     > .inner
       background-color: rgba(#fff, .5)
-      height: 6em
+      height: 100%
   
   @for $i from 1 through $columns
     .#{$prefix}#{$i}
@@ -22,6 +32,8 @@
 
 
 //  Use this HTML to test the grid
+//
+//  <div class="testgroup">
 //  <div class="test a1"><div class="inner"></div></div>
 //  <div class="test a2"><div class="inner"></div></div>
 //  <div class="test a3"><div class="inner"></div></div>
@@ -54,3 +66,4 @@
 //  <div class="test a30"><div class="inner"></div></div>
 //  <div class="test a31"><div class="inner"></div></div>
 //  <div class="test a32"><div class="inner"></div></div>
+//  </div>

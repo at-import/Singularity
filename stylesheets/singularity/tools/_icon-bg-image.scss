@@ -1,9 +1,0 @@
-@mixin icon-bg-image($iconName) {
-  background-image: url(/images/united/icons/icon-#{$iconName}.png);
-  .ui-state-hover & { background-image: url(/images/united/icons/icon-#{$iconName}-hover.png); }
-  .ui-state-disabled & { background-image: url(/images/united/icons/icon-#{$iconName}.png); }
-  .vox-button-alt.ui-state-hover & {
-    background-color: $button-hover-bg;
-    background-image: url(/images/united/icons/icon-#{$iconName}-ko.png);
-  }
-}
