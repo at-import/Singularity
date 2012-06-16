@@ -1,8 +1,8 @@
 $columns: 12
-
 $gutter: 2% // Must be %
 
-// calculate the total sum of a list (context)
+
+// Calculate the total sum of a list (context)
 @function list-sum($list)
   // zero out the initial sum
   $sum: 0
@@ -10,6 +10,14 @@ $gutter: 2% // Must be %
   @for $i from 1 through length($list)
     $sum: $sum + nth($list, $i)
   @return $sum
+
+
+// Find column count
+@function column-count($columns)
+  @if type-of($columns) == number
+    @return $columns
+  @if type-of($columns) == list
+    @return length($columns)
 
 
 // calculate the width of individual columns
@@ -39,8 +47,12 @@ $gutter: 2% // Must be %
     @return percentage($sum)
 
 
-// Gutters to be subtracted from columns
+// Gutters to be removed from columns
+@function gutter-offset($gutter, $columns)
+  $gutter-sum: $gutter * (column-count($columns) - 1)
 
+
+@function grid-span($span, $location: 1, $columns: $columns)
 
 // TEST
 
