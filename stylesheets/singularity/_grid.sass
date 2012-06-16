@@ -1,4 +1,6 @@
-$columns: false !default
+$columns: 12
+
+$gutter: 2% // Must be %
 
 // calculate the total sum of a list (context)
 @function list-sum($list)
@@ -21,17 +23,26 @@ $columns: false !default
 
 
 // Calculate the width spanning multiple columns
-@function span($span, $location: 1, $columns: $columns)
-  // zero out initial sum
-  $sum: 0
-  // from start point to end point
-  @for $i from $location to ($location + $span)
-    $sum: $sum + list-column-width($i, $columns)
-  @return percentage($sum)
+@function column-span($span, $location: 1, $columns: $columns)
+  
+  // Equal width columns
+  @if type-of($columns) == number
+    @return $span * (100% / $columns)
+  
+  // Variable width columns
+  @if type-of($columns) == list
+    // zero out initial sum
+    $sum: 0
+    // from start point to end point
+    @for $i from $location to ($location + $span)
+      $sum: $sum + list-column-width($i, $columns)
+    @return percentage($sum)
 
+
+// Gutters to be subtracted from columns
 
 
 // TEST
 
 $columns: 1, 2, 4, 8, 16, 32
-@debug span(3, 4)
+@debug column-span(3, 3)
