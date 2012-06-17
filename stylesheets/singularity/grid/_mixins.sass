@@ -1,0 +1,12 @@
+// Grid location is automatically counted unless overridden
+$grid-counter: 1
+
+=span-grid($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter)
+  float: left
+  width: grid-span($span, $location, $columns, $gutter)
+  $grid-counter: $location + $span
+  @if $grid-counter > $columns
+    $grid-counter: 1
+  @else
+    margin-left: $gutter
+    @debug $grid-counter

@@ -1,5 +1,8 @@
-$columns: 12
-$gutter: 2% // Must be %
+// Can be a number or a list of non-uniform column widths
+$columns: 12 !default
+
+// Must be % or 0
+$gutter: 2% !default
 
 // Helpers return think like list sums and column counts
 @import grid/helpers
@@ -12,3 +15,6 @@ $gutter: 2% // Must be %
 
 // Grid math combines column and gutter math
 @import grid/grid
+
+// Mixins to write 
+@import grid/mixins
