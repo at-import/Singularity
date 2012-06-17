@@ -1,60 +1,14 @@
 $columns: 12
 $gutter: 2% // Must be %
 
+// Helpers return think like list sums and column counts
+@import grid/helpers
 
-// Calculate the total sum of a list (context)
-@function list-sum($list)
-  // zero out the initial sum
-  $sum: 0
-  // loop through each value in the list adding it to $list-sum
-  @for $i from 1 through length($list)
-    $sum: $sum + nth($list, $i)
-  @return $sum
+// Column math is isolated
+@import grid/column
 
+// Gutter math is isolated
+@import grid/gutter
 
-// Find column count
-@function column-count($columns)
-  @if type-of($columns) == number
-    @return $columns
-  @if type-of($columns) == list
-    @return length($columns)
-
-
-// calculate the width of individual columns
-@function list-column-width($location, $columns)
-  // send a warning if this is used when $columns is not a list
-  @if type-of($columns) != list
-    @warn "The column-list-sum function requires the variable $columns to be a list."
-  @else
-    // divide the column from its context
-    @return nth($columns, $location) / list-sum($columns)
-
-
-// Calculate the width spanning multiple columns
-@function column-span($span, $location: 1, $columns: $columns)
-  
-  // Equal width columns
-  @if type-of($columns) == number
-    @return $span * (100% / $columns)
-  
-  // Variable width columns
-  @if type-of($columns) == list
-    // zero out initial sum
-    $sum: 0
-    // from start point to end point
-    @for $i from $location to ($location + $span)
-      $sum: $sum + list-column-width($i, $columns)
-    @return percentage($sum)
-
-
-// Gutters to be removed from columns
-@function gutter-offset($gutter, $columns)
-  $gutter-sum: $gutter * (column-count($columns) - 1)
-
-
-@function grid-span($span, $location: 1, $columns: $columns)
-
-// TEST
-
-$columns: 1, 2, 4, 8, 16, 32
-@debug column-span(3, 3)
+// Grid math combines column and gutter math
+@import grid/grid

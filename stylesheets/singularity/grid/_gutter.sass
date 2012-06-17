@@ -1,0 +1,4 @@
+// Gutters to be removed from columns
+@function gutter-offset($gutter, $columns)
+  $gutter-sum: $gutter * (column-count($columns) - 1)
+  @return $gutter-sum / column-count($columns)
