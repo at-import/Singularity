@@ -1,0 +1,54 @@
+=test-grid($columns: $columns, $gutter: $gutter, $prefix: a, $opacity: .5)
+  .test
+  $grid-counter: 1
+  @for $i from 1 through column-count($columns)
+    .test.#{$prefix}#{$i}
+      height: 200px
+      +span-grid(1, $i, $columns, $gutter)
+      background-color: rgba(#6bb, $opacity)
+
+html, body
+  margin: 0
+  padding: 0
+
++test-grid((1, 3, 1), 3%)
+
+@media (min-width: 500px)
+  +test-grid(compound(3, 4), 2%)
+
+@media (min-width: 900px)
+  +test-grid(compound(4, 5), 1%)
+
+// Need this markup to test
+//<div class="test a1"><div class="inner"></div></div>
+//<div class="test a2"><div class="inner"></div></div>
+//<div class="test a3"><div class="inner"></div></div>
+//<div class="test a4"><div class="inner"></div></div>
+//<div class="test a5"><div class="inner"></div></div>
+//<div class="test a6"><div class="inner"></div></div>
+//<div class="test a7"><div class="inner"></div></div>
+//<div class="test a8"><div class="inner"></div></div>
+//<div class="test a9"><div class="inner"></div></div>
+//<div class="test a10"><div class="inner"></div></div>
+//<div class="test a11"><div class="inner"></div></div>
+//<div class="test a12"><div class="inner"></div></div>
+//<div class="test a13"><div class="inner"></div></div>
+//<div class="test a14"><div class="inner"></div></div>
+//<div class="test a15"><div class="inner"></div></div>
+//<div class="test a16"><div class="inner"></div></div>
+//<div class="test a17"><div class="inner"></div></div>
+//<div class="test a18"><div class="inner"></div></div>
+//<div class="test a19"><div class="inner"></div></div>
+//<div class="test a20"><div class="inner"></div></div>
+//<div class="test a21"><div class="inner"></div></div>
+//<div class="test a22"><div class="inner"></div></div>
+//<div class="test a23"><div class="inner"></div></div>
+//<div class="test a24"><div class="inner"></div></div>
+//<div class="test a25"><div class="inner"></div></div>
+//<div class="test a26"><div class="inner"></div></div>
+//<div class="test a27"><div class="inner"></div></div>
+//<div class="test a28"><div class="inner"></div></div>
+//<div class="test a29"><div class="inner"></div></div>
+//<div class="test a30"><div class="inner"></div></div>
+//<div class="test a31"><div class="inner"></div></div>
+//<div class="test a32"><div class="inner"></div></div>

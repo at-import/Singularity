@@ -1,4 +1,0 @@
-AddType image/svg+xml svg svgz
-AddEncoding gzip svgz
-AddType text/cache-manifest .appcache
-AddType text/x-component .htc

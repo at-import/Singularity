@@ -1,0 +1,30 @@
+@function compound($c1: 1, $c2: 1, $c3: 1, $c4: 1, $c5: 1, $c6: 1)
+  $common-multiple: ($c1 * $c2 * $c3 * $c4 * $c5 * $c6)
+  $compound-grid: ()
+  $compound-counter: 1
+  @for $i from 1 through $common-multiple
+    $add-col: false
+    @if $c1 !=1
+      @if $i / $c1 == round($i / $c1)
+        $add-col: true
+    @if $c2 !=1
+      @if $i / $c2 == round($i / $c2)
+        $add-col: true
+    @if $c3 !=1
+      @if $i / $c3 == round($i / $c3)
+        $add-col: true
+    @if $c4 !=1
+      @if $i / $c4 == round($i / $c4)
+        $add-col: true
+    @if $c5 !=1
+      @if $i / $c5 == round($i / $c5)
+        $add-col: true
+    @if $c6 !=1
+      @if $i / $c6 == round($i / $c6)
+        $add-col: true
+    @if $add-col
+      $compound-grid: join($compound-grid, $compound-counter, comma)
+      $compound-counter: 1
+    @else
+      $compound-counter: $compound-counter + 1
+  @return $compound-grid

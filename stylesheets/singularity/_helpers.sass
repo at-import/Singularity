@@ -14,3 +14,8 @@
     @return $columns
   @if type-of($columns) == list
     @return length($columns)
+
+
+// Context of gutters
+@function gutter-context($gutter, $context)
+  @return $gutter * (100% / $context)

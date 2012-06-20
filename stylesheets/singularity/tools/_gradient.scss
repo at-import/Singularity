@@ -1,6 +1,0 @@
-@mixin gradient($start-color, $end-color, $start-position : top) {
-  @include background(
-    mix($start-color, $end-color),
-    linear-gradient($start-position, $start-color, $end-color)
-  );
-}

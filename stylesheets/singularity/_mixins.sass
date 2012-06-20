@@ -5,8 +5,10 @@ $grid-counter: 1
   float: left
   width: grid-span($span, $location, $columns, $gutter)
   $grid-counter: $location + $span
-  @if $grid-counter > $columns
+  @if $grid-counter > column-count($columns)
     $grid-counter: 1
   @else
-    margin-left: $gutter
+    margin-right: $gutter
     @debug $grid-counter
+
+  

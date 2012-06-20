@@ -1,5 +1,28 @@
 /*! SINGULARITY -- http://singularity.gs/ */
 
-// FRAMEWORK
-@import singularity/tools
-@import singularity/styleguide
+// Can be a number or a list of non-uniform column widths
+$columns: 12 !default
+
+// Must be % or 0
+$gutter: 2% !default
+
+// Helpers return think like list sums and column counts
+@import singularity/helpers
+
+// Compound grid calculation function
+@import singularity/compound
+
+// Column math is isolated
+@import singularity/column
+
+// Gutter math is isolated
+@import singularity/gutter
+
+// Grid math combines column and gutter math
+@import singularity/grid
+
+// Mixins to write 
+@import singularity/mixins
+
+// Mixins to write 
+@import singularity/grid-test

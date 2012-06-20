@@ -1,20 +1,3 @@
-// Can be a number or a list of non-uniform column widths
-$columns: 12 !default
+@function grid-span($span, $location: 1, $columns: $columns, $gutter: $gutter)
+  @return column-span($span, $location, $columns) - gutter-offset($gutter, $columns)
 
-// Must be % or 0
-$gutter: 2% !default
-
-// Helpers return think like list sums and column counts
-@import grid/helpers
-
-// Column math is isolated
-@import grid/column
-
-// Gutter math is isolated
-@import grid/gutter
-
-// Grid math combines column and gutter math
-@import grid/grid
-
-// Mixins to write 
-@import grid/mixins
