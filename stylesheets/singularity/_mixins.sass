@@ -10,4 +10,21 @@ $grid-counter: 1
   @else
     margin-right: $gutter
 
-  
+
+// This writes classes, IDs, or silent objects for you to extend or use in your HTML. They can be written to different breakpoints to extend or call into your HTML as needed.
+=grid-objects($prefix: a, $columns: $columns, $gutter: $gutter, $selector: "%")
+  // counter keeps track of the starting position
+  $count: 1
+  // Loop through each column in the series
+  @for $i from 1 through $columns
+    @for $n from ($count + 1) through $columns
+      #{$selector}#{$prefix}#{$count}-#{$n}
+        +grid-span($count, $n, $columns, $gutter)
+    // Add to the column count each pass
+    $count: $count + 1
+
+// Add padding to an object on the grid.
+=grid-padding($padding)
+  padding: 0 $padding
+  // box sizing to make sure padding doesn't effect grid.
+  +prefix(box-sizing, border-box, -webkit- -moz-)
