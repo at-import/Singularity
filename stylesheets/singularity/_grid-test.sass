@@ -1,14 +1,19 @@
 =test-grid($columns: $columns, $gutter: $gutter, $prefix: a, $opacity: .5)
-  .test
+  .test-grid
+    position: relative
+    height: 100%
+    width: 100%
+    min-height: 200px
+    margin-bottom: -100%
   $grid-counter: 1
   @for $i from 1 through column-count($columns)
     .test.#{$prefix}#{$i}
       height: 100%
-      min-height: 200px
       +grid-span(1, $i, $columns: $columns, $gutter: $gutter)
       background-color: rgba(#6bb, $opacity)
 
 // Need this markup to test
+//<div class="test-grid">
 //<div class="test a1"><div class="inner"></div></div>
 //<div class="test a2"><div class="inner"></div></div>
 //<div class="test a3"><div class="inner"></div></div>
@@ -41,3 +46,4 @@
 //<div class="test a30"><div class="inner"></div></div>
 //<div class="test a31"><div class="inner"></div></div>
 //<div class="test a32"><div class="inner"></div></div>
+//</div>
