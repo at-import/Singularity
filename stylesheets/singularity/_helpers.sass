@@ -19,3 +19,7 @@
 // Context of gutters
 @function gutter-context($gutter, $context)
   @return $gutter * (100% / $context)
+
+// box sizing in one place
+%border-box
+  +box-sizing(border-box)
