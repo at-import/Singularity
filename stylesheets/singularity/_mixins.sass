@@ -38,16 +38,13 @@ $grid-counter: 1
 =grid-objects($prefix: a, $columns: $columns, $gutter: $gutter, $padding: $padding, $selector: "%")
   // counter keeps track of the starting position
   $count: 0
-  // Loop through each column in the series
-  @for $i from 0 through column-count($columns)
-    @for $n from ($count + 1) through column-count($columns)
-      #{$selector}#{$prefix}#{$count}-#{$n}
-        //@debug $n
-        //@debug $n - $count
-        @debug grid-span($n - $count, $n, $columns, $gutter)
-        +grid-span($n - $count, $n, $columns, $gutter)
-    // Add to the column count each pass
+  @for $i from 1 through column-count($columns)
+    @for $n from 1 through column-count($columns) - $count
+      #{$selector}#{$prefix}#{$n}-#{$count + 1}
+        +grid-span($n, $count + 1, $columns, $gutter, $padding)
     $count: $count + 1
+
+
 
 // Add padding to an object on the grid.
 =grid-padding($padding)
