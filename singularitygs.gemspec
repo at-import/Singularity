@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |s|
   # General Project Information
-  s.name = "singularity"
+  s.name = "singularitygs"
   s.version = "0.0.1"
   s.date = "2012-06-23"
-  s.rubyforge_project = "singularity"
+  s.rubyforge_project = "singularitygs"
   s.rubygems_version = "1.7.2"
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2")
   

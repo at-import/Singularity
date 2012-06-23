@@ -1,6 +1,6 @@
 require 'compass'
 require 'modular-scale'
-Compass::Frameworks.register("singularity", :path => "#{File.dirname(__FILE__)}/..")
+Compass::Frameworks.register("singularitygs", :path => "#{File.dirname(__FILE__)}/..")
 
 module CompassExtension
   
