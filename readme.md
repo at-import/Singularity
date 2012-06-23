@@ -17,11 +17,18 @@ Next, install Singularity
 $ gem install singularitygs
 ```
 
-Import Compass and Singularity into your project
+Require Compass and Singularity into your config.rb
 
+```ruby
+require 'compass'
+require 'singularity'
 ```
-@import "compass"
-@import "singularity"
+
+Import them in your stylesheets
+
+```scss
+@import "compass";
+@import "singularity";
 ```
 
 ## Using Singularity
