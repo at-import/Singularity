@@ -1,26 +1,49 @@
-# Singularity • ALPHA
+# Singularity.gs β
 
-### Singularity is a powerful and intelegent grid framework for Sass that not only allows you to create responsive websites on any uniform columnar grid, but has the tools for asymmetric and compound grids built in.
+### Singularity is a powerful and intelligent grid framework for Sass and Compass that not only allows you to create responsive websites on any uniform columnar grid, but has the tools for asymmetric and compound grids built in.
+
+## Installing Singularity
+
+Make sure you have Compass and the Sass 3.2 alpha installed
+
+```
+$ gem install compass
+$ gem install sass --pre
+```
+
+Next, install Singularity
+
+```
+$ gem install singularitygs
+```
+
+Import Compass and Singularity into your project
+
+```
+@import "compass"
+@import "singularity"
+```
 
 ## Using Singularity
 
-First, you might want to set up your column and gutter defaults. Columns can exist as a single number of uniform columns, or a list of varying asymmetric grid widths.
+Unlike most other grid systems Singularity supports non-uniform column widths. Because of this the location of the initial column is just as important as how many columns an element spans. There is a built in counter to help keep track of this for you but location of columns is something to keep in mind.
 
-  $columns: 12;
-  // or write a list with varying width columns
-  $columns: 3, 2, 2, 3;
+#### Setting up columns
+There are two ways to set up columns, with a single value that creates equal column widths or a list that creates asymmetric grids.
 
-For columns, just write how wide you want them to be.
+###### 12 equal columns:
 
-  $gutter: 2%;
+```scss
+$columns: 12;
+```
 
-Now just write either a mixin or function.
+###### 6 columns where the second column is twice the first, the third column is three times the first, and so on:
 
-  @include grid-span($span, $location, $columns, $gutter);
-  
-or the function if you want to use grid values anywhere.
+```scss
+$columns: 1, 2, 3, 1, 2, 3;
+```
 
-  grid-span($span, $location, $columns, $gutter);
+## To be continued …
 
 ## Licence:
 
