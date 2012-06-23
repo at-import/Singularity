@@ -1,14 +1,35 @@
 // Grid location is automatically counted unless overridden
 $grid-counter: 1
 
-=grid-span($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter)
+=grid-span($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding)
   float: left
   width: grid-span($span, $location, $columns, $gutter)
+  
+  // add special left padding
+  @if type-of(nth($columns, $location)) == list
+    padding-left: nth(nth($columns, $location), 2)
+  @elseif $padding != 0
+    padding-left: $padding
+  // add special right padding
+  @if type-of(nth($columns, ($location + $span - 1))) == list
+    padding-right: nth(nth($columns, ($location + $span - 1)), 2)
+  @elseif $padding != 0
+    padding-right: $padding
+  
+  // if no special padding, apply box sizing, else apply regular padding
+  @if type-of(nth($columns, $location)) or type-of(nth($columns, ($location + $span - 1))) == list
+    +box-sizing(border-box)
+  @else
+    +grid-padding($padding)
+  
+  // bump up the counter
   $grid-counter: $location + $span
   @if $grid-counter > column-count($columns)
     $grid-counter: 1
   @else
     margin-right: $gutter
+  @if $padding != 0
+    +grid-padding($padding)
 
 
 // This writes classes, IDs, or silent objects for you to extend or use in your HTML. They can be written to different breakpoints to extend or call into your HTML as needed.
@@ -25,6 +46,7 @@ $grid-counter: 1
 
 // Add padding to an object on the grid.
 =grid-padding($padding)
-  padding: 0 $padding
-  // box sizing to make sure padding doesn't effect grid.
-  +prefix(box-sizing, border-box, -webkit- -moz-)
+  @if $padding != 0
+    padding: 0 $padding
+    // box sizing to make sure padding doesn't effect grid.
+    +box-sizing(border-box)

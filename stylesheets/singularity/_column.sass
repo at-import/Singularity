@@ -5,7 +5,7 @@
     @warn "The column-list-sum function requires the variable $columns to be a list."
   @else
     // divide the column from its context
-    @return nth($columns, $location) / list-sum($columns)
+    @return nth(nth($columns, $location), 1) / list-sum($columns)
 
 
 // Calculate the width spanning multiple columns

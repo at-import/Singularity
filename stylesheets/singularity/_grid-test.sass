@@ -1,4 +1,4 @@
-=test-grid($columns: $columns, $gutter: $gutter, $prefix: a, $opacity: .5)
+=test-grid($columns: $columns, $gutter: $gutter, $padding: $padding, $prefix: a, $opacity: .5)
   .test-grid
     position: relative
     height: 100%
@@ -9,8 +9,11 @@
   @for $i from 1 through column-count($columns)
     .test.#{$prefix}#{$i}
       height: 100%
-      +grid-span(1, $i, $columns: $columns, $gutter: $gutter)
-      background-color: rgba(#6bb, $opacity)
+      +grid-span(1, $i, $columns: $columns, $gutter: $gutter, $padding: $padding)
+      background-color: rgba(#6bb, $opacity / 2)
+      .inner
+        height: 100%
+        background-color: rgba(#6bb, $opacity / 2)
 
 // Need this markup to test
 //<div class="test-grid">

@@ -4,8 +4,8 @@
   $sum: 0
   // loop through each value in the list adding it to $list-sum
   @for $i from 1 through length($list)
-    $sum: $sum + nth($list, $i)
-  @return $sum
+    $sum: $sum + nth(nth($list, $i), 1)
+  @return nth($sum, 1)
 
 
 // Find column count
