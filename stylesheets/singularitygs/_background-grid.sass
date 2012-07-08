@@ -2,6 +2,8 @@
 @function grid-gradient-stop($location, $columns, $gutter, $color)
   @if $location == 1
     @return ($color 0%, $color grid-span(1, 1, $columns, $gutter), transparentize($color, 1) grid-span(1, 1, $columns, $gutter))
+  @if $location == column-count($columns)
+    @return (transparentize($color, 1) grid-span($location - 1, 1, $columns, $gutter) + $gutter, $color grid-span($location - 1, 1, $columns, $gutter) + $gutter, $color 100%)
   @if $location > 1
     @return (transparentize($color, 1) grid-span($location - 1, 1, $columns, $gutter) + $gutter, $color grid-span($location - 1, 1, $columns, $gutter) + $gutter, $color grid-span($location, 1, $columns, $gutter), transparentize($color, 1) grid-span($location, 1, $columns, $gutter))
 
