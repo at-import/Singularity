@@ -20,6 +20,8 @@
 @function gutter-context($gutter, $context)
   @return $gutter * (100% / $context)
 
-// box sizing in one place
-%border-box
-  +box-sizing(border-box)
+@function repeat($count, $repeat)
+  $list: $repeat
+  @for $i from 2 through $count
+    $list: join($repeat, $list)
+  @return $list

@@ -27,7 +27,7 @@ $grid-counter: 1
     $box-sizing: true
   
   @if $box-sizing
-    @extend %border-box
+    +box-sizing(border-box)
   
   // bump up the counter
   $grid-counter: $location + $span
