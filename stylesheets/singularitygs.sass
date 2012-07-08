@@ -1,6 +1,4 @@
 /*! SINGULARITY -- http://singularity.gs/ */
-@import "modular-scale"
-
 
 // Can be a number or a list of non-uniform column widths
 $columns: 12 !default
@@ -12,22 +10,25 @@ $gutter: 2% !default
 $padding: 0 !default
 
 // Helpers return think like list sums and column counts
-@import singularity/helpers
+@import singularitygs/helpers
 
 // Compound grid calculation function
-@import singularity/compound
+@import singularitygs/compound
 
 // Column math is isolated
-@import singularity/column
+@import singularitygs/column
 
 // Gutter math is isolated
-@import singularity/gutter
+@import singularitygs/gutter
 
 // Grid math combines column and gutter math
-@import singularity/grid
+@import singularitygs/grid
 
 // Mixins to write 
-@import singularity/mixins
+@import singularitygs/mixins
 
 // Mixins to write 
-@import singularity/grid-test
+@import singularitygs/grid-test
+
+// Mixins to write 
+@import singularitygs/background-grid

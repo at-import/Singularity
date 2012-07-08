@@ -1,0 +1,14 @@
+@function grid-gradient-stop($location, $color)
+  @if $location == 1
+    @return ($color 0%, $color grid-span(1, 1), transparentize($color, 1) grid-span(1, 1))
+  @if $location > 1
+    @return (transparentize($color, 1) grid-span($location - 1, 1) + $gutter, $color grid-span($location - 1, 1) + $gutter, $color grid-span($location, 1), transparentize($color, 1) grid-span($location, 1))
+
+@function grid-gradient-stops($columns, $color)
+  $list: ()
+  @for $i from 1 through column-count($columns)
+    $list: join($list, grid-gradient-stop($i, $color), comma)
+  @return $list
+
+=background-grid($columns: $columns, $gutter: $gutter, $padding: $padding, $color: rgba(#69AEDB, .5))
+  +background(linear-gradient(left, grid-gradient-stops($columns, $color)))
