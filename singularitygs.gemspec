@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   # General Project Information
   s.name = "singularitygs"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.date = "2012-06-23"
   s.rubyforge_project = "singularitygs"
   s.rubygems_version = "1.7.2"
@@ -19,7 +19,8 @@ Gem::Specification.new do |s|
   s.summary = "Singularity is a fluid grid system that can generate uniform columns as well as asymmetric and compound grids with tools to write grids as functions, mixins, or class based objects."
   
   # Files to Include
-  s.files = Dir.glob("lib/**/*.*")
+  s.files = Dir.glob("lib/*.*")
+  s.files += Dir.glob("stylesheets/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
   
   # Dependent Gems
