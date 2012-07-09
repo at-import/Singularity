@@ -61,6 +61,14 @@ Compound grids are two uniform column grids that overlap and create more complex
 $columns: compound(3, 4);
 ```
 
+If a grid has a repeating column pattern, the repeat function will cycle through the pattern for you.
+
+###### Alternating 1x and 2x column widths repeating 3 times:
+
+```scss
+$columns: repeat(3, (1, 2));
+```
+
 #### Gutters
 
 Gutters are the space between columns and always a percent.
@@ -129,12 +137,12 @@ By default, this writes placeholder selectors that do not show up in your CSS fi
 
 The prefix is a name or letter associated with the grid. You can write the mixin within a media query and name the prefix after your breakpoint.
 
-###### Testing your grid
+###### Visualizing your grid
 
-Visualizing grids can be one of the more difficult parts of using grid systems. Using this mixn and the [HTML markup here](https://github.com/scottkellum/Singularity/blob/master/stylesheets/singularity/_grid-test.sass#L18) you can see how the grid you are building looks.
+Visualizing grids can be one of the more difficult parts of using grid systems. This mixin draws your grid to the background of any element.
 
 ```scss
-@include test-grid($columns, $gutter, $padding, $prefix, $opacity);
+@include background-grid($columns, $gutter, $color);
 ```
 
 ## Development
