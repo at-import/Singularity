@@ -35,18 +35,31 @@ $grid-counter: 1
     $grid-counter: 1
   @else
     margin-right: $gutter
-  @if $padding != 0
-    +grid-padding($padding)
 
 
 // This writes classes, IDs, or silent objects for you to extend or use in your HTML. They can be written to different breakpoints to extend or call into your HTML as needed.
 =grid-objects($prefix: a, $columns: $columns, $gutter: $gutter, $padding: $padding, $selector: "%")
   // counter keeps track of the starting position
   $count: 0
+  %column
+    float: left
+    +grid-padding($padding)
+    margin-right: $gutter
+    
   @for $i from 1 through column-count($columns)
-    @for $n from 1 through column-count($columns) - $count
-      #{$selector}#{$prefix}#{$n}-#{$count + 1}
-        +grid-span($n, $count + 1, $columns, $gutter, $padding)
+    @for $n from $count + 1 through column-count($columns)
+      #{$selector}#{$prefix}#{$count}-#{$n}
+        @extend %column
+        width: grid-span($n - $count, $count + 1, $columns, $gutter)
+        @if $n == column-count($columns)
+          margin-right: 0
+        // add special padding
+        @if type-of($columns) == list
+          @if type-of(nth($columns, $count + 1)) == list
+            padding-left: nth(nth($columns, $count + 1), 2)
+          // add special right padding
+          @if type-of(nth($columns, ($n))) == list
+            padding-right: nth(nth($columns, ($n)), 2)
     $count: $count + 1
 
 
@@ -55,3 +68,4 @@ $grid-counter: 1
 =grid-padding($padding)
   @if $padding != 0
     padding: 0 $padding
+    +box-sizing(border-box)
