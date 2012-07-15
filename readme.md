@@ -6,18 +6,13 @@
 
 Make sure you have Compass and the Sass 3.2 alpha installed
 
-```
-$ gem install compass
-$ gem install sass --pre
-```
-
-Next, install Singularity
+Install Singularity
 
 ```
 $ gem install singularitygs
 ```
 
-Require Compass and Singularity into your config.rb
+Require Compass and Singularity into your Compass config.rb
 
 ```ruby
 require 'compass'
