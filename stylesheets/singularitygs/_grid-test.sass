@@ -1,4 +1,4 @@
-=test-grid($columns: $columns, $gutter: $gutter, $padding: $padding, $prefix: a, $opacity: .5)
+=test-grid($columns: $columns, $gutter: $gutter, $padding: $padding, $prefix: a, $color: #6bb)
   .test-grid
     height: 200px
     width: 100%
@@ -7,10 +7,10 @@
     .test.#{$prefix}#{$i}
       height: 100%
       +grid-span(1, $i, $columns: $columns, $gutter: $gutter, $padding: $padding)
-      background-color: rgba(#6bb, $opacity / 2)
+      background-color: transparentize($color, .5)
       .inner
         height: 100%
-        background-color: rgba(#6bb, $opacity / 2)
+        background-color: transparentize($color, .5)
 
 // Need this markup to test
 //<div class="test-grid">
