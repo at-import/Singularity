@@ -16,14 +16,14 @@ Require Compass and Singularity into your Compass config.rb
 
 ```ruby
 require 'compass'
-require 'singularity'
+require 'singularitygs'
 ```
 
 Import them in your stylesheets
 
 ```scss
 @import "compass";
-@import "singularity";
+@import "singularitygs";
 ```
 
 ## Using Singularity
