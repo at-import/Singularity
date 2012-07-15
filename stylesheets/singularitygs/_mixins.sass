@@ -33,6 +33,7 @@ $grid-counter: 1
   $grid-counter: $location + $span
   @if $grid-counter > column-count($columns)
     $grid-counter: 1
+    margin-right: 0
   @else
     margin-right: $gutter
 
