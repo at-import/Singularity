@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   # General Project Information
   s.name = "singularitygs"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
   s.date = "2012-06-23"
   s.rubyforge_project = "singularitygs"
   s.rubygems_version = "1.7.2"
