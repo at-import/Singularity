@@ -1,0 +1,60 @@
+/* SINGULARITY -- http://singularity.gs/ */
+@media (min-width: 20em) and (max-width: 40em) {
+  /* line 45, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  article, aside.one {
+    float: left;
+    margin-right: 2%;
+  }
+
+  /* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  article {
+    width: 49%;
+  }
+
+  /* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  aside.one {
+    width: 49%;
+    margin-right: 0;
+  }
+}
+@media (min-width: 40em) and (max-width: 60em) {
+  /* line 45, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  article, aside.one {
+    float: left;
+    margin-right: 1.5%;
+  }
+
+  /* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  article {
+    width: 65.54167%;
+  }
+
+  /* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  aside.one {
+    width: 32.20833%;
+    margin-right: 0;
+  }
+}
+@media (min-width: 60em) {
+  /* line 45, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  article, aside.one, aside.two {
+    float: left;
+    margin-right: 1%;
+  }
+
+  /* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  article {
+    width: 65.83333%;
+  }
+
+  /* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  aside.one {
+    width: 7.5%;
+  }
+
+  /* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+  aside.two {
+    width: 24.16667%;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,14 @@
+@import "compass";
+@import "singularitygs";
+
+// Padding can be defined globally:
+$padding: 1em;
+
+// or overridden in the column list:
+$columns: 2, 4 5%, 3 10px, 5, 1;
+
+// note the second column has 5% padding and the third has 10px padding.
+
+
+// write your grid however you wish, here I am writing class based grid objects with a prefix of "a".
+@include grid-objects(a, $selector: ".");

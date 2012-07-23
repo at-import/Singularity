@@ -1,0 +1,42 @@
+/* SINGULARITY -- http://singularity.gs/ */
+/* line 10, ../sass/grid-span.scss */
+article:nth-child(1) {
+  float: left;
+  width: 20.88889%;
+  margin-right: 2%;
+}
+
+/* line 13, ../sass/grid-span.scss */
+article:nth-child(2) {
+  float: left;
+  width: 43.11111%;
+  margin-right: 2%;
+}
+
+/* line 16, ../sass/grid-span.scss */
+article:nth-child(3) {
+  float: left;
+  width: 32.0%;
+  margin-right: 0;
+}
+
+/* line 21, ../sass/grid-span.scss */
+article:nth-child(2) {
+  float: left;
+  width: 43.11111%;
+  margin-right: 2%;
+}
+
+/* line 24, ../sass/grid-span.scss */
+article:nth-child(3) {
+  float: left;
+  width: 32.0%;
+  margin-right: 0;
+}
+
+/* line 27, ../sass/grid-span.scss */
+article:nth-child(1) {
+  float: left;
+  width: 20.88889%;
+  margin-right: 2%;
+}

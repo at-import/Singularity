@@ -1,0 +1,18 @@
+@import "compass";
+@import "singularitygs";
+
+// Modular scale defaults to the golden ratio.
+
+$columns: ms(2), ms(1), ms(4);
+
+
+// Singularity has a built-in counter so you don’t need to define location
+article:nth-child(1) {
+  @include grid-span(1);
+}
+article:nth-child(2) {
+  @include grid-span(1);
+}
+article:nth-child(3) {
+  @include grid-span(1);
+}
