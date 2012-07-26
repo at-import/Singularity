@@ -96,6 +96,11 @@
       <p>If a portion of your grid repeats, you can use the repeat function to easily create patterns. Below the pattern <code>3, 2, 1</code> will repeat three times.</p>
       
 <pre><code>$columns: repeat(3, (3, 2, 1));</code></pre>
+
+      <p>You can also build grids off of ratios. Simply define the ratio (for instance, you can use golden-ratio() for the Golden Ratio), the number of columns you want generated, and whether you want to start large or start small</p>
+      
+      <pre><code>$columns: ratio(golden-ratio(), 4, 'small')</code></pre>
+      <pre><code>$columns: ratio(4/3, 6, 'large')
       
       <h4>Gutters</h4>
       
