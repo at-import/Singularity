@@ -1,5 +1,4 @@
 # Require any additional compass plugins here.
-require 'compass'
 require 'singularitygs'
 # load '/Users/scottkellum/Sites/singularity/framework'
 
