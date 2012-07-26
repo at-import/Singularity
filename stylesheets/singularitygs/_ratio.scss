@@ -1,0 +1,20 @@
+// Creates a list based on a ratio
+// Valid options for $start: 'large' or 'small'
+@function ratio($ratio, $steps, $start: 'small') {
+  $x: 1;
+  $return: ();
+  
+  @for $i from 0 through $steps - 1 {
+    $xr: $x * pow($ratio, $i);
+    $return: append($return, $xr, comma);
+  }
+  
+  @if $start == 'small' and $ratio < 1 {
+    $return: reverse($return);
+  }
+  @else if $start == 'large' and $ratio > 1 {
+    $return: reverse($return);
+  }
+  
+  @return $return;
+}

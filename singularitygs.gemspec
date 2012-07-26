@@ -3,15 +3,15 @@
 Gem::Specification.new do |s|
   # General Project Information
   s.name = "singularitygs"
-  s.version = "0.0.7"
-  s.date = "2012-06-23"
+  s.version = "0.0.8"
+  s.date = "2012-07-26"
   s.rubyforge_project = "singularitygs"
   s.rubygems_version = "1.7.2"
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2")
   
   # Author Information
-  s.authors = ["Scott Kellum"]
-  s.email = ["scott@scottkellum.com"]
+  s.authors = ["Scott Kellum", "Sam Richard"]
+  s.email = ["scott@scottkellum.com", "snugug@gmail.com"]
   s.homepage = "http://singularity.gs"
   
   # Project Description
@@ -27,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass',                ">= 3.2.0.alpha.269" 
   s.add_dependency 'compass',             ">= 0.12.1" 
   s.add_dependency 'modular-scale',       ">= 0.0.4"
+  s.add_dependency 'sassy-math',          ">= 1.1"
 end
