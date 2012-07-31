@@ -42,7 +42,7 @@ $grid-counter: 1
 =grid-objects($prefix: a, $columns: $columns, $gutter: $gutter, $padding: $padding, $selector: "%")
   // counter keeps track of the starting position
   $count: 0
-  %column
+  %#{$prefix}column
     float: left
     +grid-padding($padding)
     margin-right: $gutter
@@ -50,7 +50,7 @@ $grid-counter: 1
   @for $i from 1 through column-count($columns)
     @for $n from $count + 1 through column-count($columns)
       #{$selector}#{$prefix}#{$count}-#{$n}
-        @extend %column
+        @extend %#{$prefix}column
         width: grid-span($n - $count, $count + 1, $columns, $gutter)
         @if $n == column-count($columns)
           margin-right: 0
