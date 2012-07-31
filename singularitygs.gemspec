@@ -26,6 +26,5 @@ Gem::Specification.new do |s|
   # Dependent Gems
   s.add_dependency 'sass',                ">= 3.2.0.alpha.269" 
   s.add_dependency 'compass',             ">= 0.12.1" 
-  s.add_dependency 'modular-scale',       ">= 0.0.4"
-  s.add_dependency 'sassy-math',          ">= 1.1"
+  s.add_dependency 'modular-scale',       ">= 1.0.rc1"
 end
