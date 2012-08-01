@@ -2,10 +2,13 @@
 $grid-counter: 1
 
 =grid-span($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding)
-  float: left
+  @if $location < column-count($columns)
+    float: left
+  @else
+    float: right
   width: grid-span($span, $location, $columns, $gutter)
   $box-sizing: false
-  
+
   // add special left padding
   @if type-of($columns) == list
     @if type-of(nth($columns, $location)) == list
@@ -21,14 +24,14 @@ $grid-counter: 1
     @else if $padding != 0
       padding-right: $padding
       $box-sizing: true
-  
+
   @else if $padding != 0
     padding: 0 $padding
     $box-sizing: true
-  
+
   @if $box-sizing
     +box-sizing(border-box)
-  
+
   // bump up the counter
   $grid-counter: $location + $span
   @if $grid-counter > column-count($columns)
@@ -46,7 +49,7 @@ $grid-counter: 1
     float: left
     +grid-padding($padding)
     margin-right: $gutter
-    
+
   @for $i from 1 through column-count($columns)
     @for $n from $count + 1 through column-count($columns)
       #{$selector}#{$prefix}#{$count}-#{$n}
