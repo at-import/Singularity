@@ -1,0 +1,242 @@
+$gridset: () !default;
+$gutterset: () !default;
+$paddingset: () !default;
+
+$gridset-mobile-first: true;
+
+@mixin gridset-span($span, $location, $gutters: false, $paddings: false) {
+  $length: length($gridset);
+  
+  $query-min: breakpoint-get-context('min-width');
+  $query-max: breakpoint-get-context('max-width');
+  
+  @if $query-min {
+    $query-min: breakpoint-to-base-em($query-min);
+  }
+  @if $query-max {
+    $query-max: breakpoint-to-base-em($query-max);
+  }
+  
+  $written: false;
+  
+  $gutter-length: length($gutterset);
+  $padding-length: length($paddingset);
+  
+  $ghr: () !default;
+  $ghs: () !default;
+  $phs: () !default;
+  
+  @if $query-min or $query-max {
+    @for $j from 2 through $length {
+      $ghr: append($ghr, nth($gridset, $j), comma);
+    }
+    
+    @for $j from 2 through $length {
+      @if $j > $gutter-length {
+        $ghs: append($ghs, nth($gutterset, $gutter-length));
+      }
+      @else {
+        $ghs: append($ghs, nth($gutterset, $j));
+      }
+    }
+
+    @for $j from 2 through $length {
+      @if $j > $padding-length {
+        $phs: append($phs, nth($paddingset, $padding-length));
+      }
+      @else {
+        $phs: append($phs, nth($paddingset, $j));
+      }
+    }
+    
+    $ghr: reverse($ghr);
+    
+    $gthr: reverse($ghs);
+    $phr: reverse($phs);
+    
+    $holder-length: length($ghr);
+    
+    @for $i from 1 through $holder-length {
+      $gridholder: nth($ghr, $i);
+      
+      $grid-columns: nth($gridholder, 1);
+      $grid-query: nth($gridholder, 2);
+      
+      $grid-query: breakpoint-to-base-em($grid-query);
+      
+      @if length($gridholder) < 2 {
+        @warn 'Grid #{$gridholder} needs a breakpoint value!';
+      }
+      @else if not $written {
+        @if $gridset-mobile-first {
+          @if $query-min and not $query-max {
+            @if $query-min and $query-max {
+              @if $query-min >= $grid-query and $query-max < $grid-query {
+                @if $gutters == false {
+                  @if $gutter-length > 0 {
+                    $gutters: nth($gthr, $i);
+                  }
+                  @else {
+                    $gutters: $gutter;
+                  }
+                }
+                @if $paddings == false {
+                  @if $padding-length > 0 {
+                    $paddings: nth($phr, $i);
+                  }
+                  @else {
+                    $paddings: $padding;
+                  }
+                }
+                @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
+                $written: true;
+                $gutters: false;
+                $paddings: false;
+              }
+            }
+            @else if $query-min >= $grid-query {
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
+              @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
+              $written: true;
+              $gutters: false;
+              $paddings: false;
+            }
+          }
+          @else {
+            @if $query-max < $grid-query {
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
+              @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
+              $written: true;
+              $gutters: false;
+              $paddings: false;
+            }
+          }
+        }
+        @else {
+          @if $query-min and $query-max {
+            @if $gutters == false {
+              @if $gutter-length > 0 {
+                $gutters: nth($gthr, $i);
+              }
+              @else {
+                $gutters: $gutter;
+              }
+            }
+            @if $paddings == false {
+              @if $padding-length > 0 {
+                $paddings: nth($phr, $i);
+              }
+              @else {
+                $paddings: $padding;
+              }
+            }
+            @if $query-min > $grid-query and $query-max <= $grid-query {
+              @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
+              $written: true;
+              $gutters: false;
+              $paddings: false;
+            }
+          }
+          @else if $query-min and not $query-max {
+            @if $query-min > $grid-query {
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
+              @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
+              $written: true;
+              $gutters: false;
+              $paddings: false;
+            }
+          }
+          @else {
+            @if $query-max <= $grid-query {
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
+              @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
+              $written: true;
+              $gutters: false;
+              $paddings: false;
+            }
+          }
+        }
+      }
+    }
+  }
+  @else {
+    @if $gutters == false {
+      @if $gutter-length > 0 {
+        $gutters: nth($gutterset, 1);
+      }
+      @else {
+        $gutters: $gutter;
+      }
+    }
+    
+    @if $paddings == false {
+      @if $padding-length > 0 {
+        $paddings: nth($paddingset, 1);
+      }
+      @else {
+        $paddings: $padding;
+      }
+    }
+    @include grid-span($span, $location, nth($gridset, 1), $gutters, $paddings);
+  }
+}
