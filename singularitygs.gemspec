@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   # General Project Information
   s.name = "singularitygs"
-  s.version = "0.0.8"
+  s.version = "0.0.9"
   s.date = "2012-07-26"
   s.rubyforge_project = "singularitygs"
   s.rubygems_version = "1.7.2"
@@ -26,5 +26,5 @@ Gem::Specification.new do |s|
   # Dependent Gems
   s.add_dependency 'sass',                ">= 3.2.0.alpha.269" 
   s.add_dependency 'compass',             ">= 0.12.1" 
-  s.add_dependency 'modular-scale',       ">= 1.0.rc1"
+  s.add_dependency 'modular-scale',       ">= 1.0.0"
 end
