@@ -21,7 +21,6 @@ $gridset-mobile-first: true;
   
   $gutter-length: length($gutterset);
   $padding-length: length($paddingset);
-  @debug 'Padding Length: #{$padding-length};';
   
   $ghr: () !default;
   $ghs: () !default;
@@ -52,11 +51,8 @@ $gridset-mobile-first: true;
     
     $ghr: reverse($ghr);
     
-//    $gthr: reverse($ghs);
-//    $phr: reverse($phs);
-    
-    $gthr: $ghs;
-    $phr: $phs;
+    $gthr: reverse($ghs);
+    $phr: reverse($phs);
     
     $holder-length: length($ghr);
     
@@ -65,35 +61,6 @@ $gridset-mobile-first: true;
       
       $grid-columns: nth($gridholder, 1);
       $grid-query: nth($gridholder, 2);
-      
-//      @debug $gutters;
-      
-      @if $gutters == false {
-        @if $gutter-length > 0 {
-          $gutters: nth($gthr, $i);
-        }
-        @else {
-          $gutters: $gutter;
-        }
-      }
-      
-//      @debug $gutters;
-      
-      
-      
-      @if $paddings == false {
-        @if $padding-length > 0 {
-          $paddings: nth($phr, $i);
-        }
-        @else {
-          $paddings: $padding;
-        }
-      }
-      
-      @debug $phr;
-      @debug nth($phr, $i);
-      
-      @debug 'Gutter and Padding';
       
       $grid-query: breakpoint-to-base-em($grid-query);
       
@@ -105,9 +72,22 @@ $gridset-mobile-first: true;
           @if $query-min and not $query-max {
             @if $query-min and $query-max {
               @if $query-min >= $grid-query and $query-max < $grid-query {
-                @debug $gutters;
-                @debug $paddings;
-                @debug 'Actually Used';
+                @if $gutters == false {
+                  @if $gutter-length > 0 {
+                    $gutters: nth($gthr, $i);
+                  }
+                  @else {
+                    $gutters: $gutter;
+                  }
+                }
+                @if $paddings == false {
+                  @if $padding-length > 0 {
+                    $paddings: nth($phr, $i);
+                  }
+                  @else {
+                    $paddings: $padding;
+                  }
+                }
                 @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
                 $written: true;
                 $gutters: false;
@@ -115,11 +95,23 @@ $gridset-mobile-first: true;
               }
             }
             @else if $query-min >= $grid-query {
-              @debug $gutters;
-              @debug $paddings;
-              @debug 'Actually Used';
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
               @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
-              content: '#{$grid-columns}';
               $written: true;
               $gutters: false;
               $paddings: false;
@@ -127,9 +119,22 @@ $gridset-mobile-first: true;
           }
           @else {
             @if $query-max < $grid-query {
-              @debug $gutters;
-              @debug $paddings;
-              @debug 'Actually Used';
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
               @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
               $written: true;
               $gutters: false;
@@ -139,9 +144,22 @@ $gridset-mobile-first: true;
         }
         @else {
           @if $query-min and $query-max {
-            @debug $gutters;
-            @debug $paddings;
-            @debug 'Actually Used';
+            @if $gutters == false {
+              @if $gutter-length > 0 {
+                $gutters: nth($gthr, $i);
+              }
+              @else {
+                $gutters: $gutter;
+              }
+            }
+            @if $paddings == false {
+              @if $padding-length > 0 {
+                $paddings: nth($phr, $i);
+              }
+              @else {
+                $paddings: $padding;
+              }
+            }
             @if $query-min > $grid-query and $query-max <= $grid-query {
               @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
               $written: true;
@@ -151,9 +169,22 @@ $gridset-mobile-first: true;
           }
           @else if $query-min and not $query-max {
             @if $query-min > $grid-query {
-              @debug $gutters;
-              @debug $paddings;
-              @debug 'Actually Used';
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
               @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
               $written: true;
               $gutters: false;
@@ -162,9 +193,22 @@ $gridset-mobile-first: true;
           }
           @else {
             @if $query-max <= $grid-query {
-              @debug $gutters;
-              @debug $paddings;
-              @debug 'Actually Used';
+              @if $gutters == false {
+                @if $gutter-length > 0 {
+                  $gutters: nth($gthr, $i);
+                }
+                @else {
+                  $gutters: $gutter;
+                }
+              }
+              @if $paddings == false {
+                @if $padding-length > 0 {
+                  $paddings: nth($phr, $i);
+                }
+                @else {
+                  $paddings: $padding;
+                }
+              }
               @include grid-span($span, $location, $grid-columns, $gutters, $paddings);
               $written: true;
               $gutters: false;
