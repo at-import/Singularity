@@ -1,6 +1,5 @@
 require 'compass'
 require 'modular-scale'
-require 'sassy-math'
 require 'breakpoint'
 
 Compass::Frameworks.register("singularitygs", :path => "#{File.dirname(__FILE__)}/..")
