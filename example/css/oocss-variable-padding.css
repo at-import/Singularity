@@ -1,5 +1,5 @@
 /* SINGULARITY -- http://singularity.gs/ */
-/* line 45, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 48, ../../stylesheets/singularitygs/_mixins.sass */
 .a0-1, .a0-2, .a0-3, .a0-4, .a0-5, .a1-2, .a1-3, .a1-4, .a1-5, .a2-3, .a2-4, .a2-5, .a3-4, .a3-5, .a4-5 {
   float: left;
   padding: 0 1em;
@@ -9,93 +9,93 @@
   margin-right: 2%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a0-1 {
   width: 11.73333%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a0-2 {
   width: 38.4%;
   padding-right: 5%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a0-3 {
   width: 58.4%;
   padding-right: 10px;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a0-4 {
   width: 91.73333%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a0-5 {
   width: 98.4%;
   margin-right: 0;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a1-2 {
   width: 25.06667%;
   padding-left: 5%;
   padding-right: 5%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a1-3 {
   width: 45.06667%;
   padding-left: 5%;
   padding-right: 10px;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a1-4 {
   width: 78.4%;
   padding-left: 5%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a1-5 {
   width: 85.06667%;
   margin-right: 0;
   padding-left: 5%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a2-3 {
   width: 18.4%;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a2-4 {
   width: 51.73333%;
   padding-left: 10px;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a2-5 {
   width: 58.4%;
   margin-right: 0;
   padding-left: 10px;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a3-4 {
   width: 31.73333%;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a3-5 {
   width: 38.4%;
   margin-right: 0;
 }
 
-/* line 52, ../../../../../.rvm/gems/ruby-1.9.2-p320@singularity/gems/singularitygs-0.0.7/stylesheets/singularitygs/_mixins.sass */
+/* line 55, ../../stylesheets/singularitygs/_mixins.sass */
 .a4-5 {
   width: 5.06667%;
   margin-right: 0;

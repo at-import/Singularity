@@ -19,5 +19,3 @@
   // prefix is "c" creating a compound 3 and 4 column grid with 1% gutters.
   @include grid-objects(c, compound(3, 4), 1%, $selector: ".");
 }
-
-@warn "Yes, this throws a bunch of scarry warnings. Working with Sass folks to make sure this is not an issue.";
