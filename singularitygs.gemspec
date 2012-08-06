@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
+require './lib/singularitygs'
 
 Gem::Specification.new do |s|
   # General Project Information
   s.name = "singularitygs"
-  s.version = SINGULARITYGS::VERSION
-  s.date = SINGULARITYGS::DATE
+  s.version = SingularityGS::VERSION
+  s.date = SingularityGS::DATE
   s.rubyforge_project = "singularitygs"
   s.rubygems_version = "1.7.2"
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2")
