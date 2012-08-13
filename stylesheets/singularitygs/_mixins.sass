@@ -36,7 +36,7 @@ $grid-counter: 1
       float: right
       margin-right: 0
       @if $dir == both
-        [dir="rtl"] &
+        #{$rtl-selector} &
           float: left
           margin-left: 0
     @if $dir == rtl
@@ -47,7 +47,7 @@ $grid-counter: 1
       float: left
       margin-right: $gutter
       @if $dir == both
-        [dir="rtl"] &
+        #{$rtl-selector} &
           float: right
           margin-right: 0
           margin-left: $gutter
