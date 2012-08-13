@@ -1,0 +1,48 @@
+@import "singularitygs";
+
+//list columns
+$columns: 2, 4, 3;
+// this is a list of variable widths
+
+/* default ltr direction */
+$dir: ltr;
+
+// Singularity has a built-in counter so you don’t need to define location
+article:nth-child(1) {
+  @include grid-span(1);
+}
+article:nth-child(2) {
+  @include grid-span(1);
+}
+article:nth-child(3) {
+  @include grid-span(1);
+}
+
+/* rtl only */
+$dir: rtl;
+
+// Singularity has a built-in counter so you don’t need to define location
+article:nth-child(1) {
+  @include grid-span(1);
+}
+article:nth-child(2) {
+  @include grid-span(1);
+}
+article:nth-child(3) {
+  @include grid-span(1);
+}
+
+/* both directions */
+$dir: both;
+
+// Singularity has a built-in counter so you don’t need to define location
+article:nth-child(1) {
+  @include grid-span(1);
+}
+article:nth-child(2) {
+  @include grid-span(1);
+}
+article:nth-child(3) {
+  @include grid-span(1);
+}
+

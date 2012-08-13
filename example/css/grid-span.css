@@ -1,42 +1,42 @@
 /* SINGULARITY -- http://singularity.gs/ */
 /* line 9, ../sass/grid-span.scss */
 article:nth-child(1) {
-  float: left;
   width: 20.88889%;
+  float: left;
   margin-right: 2%;
 }
 
 /* line 12, ../sass/grid-span.scss */
 article:nth-child(2) {
-  float: left;
   width: 43.11111%;
+  float: left;
   margin-right: 2%;
 }
 
 /* line 15, ../sass/grid-span.scss */
 article:nth-child(3) {
-  float: right;
   width: 32.0%;
+  float: right;
   margin-right: 0;
 }
 
 /* line 20, ../sass/grid-span.scss */
 article:nth-child(2) {
-  float: left;
   width: 43.11111%;
+  float: left;
   margin-right: 2%;
 }
 
 /* line 23, ../sass/grid-span.scss */
 article:nth-child(3) {
-  float: right;
   width: 32.0%;
+  float: right;
   margin-right: 0;
 }
 
 /* line 26, ../sass/grid-span.scss */
 article:nth-child(1) {
-  float: left;
   width: 20.88889%;
+  float: left;
   margin-right: 2%;
 }
