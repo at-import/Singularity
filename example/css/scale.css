@@ -1,21 +1,21 @@
 /* SINGULARITY -- http://singularity.gs/ */
 /* line 9, ../sass/scale.scss */
 article:nth-child(1) {
-  float: left;
   width: 22.26217%;
+  float: left;
   margin-right: 2%;
 }
 
 /* line 12, ../sass/scale.scss */
 article:nth-child(2) {
-  float: left;
   width: 13.27341%;
+  float: left;
   margin-right: 2%;
 }
 
 /* line 15, ../sass/scale.scss */
 article:nth-child(3) {
-  float: right;
   width: 60.46442%;
+  float: right;
   margin-right: 0;
 }

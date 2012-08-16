@@ -2,50 +2,50 @@
 /* line 11, ../sass/gridset.scss */
 #foo {
   background: red;
-  float: right;
   width: 100%;
   padding: 0 5px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  float: right;
   margin-right: 0;
 }
 @media (min-width: 470px) {
   /* line 11, ../sass/gridset.scss */
   #foo {
-    float: left;
     width: 20.83333%;
     padding-left: 30px;
     padding-right: 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    float: left;
     margin-right: 5%;
   }
 }
 @media (min-width: 800px) {
   /* line 11, ../sass/gridset.scss */
   #foo {
-    float: left;
     width: 20.57143%;
     padding-left: 15px;
     padding-right: 15px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    float: left;
     margin-right: 10%;
   }
 }
 @media (min-width: 1500px) {
   /* line 11, ../sass/gridset.scss */
   #foo {
-    float: right;
     width: 33.98213%;
     padding-left: 15px;
     padding-right: 15px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    float: right;
     margin-right: 0;
   }
 }

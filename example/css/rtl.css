@@ -1,0 +1,85 @@
+/* SINGULARITY -- http://singularity.gs/ */
+/* default ltr direction */
+/* line 11, ../sass/rtl.scss */
+article:nth-child(1) {
+  width: 20.88889%;
+  float: left;
+  margin-right: 2%;
+}
+
+/* line 14, ../sass/rtl.scss */
+article:nth-child(2) {
+  width: 43.11111%;
+  float: left;
+  margin-right: 2%;
+}
+
+/* line 17, ../sass/rtl.scss */
+article:nth-child(3) {
+  width: 32.0%;
+  float: right;
+  margin-right: 0;
+}
+
+/* rtl only */
+/* line 25, ../sass/rtl.scss */
+article:nth-child(1) {
+  width: 20.88889%;
+  float: right;
+  margin-right: 0;
+  margin-left: 2%;
+}
+
+/* line 28, ../sass/rtl.scss */
+article:nth-child(2) {
+  width: 43.11111%;
+  float: right;
+  margin-right: 0;
+  margin-left: 2%;
+}
+
+/* line 31, ../sass/rtl.scss */
+article:nth-child(3) {
+  width: 32.0%;
+  float: left;
+  margin-left: 0;
+}
+
+/* both directions */
+/* line 39, ../sass/rtl.scss */
+article:nth-child(1) {
+  width: 20.88889%;
+  float: left;
+  margin-right: 2%;
+}
+/* line 50, ../../stylesheets/singularitygs/_mixins.sass */
+[dir="rtl"] article:nth-child(1) {
+  float: right;
+  margin-right: 0;
+  margin-left: 2%;
+}
+
+/* line 42, ../sass/rtl.scss */
+article:nth-child(2) {
+  width: 43.11111%;
+  float: left;
+  margin-right: 2%;
+}
+/* line 50, ../../stylesheets/singularitygs/_mixins.sass */
+[dir="rtl"] article:nth-child(2) {
+  float: right;
+  margin-right: 0;
+  margin-left: 2%;
+}
+
+/* line 45, ../sass/rtl.scss */
+article:nth-child(3) {
+  width: 32.0%;
+  float: right;
+  margin-right: 0;
+}
+/* line 39, ../../stylesheets/singularitygs/_mixins.sass */
+[dir="rtl"] article:nth-child(3) {
+  float: left;
+  margin-left: 0;
+}

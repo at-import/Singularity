@@ -2,10 +2,6 @@
 $grid-counter: 1
 
 =grid-span($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding)
-  @if $location < column-count($columns)
-    float: left
-  @else
-    float: right
   width: grid-span($span, $location, $columns, $gutter)
   $box-sizing: false
 
@@ -36,9 +32,29 @@ $grid-counter: 1
   $grid-counter: $location + $span
   @if $grid-counter > column-count($columns)
     $grid-counter: 1
-    margin-right: 0
+    @if $dir == ltr or $dir == both
+      float: right
+      margin-right: 0
+      @if $dir == both
+        #{$rtl-selector} &
+          float: left
+          margin-left: 0
+    @if $dir == rtl
+      float: left
+      margin-left: 0
   @else
-    margin-right: $gutter
+    @if $dir == ltr or $dir == both
+      float: left
+      margin-right: $gutter
+      @if $dir == both
+        #{$rtl-selector} &
+          float: right
+          margin-right: 0
+          margin-left: $gutter
+    @if $dir == rtl
+      float: right
+      margin-right: 0
+      margin-left: $gutter
 
 
 // This writes classes, IDs, or silent objects for you to extend or use in your HTML. They can be written to different breakpoints to extend or call into your HTML as needed.
