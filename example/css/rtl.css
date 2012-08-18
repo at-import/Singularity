@@ -39,9 +39,9 @@ article:nth-child(1) {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 20.88889%;
-  margin-right: -100%;
-  float: left;
-  margin-left: 0;
+  margin-left: -100%;
+  float: right;
+  margin-right: 0;
 }
 
 /* line 28, ../sass/rtl.scss */
@@ -50,9 +50,9 @@ article:nth-child(2) {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 43.11111%;
-  margin-right: -100%;
-  float: left;
-  margin-left: 22.88889%;
+  margin-left: -100%;
+  float: right;
+  margin-right: 22.88889%;
 }
 
 /* line 31, ../sass/rtl.scss */
@@ -61,8 +61,8 @@ article:nth-child(3) {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 32.0%;
-  float: right;
-  margin-right: 0;
+  float: left;
+  margin-left: 0;
 }
 
 /* both directions */
@@ -76,6 +76,12 @@ article:nth-child(1) {
   float: left;
   margin-left: 0;
 }
+/* line 27, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
+[dir="rtl"] article:nth-child(1) {
+  margin-left: -100%;
+  float: right;
+  margin-right: 0;
+}
 
 /* line 42, ../sass/rtl.scss */
 article:nth-child(2) {
@@ -87,6 +93,12 @@ article:nth-child(2) {
   float: left;
   margin-left: 22.88889%;
 }
+/* line 27, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
+[dir="rtl"] article:nth-child(2) {
+  margin-left: -100%;
+  float: right;
+  margin-right: 22.88889%;
+}
 
 /* line 45, ../sass/rtl.scss */
 article:nth-child(3) {
@@ -96,4 +108,9 @@ article:nth-child(3) {
   width: 32.0%;
   float: right;
   margin-right: 0;
+}
+/* line 27, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
+[dir="rtl"] article:nth-child(3) {
+  float: left;
+  margin-left: 0;
 }
