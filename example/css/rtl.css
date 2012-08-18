@@ -76,7 +76,7 @@ article:nth-child(1) {
   float: left;
   margin-left: 0;
 }
-/* line 27, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
+/* line 31, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
 [dir="rtl"] article:nth-child(1) {
   margin-left: -100%;
   float: right;
@@ -93,7 +93,7 @@ article:nth-child(2) {
   float: left;
   margin-left: 22.88889%;
 }
-/* line 27, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
+/* line 31, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
 [dir="rtl"] article:nth-child(2) {
   margin-left: -100%;
   float: right;
@@ -109,7 +109,7 @@ article:nth-child(3) {
   float: right;
   margin-right: 0;
 }
-/* line 27, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
+/* line 31, ../../stylesheets/singularitygs/grid-structure/_structure-float.sass */
 [dir="rtl"] article:nth-child(3) {
   float: left;
   margin-left: 0;

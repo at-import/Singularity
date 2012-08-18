@@ -1,24 +1,28 @@
 =structure-float($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $grouped-styles: false)
   @if $dir == ltr or $dir == both
     @if $location > 1 and $location < column-count($columns)
-      margin-right: -100%
-      float: left
+      @if $grouped-styles == false
+        margin-right: -100%
+        float: left
       margin-left: grid-span($location - 1, 1, $columns, $gutter) + $gutter
     @if $location == 1
-      margin-right: -100%
-      float: left
+      @if $grouped-styles == false
+        margin-right: -100%
+        float: left
       margin-left: 0
     @if $location == column-count($columns)
       float: right
       margin-right: 0
   @if $dir == rtl
     @if $location > 1 and $location < column-count($columns)
-      margin-left: -100%
-      float: right
+      @if $grouped-styles == false
+        margin-left: -100%
+        float: right
       margin-right: grid-span($location - 1, 1, $columns, $gutter) + $gutter
     @if $location == 1
-      margin-left: -100%
-      float: right
+      @if $grouped-styles == false
+        margin-left: -100%
+        float: right
       margin-right: 0
     @if $location == column-count($columns)
       float: left
@@ -26,12 +30,14 @@
   @if $dir == both
     #{$rtl-selector} &
       @if $location > 1 and $location < column-count($columns)
-        margin-left: -100%
-        float: right
+        @if $grouped-styles == false
+          margin-left: -100%
+          float: right
         margin-right: grid-span($location - 1, 1, $columns, $gutter) + $gutter
       @if $location == 1
-        margin-left: -100%
-        float: right
+        @if $grouped-styles == false
+          margin-left: -100%
+          float: right
         margin-right: 0
       @if $location == column-count($columns)
         float: left

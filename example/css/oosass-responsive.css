@@ -1,60 +1,102 @@
 /* SINGULARITY -- http://singularity.gs/ */
 @media (min-width: 20em) and (max-width: 40em) {
-  /* line 36, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 39, ../../stylesheets/singularitygs/_mixins.sass */
   article, aside.one {
+    margin-right: -100%;
+    float: left;
     float: left;
     margin-right: 2%;
   }
 
-  /* line 43, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
   article {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 49%;
+    margin-right: -100%;
+    float: left;
+    margin-left: 0;
   }
 
-  /* line 43, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
   aside.one {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 49%;
+    float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 40em) and (max-width: 60em) {
-  /* line 36, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 39, ../../stylesheets/singularitygs/_mixins.sass */
   article, aside.one {
+    margin-right: -100%;
+    float: left;
     float: left;
     margin-right: 1.5%;
   }
 
-  /* line 43, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
   article {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 65.54167%;
+    margin-right: -100%;
+    float: left;
+    margin-left: 0;
   }
 
-  /* line 43, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
   aside.one {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 32.20833%;
+    float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 60em) {
-  /* line 36, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 39, ../../stylesheets/singularitygs/_mixins.sass */
   article, aside.one, aside.two {
+    margin-right: -100%;
+    float: left;
     float: left;
     margin-right: 1%;
   }
 
-  /* line 43, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
   article {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 65.83333%;
+    margin-right: -100%;
+    float: left;
+    margin-left: 0;
   }
 
-  /* line 43, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
   aside.one {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 7.5%;
+    margin-right: -100%;
+    float: left;
+    margin-left: 66.83333%;
   }
 
-  /* line 43, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
   aside.two {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 24.16667%;
+    float: right;
     margin-right: 0;
   }
 }
