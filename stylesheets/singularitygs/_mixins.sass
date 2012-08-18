@@ -5,7 +5,8 @@ $grid-counter: 1
   +box-sizing(border-box)
   width: grid-span($span, $location, $columns, $gutter)
 
-  +structure-float($span, $location, $columns, $gutter)
+  @if $grid-structure == float
+    +structure-float($span, $location, $columns, $gutter)
 
   // add special left padding
   @if type-of($columns) == list

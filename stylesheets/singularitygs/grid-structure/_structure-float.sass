@@ -1,4 +1,4 @@
-=structure-float($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter)
+=structure-float($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $grouped-styles: false)
   @if $dir == ltr or $dir == both
     @if $location > 1 and $location < column-count($columns)
       margin-right: -100%
