@@ -1,0 +1,12 @@
+=structure-float($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter)
+  @if $location > 1 and $location < column-count($columns)
+    margin-right: -100%
+    float: left
+    margin-left: grid-span($location - 1, 1, $columns, $gutter) + $gutter
+  @if $location == 1
+    margin-right: -100%
+    float: left
+    margin-left: 0
+  @if $location == column-count($columns)
+    float: right
+    margin-right: 0

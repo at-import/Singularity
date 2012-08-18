@@ -1,20 +1,31 @@
 /* SINGULARITY -- http://singularity.gs/ */
 /* line 9, ../sass/grid-span.scss */
 article:nth-child(1) {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 20.88889%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  margin-left: 0;
 }
 
 /* line 12, ../sass/grid-span.scss */
 article:nth-child(2) {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 43.11111%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  margin-left: 22.88889%;
 }
 
 /* line 15, ../sass/grid-span.scss */
 article:nth-child(3) {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 32.0%;
   float: right;
   margin-right: 0;
@@ -22,13 +33,20 @@ article:nth-child(3) {
 
 /* line 20, ../sass/grid-span.scss */
 article:nth-child(2) {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 43.11111%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  margin-left: 22.88889%;
 }
 
 /* line 23, ../sass/grid-span.scss */
 article:nth-child(3) {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 32.0%;
   float: right;
   margin-right: 0;
@@ -36,7 +54,11 @@ article:nth-child(3) {
 
 /* line 26, ../sass/grid-span.scss */
 article:nth-child(1) {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 20.88889%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  margin-left: 0;
 }

@@ -2,50 +2,55 @@
 /* line 11, ../sass/gridset.scss */
 #foo {
   background: red;
-  width: 100%;
-  padding: 0 5px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  width: 100%;
+  margin-right: -100%;
+  float: left;
+  margin-left: 0;
   float: right;
   margin-right: 0;
+  padding: 0 5px;
 }
 @media (min-width: 470px) {
   /* line 11, ../sass/gridset.scss */
   #foo {
-    width: 20.83333%;
-    padding-left: 30px;
-    padding-right: 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    width: 20.83333%;
+    margin-right: -100%;
     float: left;
-    margin-right: 5%;
+    margin-left: 25.83333%;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 @media (min-width: 800px) {
   /* line 11, ../sass/gridset.scss */
   #foo {
-    width: 20.57143%;
-    padding-left: 15px;
-    padding-right: 15px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    width: 20.57143%;
+    margin-right: -100%;
     float: left;
-    margin-right: 10%;
+    margin-left: 30.57143%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 @media (min-width: 1500px) {
   /* line 11, ../sass/gridset.scss */
   #foo {
-    width: 33.98213%;
-    padding-left: 15px;
-    padding-right: 15px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    width: 33.98213%;
     float: right;
     margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

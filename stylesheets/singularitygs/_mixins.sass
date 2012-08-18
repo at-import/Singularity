@@ -2,59 +2,30 @@
 $grid-counter: 1
 
 =grid-span($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding)
+  +box-sizing(border-box)
   width: grid-span($span, $location, $columns, $gutter)
-  $box-sizing: false
+
+  +structure-float($span, $location, $columns, $gutter)
 
   // add special left padding
   @if type-of($columns) == list
     @if type-of(nth($columns, $location)) == list
       padding-left: nth(nth($columns, $location), 2)
-      $box-sizing: true
     @else if $padding != 0
       padding-left: $padding
-      $box-sizing: true
     // add special right padding
     @if type-of(nth($columns, ($location + $span - 1))) == list
       padding-right: nth(nth($columns, ($location + $span - 1)), 2)
-      $box-sizing: true
     @else if $padding != 0
       padding-right: $padding
-      $box-sizing: true
 
   @else if $padding != 0
     padding: 0 $padding
-    $box-sizing: true
-
-  @if $box-sizing
-    +box-sizing(border-box)
 
   // bump up the counter
   $grid-counter: $location + $span
   @if $grid-counter > column-count($columns)
     $grid-counter: 1
-    @if $dir == ltr or $dir == both
-      float: right
-      margin-right: 0
-      @if $dir == both
-        #{$rtl-selector} &
-          float: left
-          margin-left: 0
-    @if $dir == rtl
-      float: left
-      margin-left: 0
-  @else
-    @if $dir == ltr or $dir == both
-      float: left
-      margin-right: $gutter
-      @if $dir == both
-        #{$rtl-selector} &
-          float: right
-          margin-right: 0
-          margin-left: $gutter
-    @if $dir == rtl
-      float: right
-      margin-right: 0
-      margin-left: $gutter
 
 
 // This writes classes, IDs, or silent objects for you to extend or use in your HTML. They can be written to different breakpoints to extend or call into your HTML as needed.
