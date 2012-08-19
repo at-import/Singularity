@@ -16,7 +16,21 @@
     width: 49%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .a0-1:before, .a0-1:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .a0-1:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -27,7 +41,21 @@
     width: 99%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .a0-2:before, .a0-2:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .a0-2:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -38,6 +66,20 @@
     width: 49%;
     float: right;
     margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .a1-2:before, .a1-2:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .a1-2:after {
+    clear: both;
   }
 }
 @media (min-width: 40em) and (max-width: 60em) {
@@ -57,7 +99,21 @@
     width: 32.20833%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-1:before, .b0-1:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-1:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -68,7 +124,21 @@
     width: 48.875%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-2:before, .b0-2:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-2:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -79,7 +149,21 @@
     width: 65.54167%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-3:before, .b0-3:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-3:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -90,7 +174,21 @@
     width: 98.875%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-4:before, .b0-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b0-4:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -101,7 +199,21 @@
     width: 15.54167%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 33.70833%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b1-2:before, .b1-2:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b1-2:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -112,7 +224,21 @@
     width: 32.20833%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 33.70833%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b1-3:before, .b1-3:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b1-3:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -121,9 +247,22 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 65.54167%;
-    margin-right: -100%;
-    float: left;
-    margin-left: 33.70833%;
+    float: right;
+    margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b1-4:before, .b1-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b1-4:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -134,7 +273,21 @@
     width: 15.54167%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 50.375%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b2-3:before, .b2-3:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b2-3:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -143,9 +296,22 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 48.875%;
-    margin-right: -100%;
-    float: left;
-    margin-left: 50.375%;
+    float: right;
+    margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b2-4:before, .b2-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b2-4:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -156,6 +322,20 @@
     width: 32.20833%;
     float: right;
     margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b3-4:before, .b3-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .b3-4:after {
+    clear: both;
   }
 }
 @media (min-width: 60em) {
@@ -175,7 +355,21 @@
     width: 24.16667%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-1:before, .c0-1:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-1:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -186,7 +380,21 @@
     width: 32.5%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-2:before, .c0-2:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-2:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -197,7 +405,21 @@
     width: 49.16667%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-3:before, .c0-3:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-3:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -208,7 +430,21 @@
     width: 65.83333%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-4:before, .c0-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-4:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -219,7 +455,21 @@
     width: 74.16667%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-5:before, .c0-5:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-5:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -230,7 +480,21 @@
     width: 99.16667%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 0;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-6:before, .c0-6:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c0-6:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -241,7 +505,21 @@
     width: 7.5%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 25.16667%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-2:before, .c1-2:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-2:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -252,7 +530,21 @@
     width: 24.16667%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 25.16667%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-3:before, .c1-3:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-3:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -263,7 +555,21 @@
     width: 40.83333%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 25.16667%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-4:before, .c1-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-4:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -274,7 +580,21 @@
     width: 49.16667%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 25.16667%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-5:before, .c1-5:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-5:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -283,9 +603,22 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 74.16667%;
-    margin-right: -100%;
-    float: left;
-    margin-left: 25.16667%;
+    float: right;
+    margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-6:before, .c1-6:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c1-6:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -296,7 +629,21 @@
     width: 15.83333%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 33.5%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-3:before, .c2-3:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-3:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -307,7 +654,21 @@
     width: 32.5%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 33.5%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-4:before, .c2-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-4:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -318,7 +679,21 @@
     width: 40.83333%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 33.5%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-5:before, .c2-5:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-5:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -327,9 +702,22 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 65.83333%;
-    margin-right: -100%;
-    float: left;
-    margin-left: 33.5%;
+    float: right;
+    margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-6:before, .c2-6:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c2-6:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -340,7 +728,21 @@
     width: 15.83333%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 50.16667%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c3-4:before, .c3-4:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c3-4:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -351,7 +753,21 @@
     width: 24.16667%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 50.16667%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c3-5:before, .c3-5:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c3-5:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -360,9 +776,22 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 49.16667%;
-    margin-right: -100%;
-    float: left;
-    margin-left: 50.16667%;
+    float: right;
+    margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c3-6:before, .c3-6:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c3-6:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -373,7 +802,21 @@
     width: 7.5%;
     margin-right: -100%;
     float: left;
+    clear: right;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
     margin-left: 66.83333%;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c4-5:before, .c4-5:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c4-5:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -382,9 +825,22 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 32.5%;
-    margin-right: -100%;
-    float: left;
-    margin-left: 66.83333%;
+    float: right;
+    margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c4-6:before, .c4-6:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c4-6:after {
+    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -395,5 +851,19 @@
     width: 24.16667%;
     float: right;
     margin-right: 0;
+    clear: left;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+  }
+  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c5-6:before, .c5-6:after {
+    content: "";
+    display: table;
+  }
+  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
+  .c5-6:after {
+    clear: both;
   }
 }
