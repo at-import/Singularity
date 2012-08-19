@@ -81,12 +81,11 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 98.4%;
-  margin-right: -100%;
-  float: left;
-  clear: right;
+  float: right;
+  margin-right: 0;
+  clear: left;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 0;
   padding-left: 1em;
   padding-right: 1em;
 }

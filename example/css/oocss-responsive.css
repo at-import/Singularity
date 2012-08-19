@@ -28,12 +28,11 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 99%;
-    margin-right: -100%;
-    float: left;
-    clear: right;
+    float: right;
+    margin-right: 0;
+    clear: left;
     overflow: hidden;
     *zoom: 1;
-    margin-left: 0;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -106,12 +105,11 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 98.875%;
-    margin-right: -100%;
-    float: left;
-    clear: right;
+    float: right;
+    margin-right: 0;
+    clear: left;
     overflow: hidden;
     *zoom: 1;
-    margin-left: 0;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -280,12 +278,11 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 99.16667%;
-    margin-right: -100%;
-    float: left;
-    clear: right;
+    float: right;
+    margin-right: 0;
+    clear: left;
     overflow: hidden;
     *zoom: 1;
-    margin-left: 0;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */

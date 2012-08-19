@@ -24,6 +24,30 @@ body {
     }
 }
 
+.a1, .a2, .a3, .a4, .a5 {
+  @extend %holder;
+}
+
+.a1 {
+  @include grid-span(1);
+}
+
+.a2 {
+  @include grid-span(1);
+}
+
+.a3 {
+  @include grid-span(1);
+}
+
+.a4 {
+  @include grid-span(1);
+}
+
+.a5 {
+  @include grid-span(1);
+}
+
 #nav-left {
   @extend %holder;
   @include grid-span(1);

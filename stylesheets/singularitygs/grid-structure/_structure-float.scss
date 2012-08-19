@@ -10,14 +10,14 @@
   }
 
   @include clearfix;
-  
+
 }
 
 @mixin structure-float($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $grouped-styles: false) {
   
   $grid-location: '';
   
-  @if $location > 1 and ($span + $location - 1) == column-count($columns) {
+  @if ($span + $location) > column-count($columns) {
     $grid-location: 'last';
   }
   @else if $location == 1 {
