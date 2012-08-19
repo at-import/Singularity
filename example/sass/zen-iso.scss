@@ -37,12 +37,12 @@ body {
 
 #nav-right {
   @extend %holder;
-  @include grid-span(2);
+  @include grid-span(1, 4);
   clear: right;
 }
 
 #content {
   @extend %holder;
-  @include grid-span(1, 5);
+  @include grid-span(2, 4);
   clear: left;
 }
