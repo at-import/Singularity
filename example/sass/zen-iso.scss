@@ -1,8 +1,8 @@
 @import 'singularitygs';
 
 $columns: ratio(golden-ratio(), 5);
-$gutter: 2%;
-$padding: 1em;
+$gutter: 4%;
+// $padding: 1em;
 
 body {
   margin: 0;
@@ -62,7 +62,7 @@ body {
 
 #nav-right {
   @extend %holder;
-  @include grid-span(2, 3);
+  @include grid-span(3, 3);
   clear: right;
 }
 
