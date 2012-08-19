@@ -24,6 +24,9 @@ body {
     }
 }
 
+@debug grid-span(5);
+@debug gutter-offset($gutter, $columns);
+
 .a1, .a2, .a3, .a4, .a5 {
   @extend %holder;
 }
