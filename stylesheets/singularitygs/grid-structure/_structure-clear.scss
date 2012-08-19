@@ -1,0 +1,31 @@
+$legacy-support-for-ie: true !default;
+
+@mixin grid-clear($dir) {
+  @if $dir == 'left' {
+    clear: right;
+  }
+  @else if $dir == 'right' {
+    clear: left;
+  }
+  @else if $dir == 'both' {
+    clear: both;
+  }
+  
+  
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  
+  &:after {
+    clear: both;
+  }
+  
+  @if $legacy-support-for-ie {
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  }
+  /* non-JS fallback */
+  *zoom: 1;
+}
