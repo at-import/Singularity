@@ -7,6 +7,9 @@ article:nth-child(1) {
   width: 22.26217%;
   margin-right: -100%;
   float: left;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
   margin-left: 0;
 }
 
@@ -18,6 +21,9 @@ article:nth-child(2) {
   width: 13.27341%;
   margin-right: -100%;
   float: left;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
   margin-left: 24.26217%;
 }
 
@@ -29,4 +35,7 @@ article:nth-child(3) {
   width: 60.46442%;
   float: right;
   margin-right: 0;
+  clear: left;
+  overflow: hidden;
+  *zoom: 1;
 }

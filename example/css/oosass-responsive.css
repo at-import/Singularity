@@ -17,20 +17,9 @@
     margin-right: -100%;
     float: left;
     clear: right;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
     margin-left: 0;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  article:before, article:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  article:after {
-    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -42,19 +31,8 @@
     float: right;
     margin-right: 0;
     clear: left;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.one:before, aside.one:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.one:after {
-    clear: both;
   }
 }
 @media (min-width: 40em) and (max-width: 60em) {
@@ -75,20 +53,9 @@
     margin-right: -100%;
     float: left;
     clear: right;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
     margin-left: 0;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  article:before, article:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  article:after {
-    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -100,19 +67,8 @@
     float: right;
     margin-right: 0;
     clear: left;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.one:before, aside.one:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.one:after {
-    clear: both;
   }
 }
 @media (min-width: 60em) {
@@ -133,20 +89,9 @@
     margin-right: -100%;
     float: left;
     clear: right;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
     margin-left: 0;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  article:before, article:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  article:after {
-    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -158,20 +103,9 @@
     margin-right: -100%;
     float: left;
     clear: right;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
     margin-left: 66.83333%;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.one:before, aside.one:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.one:after {
-    clear: both;
   }
 
   /* line 56, ../../stylesheets/singularitygs/_mixins.sass */
@@ -183,18 +117,7 @@
     float: right;
     margin-right: 0;
     clear: left;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.two:before, aside.two:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  aside.two:after {
-    clear: both;
   }
 }

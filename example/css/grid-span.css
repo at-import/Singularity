@@ -8,20 +8,9 @@ article:nth-child(1) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 0;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):before, article:nth-child(1):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):after {
-  clear: both;
 }
 
 /* line 12, ../sass/grid-span.scss */
@@ -33,20 +22,9 @@ article:nth-child(2) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 22.88889%;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):before, article:nth-child(2):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):after {
-  clear: both;
 }
 
 /* line 15, ../sass/grid-span.scss */
@@ -58,19 +36,8 @@ article:nth-child(3) {
   float: right;
   margin-right: 0;
   clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):before, article:nth-child(3):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):after {
-  clear: both;
 }
 
 /* line 20, ../sass/grid-span.scss */
@@ -82,20 +49,9 @@ article:nth-child(2) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 22.88889%;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):before, article:nth-child(2):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):after {
-  clear: both;
 }
 
 /* line 23, ../sass/grid-span.scss */
@@ -107,19 +63,8 @@ article:nth-child(3) {
   float: right;
   margin-right: 0;
   clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):before, article:nth-child(3):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):after {
-  clear: both;
 }
 
 /* line 26, ../sass/grid-span.scss */
@@ -131,18 +76,7 @@ article:nth-child(1) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 0;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):before, article:nth-child(1):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):after {
-  clear: both;
 }

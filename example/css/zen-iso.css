@@ -1,5 +1,5 @@
 /* SINGULARITY -- http://singularity.gs/ */
-/* line 6, ../sass/zen-iso.scss */
+/* line 7, ../sass/zen-iso.scss */
 body {
   margin: 0;
   padding: 0;
@@ -7,26 +7,25 @@ body {
   background: -webkit-linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 4.52511%, rgba(105, 174, 219, 0) 4.52511%, rgba(105, 174, 219, 0) 6.52511%, rgba(105, 174, 219, 0.5) 6.52511%, rgba(105, 174, 219, 0.5) 14.43575%, rgba(105, 174, 219, 0) 14.43575%, rgba(105, 174, 219, 0) 16.43575%, rgba(105, 174, 219, 0.5) 16.43575%, rgba(105, 174, 219, 0.5) 30.47149%, rgba(105, 174, 219, 0) 30.47149%, rgba(105, 174, 219, 0) 32.47149%, rgba(105, 174, 219, 0.5) 32.47149%, rgba(105, 174, 219, 0.5) 56.41787%, rgba(105, 174, 219, 0) 56.41787%, rgba(105, 174, 219, 0) 58.41787%, rgba(105, 174, 219, 0.5) 58.41787%, rgba(105, 174, 219, 0.5) 100%);
   background: -moz-linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 4.52511%, rgba(105, 174, 219, 0) 4.52511%, rgba(105, 174, 219, 0) 6.52511%, rgba(105, 174, 219, 0.5) 6.52511%, rgba(105, 174, 219, 0.5) 14.43575%, rgba(105, 174, 219, 0) 14.43575%, rgba(105, 174, 219, 0) 16.43575%, rgba(105, 174, 219, 0.5) 16.43575%, rgba(105, 174, 219, 0.5) 30.47149%, rgba(105, 174, 219, 0) 30.47149%, rgba(105, 174, 219, 0) 32.47149%, rgba(105, 174, 219, 0.5) 32.47149%, rgba(105, 174, 219, 0.5) 56.41787%, rgba(105, 174, 219, 0) 56.41787%, rgba(105, 174, 219, 0) 58.41787%, rgba(105, 174, 219, 0.5) 58.41787%, rgba(105, 174, 219, 0.5) 100%);
   background: -o-linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 4.52511%, rgba(105, 174, 219, 0) 4.52511%, rgba(105, 174, 219, 0) 6.52511%, rgba(105, 174, 219, 0.5) 6.52511%, rgba(105, 174, 219, 0.5) 14.43575%, rgba(105, 174, 219, 0) 14.43575%, rgba(105, 174, 219, 0) 16.43575%, rgba(105, 174, 219, 0.5) 16.43575%, rgba(105, 174, 219, 0.5) 30.47149%, rgba(105, 174, 219, 0) 30.47149%, rgba(105, 174, 219, 0) 32.47149%, rgba(105, 174, 219, 0.5) 32.47149%, rgba(105, 174, 219, 0.5) 56.41787%, rgba(105, 174, 219, 0) 56.41787%, rgba(105, 174, 219, 0) 58.41787%, rgba(105, 174, 219, 0.5) 58.41787%, rgba(105, 174, 219, 0.5) 100%);
-  background: -ms-linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 4.52511%, rgba(105, 174, 219, 0) 4.52511%, rgba(105, 174, 219, 0) 6.52511%, rgba(105, 174, 219, 0.5) 6.52511%, rgba(105, 174, 219, 0.5) 14.43575%, rgba(105, 174, 219, 0) 14.43575%, rgba(105, 174, 219, 0) 16.43575%, rgba(105, 174, 219, 0.5) 16.43575%, rgba(105, 174, 219, 0.5) 30.47149%, rgba(105, 174, 219, 0) 30.47149%, rgba(105, 174, 219, 0) 32.47149%, rgba(105, 174, 219, 0.5) 32.47149%, rgba(105, 174, 219, 0.5) 56.41787%, rgba(105, 174, 219, 0) 56.41787%, rgba(105, 174, 219, 0) 58.41787%, rgba(105, 174, 219, 0.5) 58.41787%, rgba(105, 174, 219, 0.5) 100%);
   background: linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 4.52511%, rgba(105, 174, 219, 0) 4.52511%, rgba(105, 174, 219, 0) 6.52511%, rgba(105, 174, 219, 0.5) 6.52511%, rgba(105, 174, 219, 0.5) 14.43575%, rgba(105, 174, 219, 0) 14.43575%, rgba(105, 174, 219, 0) 16.43575%, rgba(105, 174, 219, 0.5) 16.43575%, rgba(105, 174, 219, 0.5) 30.47149%, rgba(105, 174, 219, 0) 30.47149%, rgba(105, 174, 219, 0) 32.47149%, rgba(105, 174, 219, 0.5) 32.47149%, rgba(105, 174, 219, 0.5) 56.41787%, rgba(105, 174, 219, 0) 56.41787%, rgba(105, 174, 219, 0) 58.41787%, rgba(105, 174, 219, 0.5) 58.41787%, rgba(105, 174, 219, 0.5) 100%);
 }
 
-/* line 12, ../sass/zen-iso.scss */
+/* line 13, ../sass/zen-iso.scss */
 #nav-left, #nav-middle, #nav-right, #content {
   height: 50vh;
   background: green;
 }
-/* line 17, ../sass/zen-iso.scss */
+/* line 18, ../sass/zen-iso.scss */
 #nav-left:before, #nav-middle:before, #nav-right:before, #content:before, #nav-left:after, #nav-middle:after, #nav-right:after, #content:after {
   content: "";
   display: table;
 }
-/* line 21, ../sass/zen-iso.scss */
+/* line 22, ../sass/zen-iso.scss */
 #nav-left:after, #nav-middle:after, #nav-right:after, #content:after {
   clear: both;
 }
 
-/* line 26, ../sass/zen-iso.scss */
+/* line 27, ../sass/zen-iso.scss */
 #nav-left {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -35,24 +34,15 @@ body {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 0;
+  padding-left: 1em;
+  padding-right: 1em;
   clear: right;
 }
-/* line 16, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#nav-left:before, #nav-left:after {
-  content: "";
-  display: table;
-}
-/* line 21, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#nav-left:after {
-  clear: both;
-}
 
-/* line 32, ../sass/zen-iso.scss */
+/* line 33, ../sass/zen-iso.scss */
 #nav-middle {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -61,24 +51,15 @@ body {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 6.52511%;
+  padding-left: 1em;
+  padding-right: 1em;
   clear: right;
 }
-/* line 16, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#nav-middle:before, #nav-middle:after {
-  content: "";
-  display: table;
-}
-/* line 21, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#nav-middle:after {
-  clear: both;
-}
 
-/* line 38, ../sass/zen-iso.scss */
+/* line 39, ../sass/zen-iso.scss */
 #nav-right {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -87,44 +68,27 @@ body {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 32.47149%;
+  padding-left: 1em;
+  padding-right: 1em;
   clear: right;
 }
-/* line 16, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#nav-right:before, #nav-right:after {
-  content: "";
-  display: table;
-}
-/* line 21, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#nav-right:after {
-  clear: both;
-}
 
-/* line 44, ../sass/zen-iso.scss */
+/* line 45, ../sass/zen-iso.scss */
 #content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 66.32851%;
-  float: right;
-  margin-right: 0;
-  clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  width: 14.43575%;
+  margin-right: -100%;
+  float: left;
+  clear: right;
+  overflow: hidden;
   *zoom: 1;
+  margin-left: 16.43575%;
+  padding-left: 1em;
+  padding-right: 1em;
   clear: left;
-}
-/* line 16, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#content:before, #content:after {
-  content: "";
-  display: table;
-}
-/* line 21, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#content:after {
-  clear: both;
 }

@@ -9,21 +9,10 @@
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 0;
   padding: 0 5px;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#foo:before, #foo:after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-#foo:after {
-  clear: both;
 }
 @media (min-width: 470px) {
   /* line 11, ../sass/gridset.scss */
@@ -35,22 +24,11 @@
     margin-right: -100%;
     float: left;
     clear: right;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
     margin-left: 25.83333%;
     padding-left: 30px;
     padding-right: 30px;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  #foo:before, #foo:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  #foo:after {
-    clear: both;
   }
 }
 @media (min-width: 800px) {
@@ -63,22 +41,11 @@
     margin-right: -100%;
     float: left;
     clear: right;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
     margin-left: 30.57143%;
     padding-left: 15px;
     padding-right: 15px;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  #foo:before, #foo:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  #foo:after {
-    clear: both;
   }
 }
 @media (min-width: 1500px) {
@@ -91,20 +58,9 @@
     float: right;
     margin-right: 0;
     clear: left;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
+    overflow: hidden;
     *zoom: 1;
     padding-left: 15px;
     padding-right: 15px;
-  }
-  /* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  #foo:before, #foo:after {
-    content: "";
-    display: table;
-  }
-  /* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-  #foo:after {
-    clear: both;
   }
 }

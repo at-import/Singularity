@@ -1,3 +1,18 @@
+@mixin grid-clear($dir) {
+  @if $dir == 'left' {
+    clear: right;
+  }
+  @else if $dir == 'right' {
+    clear: left;
+  }
+  @else if $dir == 'both' {
+    clear: both;
+  }
+
+  @include clearfix;
+  
+}
+
 @mixin structure-float($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $grouped-styles: false) {
   
   $grid-location: '';

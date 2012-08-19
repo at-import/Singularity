@@ -9,20 +9,9 @@ article:nth-child(1) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 0;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):before, article:nth-child(1):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):after {
-  clear: both;
 }
 
 /* line 14, ../sass/rtl.scss */
@@ -34,20 +23,9 @@ article:nth-child(2) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 22.88889%;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):before, article:nth-child(2):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):after {
-  clear: both;
 }
 
 /* line 17, ../sass/rtl.scss */
@@ -59,19 +37,8 @@ article:nth-child(3) {
   float: right;
   margin-right: 0;
   clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):before, article:nth-child(3):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):after {
-  clear: both;
 }
 
 /* rtl only */
@@ -92,20 +59,9 @@ article:nth-child(2) {
   margin-left: -100%;
   float: right;
   clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-right: 22.88889%;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):before, article:nth-child(2):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):after {
-  clear: both;
 }
 
 /* line 31, ../sass/rtl.scss */
@@ -117,19 +73,8 @@ article:nth-child(3) {
   float: left;
   margin-left: 0;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):before, article:nth-child(3):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):after {
-  clear: both;
 }
 
 /* both directions */
@@ -142,40 +87,18 @@ article:nth-child(1) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 0;
 }
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):before, article:nth-child(1):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(1):after {
-  clear: both;
-}
-/* line 65, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 80, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(1) {
   margin-left: -100%;
   float: right;
   clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-right: 0;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-[dir="rtl"] article:nth-child(1):before, [dir="rtl"] article:nth-child(1):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-[dir="rtl"] article:nth-child(1):after {
-  clear: both;
 }
 
 /* line 42, ../sass/rtl.scss */
@@ -187,40 +110,18 @@ article:nth-child(2) {
   margin-right: -100%;
   float: left;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-left: 22.88889%;
 }
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):before, article:nth-child(2):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(2):after {
-  clear: both;
-}
-/* line 65, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 80, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(2) {
   margin-left: -100%;
   float: right;
   clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
   margin-right: 22.88889%;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-[dir="rtl"] article:nth-child(2):before, [dir="rtl"] article:nth-child(2):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-[dir="rtl"] article:nth-child(2):after {
-  clear: both;
 }
 
 /* line 45, ../sass/rtl.scss */
@@ -232,36 +133,14 @@ article:nth-child(3) {
   float: right;
   margin-right: 0;
   clear: left;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
 }
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):before, article:nth-child(3):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-article:nth-child(3):after {
-  clear: both;
-}
-/* line 65, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 80, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(3) {
   float: left;
   margin-left: 0;
   clear: right;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
+  overflow: hidden;
   *zoom: 1;
-}
-/* line 16, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-[dir="rtl"] article:nth-child(3):before, [dir="rtl"] article:nth-child(3):after {
-  content: "";
-  display: table;
-}
-/* line 21, ../../stylesheets/singularitygs/grid-structure/_structure-clear.scss */
-[dir="rtl"] article:nth-child(3):after {
-  clear: both;
 }

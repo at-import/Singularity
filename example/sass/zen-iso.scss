@@ -2,6 +2,7 @@
 
 $columns: ratio(golden-ratio(), 5);
 $gutter: 2%;
+$padding: 1em;
 
 body {
   margin: 0;
@@ -43,6 +44,6 @@ body {
 
 #content {
   @extend %holder;
-  @include grid-span(2, 4);
+  @include grid-span(1, 3);
   clear: left;
 }
