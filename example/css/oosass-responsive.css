@@ -30,7 +30,6 @@
     width: 49%;
     float: right;
     margin-right: 0;
-    clear: left;
     overflow: hidden;
     *zoom: 1;
   }
@@ -66,7 +65,6 @@
     width: 32.20833%;
     float: right;
     margin-right: 0;
-    clear: left;
     overflow: hidden;
     *zoom: 1;
   }
@@ -116,7 +114,6 @@
     width: 24.16667%;
     float: right;
     margin-right: 0;
-    clear: left;
     overflow: hidden;
     *zoom: 1;
   }

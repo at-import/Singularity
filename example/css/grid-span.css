@@ -35,7 +35,6 @@ article:nth-child(3) {
   width: 32.0%;
   float: right;
   margin-right: 0;
-  clear: left;
   overflow: hidden;
   *zoom: 1;
 }
@@ -62,7 +61,6 @@ article:nth-child(3) {
   width: 32.0%;
   float: right;
   margin-right: 0;
-  clear: left;
   overflow: hidden;
   *zoom: 1;
 }

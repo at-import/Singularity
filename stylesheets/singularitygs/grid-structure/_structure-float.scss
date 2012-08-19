@@ -50,7 +50,7 @@
     @else if $grid-location == 'last' {
       float: right;
       margin-right: 0;
-      @include grid-clear('right');
+      @include clearfix;
     }
   }
   @if $dir == rtl {
