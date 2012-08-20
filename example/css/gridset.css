@@ -8,6 +8,7 @@
   width: 100%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
   padding: 0 5px;
@@ -18,13 +19,13 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 20.83333%;
+    width: 22.72727%;
     margin-right: -100%;
     float: left;
     clear: right;
     overflow: hidden;
     *zoom: 1;
-    margin-left: 25.83333%;
+    margin-left: 27.14988%;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -35,13 +36,13 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 20.57143%;
+    width: 27.58621%;
     margin-right: -100%;
     float: left;
     clear: right;
     overflow: hidden;
     *zoom: 1;
-    margin-left: 30.57143%;
+    margin-left: 43.97965%;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -52,9 +53,10 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 33.98213%;
+    width: 28.17576%;
     float: right;
     margin-right: 0;
+    clear: right;
     overflow: hidden;
     *zoom: 1;
     padding-left: 15px;

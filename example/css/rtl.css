@@ -5,7 +5,7 @@ article:nth-child(1) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 20.88889%;
+  width: 15.38462%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -19,13 +19,13 @@ article:nth-child(2) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 43.11111%;
+  width: 30.76923%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 22.88889%;
+  margin-left: 30.76923%;
 }
 
 /* line 17, ../sass/rtl.scss */
@@ -33,9 +33,10 @@ article:nth-child(3) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 32.0%;
+  width: 23.07692%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
 }
@@ -46,7 +47,7 @@ article:nth-child(1) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 20.88889%;
+  width: 15.38462%;
 }
 
 /* line 28, ../sass/rtl.scss */
@@ -54,13 +55,13 @@ article:nth-child(2) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 43.11111%;
+  width: 30.76923%;
   margin-left: -100%;
   float: right;
   clear: left;
   overflow: hidden;
   *zoom: 1;
-  margin-right: 22.88889%;
+  margin-right: 30.76923%;
 }
 
 /* line 31, ../sass/rtl.scss */
@@ -68,10 +69,10 @@ article:nth-child(3) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 32.0%;
+  width: 23.07692%;
   float: left;
   margin-left: 0;
-  clear: right;
+  clear: left;
   overflow: hidden;
   *zoom: 1;
 }
@@ -82,7 +83,7 @@ article:nth-child(1) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 20.88889%;
+  width: 15.38462%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -90,7 +91,7 @@ article:nth-child(1) {
   *zoom: 1;
   margin-left: 0;
 }
-/* line 80, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 79, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(1) {
   margin-left: -100%;
   float: right;
@@ -105,22 +106,22 @@ article:nth-child(2) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 43.11111%;
+  width: 30.76923%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 22.88889%;
+  margin-left: 30.76923%;
 }
-/* line 80, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 79, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(2) {
   margin-left: -100%;
   float: right;
   clear: left;
   overflow: hidden;
   *zoom: 1;
-  margin-right: 22.88889%;
+  margin-right: 30.76923%;
 }
 
 /* line 45, ../sass/rtl.scss */
@@ -128,17 +129,18 @@ article:nth-child(3) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 32.0%;
+  width: 23.07692%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 80, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 79, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(3) {
   float: left;
   margin-left: 0;
-  clear: right;
+  clear: left;
   overflow: hidden;
   *zoom: 1;
 }

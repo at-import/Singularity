@@ -1,40 +1,143 @@
-/* SINGULARITY -- http://singularity.gs/ */
-/* line 9, ../sass/scale.scss */
-article:nth-child(1) {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 22.26217%;
-  margin-right: -100%;
-  float: left;
-  clear: right;
-  overflow: hidden;
-  *zoom: 1;
-  margin-left: 0;
-}
+/*
+Syntax error: Incompatible units: '%' and 'px'.
+        on line 47 of /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_column.scss, in `grid-span'
+        from line 10 of /Users/Magrathea/Development/Singularity/example/sass/scale.scss
 
-/* line 12, ../sass/scale.scss */
-article:nth-child(2) {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 13.27341%;
-  margin-right: -100%;
-  float: left;
-  clear: right;
-  overflow: hidden;
-  *zoom: 1;
-  margin-left: 24.26217%;
-}
-
-/* line 15, ../sass/scale.scss */
-article:nth-child(3) {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 60.46442%;
-  float: right;
-  margin-right: 0;
-  overflow: hidden;
-  *zoom: 1;
-}
+Backtrace:
+/Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_column.scss:47:in `grid-span'
+/Users/Magrathea/Development/Singularity/example/sass/scale.scss:10
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/number.rb:394:in `coercion_factor'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/number.rb:325:in `coerce'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/number.rb:375:in `operate'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/number.rb:97:in `plus'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/operation.rb:90:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/operation.rb:90:in `_perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/node.rb:40:in `perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:323:in `visit_variable'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:107:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:203:in `visit_if'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:206:in `visit_if'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `each'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:182:in `catch'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:182:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:68:in `perform_arguments'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:181:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:97:in `_perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/node.rb:40:in `perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:323:in `visit_variable'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `each'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:182:in `catch'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:182:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:68:in `perform_arguments'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:181:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:97:in `_perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/node.rb:40:in `perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:301:in `visit_return'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `each'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:183:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:182:in `catch'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:182:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:68:in `perform_arguments'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:181:in `perform_sass_fn'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/funcall.rb:97:in `_perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/script/node.rb:40:in `perform'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:294:in `visit_prop'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:264:in `visit_mixin'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:264:in `map'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:264:in `visit_mixin'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:264:in `visit_mixin'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:68:in `perform_arguments'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:259:in `visit_mixin'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:107:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:316:in `visit_rule'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:107:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:126:in `visit_root'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/tree/root_node.rb:20:in `render'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/engine.rb:315:in `_render'
+/usr/local/gems/sass-3.2.1/lib/sass/../sass/engine.rb:262:in `render'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:140:in `compile'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:126:in `timed'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:139:in `compile'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/logger.rb:45:in `red'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:138:in `compile'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:118:in `compile_if_required'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:103:in `run'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:101:in `each'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:101:in `run'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:126:in `timed'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:100:in `run'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/commands/watch_project.rb:147:in `recompile'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/commands/watch_project.rb:68:in `perform'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/commands/base.rb:18:in `execute'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/commands/project_base.rb:19:in `execute'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/usr/local/gems/compass-0.13.alpha.0/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/usr/local/gems/compass-0.13.alpha.0/bin/compass:29
+/usr/local/gems/compass-0.13.alpha.0/bin/compass:43:in `call'
+/usr/local/gems/compass-0.13.alpha.0/bin/compass:43
+/usr/bin/compass:19:in `load'
+/usr/bin/compass:19
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Incompatible units: '%' and 'px'.\A         on line 47 of /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_column.scss, in `grid-span'\A         from line 10 of /Users/Magrathea/Development/Singularity/example/sass/scale.scss"; }

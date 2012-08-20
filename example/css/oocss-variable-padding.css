@@ -1,5 +1,5 @@
 /* SINGULARITY -- http://singularity.gs/ */
-/* line 39, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 41, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a0-1, .a0-2, .a0-3, .a0-4, .a0-5, .a1-2, .a1-3, .a1-4, .a1-5, .a2-3, .a2-4, .a2-5, .a3-4, .a3-5, .a4-5 {
   margin-right: -100%;
   float: left;
@@ -11,12 +11,12 @@
   margin-right: 2%;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a0-1 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 11.73333%;
+  width: 8.69565%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -27,12 +27,12 @@
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a0-2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 38.4%;
+  width: 34.78261%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -43,12 +43,12 @@
   padding-right: 5%;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a0-3 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 58.4%;
+  width: 56.52174%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -59,12 +59,12 @@
   padding-right: 10px;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a0-4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 91.73333%;
+  width: 86.95652%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -75,166 +75,171 @@
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a0-5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 98.4%;
+  width: 100%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
   padding-left: 1em;
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a1-2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 25.06667%;
+  width: 17.3913%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 13.73333%;
+  margin-left: 17.3913%;
   padding-left: 5%;
   padding-right: 5%;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a1-3 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 45.06667%;
+  width: 39.13043%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 13.73333%;
+  margin-left: 17.3913%;
   padding-left: 5%;
   padding-right: 10px;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a1-4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 78.4%;
+  width: 69.56522%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 13.73333%;
+  margin-left: 17.3913%;
   padding-left: 5%;
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a1-5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 85.06667%;
+  width: 82.6087%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
   padding-left: 5%;
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a2-3 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 18.4%;
+  width: 13.04348%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 40.4%;
+  margin-left: 43.47826%;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a2-4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 51.73333%;
+  width: 43.47826%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 40.4%;
+  margin-left: 43.47826%;
   padding-left: 10px;
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a2-5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 58.4%;
+  width: 56.52174%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
   padding-left: 10px;
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a3-4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 31.73333%;
+  width: 21.73913%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 60.4%;
+  margin-left: 65.21739%;
   padding-left: 1em;
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a3-5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 38.4%;
+  width: 34.78261%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
   padding-left: 1em;
   padding-right: 1em;
 }
 
-/* line 56, ../../stylesheets/singularitygs/_mixins.sass */
+/* line 62, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/_mixins.scss */
 .a4-5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 5.06667%;
+  width: 4.34783%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
   padding-left: 1em;

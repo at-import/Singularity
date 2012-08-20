@@ -3,11 +3,6 @@
 body {
   margin: 0;
   padding: 0;
-  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(105, 174, 219, 0.5)), color-stop(2.92511%, rgba(105, 174, 219, 0.5)), color-stop(2.92511%, rgba(105, 174, 219, 0)), color-stop(6.92511%, rgba(105, 174, 219, 0)), color-stop(6.92511%, rgba(105, 174, 219, 0.5)), color-stop(12.83575%, rgba(105, 174, 219, 0.5)), color-stop(12.83575%, rgba(105, 174, 219, 0)), color-stop(16.83575%, rgba(105, 174, 219, 0)), color-stop(16.83575%, rgba(105, 174, 219, 0.5)), color-stop(28.87149%, rgba(105, 174, 219, 0.5)), color-stop(28.87149%, rgba(105, 174, 219, 0)), color-stop(32.87149%, rgba(105, 174, 219, 0)), color-stop(32.87149%, rgba(105, 174, 219, 0.5)), color-stop(54.81787%, rgba(105, 174, 219, 0.5)), color-stop(54.81787%, rgba(105, 174, 219, 0)), color-stop(58.81787%, rgba(105, 174, 219, 0)), color-stop(58.81787%, rgba(105, 174, 219, 0.5)), color-stop(100%, rgba(105, 174, 219, 0.5)));
-  background: -webkit-linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 2.92511%, rgba(105, 174, 219, 0) 2.92511%, rgba(105, 174, 219, 0) 6.92511%, rgba(105, 174, 219, 0.5) 6.92511%, rgba(105, 174, 219, 0.5) 12.83575%, rgba(105, 174, 219, 0) 12.83575%, rgba(105, 174, 219, 0) 16.83575%, rgba(105, 174, 219, 0.5) 16.83575%, rgba(105, 174, 219, 0.5) 28.87149%, rgba(105, 174, 219, 0) 28.87149%, rgba(105, 174, 219, 0) 32.87149%, rgba(105, 174, 219, 0.5) 32.87149%, rgba(105, 174, 219, 0.5) 54.81787%, rgba(105, 174, 219, 0) 54.81787%, rgba(105, 174, 219, 0) 58.81787%, rgba(105, 174, 219, 0.5) 58.81787%, rgba(105, 174, 219, 0.5) 100%);
-  background: -moz-linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 2.92511%, rgba(105, 174, 219, 0) 2.92511%, rgba(105, 174, 219, 0) 6.92511%, rgba(105, 174, 219, 0.5) 6.92511%, rgba(105, 174, 219, 0.5) 12.83575%, rgba(105, 174, 219, 0) 12.83575%, rgba(105, 174, 219, 0) 16.83575%, rgba(105, 174, 219, 0.5) 16.83575%, rgba(105, 174, 219, 0.5) 28.87149%, rgba(105, 174, 219, 0) 28.87149%, rgba(105, 174, 219, 0) 32.87149%, rgba(105, 174, 219, 0.5) 32.87149%, rgba(105, 174, 219, 0.5) 54.81787%, rgba(105, 174, 219, 0) 54.81787%, rgba(105, 174, 219, 0) 58.81787%, rgba(105, 174, 219, 0.5) 58.81787%, rgba(105, 174, 219, 0.5) 100%);
-  background: -o-linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 2.92511%, rgba(105, 174, 219, 0) 2.92511%, rgba(105, 174, 219, 0) 6.92511%, rgba(105, 174, 219, 0.5) 6.92511%, rgba(105, 174, 219, 0.5) 12.83575%, rgba(105, 174, 219, 0) 12.83575%, rgba(105, 174, 219, 0) 16.83575%, rgba(105, 174, 219, 0.5) 16.83575%, rgba(105, 174, 219, 0.5) 28.87149%, rgba(105, 174, 219, 0) 28.87149%, rgba(105, 174, 219, 0) 32.87149%, rgba(105, 174, 219, 0.5) 32.87149%, rgba(105, 174, 219, 0.5) 54.81787%, rgba(105, 174, 219, 0) 54.81787%, rgba(105, 174, 219, 0) 58.81787%, rgba(105, 174, 219, 0.5) 58.81787%, rgba(105, 174, 219, 0.5) 100%);
-  background: linear-gradient(left, rgba(105, 174, 219, 0.5) 0%, rgba(105, 174, 219, 0.5) 2.92511%, rgba(105, 174, 219, 0) 2.92511%, rgba(105, 174, 219, 0) 6.92511%, rgba(105, 174, 219, 0.5) 6.92511%, rgba(105, 174, 219, 0.5) 12.83575%, rgba(105, 174, 219, 0) 12.83575%, rgba(105, 174, 219, 0) 16.83575%, rgba(105, 174, 219, 0.5) 16.83575%, rgba(105, 174, 219, 0.5) 28.87149%, rgba(105, 174, 219, 0) 28.87149%, rgba(105, 174, 219, 0) 32.87149%, rgba(105, 174, 219, 0.5) 32.87149%, rgba(105, 174, 219, 0.5) 54.81787%, rgba(105, 174, 219, 0) 54.81787%, rgba(105, 174, 219, 0) 58.81787%, rgba(105, 174, 219, 0.5) 58.81787%, rgba(105, 174, 219, 0.5) 100%);
 }
 
 /* line 13, ../sass/zen-iso.scss */
@@ -25,12 +20,12 @@ body {
   clear: both;
 }
 
-/* line 34, ../sass/zen-iso.scss */
+/* line 32, ../sass/zen-iso.scss */
 .a1 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 2.92511%;
+  width: 5.77159%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -39,66 +34,67 @@ body {
   margin-left: 0;
 }
 
-/* line 38, ../sass/zen-iso.scss */
+/* line 36, ../sass/zen-iso.scss */
 .a2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 6.71064%;
+  width: 9.33863%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 6.92511%;
+  margin-left: 7.21449%;
 }
 
-/* line 42, ../sass/zen-iso.scss */
+/* line 40, ../sass/zen-iso.scss */
 .a3 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 12.83575%;
+  width: 15.11023%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 16.83575%;
+  margin-left: 17.99602%;
 }
 
-/* line 46, ../sass/zen-iso.scss */
+/* line 44, ../sass/zen-iso.scss */
 .a4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 22.74638%;
+  width: 24.44886%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 32.87149%;
+  margin-left: 34.54915%;
 }
 
-/* line 50, ../sass/zen-iso.scss */
+/* line 48, ../sass/zen-iso.scss */
 .a5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 38.78213%;
+  width: 39.55909%;
   float: right;
   margin-right: 0;
+  clear: right;
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 54, ../sass/zen-iso.scss */
+/* line 61, ../sass/zen-iso.scss */
 #nav-left {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 2.92511%;
+  width: 5.77159%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -108,45 +104,47 @@ body {
   clear: right;
 }
 
-/* line 60, ../sass/zen-iso.scss */
+/* line 67, ../sass/zen-iso.scss */
 #nav-middle {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 6.71064%;
+  width: 9.33863%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 6.92511%;
+  margin-left: 7.21449%;
   clear: right;
 }
 
-/* line 66, ../sass/zen-iso.scss */
+/* line 73, ../sass/zen-iso.scss */
 #nav-right {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 80.76425%;
-  float: right;
-  margin-right: 0;
-  overflow: hidden;
-  *zoom: 1;
-  clear: right;
-}
-
-/* line 72, ../sass/zen-iso.scss */
-#content {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 48.69276%;
+  width: 41.00199%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 6.92511%;
+  margin-left: 17.99602%;
+  clear: right;
+}
+
+/* line 79, ../sass/zen-iso.scss */
+#content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 51.78352%;
+  margin-right: -100%;
+  float: left;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: 7.21449%;
   clear: left;
 }
