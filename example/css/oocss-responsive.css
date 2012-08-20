@@ -1,204 +1,492 @@
 /* SINGULARITY -- http://singularity.gs/ */
 @media (min-width: 20em) and (max-width: 40em) {
-  /* line 64, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 41, ../../stylesheets/singularitygs/_mixins.scss */
   .a0-1, .a0-2, .a1-2 {
+    margin-right: -100%;
+    float: left;
     float: left;
     margin-right: 2%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .a0-1 {
-    width: 49%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .a0-2 {
-    width: 99%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .a1-2 {
-    width: 49%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 }
 @media (min-width: 40em) and (max-width: 60em) {
-  /* line 64, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 41, ../../stylesheets/singularitygs/_mixins.scss */
   .b0-1, .b0-2, .b0-3, .b0-4, .b1-2, .b1-3, .b1-4, .b2-3, .b2-4, .b3-4 {
+    margin-right: -100%;
+    float: left;
     float: left;
     margin-right: 1.5%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b0-1 {
-    width: 32.20833%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b0-2 {
-    width: 48.875%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b0-3 {
-    width: 65.54167%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b0-4 {
-    width: 98.875%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b1-2 {
-    width: 15.54167%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 8.33333%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 30.95238%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b1-3 {
-    width: 32.20833%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 30.95238%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b1-4 {
-    width: 65.54167%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b2-3 {
-    width: 15.54167%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 8.33333%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 55.95238%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b2-4 {
-    width: 48.875%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .b3-4 {
-    width: 32.20833%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 }
 @media (min-width: 60em) {
-  /* line 64, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 41, ../../stylesheets/singularitygs/_mixins.scss */
   .c0-1, .c0-2, .c0-3, .c0-4, .c0-5, .c0-6, .c1-2, .c1-3, .c1-4, .c1-5, .c1-6, .c2-3, .c2-4, .c2-5, .c2-6, .c3-4, .c3-5, .c3-6, .c4-5, .c4-6, .c5-6 {
+    margin-right: -100%;
+    float: left;
     float: left;
     margin-right: 1%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c0-1 {
-    width: 24.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 13.63636%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c0-2 {
-    width: 32.5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 27.27273%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c0-3 {
-    width: 49.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 45.45455%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c0-4 {
-    width: 65.83333%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 63.63636%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c0-5 {
-    width: 74.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 77.27273%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 0;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c0-6 {
-    width: 99.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c1-2 {
-    width: 7.5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 4.54545%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 19.51872%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c1-3 {
-    width: 24.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 22.72727%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 19.51872%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c1-4 {
-    width: 40.83333%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 40.90909%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 19.51872%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c1-5 {
-    width: 49.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 54.54545%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 19.51872%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c1-6 {
-    width: 74.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 77.27273%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c2-3 {
-    width: 15.83333%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 9.09091%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 33.15508%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c2-4 {
-    width: 32.5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 27.27273%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 33.15508%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c2-5 {
-    width: 40.83333%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 40.90909%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 33.15508%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c2-6 {
-    width: 65.83333%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 63.63636%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c3-4 {
-    width: 15.83333%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 9.09091%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 51.3369%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c3-5 {
-    width: 24.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 22.72727%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 51.3369%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c3-6 {
-    width: 49.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 45.45455%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c4-5 {
-    width: 7.5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 4.54545%;
+    margin-right: -100%;
+    float: left;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: 69.51872%;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c4-6 {
-    width: 32.5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 27.27273%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 
-  /* line 71, ../../stylesheets/singularitygs/_mixins.sass */
+  /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
   .c5-6 {
-    width: 24.16667%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 13.63636%;
+    float: right;
     margin-right: 0;
+    clear: right;
+    overflow: hidden;
+    *zoom: 1;
   }
 }

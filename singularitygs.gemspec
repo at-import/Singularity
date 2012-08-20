@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
   s.files += Dir.glob("stylesheets/**/*.*")
   
   # Dependent Gems
-  s.add_dependency 'sass',                ">= 3.2.0.alpha.269" 
-  s.add_dependency 'compass',             ">= 0.12.1" 
-  s.add_dependency 'modular-scale',       ">= 1.0.0"
+  s.add_dependency 'sass',                ">= 3.2.1" 
+  s.add_dependency 'compass',             ">= 0.12.2" 
+  s.add_dependency 'modular-scale',       ">= 1.0.2"
   s.add_dependency 'breakpoint',          ">= 1.1.1"
 end

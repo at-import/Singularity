@@ -1,0 +1,11 @@
+// Gutters to be removed from columns
+@function gutter-offset($gutter, $columns) {
+  $gutter-sum: $gutter * (column-count($columns) - 1);
+  @return $gutter-sum / column-count($columns);
+}
+
+@function gutter-span($gutter, $columns) {
+  $columns-and-gutters: column-sum($columns, $gutter);
+  
+  @return $gutter / $columns-and-gutters * 100%;
+}

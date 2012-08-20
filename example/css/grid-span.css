@@ -1,42 +1,82 @@
 /* SINGULARITY -- http://singularity.gs/ */
 /* line 9, ../sass/grid-span.scss */
 article:nth-child(1) {
-  width: 20.88889%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 15.38462%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: 0;
 }
 
 /* line 12, ../sass/grid-span.scss */
 article:nth-child(2) {
-  width: 43.11111%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 30.76923%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: 30.76923%;
 }
 
 /* line 15, ../sass/grid-span.scss */
 article:nth-child(3) {
-  width: 32.0%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 23.07692%;
   float: right;
   margin-right: 0;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
 }
 
 /* line 20, ../sass/grid-span.scss */
 article:nth-child(2) {
-  width: 43.11111%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 30.76923%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: 30.76923%;
 }
 
 /* line 23, ../sass/grid-span.scss */
 article:nth-child(3) {
-  width: 32.0%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 23.07692%;
   float: right;
   margin-right: 0;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
 }
 
 /* line 26, ../sass/grid-span.scss */
 article:nth-child(1) {
-  width: 20.88889%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 15.38462%;
+  margin-right: -100%;
   float: left;
-  margin-right: 2%;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: 0;
 }
