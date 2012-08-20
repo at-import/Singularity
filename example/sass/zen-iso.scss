@@ -1,0 +1,76 @@
+@import 'singularitygs';
+
+$columns: ratio(golden-ratio(), 5);
+$gutter: 4%;
+// $padding: 1em;
+
+body {
+  margin: 0;
+  padding: 0;
+  @include background-grid($columns, $gutter);
+}
+
+%holder {
+  height: 50vh;
+  background: green;
+  
+  &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+@debug grid-span(5);
+@debug gutter-offset($gutter, $columns);
+
+.a1, .a2, .a3, .a4, .a5 {
+  @extend %holder;
+}
+
+.a1 {
+  @include grid-span(1);
+}
+
+.a2 {
+  @include grid-span(1);
+}
+
+.a3 {
+  @include grid-span(1);
+}
+
+.a4 {
+  @include grid-span(1);
+}
+
+.a5 {
+  @include grid-span(1);
+}
+
+#nav-left {
+  @extend %holder;
+  @include grid-span(1);
+  clear: right;
+}
+
+#nav-middle {
+  @extend %holder;
+  @include grid-span(1);
+  clear: right;
+}
+
+#nav-right {
+  @extend %holder;
+  @include grid-span(3, 3);
+  clear: right;
+}
+
+#content {
+  @extend %holder;
+  @include grid-span(3, 2);
+  clear: left;
+}

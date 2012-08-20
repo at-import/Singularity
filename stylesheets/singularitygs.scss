@@ -12,6 +12,10 @@ $gutter: 2% !default;
 // Grid padding can be any type of unit
 $padding: 0 !default;
 
+// Grid structure
+// Only option is float at the moment
+$grid-structure: float !default
+
 // Layout direction?
 // options are ltr, rtl, both
 $dir: ltr !default;
@@ -33,6 +37,9 @@ $rtl-selector: '[dir="rtl"]' !default;
 
 // Grid math combines column and gutter math
 @import "singularitygs/grid";
+
+// Structural templates for grid
+@import singularitygs/grid-structure
 
 // Mixins to write
 @import "singularitygs/mixins";
