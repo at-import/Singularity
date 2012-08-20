@@ -105,11 +105,12 @@
       
       <h4>Gutters</h4>
       
-      <p>Gutters are the space between columns and always a percent.</p>
+      <h6>NOTE CHANGED FUNCTIONALITY IN v0.0.11</h6>
+      <p>Gutters must be the <strong>same unit</strong> as your grid list. If you are using unitless numbers as ratios, your gutter will behave the same way.</p>
       
-      <p>2% gutters:</p>
+      <p>gutters:</p>
       
-<pre><code>$gutter: 2%;</code></pre>
+<pre><code>$gutter: .1;</code></pre>
       
       <h4>Padding</h4>
       
@@ -141,9 +142,12 @@
       
       <p>If no location is set this mixin will count through the columns for you. So if you have a 9 column grid and three mixins spanning 3 columns, the mixin will know what columns you are as well as know you reached the end of a row.</p>
       
+      <h6>NOTE CHANGED FUNCTIONALITY IN v0.0.11</h6>
       <h4>gutter context</h4>
       
       <p>If you are nesting grids you may want a consistent gutter width. You can easily calculate gutters for the context by writing the gutter width you want followed by its context, like a context of grid-span(3, 3).</p>
+
+      <p><strong>If you are using equal widths columns in v0.0.11 and above gutter context is, for the most part, automatic.</strong></p>
       
 <pre><code>gutter-context($gutter, $context)</code></pre>
       
