@@ -12,16 +12,18 @@
 
 // Calculate the width spanning multiple columns
 @function column-span($span, $location: 1, $columns: $columns) {
+  $span-and-gutter: $span + ($span -1 * $gutter);
+  
   // Equal width columns
   @if type-of($columns) == number {
-    @return $span * 100% / $columns;
+    @return $span-and-gutter * 100% / $columns;
   }
   // Variable width columns
   @if type-of($columns) == list {
     // zero out initial sum
     $sum: 0;
     // from start point to end point
-    @for $i from $location to $location + $span {
+    @for $i from $location to $location + $span-and-gutter {
       $sum: $sum + list-column-width($i, $columns);
     }
     @return percentage($sum);
