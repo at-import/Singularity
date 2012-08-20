@@ -10,7 +10,6 @@
   }
 
   @include clearfix;
-
 }
 
 @mixin structure-float($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $grouped-styles: false) {
@@ -37,7 +36,7 @@
         float: left;
         @include grid-clear('left');
       }
-      margin-left: grid-span($location - 1, 1, $columns, $gutter) + $gutter;
+      margin-left: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
     }
     @else if $grid-location == 'first' {
       @if $grouped-styles == false {
@@ -50,7 +49,7 @@
     @else if $grid-location == 'last' {
       float: right;
       margin-right: 0;
-      @include clearfix;
+      @include grid-clear('left');
     }
   }
   @if $dir == rtl {
@@ -60,7 +59,7 @@
         float: right;
         @include grid-clear('right');
       }
-      margin-right: grid-span($location - 1, 1, $columns, $gutter) + $gutter;
+      margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
     }
     @else if grid-location == 'first' {
       @if $grouped-styles == false {
@@ -73,7 +72,7 @@
     @else if $grid-location == 'last' {
       float: left;
       margin-left: 0;
-      @include grid-clear('left');
+      @include grid-clear('right');
     }
   }
   @if $dir == both {
@@ -84,7 +83,7 @@
           float: right;
           @include grid-clear('right');
         }
-        margin-right: grid-span($location - 1, 1, $columns, $gutter) + $gutter;
+        margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
       }
       @if $grid-location == 'first' {
         @if $grouped-styles == false {
@@ -97,7 +96,7 @@
       @if $grid-location == 'last' {
         float: left;
         margin-left: 0;
-        @include grid-clear('left');
+        @include grid-clear('right');
       }
     }
   }
