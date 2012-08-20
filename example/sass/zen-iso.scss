@@ -1,13 +1,13 @@
 @import 'singularitygs';
 
 $columns: ratio(golden-ratio(), 5);
-$gutter: 4%;
+$gutter: .25;
 // $padding: 1em;
 
 body {
   margin: 0;
   padding: 0;
-  @include background-grid($columns, $gutter);
+//  @include background-grid($columns, $gutter);
 }
 
 %holder {
@@ -24,9 +24,7 @@ body {
     }
 }
 
-@debug grid-span(5);
-@debug gutter-offset($gutter, $columns);
-
+//
 .a1, .a2, .a3, .a4, .a5 {
   @extend %holder;
 }
@@ -51,21 +49,30 @@ body {
   @include grid-span(1);
 }
 
+//@debug $columns;
+//
+//@debug nth(nth($columns, 1), 1);
+//@debug nth(nth($columns, 2), 1);
+//@debug nth(nth($columns, 3), 1) + nth(nth($columns, 4), 1);
+//@debug nth(nth($columns, 2), 1) + nth(nth($columns, 3), 1) + nth(nth($columns, 4), 1);
+//
+//@debug column-sum($columns, $gutter);
+
 #nav-left {
   @extend %holder;
   @include grid-span(1);
   clear: right;
 }
-
+//
 #nav-middle {
   @extend %holder;
   @include grid-span(1);
   clear: right;
 }
-
+//
 #nav-right {
   @extend %holder;
-  @include grid-span(3, 3);
+  @include grid-span(2, 3);
   clear: right;
 }
 
