@@ -1,7 +1,7 @@
 @import 'singularitygs';
 
-$columns: ratio(golden-ratio(), 5);
-$gutter: .25;
+$columns: 5;
+$gutter: .1;
 // $padding: 1em;
 
 body {
@@ -80,4 +80,30 @@ body {
   @extend %holder;
   @include grid-span(3, 2);
   clear: left;
+
+  // CONTEXT of content
+  $columns: 3;
+
+  div {
+    @extend %holder;
+    background: red;
+  }
+  .one {
+    @include grid-span(1, 1);
+  }
+  .two {
+    @include grid-span(1);
+  }
+  .three {
+    @include grid-span(1);
+  }
 }
+
+
+
+
+
+
+
+
+

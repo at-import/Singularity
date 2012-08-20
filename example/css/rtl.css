@@ -91,7 +91,7 @@ article:nth-child(1) {
   *zoom: 1;
   margin-left: 0;
 }
-/* line 79, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 79, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(1) {
   margin-left: -100%;
   float: right;
@@ -114,7 +114,7 @@ article:nth-child(2) {
   *zoom: 1;
   margin-left: 30.76923%;
 }
-/* line 79, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 79, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(2) {
   margin-left: -100%;
   float: right;
@@ -136,7 +136,7 @@ article:nth-child(3) {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 79, /Users/Magrathea/Development/Singularity/stylesheets/singularitygs/grid-structure/_structure-float.scss */
+/* line 79, ../../stylesheets/singularitygs/grid-structure/_structure-float.scss */
 [dir="rtl"] article:nth-child(3) {
   float: left;
   margin-left: 0;
