@@ -14,7 +14,7 @@ $padding: 0 !default;
 
 // Grid structure
 // Only option is float at the moment
-$grid-structure: float !default
+$grid-structure: float !default;
 
 // Layout direction?
 // options are ltr, rtl, both
@@ -39,7 +39,7 @@ $rtl-selector: '[dir="rtl"]' !default;
 @import "singularitygs/grid";
 
 // Structural templates for grid
-@import singularitygs/grid-structure
+@import "singularitygs/grid-structure";
 
 // Mixins to write
 @import "singularitygs/mixins";
