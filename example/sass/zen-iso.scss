@@ -12,7 +12,7 @@ body {
 
 %holder {
   height: 50vh;
-  background: green;
+  background: rgba(green, .5);
   
   &:before,
     &:after {
@@ -43,10 +43,12 @@ body {
 
 .a4 {
   @include grid-span(1);
+  height: 55vh;
 }
 
 .a5 {
   @include grid-span(1);
+  clear: left;
 }
 
 //@debug $columns;
@@ -61,19 +63,16 @@ body {
 #nav-left {
   @extend %holder;
   @include grid-span(1);
-  clear: right;
 }
 //
 #nav-middle {
   @extend %holder;
   @include grid-span(1);
-  clear: right;
 }
 //
 #nav-right {
   @extend %holder;
   @include grid-span(2, 3);
-  clear: right;
 }
 
 #content {
