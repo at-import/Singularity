@@ -8,7 +8,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-right: 2%;
+  margin-right: 0.25;
 }
 
 /* line 62, ../../stylesheets/singularitygs/_mixins.scss */
@@ -16,7 +16,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 8.69565%;
+  width: 12.5%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -32,7 +32,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 34.78261%;
+  width: 39.0625%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -48,7 +48,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 56.52174%;
+  width: 59.375%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -64,7 +64,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 86.95652%;
+  width: 92.1875%;
   margin-right: -100%;
   float: left;
   clear: right;
@@ -95,13 +95,13 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 17.3913%;
+  width: 25%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 17.3913%;
+  margin-left: 14.0625%;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -111,13 +111,13 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 39.13043%;
+  width: 45.3125%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 17.3913%;
+  margin-left: 14.0625%;
   padding-left: 5%;
   padding-right: 10px;
 }
@@ -127,13 +127,13 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 69.56522%;
+  width: 78.125%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 17.3913%;
+  margin-left: 14.0625%;
   padding-left: 5%;
   padding-right: 1em;
 }
@@ -143,7 +143,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 82.6087%;
+  width: 85.9375%;
   float: right;
   margin-right: 0;
   clear: right;
@@ -158,13 +158,13 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 13.04348%;
+  width: 18.75%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 43.47826%;
+  margin-left: 40.625%;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -174,13 +174,13 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 43.47826%;
+  width: 51.5625%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 43.47826%;
+  margin-left: 40.625%;
   padding-left: 10px;
   padding-right: 1em;
 }
@@ -190,7 +190,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 56.52174%;
+  width: 59.375%;
   float: right;
   margin-right: 0;
   clear: right;
@@ -205,13 +205,13 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 21.73913%;
+  width: 31.25%;
   margin-right: -100%;
   float: left;
   clear: right;
   overflow: hidden;
   *zoom: 1;
-  margin-left: 65.21739%;
+  margin-left: 60.9375%;
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -221,7 +221,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 34.78261%;
+  width: 39.0625%;
   float: right;
   margin-right: 0;
   clear: right;
@@ -236,7 +236,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 4.34783%;
+  width: 6.25%;
   float: right;
   margin-right: 0;
   clear: right;

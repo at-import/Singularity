@@ -8,7 +8,7 @@ body {
 /* line 13, ../sass/zen-iso.scss */
 .a1, .a2, .a3, .a4, .a5, #nav-left, #nav-middle, #nav-right, #content, #content div {
   height: 50vh;
-  background: green;
+  background: rgba(0, 128, 0, 0.5);
 }
 /* line 18, ../sass/zen-iso.scss */
 .a1:before, .a2:before, .a3:before, .a4:before, .a5:before, #nav-left:before, #nav-middle:before, #nav-right:before, #content:before, #content div:before, .a1:after, .a2:after, .a3:after, .a4:after, .a5:after, #nav-left:after, #nav-middle:after, #nav-right:after, #content:after, #content div:after {
@@ -74,9 +74,10 @@ body {
   overflow: hidden;
   *zoom: 1;
   margin-left: 61.11111%;
+  height: 55vh;
 }
 
-/* line 48, ../sass/zen-iso.scss */
+/* line 49, ../sass/zen-iso.scss */
 .a5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -87,9 +88,10 @@ body {
   clear: right;
   overflow: hidden;
   *zoom: 1;
+  clear: left;
 }
 
-/* line 61, ../sass/zen-iso.scss */
+/* line 63, ../sass/zen-iso.scss */
 #nav-left {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -101,10 +103,9 @@ body {
   overflow: hidden;
   *zoom: 1;
   margin-left: 0;
-  clear: right;
 }
 
-/* line 67, ../sass/zen-iso.scss */
+/* line 68, ../sass/zen-iso.scss */
 #nav-middle {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -116,7 +117,6 @@ body {
   overflow: hidden;
   *zoom: 1;
   margin-left: 20.37037%;
-  clear: right;
 }
 
 /* line 73, ../sass/zen-iso.scss */
@@ -131,10 +131,9 @@ body {
   overflow: hidden;
   *zoom: 1;
   margin-left: 40.74074%;
-  clear: right;
 }
 
-/* line 79, ../sass/zen-iso.scss */
+/* line 78, ../sass/zen-iso.scss */
 #content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -148,11 +147,11 @@ body {
   margin-left: 20.37037%;
   clear: left;
 }
-/* line 87, ../sass/zen-iso.scss */
+/* line 86, ../sass/zen-iso.scss */
 #content div {
   background: red;
 }
-/* line 91, ../sass/zen-iso.scss */
+/* line 90, ../sass/zen-iso.scss */
 #content .one {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -165,7 +164,7 @@ body {
   *zoom: 1;
   margin-left: 0;
 }
-/* line 94, ../sass/zen-iso.scss */
+/* line 93, ../sass/zen-iso.scss */
 #content .two {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -178,7 +177,7 @@ body {
   *zoom: 1;
   margin-left: 34.375%;
 }
-/* line 97, ../sass/zen-iso.scss */
+/* line 96, ../sass/zen-iso.scss */
 #content .three {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
