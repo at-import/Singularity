@@ -6,7 +6,7 @@
 // Can be a number or a list of non-uniform column widths
 $columns: 12 !default;
 
-// Must be % or 0
+// Must be of the same unit type of defined columns
 $gutter: .25 !default;
 
 // Grid padding can be any type of unit
@@ -22,6 +22,13 @@ $dir: ltr !default;
 
 // Choose a selector for rtl layouts when using 'both'
 $rtl-selector: '[dir="rtl"]' !default;
+
+// Options for Multiple Grids
+$grids: () !default;
+$gutters: () !default;
+$paddings: () !default;
+
+$grids-mobile-first: true !default;
 
 // Helpers return think like list sums and column counts
 @import "singularitygs/helpers";
