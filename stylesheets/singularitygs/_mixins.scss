@@ -1,7 +1,6 @@
-// Grid location is automatically counted unless overridden
-$grid-counter: 1;
-
-@mixin grid-span($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding) {
+// Converted old Grid Span into Grid Build
+// It a piece of cake to make a pretty grid, CAKE!
+@mixin grid-build($span, $location, $columns, $gutter, $padding) {
   @include box-sizing(border-box);
   width: grid-span($span, $location, $columns, $gutter);
   @if $grid-structure == float {
