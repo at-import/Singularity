@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   # Files to Include
   s.files = Dir.glob("lib/*.*")
   s.files += Dir.glob("stylesheets/*.*")
-  s.files += Dir.glob("stylesheets/**/*.*")
+  s.files += Dir.glob("templates/**/*.*")
   
   # Dependent Gems
   s.add_dependency 'sass',                ">= 3.2.1" 

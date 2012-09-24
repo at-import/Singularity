@@ -2,6 +2,7 @@
 // It a piece of cake to make a pretty grid, CAKE!
 @mixin grid-build($span, $location, $columns, $gutter, $padding) {
   @include box-sizing(border-box);
+  *behavior: url('../behaviors/box-sizing/boxsizing.php');
   width: grid-span($span, $location, $columns, $gutter);
   @if $grid-structure == float {
     @include structure-float($span, $location, $columns, $gutter);
@@ -72,5 +73,6 @@
   @if $padding != 0 {
     padding: 0 $padding;
     @include box-sizing(border-box);
+    *behavior: url('../behaviors/box-sizing/boxsizing.php');
   }
 }
