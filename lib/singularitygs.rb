@@ -5,6 +5,6 @@ require 'breakpoint'
 Compass::Frameworks.register("singularitygs", :path => "#{File.dirname(__FILE__)}/..")
 
 module SingularityGS
-  VERSION = "0.0.12"
-  DATE = "2012-09-24"
+  VERSION = "0.0.13"
+  DATE = "2012-09-28"
 end
