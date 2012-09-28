@@ -24,6 +24,14 @@ Import them in your stylesheets
 @import "singularitygs";
 ```
 
+Once you've created your project, install the Singularity behaviors so you can use Box Sizing in IE<8! This will install [Christian Schaefer's Box Sizing Polyfill](https://github.com/Schepp/box-sizing-polyfill) with [Suzi Arnold's PHP Wrapper](https://github.com/suzi).
+
+```
+$ compass install -r singularitygs -f singularitygs
+```
+
+Make sure the installed `behaviors` folder is at the same level as your CSS folder so that it can be accessed by your stylesheet via `../behaviors/*`.
+
 ## Using Singularity
 
 #### [Learn how to use Singularity here](http://singularity.gs#use)
