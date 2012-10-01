@@ -7,7 +7,7 @@
   @for $i from 1 through column-count($columns) {
     .test.#{$prefix}#{$i} {
       height: 100%;
-      @include grid-span(1, $i, $columns: $columns, $gutter: $gutter, $padding: $padding);
+      @include grid-span(1, $i, $columns, $gutter, $padding);
       background-color: transparentize($color, 0.5);
       .inner {
         height: 100%;
