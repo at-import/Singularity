@@ -30,6 +30,14 @@ $paddings: () !default;
 
 $grids-mobile-first: true !default;
 
+// Container Nonsense
+$container: 100% !default;
+$containers: () !default;
+$container-to-ems: false !default;
+
+// Base Font Size
+$base-font-size: 1em !default;
+
 // Helpers return think like list sums and column counts
 @import "singularitygs/helpers";
 

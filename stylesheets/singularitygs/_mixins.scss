@@ -76,3 +76,139 @@
     *behavior: url('../behaviors/box-sizing/boxsizing.php');
   }
 }
+
+//////////////////////////////
+// Container Mixin
+//////////////////////////////
+@mixin container($max-width: $container, $bfs: $base-font-size) {
+  $bfs-length: length($bfs);
+  $bfs-counter: 1;
+  
+  @if length($containers) != 0 {
+    $query: 'min-width';
+    @if $grids-mobile-first == false {
+      $query: 'max-width';
+    }
+    
+    $total: length($containers);
+    
+    @if $total > 1 {
+      @for $i from 2 through $total {
+        $bfs-holder: '';
+        @if ($bfs-counter + 1) > $bfs-length {
+          $bfs-holder: nth($base-font-size, $bfs-counter);
+        }
+        @else {
+          $bfs-counter: $bfs-counter + 1;
+          $bfs-holder: nth($base-font-size, $bfs-counter);
+        }
+        
+        @include breakpoint((nth(nth($containers, $i), 2) $query)) {
+          @if unit(nth(nth($containers, $i), 1)) != '%' and $container-to-ems == true {
+            max-width: base-conversion(nth(nth($containers, $i), 1)) / base-conversion($bfs-holder) * 1em;;
+          }
+          @else {
+            max-width: nth(nth($containers, $i), 1);
+          }
+        }
+      }
+    }
+    @if unit(nth($containers, 1)) != '%' {
+      max-width: breakpoint-to-base-em(nth($containers, 1), nth($bfs, 1));
+    }
+    @else {
+      max-width: nth($containers, 1);
+    }
+  }
+  @else {
+    @if unit($max-width) != '%' and $container-to-ems == true {
+      max-width: base-conversion($max-width) / base-conversion($bfs) * 1em;
+    }
+    @else {
+      max-width: $max-width;
+    }
+  }
+  
+  //////////////////////////////
+  // Border box and clearfix
+  //////////////////////////////
+  @include box-sizing(border-box);
+  *behavior: url('../behaviors/box-sizing/boxsizing.php');
+  
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  
+  &:after {
+    clear: both;
+  }
+  
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  }
+  /* non-JS fallback */
+  *zoom: 1;
+}
+
+//////////////////////////////
+// Base Font Size in HTML tag
+// NOT DONE YET!
+//////////////////////////////
+//@mixin base-font-sizing($bfs: $base-font-size) {
+//  $bfs-length: length($base-font-size);
+//  $query: 'min-width';
+//  @if $grids-mobile-first == false {
+//    $query: 'max-width';
+//  }
+//  
+//  html {
+//    font-size: nth($bfs, 1);
+//    
+//    @if $bfs-length > 1 {
+//      @for $i from 2 through $bfs-length {
+//        @include breakpoint((nth(nth($bfs, $i), 2) $query)) {
+//          font-size: nth(nth($bfs, $i), 1);
+//        }
+//      }
+//    }
+//  }
+//}
+//
+////////////////////////////////
+//// Find Base Font Size
+////////////////////////////////
+//@function bfs-finder($query) {
+//  $context: breakpoint-get-context($query);
+//  $reverse: reverse($base-font-size);
+//  
+//  @debug $reverse;
+//  @debug $context;
+//  
+//  @if $query == "min-width" {
+//    @each $size in $base-font-size {
+//      @if length($size) == 2 {
+//        @if nth($size, 2) < $context {
+//          @return nth($size, 1);
+//        }
+//      }
+//      @else {
+//        @return nth($base-font-size, 1);
+//      }
+//    }
+//  }
+//  @else if $query == "max-width" {
+//    @each $size in $base-font-size {
+//      @if length($size) == 2 {
+//        @if nth($size, 2) > $context {
+//          @return nth($size, 1);
+//        }
+//      }
+//      @else {
+//        @return nth($base-font-size, 1);
+//      }
+//    }
+//  }
+//}
