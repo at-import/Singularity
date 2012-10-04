@@ -1,0 +1,21 @@
+@import 'singularitygs';
+$container: 960px;
+
+$containers: 100%, 960px 980px, 1024px 1050px;
+$grids-mobile-first: false;
+//$breakpoint-to-ems: true;
+$container-to-ems: true;
+//$base-font-size: 1em, 2em 500px;
+$base-font-size: 1em, 2em;
+
+//@include base-font-sizing;
+
+#foo {
+  @include container;
+}
+//
+//@debug bfs-finder('min-width');
+//
+//@include breakpoint(600px) {
+//  @debug bfs-finder('min-width');
+//}
