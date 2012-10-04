@@ -1,0 +1,9 @@
+@import 'singularitygs';
+
+
+$columns: 10;
+$gutter: .2;
+$padding: 1em;
+$color: green;
+
+@include test-grid($columns, $gutter, $padding, a, $color);
