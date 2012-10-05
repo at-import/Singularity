@@ -2,20 +2,14 @@
 $container: 960px;
 
 $containers: 100%, 960px 980px, 1024px 1050px;
-$grids-mobile-first: false;
+$grids-mobile-first: true;
 //$breakpoint-to-ems: true;
-$container-to-ems: true;
+//$container-to-ems: true;
 //$base-font-size: 1em, 2em 500px;
-$base-font-size: 1em, 2em;
+$base-font-size: 1em, 2em 500px, 3em 1000px;
 
-//@include base-font-sizing;
-
+@include base-font-sizing;
+//
 #foo {
   @include container;
 }
-//
-//@debug bfs-finder('min-width');
-//
-//@include breakpoint(600px) {
-//  @debug bfs-finder('min-width');
-//}
