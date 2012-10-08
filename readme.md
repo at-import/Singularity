@@ -89,7 +89,7 @@ $grids-mobile-first: true;
 // You may specify different gutters for each grid if you so choose. Simply comma seperate 
 //  each gutter. If you have fewer items in $gutters than you have in $grids, the last item in 
 //  $gutters will be used for the remaining items in $grids.
-$grids: .25, .3, .4;
+gutters: .25, .3, .4;
 
 // Just like $gutters, you may set multiple paddings for each grid if you choose. Again, 
 //  simply comma separate each padding. If you have fewer items in $paddings than you have in 
