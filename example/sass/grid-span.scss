@@ -7,13 +7,13 @@ $columns: 2, 4, 3;
 
 // Singularity has a built-in counter so you don’t need to define location
 article:nth-child(1) {
-  @include grid-span(1);
+  @include grid-span(1, 1);
 }
 article:nth-child(2) {
-  @include grid-span(1);
+  @include grid-span(1, 2);
 }
 article:nth-child(3) {
-  @include grid-span(1);
+  @include grid-span(1, 3);
 }
 
 // When not writing in markup order, you need to include the location on the grid your element starts on.
