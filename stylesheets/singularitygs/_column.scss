@@ -11,9 +11,9 @@
 //}
 
 // Calculate the width spanning multiple columns
-@function column-span($span, $location: 1, $columns: $columns) {
+@function column-span($span, $location: 1, $columns: $columns, $gutter: $gutter) {
   $columns-and-gutters: column-sum($columns, $gutter);
-  
+
   // Equal width columns
   @if type-of($columns) == number {
     $span-and-gutter: $span + (($span - 1) * $gutter);
@@ -28,10 +28,10 @@
       @for $i from $location to $location + $span {
         $holder: append($holder, nth(nth($columns, $i), 1), comma);
       }
-      
+
       @return column-sum($holder, $gutter) / $columns-and-gutters * 100%;
   }
-  
+
   @return 10%;
 }
 
