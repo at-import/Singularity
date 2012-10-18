@@ -1,36 +1,23 @@
-@function compound($c1: 1, $c2: 1, $c3: 1, $c4: 1, $c5: 1, $c6: 1) {
-  $common-multiple: $c1 * $c2 * $c3 * $c4 * $c5 * $c6;
+// space seperated list
+@function compound($grids) {
+
+  // Find the base resolution of grid
+  $resolution: 1;
+  @each $item in $grids {
+    $resolution: $resolution * $item;
+  }
+
   $compound-grid: ();
   $compound-counter: 1;
-  @for $i from 1 through $common-multiple {
+  // cycle through each step in grid resolution
+  @for $i from 1 through $resolution {
+
+    // dont add a column by default
     $add-col: false;
-    @if $c1 != 1 {
-      @if $i / $c1 == round($i / $c1) {
-        $add-col: true;
-      }
-    }
-    @if $c2 != 1 {
-      @if $i / $c2 == round($i / $c2) {
-        $add-col: true;
-      }
-    }
-    @if $c3 != 1 {
-      @if $i / $c3 == round($i / $c3) {
-        $add-col: true;
-      }
-    }
-    @if $c4 != 1 {
-      @if $i / $c4 == round($i / $c4) {
-        $add-col: true;
-      }
-    }
-    @if $c5 != 1 {
-      @if $i / $c5 == round($i / $c5) {
-        $add-col: true;
-      }
-    }
-    @if $c6 != 1 {
-      @if $i / $c6 == round($i / $c6) {
+
+    // cycle through all grids to see if any grids match
+    @for $n from 1 through length($grids) {
+      @if $i / nth($grids, $n) == round($i / nth($grids, $n)) {
         $add-col: true;
       }
     }
@@ -44,3 +31,5 @@
   }
   @return $compound-grid;
 }
+
+@debug compound(2 3)
