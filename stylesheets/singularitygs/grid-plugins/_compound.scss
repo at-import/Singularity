@@ -1,9 +1,10 @@
 // space seperated list
-@function compound($grids) {
+@function compound($cg1: 1, $cg2: 1, $cg3: 1, $cg4: 1, $cg5: 1, $cg6: 1, $cg7: 1, $cg8: 1, $cg9: 1, $cg10: 1, $cg11: 1, $cg12: 1, $cg13: 1, $cg14: 1, $cg15: 1, $cg16: 1) {
+  $compound-grids: $cg1, $cg2, $cg3, $cg4, $cg5, $cg6, $cg7, $cg8, $cg9, $cg10, $cg11, $cg12, $cg13, $cg14, $cg15, $cg16;
 
   // Find the base resolution of grid
   $resolution: 1;
-  @each $item in $grids {
+  @each $item in $compound-grids {
     $resolution: $resolution * $item;
   }
 
@@ -16,7 +17,7 @@
     $add-col: false;
 
     // cycle through all grids to see if any grids match
-    @each $grid in $grids {
+    @each $grid in $compound-grids {
 
       // if the grid divides evenly into the resolution, add a column
       // divide the resolution by number of columns to get the column resolution
