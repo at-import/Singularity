@@ -1,5 +1,8 @@
-// space seperated list
+// 16 arguments can be passed into this function
+// a max of 16 comma seperated grids
 @function compound($cg1: 1, $cg2: 1, $cg3: 1, $cg4: 1, $cg5: 1, $cg6: 1, $cg7: 1, $cg8: 1, $cg9: 1, $cg10: 1, $cg11: 1, $cg12: 1, $cg13: 1, $cg14: 1, $cg15: 1, $cg16: 1) {
+
+  // merge arguments into a single list.
   $compound-grids: $cg1, $cg2, $cg3, $cg4, $cg5, $cg6, $cg7, $cg8, $cg9, $cg10, $cg11, $cg12, $cg13, $cg14, $cg15, $cg16;
 
   // Find the base resolution of grid
