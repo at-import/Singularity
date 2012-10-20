@@ -16,20 +16,25 @@
     $add-col: false;
 
     // cycle through all grids to see if any grids match
-    @for $n from 1 through length($grids) {
-      @if $i / nth($grids, $n) == round($i / nth($grids, $n)) {
+    @each $grid in $grids {
+
+      // if the grid divides evenly into the resolution, add a column
+      // divide the resolution by number of columns to get the column resolution
+      @if $i / ($resolution / $grid) == round($i / ($resolution / $grid)) {
         $add-col: true;
       }
     }
+
+    // add the counter value to the compound grid list, reset counter
+    // this marks where one column ends and a new one begins
     @if $add-col {
       $compound-grid: join($compound-grid, $compound-counter, comma);
       $compound-counter: 1;
     }
+    // if no column is added, bump up counter
     @else {
       $compound-counter: $compound-counter + 1;
     }
   }
   @return $compound-grid;
 }
-
-@debug compound(2 3)
