@@ -16,5 +16,6 @@
     $return: reverse($return);
   }
   
+  @debug "Grid compounded to #{length($return)} columns";
   @return $return;
 }
