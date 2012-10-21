@@ -1,5 +1,7 @@
 // percentage conversion
 @function percentage-gutter-conversion($percent-gutter, $columns) {
+
+  // find the resolution of the grids
   $resolution: 0;
   @if length($columns) == 1 {
     $resolution: $columns;
@@ -10,8 +12,9 @@
     }
   }
 
-  //
-  $new-gutter: $resolution * ($percent-gutter / 100%);
+  // divide the percentage gutter by 100% to get the offset
+  // then multiply be resolution for the full conversion
+  $new-gutter: ($percent-gutter / 100%) * $resolution;
 
   @return $new-gutter;
 }
