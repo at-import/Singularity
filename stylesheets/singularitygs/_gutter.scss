@@ -19,15 +19,26 @@
   @return $new-gutter;
 }
 
-@debug percentage-gutter-conversion(2%, 12);
 
 // Gutters to be removed from columns
 @function gutter-offset($gutter, $columns) {
+
+  // if the gutter is a percent, convert it to a ratio
+  @if unit($gutter) == percentage {
+    $gutter: percentage-gutter-conversion($gutter, $columns);
+  }
+
   $gutter-sum: $gutter * (column-count($columns) - 1);
   @return $gutter-sum / column-count($columns);
 }
 
 @function gutter-span($gutter, $columns) {
+  
+  // if the gutter is a percent, convert it to a ratio
+  @if unit($gutter) == percentage {
+    $gutter: percentage-gutter-conversion($gutter, $columns);
+  }
+
   $columns-and-gutters: column-sum($columns, $gutter);
   
   @return $gutter / $columns-and-gutters * 100%;
