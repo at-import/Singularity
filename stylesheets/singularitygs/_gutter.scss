@@ -1,3 +1,23 @@
+// percentage conversion
+@function percentage-gutter-conversion($percent-gutter, $columns) {
+  $resolution: 0;
+  @if length($columns) == 1 {
+    $resolution: $columns;
+  }
+  @else {
+    @each $column in $columns {
+      $resolution: $resolution + $column;
+    }
+  }
+
+  //
+  $new-gutter: $resolution * ($percent-gutter / 100%);
+
+  @return $new-gutter;
+}
+
+@debug percentage-gutter-conversion(2%, 12);
+
 // Gutters to be removed from columns
 @function gutter-offset($gutter, $columns) {
   $gutter-sum: $gutter * (column-count($columns) - 1);
