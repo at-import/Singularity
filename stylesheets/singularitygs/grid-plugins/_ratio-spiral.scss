@@ -1,0 +1,16 @@
+@function ratio-spiral-i($i) {
+  @return (($i * 2) + 1);
+}
+
+@function ratio-spiral($depth: 5, $ratio: golden()) {
+  $list: ms(ratio-spiral-i(-$depth) + 1, 100, $ratio);
+  @for $i from -($depth - 1) to 0 {
+    @if $i/2 == round($i/2) {
+      $list: append($list, ms(ratio-spiral-i($i), 100, $ratio));
+    }
+    @else {
+      $list: append(ms(ratio-spiral-i($i), 100, $ratio), $list);
+    }
+  }
+  @return $list;
+}
