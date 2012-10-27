@@ -16,6 +16,9 @@
     $return: reverse($return);
   }
   
-  @debug "Grid compounded to #{length($return)} columns";
+  @if $singularity-debug {
+    @debug "Grid compounded to #{length($return)} columns";
+  }
+  
   @return $return;
 }

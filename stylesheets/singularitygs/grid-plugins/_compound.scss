@@ -40,6 +40,10 @@
       $compound-counter: $compound-counter + 1;
     }
   }
-  @debug "Grid compounded to #{length($compound-grid)} columns";
+
+  @if $singularity-debug {
+    @debug "Grid compounded to #{length($compound-grid)} columns";
+  }
+
   @return $compound-grid;
 }

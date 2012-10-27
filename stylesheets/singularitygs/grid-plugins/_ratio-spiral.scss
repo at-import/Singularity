@@ -34,5 +34,9 @@
     }
   }
 
+  @if $singularity-debug {
+    @debug "Grid compounded to #{length($list)} columns";
+  }
+
   @return $list;
 }

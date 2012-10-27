@@ -3,6 +3,9 @@
 @import "modular-scale";
 @import "breakpoint";
 
+// Singularity debug output
+$singularity-debug: false !default;
+
 // Can be a number or a list of non-uniform column widths
 $columns: 12 !default;
 
