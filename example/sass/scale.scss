@@ -2,7 +2,7 @@
 
 // Modular scale defaults to the golden ratio.
 
-$columns: ms(2), ms(1), ms(4);
+$columns: ms(2, 10), ms(1, 10), ms(4, 10);
 
 
 // Singularity has a built-in counter so you don’t need to define location
