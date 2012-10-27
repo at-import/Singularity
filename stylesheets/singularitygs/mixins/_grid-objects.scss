@@ -1,0 +1,19 @@
+// This writes classes, IDs, or silent objects for you to extend or use in your HTML. They can be written to different breakpoints to extend or call into your HTML as needed.
+@mixin grid-objects($prefix: a, $columns: $columns, $gutter: $gutter, $padding: $padding, $selector: "%") {
+  $grouped-styles: true;
+  // counter keeps track of the starting position
+  $count: 0;
+  %#{$prefix}column {
+    @include structure-common($columns, $gutter, true);
+  }
+  // This function now labels object prefix+span.location
+  @for $i from 1 through column-count($columns) {
+    @for $n from 1 through (column-count($columns) - $count) {
+      #{$selector}#{$prefix}#{$n}-#{$count + 1} {
+        @extend %#{$prefix}column;
+        @include grid-span($n, $count + 1, $columns, $gutter);
+      }
+    }
+    $count: $count + 1;
+  }
+}

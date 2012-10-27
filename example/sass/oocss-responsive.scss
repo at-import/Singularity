@@ -5,9 +5,15 @@
 
 // no need to set a grid at the smallest size
 
+$columns: 3;
+
+.foo {
+  @include grid-span(1, 1);
+}
+
 @media (min-width: 20em) and (max-width: 40em) {
   // prefix is "a" creating a non uniform 3-column grid with 2% gutters.
-  @include grid-objects(a, 2, 2%, $selector: ".");
+  @include grid-objects(a, $columns, 2%, $selector: ".");
 }
 
 //@media (min-width: 40em) and (max-width: 60em) {

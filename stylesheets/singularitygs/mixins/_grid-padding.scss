@@ -1,0 +1,8 @@
+// Add padding to an object on the grid.
+@mixin grid-padding($padding) {
+  @if $padding != 0 {
+    padding: 0 $padding;
+    @include box-sizing(border-box);
+    *behavior: url('../behaviors/box-sizing/boxsizing.php');
+  }
+}
