@@ -1,19 +1,14 @@
-// calculate the width of individual columns
-//@function list-column-width($location, $columns) {
-//  // send a warning if this is used when $columns is not a list
-//  @if type-of($columns) != list {
-//    @warn "The column-list-sum function requires the variable $columns to be a list.";
-//  }
-//  @else {
-//    // divide the column from its context
-//    @return nth(nth($columns, $location), 1) / list-sum($columns);
-//  }
-//}
-
 // Calculate the width spanning multiple columns
 @function column-span($span, $location: 1, $columns: $columns, $gutter: $gutter) {
-  $columns-and-gutters: column-sum($columns, $gutter);
+  // if the gutter is a percent, convert it to a ratio
   
+  @if unit($gutter) == '%' {
+    $gutter: percentage-gutter-conversion($gutter, $columns);
+  }
+
+  // gutters are a type of column
+  $columns-and-gutters: column-sum($columns, $gutter);
+
   // Equal width columns
   @if type-of($columns) == number {
     $span-and-gutter: $span + (($span - 1) * $gutter);
@@ -28,14 +23,20 @@
       @for $i from $location to $location + $span {
         $holder: append($holder, nth(nth($columns, $i), 1), comma);
       }
-      
+
       @return column-sum($holder, $gutter) / $columns-and-gutters * 100%;
   }
-  
+
   @return 10%;
 }
 
 @function column-sum($columns: $columns, $gutter: $gutter) {
+  
+  // if the gutter is a percent, convert it to a ratio
+  @if unit($gutter) == percentage {
+    $gutter: percentage-gutter-conversion($gutter, $columns);
+  }
+
   @if type-of($columns) == 'number' {
     @return $columns + ((column-count($columns) - 1) * $gutter);
   }

@@ -11,18 +11,18 @@ $gutterset: 5%, 5%, 10%;
 #foo {
   background: red;
   
-  @include gridset-span(1, 1);
+  @include grid-span(1, 1);
   
   @include breakpoint(470px) {
-    @include gridset-span(2, 2);
+    @include grid-span(2, 2);
   }
   
   @include breakpoint(800px) {
-    @include gridset-span(2, 3);
+    @include grid-span(2, 3);
   }
   
   @include breakpoint(1500px) {
-    @include gridset-span(1, 5);
+    @include grid-span(1, 5);
   }
   
 }

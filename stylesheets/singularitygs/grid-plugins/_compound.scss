@@ -1,46 +1,49 @@
-@function compound($c1: 1, $c2: 1, $c3: 1, $c4: 1, $c5: 1, $c6: 1) {
-  $common-multiple: $c1 * $c2 * $c3 * $c4 * $c5 * $c6;
+// 16 arguments can be passed into this function
+// a max of 16 comma seperated grids
+@function compound($cg1: 1, $cg2: 1, $cg3: 1, $cg4: 1, $cg5: 1, $cg6: 1, $cg7: 1, $cg8: 1, $cg9: 1, $cg10: 1, $cg11: 1, $cg12: 1, $cg13: 1, $cg14: 1, $cg15: 1, $cg16: 1) {
+
+  // merge arguments into a single list.
+  $compound-grids: $cg1, $cg2, $cg3, $cg4, $cg5, $cg6, $cg7, $cg8, $cg9, $cg10, $cg11, $cg12, $cg13, $cg14, $cg15, $cg16;
+
+  // Find the base resolution of grid
+  $resolution: 1;
+  @each $item in $compound-grids {
+    $resolution: $resolution * $item;
+  }
+
   $compound-grid: ();
   $compound-counter: 1;
-  @for $i from 1 through $common-multiple {
+  // cycle through each step in grid resolution
+  @for $i from 1 through $resolution {
+
+    // dont add a column by default
     $add-col: false;
-    @if $c1 != 1 {
-      @if $i / $c1 == round($i / $c1) {
+
+    // cycle through all grids to see if any grids match
+    @each $grid in $compound-grids {
+
+      // if the grid divides evenly into the resolution, add a column
+      // divide the resolution by number of columns to get the column resolution
+      @if $i / ($resolution / $grid) == round($i / ($resolution / $grid)) {
         $add-col: true;
       }
     }
-    @if $c2 != 1 {
-      @if $i / $c2 == round($i / $c2) {
-        $add-col: true;
-      }
-    }
-    @if $c3 != 1 {
-      @if $i / $c3 == round($i / $c3) {
-        $add-col: true;
-      }
-    }
-    @if $c4 != 1 {
-      @if $i / $c4 == round($i / $c4) {
-        $add-col: true;
-      }
-    }
-    @if $c5 != 1 {
-      @if $i / $c5 == round($i / $c5) {
-        $add-col: true;
-      }
-    }
-    @if $c6 != 1 {
-      @if $i / $c6 == round($i / $c6) {
-        $add-col: true;
-      }
-    }
+
+    // add the counter value to the compound grid list, reset counter
+    // this marks where one column ends and a new one begins
     @if $add-col {
       $compound-grid: join($compound-grid, $compound-counter, comma);
       $compound-counter: 1;
     }
+    // if no column is added, bump up counter
     @else {
       $compound-counter: $compound-counter + 1;
     }
   }
+
+  @if $singularity-debug {
+    @debug "Grid compounded to #{length($compound-grid)} columns";
+  }
+
   @return $compound-grid;
 }

@@ -6,10 +6,10 @@
   // prefix is "a" creating a non uniform 3-column grid with 2% gutters.
   @include grid-objects(a, (1, 1), 2%);
   article {
-    @extend %a0-1;
+    @extend %a1-1;
   }
   aside.one {
-    @extend %a1-2;
+    @extend %a2-1;
   }
 }
 
@@ -17,10 +17,10 @@
   // prefix is "b" creating a compound 2 and 3 column grid with 1.5% gutters.
   @include grid-objects(b, compound(2, 3), 1.5%);
   article {
-    @extend %b0-3;
+    @extend %b1-3;
   }
   aside.one {
-    @extend %b3-4;
+    @extend %b4-1;
   }
 }
 
@@ -28,12 +28,12 @@
   // prefix is "c" creating a compound 3 and 4 column grid with 1% gutters.
   @include grid-objects(c, compound(3, 4), 1%);
   article {
-    @extend %c0-4;
+    @extend %c1-4;
   }
   aside.one {
-    @extend %c4-5;
+    @extend %c5-1;
   }
   aside.two {
-    @extend %c5-6;
+    @extend %c6-1;
   }
 }

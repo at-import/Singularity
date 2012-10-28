@@ -57,11 +57,12 @@
     @include grid-padding($padding);
     margin-right: $gutter;
   }
+// This function now labels object prefix+span.location
   @for $i from 1 through column-count($columns) {
-    @for $n from $count + 1 through column-count($columns) {
-      #{$selector}#{$prefix}#{$count}-#{$n} {
+    @for $n from 1 through (column-count($columns) - $count) {
+      #{$selector}#{$prefix}#{$n}-#{$count + 1} {
         @extend %#{$prefix}column;
-        @include grid-span($n - $count, $count + 1, $columns, $gutter);
+        @include grid-span($n, $count + 1, $columns, $gutter);
       }
     }
     $count: $count + 1;
@@ -83,18 +84,18 @@
 @mixin container($max-width: $container, $bfs: $base-font-size) {
   $bfs-length: length($bfs);
   $bfs-counter: 1;
-  
+
   @if length($containers) != 0 {
     $query: 'min-width';
     @if $grids-mobile-first == false {
       $query: 'max-width';
     }
-    
+
     $total: length($containers);
-    
+
     @if $total > 1 {
       @for $i from 2 through $total {
-        
+
         @include breakpoint((nth(nth($containers, $i), 2) $query)) {
           $bfs-holder: bfs-finder($query);
           @if unit(nth(nth($containers, $i), 1)) != '%' and $container-to-ems == true {
@@ -121,7 +122,7 @@
       max-width: $max-width;
     }
   }
-  
+
   //////////////////////////////
   // Center Container
   //////////////////////////////
@@ -137,17 +138,17 @@
   //////////////////////////////
   @include box-sizing(border-box);
   *behavior: url('../behaviors/box-sizing/boxsizing.php');
-  
+
   &:before,
   &:after {
     content: "";
     display: table;
   }
-  
+
   &:after {
     clear: both;
   }
-  
+
   @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
     /* for IE 6/7 */
     *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
@@ -166,10 +167,10 @@
   @if $grids-mobile-first == false {
     $query: 'max-width';
   }
-  
+
   html {
     font-size: nth($bfs, 1);
-    
+
     @if $bfs-length > 1 {
       @for $i from 2 through $bfs-length {
         @include breakpoint((nth(nth($bfs, $i), 2) $query)) {
@@ -186,11 +187,11 @@
 @function bfs-finder($query) {
   $context: breakpoint-get-context($query);
   $reverse: reverse($base-font-size);
-  
+
   @if $grids-mobile-first == false {
     $query: 'max-width';
   }
-  
+
   @if $query == "min-width" and $context != false {
     @each $size in $reverse {
       @if length($size) == 2 {
