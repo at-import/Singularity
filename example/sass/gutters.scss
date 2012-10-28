@@ -12,5 +12,5 @@ $gutter: .25;
 }
 
 #bar {
-	@include grid-span(1, 2, $gutter-span: .15);
+	@include grid-span(1, 2, $gutter-span: 5%);
 }
