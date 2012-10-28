@@ -14,11 +14,17 @@
 
 
 
-@mixin structure-common($columns: $columns, $gutter: $gutter, $grouped-styles: false) {
+@mixin structure-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: false) {
   @include box-sizing(border-box);
   *behavior: url("../behaviors/box-sizing/boxsizing.php");
   overflow: hidden;
   *zoom: 1;
+
+  @if $grouped-styles and $padding != 0 {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+
   @if $dir == ltr or $dir == both {
     @if $grid-location == 'middle' {
       @if $grouped-styles {
@@ -94,6 +100,24 @@
 
 
 
-@mixin structure-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $grouped-styles: false) {
+@mixin structure-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: false) {
   width: grid-span($span, $location, $columns, $gutter);
+  // add special left padding
+
+  // Padding
+  @if type-of($columns) == list {
+    @if type-of(nth($columns, $location)) == list {
+      padding-left: nth(nth($columns, $location), 2);
+    }
+    @else if $padding != 0 {
+      padding-left: $padding;
+    }
+    // add special right padding
+    @if type-of(nth($columns, $location + $span - 1)) == list {
+      padding-right: nth(nth($columns, $location + $span - 1), 2);
+    }
+    @else if $padding != 0 {
+      padding-right: $padding;
+    }
+  }
 }

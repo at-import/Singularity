@@ -6,7 +6,7 @@
   // counter keeps track of the starting position
   $count: 0;
   %#{$prefix}column {
-    @include structure-common($columns, $gutter, true);
+    @include structure-common($columns, $gutter, $padding, true);
   }
 
 
@@ -17,7 +17,7 @@
 
         @extend %#{$prefix}column;
         
-        @include structure-section($n, $count + 1, $columns, $gutter, true);
+        @include structure-section($n, $count + 1, $columns, $gutter, $padding, true);
       }
     }
 

@@ -1,18 +1,19 @@
 @import "singularitygs";
 
-@mixin structure-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $grouped-styles: false) {
-  width: grid-span($span, $location, $columns, $gutter);
-}
+// @mixin structure-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: false) {
+//   width: grid-span($span, $location, $columns, $gutter);
+//}
 
 // Write classes by using the period selector.
 
 
 // no need to set a grid at the smallest size
 
-$columns: 3;
+$columns: 1, 1 5px, 1 7px;
+$padding: 10px;
 
 .foo {
-  @include grid-span(1, 1);
+  @include grid-span(2, 1);
 }
 
 @media (min-width: 20em) and (max-width: 40em) {

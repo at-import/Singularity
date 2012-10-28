@@ -6,25 +6,6 @@
   // specific styles
   @include structure-section($span, $location, $columns, $gutter);
   
-  // add special left padding
-  @if type-of($columns) == list {
-    @if type-of(nth($columns, $location)) == list {
-      padding-left: nth(nth($columns, $location), 2);
-    }
-    @else if $padding != 0 {
-      padding-left: $padding;
-    }
-    // add special right padding
-    @if type-of(nth($columns, $location + $span - 1)) == list {
-      padding-right: nth(nth($columns, $location + $span - 1), 2);
-    }
-    @else if $padding != 0 {
-      padding-right: $padding;
-    }
-  }
-  @else if $padding != 0 {
-    padding: 0 $padding;
-  }
   // bump up the counter
   $grid-counter: $location + $span;
   @if $grid-counter > column-count($columns) {
