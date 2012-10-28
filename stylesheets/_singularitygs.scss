@@ -38,6 +38,7 @@ $container-to-ems: false !default;
 $base-font-size: 1em !default;
 
 // Structural templates for grid
+$grouped-styles: false !default;
 @import "singularitygs/grid-structure/float";
 
 

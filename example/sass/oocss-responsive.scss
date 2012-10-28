@@ -1,12 +1,5 @@
 @import "singularitygs";
 
-// @mixin structure-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: false) {
-//   width: grid-span($span, $location, $columns, $gutter);
-//}
-
-// Write classes by using the period selector.
-
-
 // no need to set a grid at the smallest size
 
 $columns: 1, 1 5px, 1 7px;
