@@ -11,7 +11,7 @@
 //}
 
 // Calculate the width spanning multiple columns
-@function column-span($span, $location: 1, $columns: $columns) {
+@function column-span($span, $location: 1, $columns: $columns, $gutter: $gutter) {
   $columns-and-gutters: column-sum($columns, $gutter);
   
   // Equal width columns
