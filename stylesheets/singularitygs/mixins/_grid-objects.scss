@@ -17,7 +17,7 @@
 
         @extend %#{$prefix}column;
         
-        @include structure-section($n, $count + 1, $columns, $gutter);
+        @include structure-section($n, $count + 1, $columns, $gutter, true);
       }
     }
 
