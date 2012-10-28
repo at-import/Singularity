@@ -1,7 +1,11 @@
 @mixin grid-build($span, $location, $columns, $gutter, $padding) {
-  @include box-sizing(border-box);
-  *behavior: url('../behaviors/box-sizing/boxsizing.php');
+  
+  // common components
+  @include structure-common($columns, $gutter);
+  
+  // specific styles
   @include structure-section($span, $location, $columns, $gutter);
+  
   // add special left padding
   @if type-of($columns) == list {
     @if type-of(nth($columns, $location)) == list {
