@@ -1,32 +1,18 @@
-@mixin grid-clear($dir) {
+@mixin float-clear($dir) {
   @if $dir == 'left' {
     clear: right;
-    @if $grouped-styles {
-      margin-right: -100%;
-      float: left;
-    }
   }
   @else if $dir == 'right' {
     clear: left;
-    @if $grouped-styles {
-      margin-left: -100%;
-      float: right;
-    }
   }
   @else if $dir == 'both' {
     clear: both;
-    @if $grouped-styles {
-      margin-right: -100%;
-      float: left;
-    }
   }
 
   @include clearfix;
 }
 
-
-
-@mixin structure-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: false) {
+@mixin float-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
   @include box-sizing(border-box);
   *behavior: url("../behaviors/box-sizing/boxsizing.php");
   overflow: hidden;
@@ -43,80 +29,44 @@
 
 
 
-@mixin structure-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: false) {
+@mixin float-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
   width: grid-span($span, $location, $columns, $gutter);
   // add special left padding
 
   @include grid-location($span, $location, $columns);
 
   @if $dir == ltr or $dir == both {
-    @if $grid-location == 'middle' {
-      @if $grouped-styles == false {
-        margin-right: -100%;
-        float: left;
-        @include grid-clear('left');
-      }
-      margin-left: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
-    }
-    @else if $grid-location == 'first' {
-      @if $grouped-styles == false {
-        margin-right: -100%;
-        float: left;
-        @include grid-clear('left');
-      }
-      margin-left: 0;
+    @if $grid-location == 'middle' or $gird-location == 'first'{
+      float: left;
+      margin-right: gutter-span($gutter, $columns);
+      @include float-clear('right')
     }
     @else if $grid-location == 'last' {
       float: right;
-      margin-right: 0;
-      @include grid-clear('left');
+      @include float-clear('left');
     }
   }
   @if $dir == rtl {
-    @if $grid-location == 'middle' {
-      @if $grouped-styles == false {
-        margin-left: -100%;
-        float: right;
-        @include grid-clear('right');
-      }
-      margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
-    }
-    @else if grid-location == 'first' {
-      @if $grouped-styles {
-        margin-left: -100%;
-        float: right;
-        @include grid-clear('right');
-      }
-      margin-right: 0;
+    @if $grid-location == 'middle' or $gird-location == 'first' {
+      float: right;
+      @include float-clear('left')
+      margin-left: gutter-span($gutter, $columns);
     }
     @else if $grid-location == 'last' {
       float: left;
-      margin-left: 0;
-      @include grid-clear('right');
+      @include float-clear('right');
     }
   }
   @if $dir == both {
     #{$rtl-selector} & {
-      @if $grid-location == 'middle' {
-        @if $grouped-styles {
-          margin-left: -100%;
-          float: right;
-          @include grid-clear('right');
-        }
-        margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
+      @if $grid-location == 'middle' or $gird-location == 'first' {
+        float: right;
+        @include float-clear('left')
+        margin-left: gutter-span($gutter, $columns);
       }
-      @if $grid-location == 'first' {
-        @if $grouped-styles {
-          margin-left: -100%;
-          float: right;
-          @include grid-clear('right');
-        }
-        margin-right: 0;
-      }
-      @if $grid-location == 'last' {
+      @else if $grid-location == 'last' {
         float: left;
-        margin-left: 0;
-        @include grid-clear('right');
+        @include float-clear('right');
       }
     }
   }
@@ -137,4 +87,12 @@
       padding-right: $padding;
     }
   }
+}
+
+@mixin float-structure($span, $location, $columns, $gutter, $padding) {
+  // common components
+  @include float-common($columns, $gutter);
+
+  // specific styles
+  @include float-section($span, $location, $columns, $gutter);
 }
