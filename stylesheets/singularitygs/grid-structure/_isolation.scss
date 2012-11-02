@@ -1,0 +1,146 @@
+@mixin isolation-clear($dir) {
+  @if $dir == 'left' {
+    clear: right;
+    @if $grouped-styles {
+      margin-right: -100%;
+      float: left;
+    }
+  }
+  @else if $dir == 'right' {
+    clear: left;
+    @if $grouped-styles {
+      margin-left: -100%;
+      float: right;
+    }
+  }
+  @else if $dir == 'both' {
+    clear: both;
+    @if $grouped-styles {
+      margin-right: -100%;
+      float: left;
+    }
+  }
+
+  @include clearfix;
+}
+
+@mixin isolation-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
+  @include box-sizing(border-box);
+  *behavior: url("../behaviors/box-sizing/boxsizing.php");
+  overflow: hidden;
+  *zoom: 1;
+
+  @if $grouped-styles and $padding != 0 {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+  @if $grouped-styles == false and $padding != 0 {
+
+  }
+}
+
+
+
+@mixin isolation-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
+  width: grid-span($span, $location, $columns, $gutter);
+  // add special left padding
+
+  @include grid-location($span, $location, $columns);
+
+  @if $dir == ltr or $dir == both {
+    @if $grid-location == 'middle' {
+      @if $grouped-styles == false {
+        margin-right: -100%;
+        float: left;
+        @include isolation-clear('left');
+      }
+      margin-left: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
+    }
+    @else if $grid-location == 'first' {
+      @if $grouped-styles == false {
+        margin-right: -100%;
+        float: left;
+        @include isolation-clear('left');
+      }
+      margin-left: 0;
+    }
+    @else if $grid-location == 'last' {
+      float: right;
+      margin-right: 0;
+      @include isolation-clear('left');
+    }
+  }
+  @if $dir == rtl {
+    @if $grid-location == 'middle' {
+      @if $grouped-styles == false {
+        margin-left: -100%;
+        float: right;
+        @include isolation-clear('right');
+      }
+      margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
+    }
+    @else if grid-location == 'first' {
+      @if $grouped-styles {
+        margin-left: -100%;
+        float: right;
+        @include isolation-clear('right');
+      }
+      margin-right: 0;
+    }
+    @else if $grid-location == 'last' {
+      float: left;
+      margin-left: 0;
+      @include isolation-clear('right');
+    }
+  }
+  @if $dir == both {
+    #{$rtl-selector} & {
+      @if $grid-location == 'middle' {
+        @if $grouped-styles {
+          margin-left: -100%;
+          float: right;
+          @include isolation-clear('right');
+        }
+        margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
+      }
+      @if $grid-location == 'first' {
+        @if $grouped-styles {
+          margin-left: -100%;
+          float: right;
+          @include isolation-clear('right');
+        }
+        margin-right: 0;
+      }
+      @if $grid-location == 'last' {
+        float: left;
+        margin-left: 0;
+        @include isolation-clear('right');
+      }
+    }
+  }
+
+  // Padding
+  @if type-of($columns) == list {
+    @if type-of(nth($columns, $location)) == list {
+      padding-left: nth(nth($columns, $location), 2);
+    }
+    @else if $padding != 0 {
+      padding-left: $padding;
+    }
+    // add special right padding
+    @if type-of(nth($columns, $location + $span - 1)) == list {
+      padding-right: nth(nth($columns, $location + $span - 1), 2);
+    }
+    @else if $padding != 0 {
+      padding-right: $padding;
+    }
+  }
+}
+
+@mixin isolation-structure($span, $location, $columns, $gutter, $padding) {
+  // common components
+  @include isolation-common($columns, $gutter);
+
+  // specific styles
+  @include isolation-section($span, $location, $columns, $gutter);
+}
