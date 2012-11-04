@@ -1,8 +1,8 @@
 // Calculate the width spanning multiple columns
 @function column-span($span, $location: 1, $columns: $columns, $gutter: $gutter) {
-
   // if the gutter is a percent, convert it to a ratio
-  @if unit($gutter) == percentage {
+  
+  @if unit($gutter) == '%' {
     $gutter: percentage-gutter-conversion($gutter, $columns);
   }
 

@@ -1,0 +1,16 @@
+@import "singularitygs";
+
+$columns: 1, 2, 3, 4;
+$gutter: .25;
+
+#container {
+	@include container;
+}
+
+#foo {
+	@include grid-span(1, 2);
+}
+
+#bar {
+	@include grid-span(1, 2, $gutter-span: 5%);
+}
