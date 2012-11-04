@@ -32,42 +32,38 @@
 @mixin float-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
   width: grid-span($span, $location, $columns, $gutter);
   // add special left padding
-
   @include grid-location($span, $location, $columns);
-
+  
   @if $dir == ltr or $dir == both {
-    @if $grid-location == 'middle' or $gird-location == 'first'{
+    @if $grid-location == 'middle' or $grid-location == 'first'{
       float: left;
       margin-right: gutter-span($gutter, $columns);
-      @include float-clear('right')
     }
     @else if $grid-location == 'last' {
       float: right;
-      @include float-clear('left');
     }
+    @include float-clear('left');
   }
   @if $dir == rtl {
-    @if $grid-location == 'middle' or $gird-location == 'first' {
+    @if $grid-location == 'middle' or $grid-location == 'first' {
       float: right;
-      @include float-clear('left')
       margin-left: gutter-span($gutter, $columns);
     }
     @else if $grid-location == 'last' {
       float: left;
-      @include float-clear('right');
     }
+    @include float-clear('right');
   }
   @if $dir == both {
     #{$rtl-selector} & {
-      @if $grid-location == 'middle' or $gird-location == 'first' {
+      @if $grid-location == 'middle' or $grid-location == 'first' {
         float: right;
-        @include float-clear('left')
         margin-left: gutter-span($gutter, $columns);
       }
       @else if $grid-location == 'last' {
         float: left;
-        @include float-clear('right');
       }
+      @include float-clear('right');
     }
   }
 
