@@ -1,0 +1,134 @@
+@import 'singularitygs';
+
+$bkpt: 1000px;
+$grids: 5, 10 ($bkpt - 100px);
+$output: 'float';
+
+body {
+  margin: 0;
+  padding: 0;
+//  @include background-grid($columns, $gutter);
+}
+
+%holder {
+  height: 50vh;
+  background: rgba(blue, .5);
+  
+  &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+//
+.a1, .a2, .a3, .a4, .a5 {
+  @extend %holder;
+}
+
+.a1 {
+  @include grid-span(1, 1);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(1, 1);
+  }
+}
+
+.a2 {
+  @include grid-span(1, 2);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(3, 2);
+  }
+}
+
+.a3 {
+  @include grid-span(1, 3);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(2, 5)
+  }
+}
+
+.a4 {
+  @include grid-span(1, 4);
+  height: 55vh;
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(3, 7);
+  }
+}
+
+.a5 {
+  @include grid-span(1, 5);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(1, 10);
+  }
+}
+
+#nav-left {
+  @extend %holder;
+  @include grid-span(1, 1);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(2, 2)
+  }
+}
+//
+#nav-middle {
+  @extend %holder;
+  @include grid-span(1, 2);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(3, 4)
+  }
+}
+//
+#nav-right {
+  @extend %holder;
+  @include grid-span(2, 3);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(2, 7);
+  }
+}
+
+#content {
+  @extend %holder;
+  @include grid-span(3, 2);
+  
+  @include breakpoint($bkpt) {
+    @include grid-span(4, 3);
+  }
+//  clear: left;
+
+  // CONTEXT of content
+  $columns: 3;
+
+  div {
+    @extend %holder;
+    background: red;
+  }
+  .one {
+    @include grid-span(1, 1);
+  }
+  .two {
+    @include grid-span(1, 2);
+  }
+  .three {
+    @include grid-span(1, 3);
+  }
+}
+
+
+
+
+
+
+
+
+
