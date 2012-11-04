@@ -15,10 +15,6 @@ $gutter: .25 !default;
 // Grid padding can be any type of unit
 $padding: 0 !default;
 
-// Grid structure
-// Only option is float at the moment
-$grid-structure: float !default;
-
 // Layout direction?
 // options are ltr, rtl, both
 $dir: ltr !default;
@@ -41,6 +37,12 @@ $container-to-ems: false !default;
 // Base Font Size
 $base-font-size: 1em !default;
 
+// Structural templates for grid
+$grouped-styles: false !default;
+$output: 'isolation' !default;
+@import "singularitygs/grid-structure/isolation";
+@import "singularitygs/grid-structure/float";
+
 // Helpers return think like list sums and column counts
 @import "singularitygs/helpers";
 
@@ -56,9 +58,6 @@ $base-font-size: 1em !default;
 // Grid math combines column and gutter math
 @import "singularitygs/grid";
 
-// Structural templates for grid
-@import "singularitygs/grid-structure";
-
 // Mixins to write
 @import "singularitygs/mixins";
 
@@ -67,6 +66,3 @@ $base-font-size: 1em !default;
 
 // Mixins to write
 @import "singularitygs/background-grid";
-
-// Gridsets
-@import "singularitygs/gridsets";

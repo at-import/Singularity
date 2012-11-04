@@ -1,5 +1,5 @@
 // Converted old Gridset into Grid Span.
-@mixin grid-span($span, $location, $columns: $columns, $gutter-span: $gutter, $padding-span: $padding) {
+@mixin grid-span($span, $location, $columns: $columns, $gutter-span: $gutter, $padding-span: $padding, $output: $output) {
   $length: length($grids);
   
   @if $length > 0 {
@@ -92,7 +92,7 @@
                       $padding-span: $padding;
                     }
                   }
-                  @include grid-build($span, $location, $grid-columns, $gutter-span, $paddings);
+                  @include grid-build($span, $location, $grid-columns, $gutter-span, $paddings, $output);
                   $written: true;
                   $gutter-span: false;
                   $padding-span: false;
@@ -115,7 +115,7 @@
                     $padding-span: $padding;
                   }
                 }
-                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span);
+                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span, $output);
                 $written: true;
                 $gutter-span: false;
                 $padding-span: false;
@@ -139,7 +139,7 @@
                     $padding-span: $padding;
                   }
                 }
-                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span);
+                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span, $output);
                 $written: true;
                 $gutter-span: false;
                 $padding-span: false;
@@ -165,7 +165,7 @@
                 }
               }
               @if $query-min > $grid-query and $query-max <= $grid-query {
-                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span);
+                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span, $output);
                 $written: true;
                 $gutter-span: false;
                 $padding-span: false;
@@ -189,7 +189,7 @@
                     $padding-span: $padding;
                   }
                 }
-                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span);
+                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span, $output);
                 $written: true;
                 $gutter-span: false;
                 $padding-span: false;
@@ -213,7 +213,7 @@
                     $padding-span: $padding;
                   }
                 }
-                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span);
+                @include grid-build($span, $location, $grid-columns, $gutter-span, $padding-span, $output);
                 $written: true;
                 $gutter-span: false;
                 $padding-span: false;
