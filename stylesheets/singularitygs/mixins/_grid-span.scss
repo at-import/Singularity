@@ -243,7 +243,7 @@
       }
       
       
-      @include grid-build($span, $location, nth($grids, 1), $gutter-span, $padding-span);
+      @include grid-build($span, $location, nth($grids, 1), $gutter-span, $padding-span, $output);
     }
   }
   @else {
