@@ -1,0 +1,41 @@
+//////////////////////////////
+// Mixins to push/pull along the grid
+//////////////////////////////
+
+// Push
+@mixin push($span, $location, $grid: false, $gutter: false) {
+  $columns: find-grid($grid);
+  $gutter: find-gutter($gutter);
+  
+  @if $dir == ltr or $dir == both {
+    margin-left: grid-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns);
+  }
+  @else if $dir == rtl {
+    margin-right: grid-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns);
+  }
+  
+  @if $dir == both {
+    #{$rtl-selector} & {
+      margin-right: grid-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns);
+    }
+  }
+}
+
+// Pull
+@mixin pull($span, $location, $grid: false, $gutter: false) {
+  $columns: find-grid($grid);
+  $gutter: find-gutter($gutter);
+  
+  @if $dir == ltr or $dir == both {
+    margin-left: (grid-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns)) * -1;
+  }
+  @else if $dir == rtl {
+    margin-right: (grid-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns)) * -1;
+  }
+  
+  @if $dir == both {
+    #{$rtl-selector} & {
+      margin-right: (grid-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns)) * -1;
+    }
+  }
+}
