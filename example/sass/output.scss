@@ -4,15 +4,16 @@ $bkpt: 1000px;
 $grids: 5, 10 ($bkpt - 100px);
 $output: 'float';
 $paddings: 5px, 10px, 20px;
-$gutter: .25;
+$gutter: .4;
 
 body {
   margin: 0;
   padding: 0;
-//  @include background-grid($columns, $gutter);
+  @include background-grid($color: #f0a560);
 }
 
 %holder {
+  height: 200px;
   height: 50vh;
   background: rgba(blue, .5);
   
