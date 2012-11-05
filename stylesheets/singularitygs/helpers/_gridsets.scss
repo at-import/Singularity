@@ -1,0 +1,362 @@
+//////////////////////////////
+// Find Grid
+//
+// Finds the grid that you are on
+//////////////////////////////
+@function find-grid($user-columns: false) {
+  $length: length($grids);
+  
+  @if $user-columns != false {
+    @return $user-columns;
+  }
+  @else if $length > 0 {
+    $query-min: breakpoint-get-context('min-width');
+    $query-max: breakpoint-get-context('max-width');
+
+    @if $query-min {
+      $query-min: breakpoint-to-base-em($query-min);
+    }
+    @if $query-max {
+      $query-max: breakpoint-to-base-em($query-max);
+    }
+    
+    $ghr: () !default;
+    
+    @if $query-min or $query-max {
+      @for $j from 2 through $length {
+        $ghr: append($ghr, nth($grids, $j), comma);
+      }
+      
+      $ghr: reverse($ghr);
+      
+      $holder-length: length($ghr);
+      
+      @for $i from 1 through $holder-length {
+        $gridholder: nth($ghr, $i);
+
+        $grid-columns: nth($gridholder, 1);
+        $grid-query: nth($gridholder, 2);
+
+        $grid-query: breakpoint-to-base-em($grid-query);
+
+        @if length($gridholder) < 2 {
+          @warn 'Grid #{$gridholder} needs a breakpoint value!';
+        }
+        @else if $grids-mobile-first {
+          @if $query-min and not $query-max {
+            @if $query-min and $query-max {
+              @if $query-min >= $grid-query and $query-max < $grid-query {
+                @return $grid-columns;
+              }
+            }
+            @else if $query-min >= $grid-query {
+              @return $grid-columns;
+            }
+          }
+          @else {
+            @if $query-max < $grid-query {
+              @return $grid-columns;
+            }
+          }
+        }
+        @else {
+          @if $query-min and $query-max {
+            @if $query-min > $grid-query and $query-max <= $grid-query {
+              @return $grid-columns;
+            }
+          }
+          @else if $query-min and not $query-max {
+            @if $query-min > $grid-query {
+              @return $grid-columns;
+            }
+          }
+          @else {
+            @if $query-max <= $grid-query {
+              @return $grid-columns;
+            }
+          }
+        }
+      }
+    }
+    @else {
+      @return nth($grids, 1);
+    }
+  }
+  @else {
+    @return $columns;
+  }
+}
+
+//////////////////////////////
+// Find Gutters
+//
+// Finds the gutter that you should be using
+//////////////////////////////
+@function find-gutter($user-gutter: false) {
+  $length: length($grids);
+  
+  @if $user-gutter != false {
+    @return $user-gutter;
+  }
+  @else if $length > 0 {
+    $query-min: breakpoint-get-context('min-width');
+    $query-max: breakpoint-get-context('max-width');
+
+    @if $query-min {
+      $query-min: breakpoint-to-base-em($query-min);
+    }
+    @if $query-max {
+      $query-max: breakpoint-to-base-em($query-max);
+    }
+    
+    $ghr: () !default;
+    $ghs: () !default;
+    $gutter-length: length($gutters);
+    
+    @if $query-min or $query-max {
+      @for $j from 2 through $length {
+        $ghr: append($ghr, nth($grids, $j), comma);
+        
+        @if $gutter-length == 0 {
+          $ghs: append($ghs, $gutter);
+        }
+        @else if $j > $gutter-length {
+          $ghs: append($ghs, nth($gutters, $gutter-length));
+        }
+        @else {
+          $ghs: append($ghs, nth($gutters, $j));
+        }
+      }
+            
+      $ghr: reverse($ghr);
+      $gthr: reverse($ghs);
+      
+      $holder-length: length($ghr);
+      
+      @for $i from 1 through $holder-length {
+        $gridholder: nth($ghr, $i);
+
+        $grid-columns: nth($gridholder, 1);
+        $grid-query: nth($gridholder, 2);
+
+        $grid-query: breakpoint-to-base-em($grid-query);
+
+        @if length($gridholder) < 2 {
+          @warn 'Grid #{$gridholder} needs a breakpoint value!';
+        }
+        @else if $grids-mobile-first {
+          @if $query-min and not $query-max {
+            @if $query-min and $query-max {
+              @if $query-min >= $grid-query and $query-max < $grid-query {
+                @if $gutter-length > 0 {
+                  @return nth($gthr, $i);
+                }
+                @else {
+                  @return $gutter;
+                }
+              }
+            }
+            @else if $query-min >= $grid-query {
+              @if $gutter-length > 0 {
+                @return nth($gthr, $i);
+              }
+              @else {
+                @return $gutter;
+              }
+            }
+          }
+          @else {
+            @if $query-max < $grid-query {
+              @if $gutter-length > 0 {
+                @return nth($gthr, $i);
+              }
+              @else {
+                @return $gutter;
+              }
+            }
+          }
+        }
+        @else {
+          @if $query-min and $query-max {
+            @if $query-min > $grid-query and $query-max <= $grid-query {
+              @if $gutter-length > 0 {
+                @return nth($gthr, $i);
+              }
+              @else {
+                @return $gutter;
+              }
+            }
+          }
+          @else if $query-min and not $query-max {
+            @if $query-min > $grid-query {
+              @if $gutter-length > 0 {
+                $gutter-span: nth($gthr, $i);
+              }
+              @else {
+                $gutter-span: $gutter;
+              }
+            }
+          }
+          @else {
+            @if $query-max <= $grid-query {
+              @if $gutter-length > 0 {
+                $gutter-span: nth($gthr, $i);
+              }
+              @else {
+                $gutter-span: $gutter;
+              }
+            }
+          }
+        }
+      }
+    }
+    @else {
+      @if length($gutters) > 0 {
+        @return nth($gutters, 1);
+      }
+      @else {
+        @return $gutter;
+      }
+    }
+  }
+  @else {
+    @return $gutter;
+  }
+}
+
+//////////////////////////////
+// Find Padding
+//
+// Finds the padding that you should be using
+//////////////////////////////
+@function find-padding($user-padding: false) {
+  $length: length($grids);
+  
+  @if $user-padding != false {
+    @return $user-padding;
+  }
+  @else if $length > 0 {
+    $query-min: breakpoint-get-context('min-width');
+    $query-max: breakpoint-get-context('max-width');
+
+    @if $query-min {
+      $query-min: breakpoint-to-base-em($query-min);
+    }
+    @if $query-max {
+      $query-max: breakpoint-to-base-em($query-max);
+    }
+    
+    $ghr: () !default;
+    $phs: () !default;
+    $padding-length: length($paddings);
+    
+    @if $query-min or $query-max {
+      @for $j from 2 through $length {
+        $ghr: append($ghr, nth($grids, $j), comma);
+        
+        @if $padding-length == 0 {
+          $phs: append($phs, $padding);
+        }
+        @else if $j > $padding-length {
+          $phs: append($phs, nth($paddings, $padding-length));
+        }
+        @else {
+          $phs: append($phs, nth($paddings, $j));
+        }
+      }
+            
+      $ghr: reverse($ghr);
+      $phr: reverse($phs);
+      
+      $holder-length: length($ghr);
+      
+      @for $i from 1 through $holder-length {
+        $gridholder: nth($ghr, $i);
+
+        $grid-columns: nth($gridholder, 1);
+        $grid-query: nth($gridholder, 2);
+
+        $grid-query: breakpoint-to-base-em($grid-query);
+
+        @if length($gridholder) < 2 {
+          @warn 'Grid #{$gridholder} needs a breakpoint value!';
+        }
+        @else if $grids-mobile-first {
+          @if $query-min and not $query-max {
+            @if $query-min and $query-max {
+              @if $query-min >= $grid-query and $query-max < $grid-query {
+                @if $padding-length > 0 {
+                  @return nth($phr, $i);
+                }
+                @else {
+                  @return $padding;
+                }
+              }
+            }
+            @else if $query-min >= $grid-query {
+              @if $padding-length > 0 {
+                @return nth($phr, $i);
+              }
+              @else {
+                @return $padding;
+              }
+            }
+          }
+          @else {
+            @if $query-max < $grid-query {
+              @if $padding-length > 0 {
+                @return nth($phr, $i);
+              }
+              @else {
+                @return $padding;
+              }
+            }
+          }
+        }
+        @else {
+          @if $query-min and $query-max {
+            @if $query-min > $grid-query and $query-max <= $grid-query {
+              @if $padding-length > 0 {
+                @return nth($phr, $i);
+              }
+              @else {
+                @return $padding;
+              }
+            }
+          }
+          @else if $query-min and not $query-max {
+            @if $query-min > $grid-query {
+              @if $padding-length > 0 {
+                $padding-span: nth($phr, $i);
+              }
+              @else {
+                $padding-span: $padding;
+              }
+            }
+          }
+          @else {
+            @if $query-max <= $grid-query {
+              @if $padding-length > 0 {
+                $padding-span: nth($phr, $i);
+              }
+              @else {
+                $padding-span: $padding;
+              }
+            }
+          }
+        }
+      }
+    }
+    @else {
+      @if length($paddings) > 0 {
+        @return nth($paddings, 1);
+      }
+      @else {
+        @return $padding;
+      }
+    }
+  }
+  @else {
+    @return $padding;
+  }
+}
