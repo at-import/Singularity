@@ -54,7 +54,6 @@
         float: left;
         @include isolation-clear('left');
       }
-      margin-left: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
     }
     @else if $grid-location == 'first' {
       @if $grouped-styles == false {
@@ -77,7 +76,6 @@
         float: right;
         @include isolation-clear('right');
       }
-      margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
     }
     @else if grid-location == 'first' {
       @if $grouped-styles {
@@ -101,7 +99,6 @@
           float: right;
           @include isolation-clear('right');
         }
-        margin-right: grid-span($location - 1, 1, $columns, $gutter) + gutter-span($gutter, $columns);
       }
       @if $grid-location == 'first' {
         @if $grouped-styles {
@@ -118,6 +115,8 @@
       }
     }
   }
+  
+  @include push($location - 1, 1, $columns, $gutter);
 
   // Padding
   @if type-of($columns) == list {
