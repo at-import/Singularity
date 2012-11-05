@@ -1,3 +1,6 @@
-@function grid-span($span, $location: 1, $columns: $columns, $gutter: $gutter) {
+@function grid-span($span, $location: 1, $columns: false, $gutter: false) {
+  $columns: find-grid($columns);
+  $gutter: find-gutter($gutter);
+  
   @return column-span($span, $location, $columns, $gutter);
 }
