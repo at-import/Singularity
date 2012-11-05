@@ -21,6 +21,29 @@
 }
 
 // Pull in grid stops to make a background gradient
-@mixin background-grid($columns: $columns, $gutter: $gutter, $color: rgba(#69aedb, 0.5)) {
-  @include background(linear-gradient(left, grid-gradient-stops($columns, $gutter, $color)));
+@mixin background-grid($columns: false, $gutter: false, $color: rgba(#69aedb, 0.5)) {
+  $gl: length($grids);
+  
+  @if $gl == 0 {
+    $columns: find-grid($columns);
+    $gutter: find-gutter($gutter);
+    @include background(linear-gradient(left, grid-gradient-stops($columns, $gutter, $color)));
+  }
+  @else {
+    @for $i from 1 through $gl {
+      @if $i == 1 {
+        $grid: nth($grids, 1);
+        $gutter: find-gutter($gutter);
+        @include background(linear-gradient(left, grid-gradient-stops($grid, $gutter, $color)));
+      }
+      @else {
+        $grid: nth(nth($grids, $i), 1);
+        $mq: nth(nth($grids, $i), 2);
+        @include breakpoint($mq) {
+          $gutter: find-gutter($gutter);
+          @include background(linear-gradient(left, grid-gradient-stops($grid, $gutter, $color)));
+        }
+      }
+    }
+  }
 }
