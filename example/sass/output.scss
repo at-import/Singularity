@@ -1,10 +1,10 @@
 @import 'singularitygs';
 
 $bkpt: 1000px;
-$grids: 5, 10 ($bkpt - 100px);
+$grids: 5, 10 ($bkpt);
 $output: 'float';
-$paddings: 5px, 10px, 20px;
-$gutter: .4;
+$paddings: 5px, 7px, 20px;
+$gutters: .25;
 
 body {
   margin: 0;
