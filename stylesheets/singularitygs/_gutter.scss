@@ -14,6 +14,7 @@
 
   // divide the percentage gutter by 100% to get the offset
   // then multiply be resolution for the full conversion
+  @debug $resolution;
   $new-gutter: ($percent-gutter / 100%) * $resolution;
 
   @return $new-gutter;

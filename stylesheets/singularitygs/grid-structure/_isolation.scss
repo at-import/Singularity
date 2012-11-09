@@ -1,21 +1,21 @@
-@mixin isolation-clear($dir) {
+@mixin isolation-clear($dir, $block: both) {
   @if $dir == 'left' {
     clear: right;
-    @if $grouped-styles {
+    @if $block == common {
       margin-right: -100%;
       float: left;
     }
   }
   @else if $dir == 'right' {
     clear: left;
-    @if $grouped-styles {
+    @if $block == common {
       margin-left: -100%;
       float: right;
     }
   }
   @else if $dir == 'both' {
     clear: both;
-    @if $grouped-styles {
+    @if $block == common {
       margin-right: -100%;
       float: left;
     }
@@ -24,24 +24,24 @@
   @include clearfix;
 }
 
-@mixin isolation-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
+@mixin isolation-common($columns: $columns, $gutter: $gutter, $padding: $padding, $block: common) {
   @include box-sizing(border-box);
   *behavior: url("../behaviors/box-sizing/boxsizing.php");
   overflow: hidden;
   *zoom: 1;
 
-  @if $grouped-styles and $padding != 0 {
+  @if $block == common and $padding != 0 {
     padding-left: $padding;
     padding-right: $padding;
   }
-  @if $grouped-styles == false and $padding != 0 {
+  @if $block == both == false and $padding != 0 {
 
   }
 }
 
 
 
-@mixin isolation-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
+@mixin isolation-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $block: section) {
   width: grid-span($span, $location, $columns, $gutter);
   // add special left padding
 
@@ -49,14 +49,14 @@
 
   @if $dir == ltr or $dir == both {
     @if $grid-location == 'middle' {
-      @if $grouped-styles == false {
+      @if $block == section {
         margin-right: -100%;
         float: left;
         @include isolation-clear('left');
       }
     }
     @else if $grid-location == 'first' {
-      @if $grouped-styles == false {
+      @if $block == section {
         margin-right: -100%;
         float: left;
         @include isolation-clear('left');
@@ -71,14 +71,14 @@
   }
   @if $dir == rtl {
     @if $grid-location == 'middle' {
-      @if $grouped-styles == false {
+      @if $block == section {
         margin-left: -100%;
         float: right;
         @include isolation-clear('right');
       }
     }
     @else if grid-location == 'first' {
-      @if $grouped-styles {
+      @if $block == both {
         margin-left: -100%;
         float: right;
         @include isolation-clear('right');
@@ -94,14 +94,14 @@
   @if $dir == both {
     #{$rtl-selector} & {
       @if $grid-location == 'middle' {
-        @if $grouped-styles {
+        @if $block == both {
           margin-left: -100%;
           float: right;
           @include isolation-clear('right');
         }
       }
       @if $grid-location == 'first' {
-        @if $grouped-styles {
+        @if $block == both {
           margin-left: -100%;
           float: right;
           @include isolation-clear('right');
@@ -136,10 +136,11 @@
   }
 }
 
-@mixin isolation-structure($span, $location, $columns, $gutter, $padding) {
+@mixin isolation-structure($span, $location, $columns, $gutter, $padding, $block: both) {
+
   // common components
-  @include isolation-common($columns, $gutter);
+  @include isolation-common($columns, $gutter, $padding, $block);
 
   // specific styles
-  @include isolation-section($span, $location, $columns, $gutter);
+  @include isolation-section($span, $location, $columns, $gutter, $padding, $block);
 }

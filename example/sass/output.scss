@@ -34,14 +34,18 @@ body {
 
 .a1 {
   @include grid-span(1, 1);
-  @debug find-grid();
-  @debug find-gutter();
-  @debug find-padding();
-  @include breakpoint($bkpt) {
+  @if $singularity-debug {
     @debug find-grid();
     @debug find-gutter();
     @debug find-padding();
-    @include grid-span(1, 1);
+  }
+  @include breakpoint($bkpt) {
+    @if $singularity-debug {
+      @debug find-grid();
+      @debug find-gutter();
+      @debug find-padding();
+      @include grid-span(1, 1);
+    }
   }
 }
 

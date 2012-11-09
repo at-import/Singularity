@@ -1,4 +1,4 @@
-@mixin float-clear($dir) {
+@mixin float-clear($dir, $block: both) {
   @if $dir == 'left' {
     clear: right;
   }
@@ -12,50 +12,42 @@
   @include clearfix;
 }
 
-@mixin float-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
-  @include box-sizing(border-box);
-  *behavior: url("../behaviors/box-sizing/boxsizing.php");
-  overflow: hidden;
-  *zoom: 1;
+@mixin float-common($columns: $columns, $gutter: $gutter, $padding: $padding, $block: common) {
+  @if $block != section {
+    @include box-sizing(border-box);
+    *behavior: url("../behaviors/box-sizing/boxsizing.php");
+    overflow: hidden;
+    *zoom: 1;
 
-  @if $grouped-styles and $padding != 0 {
-    padding-left: $padding;
-    padding-right: $padding;
-  }
-  @if $grouped-styles == false and $padding != 0 {
+    @if $block == both and $padding != 0 {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    @if $block == common and $padding != 0 {
 
+    }
   }
 }
 
 
 
-@mixin float-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grouped-styles: $grouped-styles) {
-  width: grid-span($span, $location, $columns, $gutter);
-  // add special left padding
-  @include grid-location($span, $location, $columns);
-  
-  @if $dir == ltr or $dir == both {
-    @if $grid-location == 'middle' or $grid-location == 'first'{
-      float: left;
-      margin-right: gutter-span($gutter, $columns);
+@mixin float-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $block: section) {
+  @if $block == section {
+    width: grid-span($span, $location, $columns, $gutter);
+    // add special left padding
+    @include grid-location($span, $location, $columns);
+    
+    @if $dir == ltr or $dir == both {
+      @if $grid-location == 'middle' or $grid-location == 'first'{
+        float: left;
+        margin-right: gutter-span($gutter, $columns);
+      }
+      @else if $grid-location == 'last' {
+        float: right;
+      }
+      @include float-clear('left');
     }
-    @else if $grid-location == 'last' {
-      float: right;
-    }
-    @include float-clear('left');
-  }
-  @if $dir == rtl {
-    @if $grid-location == 'middle' or $grid-location == 'first' {
-      float: right;
-      margin-left: gutter-span($gutter, $columns);
-    }
-    @else if $grid-location == 'last' {
-      float: left;
-    }
-    @include float-clear('right');
-  }
-  @if $dir == both {
-    #{$rtl-selector} & {
+    @if $dir == rtl {
       @if $grid-location == 'middle' or $grid-location == 'first' {
         float: right;
         margin-left: gutter-span($gutter, $columns);
@@ -65,30 +57,43 @@
       }
       @include float-clear('right');
     }
-  }
+    @if $dir == both {
+      #{$rtl-selector} & {
+        @if $grid-location == 'middle' or $grid-location == 'first' {
+          float: right;
+          margin-left: gutter-span($gutter, $columns);
+        }
+        @else if $grid-location == 'last' {
+          float: left;
+        }
+        @include float-clear('right');
+      }
+    }
 
-  // Padding
-  @if type-of($columns) == list {
-    @if type-of(nth($columns, $location)) == list {
-      padding-left: nth(nth($columns, $location), 2);
-    }
-    @else if $padding != 0 {
-      padding-left: $padding;
-    }
-    // add special right padding
-    @if type-of(nth($columns, $location + $span - 1)) == list {
-      padding-right: nth(nth($columns, $location + $span - 1), 2);
-    }
-    @else if $padding != 0 {
-      padding-right: $padding;
+    // Padding
+    @if type-of($columns) == list {
+      @if type-of(nth($columns, $location)) == list {
+        padding-left: nth(nth($columns, $location), 2);
+      }
+      @else if $padding != 0 {
+        padding-left: $padding;
+      }
+      // add special right padding
+      @if type-of(nth($columns, $location + $span - 1)) == list {
+        padding-right: nth(nth($columns, $location + $span - 1), 2);
+      }
+      @else if $padding != 0 {
+        padding-right: $padding;
+      }
     }
   }
 }
 
-@mixin float-structure($span, $location, $columns, $gutter, $padding) {
+@mixin float-structure($span, $location, $columns, $gutter, $padding, $block: both) {
+
   // common components
-  @include float-common($columns, $gutter);
+  @include float-common($columns, $gutter, $padding, $block);
 
   // specific styles
-  @include float-section($span, $location, $columns, $gutter);
+  @include float-section($span, $location, $columns, $gutter, $padding, $block);
 }
