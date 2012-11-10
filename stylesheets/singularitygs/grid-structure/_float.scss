@@ -1,4 +1,4 @@
-@mixin float-clear($dir, $block: both) {
+@mixin float-clear($dir, $grid-output-block: both) {
   @if $dir == 'left' {
     clear: right;
   }
@@ -12,18 +12,18 @@
   @include clearfix;
 }
 
-@mixin float-common($columns: $columns, $gutter: $gutter, $padding: $padding, $block: common) {
-  @if $block != section {
+@mixin float-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grid-output-block: common) {
+  @if $grid-output-block != section {
     @include box-sizing(border-box);
     *behavior: url("../behaviors/box-sizing/boxsizing.php");
     overflow: hidden;
     *zoom: 1;
 
-    @if $block == both and $padding != 0 {
+    @if $grid-output-block == both and $padding != 0 {
       padding-left: $padding;
       padding-right: $padding;
     }
-    @if $block == common and $padding != 0 {
+    @if $grid-output-block == common and $padding != 0 {
 
     }
   }
@@ -31,8 +31,8 @@
 
 
 
-@mixin float-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $block: section) {
-  @if $block == section {
+@mixin float-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grid-output-block: section) {
+  @if $grid-output-block == section {
     width: grid-span($span, $location, $columns, $gutter);
     // add special left padding
     @include grid-location($span, $location, $columns);
@@ -89,17 +89,17 @@
   }
 }
 
-@mixin float-structure($span, $location, $columns, $gutter, $padding, $block: both) {
-  @if $block == both {
-    @include float-common($columns, $gutter, $padding, $block);
-    @include float-section($span, $location, $columns, $gutter, $padding, $block);
+@mixin float-structure($span, $location, $columns, $gutter, $padding, $grid-output-block: both) {
+  @if $grid-output-block == both {
+    @include float-common($columns, $gutter, $padding, $grid-output-block);
+    @include float-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }
 
-  @if $block == common {
-    @include float-common($columns, $gutter, $padding, $block);
+  @if $grid-output-block == common {
+    @include float-common($columns, $gutter, $padding, $grid-output-block);
   }
 
-  @if $block == section {
-    @include float-section($span, $location, $columns, $gutter, $padding, $block);
+  @if $grid-output-block == section {
+    @include float-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }
 }

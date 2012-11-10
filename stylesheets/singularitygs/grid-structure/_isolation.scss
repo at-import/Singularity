@@ -1,21 +1,21 @@
-@mixin isolation-clear($dir, $block: both) {
+@mixin isolation-clear($dir, $grid-output-block: both) {
   @if $dir == 'left' {
     clear: right;
-    @if $block == common {
+    @if $grid-output-block == common {
       margin-right: -100%;
       float: left;
     }
   }
   @else if $dir == 'right' {
     clear: left;
-    @if $block == common {
+    @if $grid-output-block == common {
       margin-left: -100%;
       float: right;
     }
   }
   @else if $dir == 'both' {
     clear: both;
-    @if $block == common {
+    @if $grid-output-block == common {
       margin-right: -100%;
       float: left;
     }
@@ -24,24 +24,24 @@
   @include clearfix;
 }
 
-@mixin isolation-common($columns: $columns, $gutter: $gutter, $padding: $padding, $block: common) {
+@mixin isolation-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grid-output-block: common) {
   @include box-sizing(border-box);
   *behavior: url("../behaviors/box-sizing/boxsizing.php");
   overflow: hidden;
   *zoom: 1;
 
-  @if $block == common and $padding != 0 {
+  @if $grid-output-block == common and $padding != 0 {
     padding-left: $padding;
     padding-right: $padding;
   }
-  @if $block == both == false and $padding != 0 {
+  @if $grid-output-block == both == false and $padding != 0 {
 
   }
 }
 
 
 
-@mixin isolation-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $block: section) {
+@mixin isolation-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grid-output-block: section) {
   width: grid-span($span, $location, $columns, $gutter);
   // add special left padding
 
@@ -49,14 +49,14 @@
 
   @if $dir == ltr or $dir == both {
     @if $grid-location == 'middle' {
-      @if $block == section {
+      @if $grid-output-block == section {
         margin-right: -100%;
         float: left;
         @include isolation-clear('left');
       }
     }
     @else if $grid-location == 'first' {
-      @if $block == section {
+      @if $grid-output-block == section {
         margin-right: -100%;
         float: left;
         @include isolation-clear('left');
@@ -71,14 +71,14 @@
   }
   @if $dir == rtl {
     @if $grid-location == 'middle' {
-      @if $block == section {
+      @if $grid-output-block == section {
         margin-left: -100%;
         float: right;
         @include isolation-clear('right');
       }
     }
     @else if grid-location == 'first' {
-      @if $block == both {
+      @if $grid-output-block == both {
         margin-left: -100%;
         float: right;
         @include isolation-clear('right');
@@ -94,14 +94,14 @@
   @if $dir == both {
     #{$rtl-selector} & {
       @if $grid-location == 'middle' {
-        @if $block == both {
+        @if $grid-output-block == both {
           margin-left: -100%;
           float: right;
           @include isolation-clear('right');
         }
       }
       @if $grid-location == 'first' {
-        @if $block == both {
+        @if $grid-output-block == both {
           margin-left: -100%;
           float: right;
           @include isolation-clear('right');
@@ -136,17 +136,17 @@
   }
 }
 
-@mixin isolation-structure($span, $location, $columns, $gutter, $padding, $block: both) {
-  @if $block == both {
-    @include isolation-common($columns, $gutter, $padding, $block);
-    @include isolation-section($span, $location, $columns, $gutter, $padding, $block);
+@mixin isolation-structure($span, $location, $columns, $gutter, $padding, $grid-output-block: both) {
+  @if $grid-output-block == both {
+    @include isolation-common($columns, $gutter, $padding, $grid-output-block);
+    @include isolation-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }
 
-  @if $block == common {
-    @include isolation-common($columns, $gutter, $padding, $block);
+  @if $grid-output-block == common {
+    @include isolation-common($columns, $gutter, $padding, $grid-output-block);
   }
 
-  @if $block == section {
-    @include isolation-section($span, $location, $columns, $gutter, $padding, $block);
+  @if $grid-output-block == section {
+    @include isolation-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }
 }
