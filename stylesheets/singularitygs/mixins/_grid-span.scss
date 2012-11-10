@@ -1,4 +1,7 @@
-// Converted old Gridset into Grid Span.
+// The top-level mixin to use on adding elements to a grid.
+
+// This step folds in multiple grids and figures out what should
+// be loaded and figures out what breakpoint you are at.
 @mixin grid-span($span, $location, $columns: false, $gutter-span: false, $padding-span: false, $output: $output) {
   
   $columns: find-grid($columns);
