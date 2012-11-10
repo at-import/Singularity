@@ -89,16 +89,21 @@
   }
 }
 
+// main structure mixin
 @mixin float-structure($span, $location, $columns, $gutter, $padding, $grid-output-block: both) {
+
+  // Full output
   @if $grid-output-block == both {
     @include float-common($columns, $gutter, $padding, $grid-output-block);
     @include float-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }
 
+  // Only the shared components
   @if $grid-output-block == common {
     @include float-common($columns, $gutter, $padding, $grid-output-block);
   }
 
+  // Only the section components
   @if $grid-output-block == section {
     @include float-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }

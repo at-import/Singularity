@@ -136,16 +136,21 @@
   }
 }
 
+// main structure mixin
 @mixin isolation-structure($span, $location, $columns, $gutter, $padding, $grid-output-block: both) {
+
+  // Full output
   @if $grid-output-block == both {
     @include isolation-common($columns, $gutter, $padding, $grid-output-block);
     @include isolation-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }
 
+  // Only the shared components
   @if $grid-output-block == common {
     @include isolation-common($columns, $gutter, $padding, $grid-output-block);
   }
 
+  // Only the section components
   @if $grid-output-block == section {
     @include isolation-section($span, $location, $columns, $gutter, $padding, $grid-output-block);
   }
