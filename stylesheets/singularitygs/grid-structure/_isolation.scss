@@ -137,10 +137,16 @@
 }
 
 @mixin isolation-structure($span, $location, $columns, $gutter, $padding, $block: both) {
+  @if $block == both {
+    @include isolation-common($columns, $gutter, $padding, $block);
+    @include isolation-section($span, $location, $columns, $gutter, $padding, $block);
+  }
 
-  // common components
-  @include isolation-common($columns, $gutter, $padding, $block);
+  @if $block == common {
+    @include isolation-common($columns, $gutter, $padding, $block);
+  }
 
-  // specific styles
-  @include isolation-section($span, $location, $columns, $gutter, $padding, $block);
+  @if $block == section {
+    @include isolation-section($span, $location, $columns, $gutter, $padding, $block);
+  }
 }

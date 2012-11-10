@@ -90,10 +90,16 @@
 }
 
 @mixin float-structure($span, $location, $columns, $gutter, $padding, $block: both) {
+  @if $block == both {
+    @include float-common($columns, $gutter, $padding, $block);
+    @include float-section($span, $location, $columns, $gutter, $padding, $block);
+  }
 
-  // common components
-  @include float-common($columns, $gutter, $padding, $block);
+  @if $block == common {
+    @include float-common($columns, $gutter, $padding, $block);
+  }
 
-  // specific styles
-  @include float-section($span, $location, $columns, $gutter, $padding, $block);
+  @if $block == section {
+    @include float-section($span, $location, $columns, $gutter, $padding, $block);
+  }
 }
