@@ -41,8 +41,8 @@ $base-font-size: 1em !default;
 $output: 'isolation' !default;
 
 
-@import "singularitygs/grid-structure/isolation";
-@import "singularitygs/grid-structure/float";
+@import "singularitygs/grid-structure";
+@import "singularitygs/grid-structure";
 
 // Helpers return think like list sums and column counts
 @import "singularitygs/helpers";
