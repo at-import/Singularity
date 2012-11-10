@@ -3,3 +3,4 @@
 *.scssc
 *.gem
 example/css/
+Gemfile.lock
