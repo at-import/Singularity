@@ -1,2 +1,14 @@
 @import "grid-structure/float";
 @import "grid-structure/isolation";
+
+// main structure mixin
+@mixin grid-structure($output, $span, $location, $columns, $gutter, $padding, $grid-output-block: both) {
+
+  @if $output == float {
+    @include float-structure($span, $location, $columns, $gutter, $padding, $grid-output-block)
+  }
+
+  @if $output == isolation {
+    @include isolation-structure($span, $location, $columns, $gutter, $padding, $grid-output-block)
+  }
+}

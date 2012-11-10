@@ -1,12 +1,7 @@
 @mixin grid-build($span, $location, $columns, $gutter, $padding, $output) {
   
   
-  @if $output == 'isolation' {
-    @include isolation-structure($span, $location, $columns, $gutter, $padding);
-  }
-  @else if $output == 'float' {
-    @include float-structure($span, $location, $columns, $gutter, $padding);
-  }
+  @include grid-structure($output, $span, $location, $columns, $gutter, $padding);
   
   // bump up the counter
   $grid-counter: $location + $span;

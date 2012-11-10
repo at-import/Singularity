@@ -6,12 +6,9 @@
   // counter keeps track of the starting position
   $count: 0;
   %#{$prefix}column {
-    @if $output == float {
-      @include float-structure(1, 1, $columns, $gutter, $padding, common);
-    }
-    @if $output == isolation {
-      @include isolation-structure(1, 1, $columns, $gutter, $padding, common);
-    }
+
+    @include grid-structure($output, 1, 1, $columns, $gutter, $padding, common);
+
   }
 
 
@@ -21,13 +18,8 @@
       #{$selector}#{$prefix}#{$n}-#{$count + 1} {
 
         @extend %#{$prefix}column;
+        @include grid-structure($output, $n, $count + 1, $columns, $gutter, $padding, section);
 
-        @if $output == float {
-          @include float-structure($n, $count + 1, $columns, $gutter, $padding, section);
-        }
-        @if $output == isolation {
-          @include isolation-structure($n, $count + 1, $columns, $gutter, $padding, section);
-        }
       }
     }
 
