@@ -22,7 +22,12 @@
 
         @extend %#{$prefix}column;
 
-        @include isolation-structure($n, $count + 1, $columns, $gutter, $padding, section);
+        @if $output == float {
+          @include float-structure($n, $count + 1, $columns, $gutter, $padding, section);
+        }
+        @if $output == isolation {
+          @include isolation-structure($n, $count + 1, $columns, $gutter, $padding, section);
+        }
       }
     }
 
