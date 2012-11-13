@@ -37,6 +37,32 @@
   @if $grid-output-block == both == false and $padding != 0 {
 
   }
+
+
+  @if $dir == ltr or $dir == both {
+    @if $grid-output-block == common {
+      margin-right: -100%;
+      float: left;
+      @include isolation-clear('left');
+    }
+  }
+  @if $dir == rtl {
+    @if $grid-output-block == common {
+      margin-left: -100%;
+      float: right;
+      @include isolation-clear('right');
+    }
+  }
+  @if $dir == both {
+    #{$rtl-selector} & {
+      @if $grid-output-block == common {
+        margin-left: -100%;
+        float: right;
+        @include isolation-clear('right');
+      }
+    }
+  }
+
 }
 
 

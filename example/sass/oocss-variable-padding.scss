@@ -3,13 +3,25 @@
 // Padding can be defined globally:
 $padding: 1em;
 
+.testgrid {
+  clear: both;
+  height: 200px;
+}
+
+.column {
+  background-color: rgba(#00f, .25);
+  height: 200px;
+  width: 0;
+}
+
 // or overridden in the column list:
 // note the second column has 5% padding and the third has 10px padding.
 $columns: 2, 4 5%, 3 10px, 5, 1;
-
 
 // write your grid however you wish, here I am writing class based grid objects with a prefix of "a".
 .baz {
   @include grid-span(1, 2)
 }
 @include grid-objects(a, $selector: ".");
+
+
