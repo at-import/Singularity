@@ -48,20 +48,12 @@
   @include grid-location($span, $location, $columns);
 
   @if $dir == ltr or $dir == both {
-    @if $grid-location == 'middle' {
-      @if $grid-output-block == section {
+    @if $grid-location == 'first' or $grid-location == 'middle' {
+      @if $grid-output-block == both {
         margin-right: -100%;
         float: left;
         @include isolation-clear('left');
       }
-    }
-    @else if $grid-location == 'first' {
-      @if $grid-output-block == section {
-        margin-right: -100%;
-        float: left;
-        @include isolation-clear('left');
-      }
-      margin-left: 0;
     }
     @else if $grid-location == 'last' {
       float: right;
@@ -70,20 +62,12 @@
     }
   }
   @if $dir == rtl {
-    @if $grid-location == 'middle' {
-      @if $grid-output-block == section {
-        margin-left: -100%;
-        float: right;
-        @include isolation-clear('right');
-      }
-    }
-    @else if grid-location == 'first' {
+    @if grid-location == 'first' or $grid-location == 'middle' {
       @if $grid-output-block == both {
         margin-left: -100%;
         float: right;
         @include isolation-clear('right');
       }
-      margin-right: 0;
     }
     @else if $grid-location == 'last' {
       float: left;
