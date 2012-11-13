@@ -28,7 +28,6 @@
   @include box-sizing(border-box);
   *behavior: url("../behaviors/box-sizing/boxsizing.php");
   overflow: hidden;
-  *zoom: 1;
 
   @if $grid-output-block == common and $padding != 0 {
     padding-left: $padding;
