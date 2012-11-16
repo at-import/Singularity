@@ -19,12 +19,17 @@
     overflow: hidden;
     *zoom: 1;
 
-    @if $grid-output-block == both and $padding != 0 {
-      padding-left: $padding;
-      padding-right: $padding;
-    }
-    @if $grid-output-block == common and $padding != 0 {
-
+    @if $grid-output-block == both or $grid-output-block == common {
+      @if $padding != 0 {
+        @if type-of($padding) == 'list' {
+          padding-left: nth($padding, 1);
+        padding-right: nth($padding, 2);
+        }
+        @else {
+          padding-left: $padding;
+          padding-right: $padding;
+        }
+      }
     }
   }
 }
@@ -32,11 +37,11 @@
 
 
 @mixin float-section($span, $location: $grid-counter, $columns: $columns, $gutter: $gutter, $padding: $padding, $grid-output-block: section) {
-  @if $grid-output-block == section {
+  @if $grid-output-block == section or $grid-output-block == both {
     width: grid-span($span, $location, $columns, $gutter);
     // add special left padding
     @include grid-location($span, $location, $columns);
-    
+
     @if $dir == ltr or $dir == both {
       @if $grid-location == 'middle' or $grid-location == 'first'{
         float: left;
@@ -67,23 +72,6 @@
           float: left;
         }
         @include float-clear('right');
-      }
-    }
-
-    // Padding
-    @if type-of($columns) == list {
-      @if type-of(nth($columns, $location)) == list {
-        padding-left: nth(nth($columns, $location), 2);
-      }
-      @else if $padding != 0 {
-        padding-left: $padding;
-      }
-      // add special right padding
-      @if type-of(nth($columns, $location + $span - 1)) == list {
-        padding-right: nth(nth($columns, $location + $span - 1), 2);
-      }
-      @else if $padding != 0 {
-        padding-right: $padding;
       }
     }
   }
