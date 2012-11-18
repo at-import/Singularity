@@ -1,2 +1,16 @@
 // import gridset directly into Singularity.
 
+// Grid by grid import is easy, parsing mixins for breakpoints is more diffucult.
+@mixin import-gridset-grid($prefix) {
+  $columns: gs-grid($prefix);
+  $gutter: gs-gutter($prefix);
+}
+
+
+// Need a variable with a list of prefixes and functions.
+// Also need funcitons that list breakpoints to parse.
+@mixin import-gridset() {
+  // @for each $grid in $gs-prefixes {
+  //   placeholder
+  // }
+}
