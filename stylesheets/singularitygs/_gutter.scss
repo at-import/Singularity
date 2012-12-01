@@ -24,7 +24,7 @@
 @function gutter-offset($gutter, $columns) {
 
   // if the gutter is a percent, convert it to a ratio
-  @if unit($gutter) == percentage {
+  @if unit($gutter) == '%' {
     $gutter: percentage-gutter-conversion($gutter, $columns);
   }
 
@@ -35,7 +35,7 @@
 @function gutter-span($gutter, $columns) {
   
   // if the gutter is a percent, convert it to a ratio
-  @if unit($gutter) == percentage {
+  @if unit($gutter) == '%' {
     $gutter: percentage-gutter-conversion($gutter, $columns);
   }
 
