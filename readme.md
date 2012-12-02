@@ -4,12 +4,12 @@
 
 ## Installing Singularity
 
-Make sure you have Compass and the Sass 3.2 alpha installed
+Make sure you have Compass and Sass 3.2 or greater installed
 
 Install Singularity
 
 ```
-$ gem install singularitygs
+$ gem install singularitygs --pre
 ```
 
 Require Compass and Singularity into your Compass config.rb
@@ -34,17 +34,41 @@ Make sure the installed `behaviors` folder is at the same level as your CSS fold
 
 ## Using Singularity
 
-First lets get started with how you are going to use Singularity. It uses mixins and focuses on non-uniform grids. Unlike uniform grids where all the columns are the same, Singularity needs to not only know how many columns your element spans, but also where it is located.
+Singularity is designed to be a powerful and super flexible grid system allowing you to not only build symmetric (uniform) grids or but asymmetric (non uniform) grids, but allows you to change the way your grid is built.
+
+Singularity supports two different outputs, the traditional Float output and the new Rounding Error Isolation method meant to eliminate issues some browsers have with rounding percentages. To figure out which one works best for you, see [On Responsive Design's Dirty Little Secret](http://snugug.com/musings/on-responsive-designs-dirty-little-secret).
+
+First, let's set the output we want to use. By default, Singularity uses the Rounding Error Isolation method for its output. If you would like to use the traditional Float method, set the `$output` variable after you've imported Singularity.
+
+```scss
+$output: 'isolation'	// Rounding Error Isolation method, Default
+$output: 'float'		// Traditional Float method
+```
+
+Let's get started with how you are going to use Singularity. Singularity uses mixins works equally well with uniform and non uniform grids. The basic mixin to align something to the grid is as follows.
 
 ```scss
 @include grid-span($span, $location);
 ```
+When using Float output and a uniform grid, simply put in how many columns you'd like your element to span. If this is the last element in a row, set `$location` to `'last'`. Let's say you want one element to span eight columns, you'd write the following.
 
-So lets say you want an element to span two columns starting at the third column
+```scss
+@include grid-span(8);
+```
+
+If you then want an element to span four columns and have that item be the last in the row, you'd write the following.
+
+```scss
+@include grid-span(4, 'last');
+```
+
+If, however, you are not using Isolation output, or are using a non uniform grid, Singularity needs to not only know how many columns your element spans, but also where it is located. Let's say you want an element to span two columns starting at the third column, you'd write the following.
 
 ```scss
 @include grid-span(2, 3);
 ```
+
+All of the examples that follow assume Isolation output.
 
 ### Setting up your grid
 
