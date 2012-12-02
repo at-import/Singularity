@@ -4,8 +4,11 @@
 // be loaded and figures out what breakpoint you are at.
 @mixin grid-span($span, $location: false, $columns: false, $gutter-span: false, $padding-span: false, $output: $output) {
   
+  $error: false;
+  
   @if $output != 'float' and $location == false {
     @warn 'Location is required for #{$output} based grids';
+    $error: true;
   }
   @else {
     $columns: find-grid($columns);
@@ -15,13 +18,14 @@
     }
     @else if type-of($columns) != 'number' and $location == false {
       @warn 'Location is required for asymmetric grids!';
+      $error: true;
     }
     @else if type-of($columns) == 'number' and $output == 'float' {
       $location: 1;
     }
   }
   
-  @if $location != false {
+  @if $error == false {
     $gutter-span: find-gutter($gutter-span);
     $padding-span: find-padding($padding-span, $span, $location, $columns);
 
