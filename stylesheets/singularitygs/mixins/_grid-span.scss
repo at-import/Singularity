@@ -2,11 +2,29 @@
 
 // This step folds in multiple grids and figures out what should
 // be loaded and figures out what breakpoint you are at.
-@mixin grid-span($span, $location, $columns: false, $gutter-span: false, $padding-span: false, $output: $output) {
+@mixin grid-span($span, $location: false, $columns: false, $gutter-span: false, $padding-span: false, $output: $output) {
+  
+  @if $output != 'float' and $location == false {
+    @warn 'Location is required for #{$output} based grids';
+  }
+  @else {
+    $columns: find-grid($columns);
+    
+    @if $location == 'last' {
+      $location: $columns - $span + 1;
+    }
+    @else if type-of($columns) != 'number' and $location == false {
+      @warn 'Location is required for asymmetric grids!';
+    }
+    @else if type-of($columns) == 'number' and $output == 'float' {
+      $location: 1;
+    }
+  }
+  
+  @if $location != false {
+    $gutter-span: find-gutter($gutter-span);
+    $padding-span: find-padding($padding-span, $span, $location, $columns);
 
-  $columns: find-grid($columns);
-  $gutter-span: find-gutter($gutter-span);
-  $padding-span: find-padding($padding-span, $span, $location, $columns);
-
-  @include grid-build($span, $location, $columns, $gutter-span, $padding-span, $output);
+    @include grid-build($span, $location, $columns, $gutter-span, $padding-span, $output);
+  }
 }
