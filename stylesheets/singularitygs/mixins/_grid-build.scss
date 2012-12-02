@@ -1,6 +1,4 @@
 @mixin grid-build($span, $location, $columns, $gutter, $padding, $output) {
-  
-  
   @include grid-structure($output, $span, $location, $columns, $gutter, $padding);
   
   // bump up the counter
