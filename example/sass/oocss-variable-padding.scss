@@ -1,8 +1,5 @@
 @import "singularitygs";
 
-// Padding can be defined globally:
-$padding: 1em;
-
 .testgrid {
   clear: both;
   height: 200px;
@@ -16,12 +13,23 @@ $padding: 1em;
 
 // or overridden in the column list:
 // note the second column has 5% padding and the third has 10px padding.
-$columns: 2, 4 5%, 3 10px, 5, 1;
+// $columns: 2, 20, 32, 6, 9;
+$gutter: .3;
+$grids: (1 3 1), (1 4 2 2 1) 600px;
 
-// write your grid however you wish, here I am writing class based grid objects with a prefix of "a".
-.baz {
-  @include grid-span(1, 2)
+// @include grid-objects(a, $selector: ".");
+
+.testgrid.sass {
+  @for $i from 1 through 3 {
+    :nth-child(#{$i}) {
+      @include grid-span(1, $i);
+    }
+  }
+  @include breakpoint(600px) {
+    @for $i from 1 through 5 {
+      :nth-child(#{$i}) {
+        @include grid-span(1, $i);
+      }
+    }
+  }
 }
-@include grid-objects(a, $selector: ".");
-
-

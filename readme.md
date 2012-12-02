@@ -34,6 +34,96 @@ Make sure the installed `behaviors` folder is at the same level as your CSS fold
 
 ## Using Singularity
 
+First lets get started with how you are going to use Singularity. It uses mixins and focuses on non-uniform grids. Unlike uniform grids where all the columns are the same, Singularity needs to not only know how many columns your element spans, but also where it is located.
+
+```scss
+@include grid-span($span, $location);
+```
+
+So lets say you want an element to span two columns starting at the third column
+
+```scss
+@include grid-span(2, 3);
+```
+
+### Setting up your grid
+
+Singularitys syntax is ratio based which helps define non-uniform grids. Lets get started with a single grid and see how this works.
+
+The `$columns` variable is where you put, well, your columns for a single grid. Lets do 4 even columns to start:
+
+```scss
+$columns: 4;
+```
+
+Great! that easy for uniform grids but the real power Singularity has is in non-uniform grids. Lets start to define relationships between 4 equal columns. We know each of those columns is 25% wide, so lets try expressing our grid that way:
+
+```scss
+$columns: 25% 25% 25% 25%;
+```
+
+Because Singularity deals with the relationships between numbers, these values can all be tweaked. In fact, we don’t even need a unit on there. Lets make the second column a little bigger and the third column a little smaller:
+
+```scss
+$columns: 25 30 20 25;
+```
+
+Now, lets say you have a mock in Photoshop and all the values are pixels? Just pass the values through:
+
+```scss
+$columns: 20px 500px 220px 220px;
+```
+
+See the ratios yet? If you write `1 2 3` then the second column will be twice the width of the first, and the third column will be three times that of the first, and because the sum of the first two is three it will also be half of the width of the wrapping element.
+
+Using this methidology you can even write Sass functions that create patterns. (refrence)
+
+### Gutters
+
+Gutters are treated like a column and use the same ratios in the columns. Here is an example of a five column grid where the gutter is 20% of the column width.
+
+```scss
+$columns: 1 1 1 1 1;
+$gutter: .2;
+```
+
+If you like percents, they will be converted for you and you can write a 2% gutter like this:
+
+```scss
+$columns: 1 1 1 1 1;
+$gutter: 2%;
+```
+
+That said, there are a few advantages to a ratio-based gutters instead of percent based gutters:
+
+* They scale automatically when nesting columns as their relationship remains based on the columns around them, not the container.
+* As you add more columns the gutters will shrink in proportion to the columns shrinking.
+
+### Working with multiple grids
+
+Chances are, your site is responsive. Singularity leverages Breakpoint to keep track of your context and the current grid you are using. Lets work mobile first and start with a three column grid.
+
+```scss
+$grids: (1 3 1);
+```
+
+This won’t work yet untill we add another breakpoint. Lets add a five column grid at 600px:
+
+```scss
+$grids: (1 3 1), (1 4 2 2 1) 600px;
+```
+
+Now, when you apply somthing to a grid, Singularity will know what context you are in and use the appropriate grid.
+
+```scss
+.column-foo {
+  @include grid-span(2, 1);
+  @include breakpoint(600px) {
+    @include grid-span(2, 2);
+  }
+}
+```
+
 ### Basic Usage
 
 There are two basic ways to use Singularity; either with a single grid or with multiple grids.
