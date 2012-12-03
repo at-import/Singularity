@@ -62,7 +62,7 @@ If you then want an element to span four columns and have that item be the last 
 @include grid-span(4, 'last');
 ```
 
-If, however, you are not using Isolation output, or are using a non uniform grid, Singularity needs to not only know how many columns your element spans, but also where it is located. Let's say you want an element to span two columns starting at the third column, you'd write the following.
+If, however, you are using Isolation output, or are using a non uniform grid, Singularity needs to not only know how many columns your element spans, but also where it is located. Let's say you want an element to span two columns starting at the third column, you'd write the following.
 
 ```scss
 @include grid-span(2, 3);
