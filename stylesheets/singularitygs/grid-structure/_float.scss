@@ -14,16 +14,19 @@
 
 @mixin float-common($columns: $columns, $gutter: $gutter, $padding: $padding, $grid-output-block: common) {
   @if $grid-output-block != section {
-    @include box-sizing(border-box);
-    *behavior: url("../behaviors/box-sizing/boxsizing.php");
-    overflow: hidden;
-    *zoom: 1;
+    //@include box-sizing(border-box);
+    //*behavior: url("../behaviors/box-sizing/boxsizing.php");
+    //overflow: hidden;
+    //*zoom: 1;
+
+    // RWRW This is from personal utility. Won't work outside of it.
+    @include clearfix();
 
     @if $grid-output-block == both or $grid-output-block == common {
       @if $padding != 0 {
         @if type-of($padding) == 'list' {
           padding-left: nth($padding, 1);
-        padding-right: nth($padding, 2);
+          padding-right: nth($padding, 2);
         }
         @else {
           padding-left: $padding;
