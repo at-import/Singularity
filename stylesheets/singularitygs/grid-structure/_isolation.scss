@@ -44,7 +44,6 @@
     }
   }
 
-
   @if $dir == ltr or $dir == both {
     @if $grid-output-block == common {
       margin-right: -100%;
