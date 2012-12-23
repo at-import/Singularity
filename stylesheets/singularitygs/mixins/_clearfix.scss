@@ -1,0 +1,16 @@
+// Wrapper to use either custom or Compass clearfix
+// Custom must be defined by user in custom-clearfix() mixin
+@mixin singularity-clearfix() {
+  @if $custom-clearfix = true {
+    @include custom-clearfix();
+  }
+  @else {
+    @include clearfix();
+
+    // RW: This was only in _container.scss. Needed?
+    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+      /* for IE 6/7 */
+      *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    }
+  }
+}

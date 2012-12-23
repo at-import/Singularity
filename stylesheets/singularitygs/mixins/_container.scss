@@ -41,23 +41,10 @@
   }
 
   // Border box and clearfix
-  @include box-sizing(border-box);
-  *behavior: url('../behaviors/box-sizing/boxsizing.php');
-
-  &:before,
-  &:after {
-    content: "";
-    display: table;
+  @if $set-box-sizing {
+    @include box-sizing(border-box);
+    *behavior: url('../behaviors/box-sizing/boxsizing.php');
   }
 
-  &:after {
-    clear: both;
-  }
-
-  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  }
-  /* non-JS fallback */
-  *zoom: 1;
+  @include singularity-clearfix();
 }
