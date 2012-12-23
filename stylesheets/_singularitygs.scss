@@ -43,7 +43,7 @@ $custom-clearfix: false !default;
 
 // If you're a cool kid who's using universal box-sizing: border-box set this
 // to false and Singularity won't re-declare the rule
-$set-box-sizing: true;
+$set-box-sizing: true !default;
 
 // Structural templates for grid
 $output: 'isolation' !default;

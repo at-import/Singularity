@@ -1,10 +1,10 @@
 // Wrapper to use either custom or Compass clearfix
 // Custom must be defined by user in custom-clearfix() mixin
 @mixin singularity-clearfix() {
-  @if $custom-clearfix = true {
+  @if $custom-clearfix == true {
     @include custom-clearfix();
   }
   @else {
-    @include clearfix();
+    @include pie-clearfix();
   }
 }
