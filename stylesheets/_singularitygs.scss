@@ -37,6 +37,16 @@ $container-to-ems: false !default;
 // Base Font Size
 $base-font-size: 1em !default;
 
+// If you're a cool kid who's using universal box-sizing: border-box set this
+// to false and Singularity won't re-declare the rule
+$set-box-sizing: true !default;
+
+// Tell Singularity to use a specific version of clearfix by adding the
+// singularity-clearfix() mixin alongside your settings variables
+// @mixin singularity-clearfix {
+//   Your custom clearfix
+// }
+
 // Structural templates for grid
 $output: 'isolation' !default;
 
