@@ -1,10 +1,6 @@
-// Wrapper to use either custom or Compass clearfix
-// Custom must be defined by user in custom-clearfix() mixin
+// Mixin that defines Singularity's clearfix
+// Redeclare alongside Singularity settings to override
 @mixin singularity-clearfix() {
-  @if $custom-clearfix == true {
-    @include custom-clearfix();
-  }
-  @else {
-    @include pie-clearfix();
-  }
+  @include pie-clearfix();
+  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
 }
