@@ -10,7 +10,7 @@
   }
 
   @if round($location / 2) == ($location / 2) and  $gutter-span < 1% {
-    $gradient-color: transparentize($color, (opacity($color) / 2));
+    $gradient-color: shade($color, 10%);
   }
 
   $gradient-stops: $gradient-color $previous-span, $gradient-color $column-span;
