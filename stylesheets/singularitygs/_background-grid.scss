@@ -1,16 +1,16 @@
 // Write stops for single columns
-@function grid-gradient-stop($location, $columns, $gutter, $color, $color2) {
+@function grid-gradient-stop($location, $columns, $gutter, $color) {
   $column-span: column-span($location, 1, $columns);
   $gutter-span: gutter-span($gutter, $columns);
-  $previous-span: 0% !default;
+  $previous-span: 0%;
   $gradient-color: $color;
 
   @if $location != 1 {
     $previous-span: column-span($location - 1, 1, $columns) + $gutter-span;
   }
 
-  @if round($location / 2) == ($location / 2) {
-    $gradient-color: $color2;
+  @if round($location / 2) == ($location / 2) and  $gutter-span < 1% {
+    $gradient-color: transparentize($color, (opacity($color) / 2));
   }
 
   $gradient-stops: $gradient-color $previous-span, $gradient-color $column-span;
@@ -24,44 +24,36 @@
 }
 
 // Compiling grid stops
-@function grid-gradient-stops($columns, $gutter, $color, $color2) {
+@function grid-gradient-stops($columns, $gutter, $color) {
   $list: ();
   @for $i from 1 through column-count($columns) {
-    $list: join($list, grid-gradient-stop($i, $columns, $gutter, $color, $color2), comma);
+    $list: join($list, grid-gradient-stop($i, $columns, $gutter, $color), comma);
   }
   @return $list;
 }
 
 // Pull in grid stops to make a background gradient
-@mixin background-grid($columns: false, $gutter: false, $color: rgba(#69aedb, 0.5), $color2: false) {
-
-  @if $color2 == false and ($gutter == 0 or $gutter == false) {
-    $color2: transparentize($color, (opacity($color) / 2));
-  }
-  @else if $color2 == false {
-    $color2: $color;
-  }
-
+@mixin background-grid($columns: false, $gutter: false, $color: rgba(#69aedb, 0.5)) {
   $gl: length($grids);
 
   @if $gl == 0 {
     $columns: find-grid($columns);
     $gutter: find-gutter($gutter);
-    @include background(linear-gradient(left, grid-gradient-stops($columns, $gutter, $color, $color2)));
+    @include background(linear-gradient(left, grid-gradient-stops($columns, $gutter, $color)));
   }
   @else {
     @for $i from 1 through $gl {
       @if $i == 1 {
         $grid: nth($grids, 1);
         $gutter: find-gutter($gutter);
-        @include background(linear-gradient(left, grid-gradient-stops($grid, $gutter, $color, $color2)));
+        @include background(linear-gradient(left, grid-gradient-stops($grid, $gutter, $color)));
       }
       @else {
         $grid: nth(nth($grids, $i), 1);
         $mq: nth(nth($grids, $i), 2);
         @include breakpoint($mq) {
           $gutter: find-gutter($gutter);
-          @include background(linear-gradient(left, grid-gradient-stops($grid, $gutter, $color, $color2)));
+          @include background(linear-gradient(left, grid-gradient-stops($grid, $gutter, $color)));
         }
       }
     }
