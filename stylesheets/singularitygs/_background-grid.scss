@@ -1,14 +1,22 @@
 // Write stops for single columns
 @function grid-gradient-stop($location, $columns, $gutter, $color) {
-  @if $location == 1 {
-    @return $color 0%, $color column-span(1, 1, $columns), transparentize($color, 1) column-span(1, 1, $columns);
+  $previous-span: 0% !default;
+
+  $column-span: column-span($location, 1, $columns);
+  $gutter-span: gutter-span($gutter, $columns);
+
+  @if $location != 1 {
+    $previous-span: column-span($location - 1, 1, $columns) + $gutter-span;
   }
-  @if $location == column-count($columns) {
-    @return transparentize($color, 1) column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), $color column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), $color 100%;
+
+  $gradient-stops: $color $previous-span, $color $column-span;
+
+  @if $location != column-count($columns) {
+    $gutter-stops: transparentize($color, 1) $column-span, transparentize($color, 1) ($column-span + $gutter-span);
+    $gradient-stops: join($gradient-stops, $gutter-stops, comma);
   }
-  @if $location > 1 {
-    @return transparentize($color, 1) column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), $color column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), $color column-span($location, 1, $columns), transparentize($color, 1) column-span($location, 1, $columns);
-  }
+
+  @return $gradient-stops;
 }
 
 // Compiling grid stops
@@ -23,7 +31,7 @@
 // Pull in grid stops to make a background gradient
 @mixin background-grid($columns: false, $gutter: false, $color: rgba(#69aedb, 0.5)) {
   $gl: length($grids);
-  
+
   @if $gl == 0 {
     $columns: find-grid($columns);
     $gutter: find-gutter($gutter);
