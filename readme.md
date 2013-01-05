@@ -1,3 +1,5 @@
+## Development of new features has slowed *but not stopped* as we are [focusing on Susy Next](http://oddbird.net/2013/01/01/susy-next/).
+
 # Singularity.gs
 
 ### Singularity is a powerful and intelligent grid framework for Sass and Compass that not only allows you to create responsive websites on any uniform columnar grid, but has the tools for asymmetric and compound grids built in.
