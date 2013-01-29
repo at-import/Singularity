@@ -1,4 +1,4 @@
-## Development of new features has slowed *but not stopped* as we are [focusing on Susy Next](http://oddbird.net/2013/01/01/susy-next/).
+## Singularity development is now offically stopped as it is rolled into [Susy Next](http://oddbird.net/2013/01/29/susy-next-alpha-1/).
 
 # Singularity.gs
 
