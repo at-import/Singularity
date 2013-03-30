@@ -1,3 +1,14 @@
-@import "helpers/lists";
-@import "helpers/grids";
-@import "helpers/gridsets";
+//////////////////////////////
+// Code Helpers
+//////////////////////////////
+@import "helpers/find";
+@import "helpers/sass-lists";
+@import "helpers/columns";
+@import "helpers/clearfix";
+@import "helpers/box-sizing";
+@import "helpers/span-shared";
+
+//////////////////////////////
+// UI Helpers
+//////////////////////////////
+@import "helpers/background-grid";

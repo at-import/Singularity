@@ -1,68 +1,54 @@
-/*! SINGULARITY -- http://singularity.gs/ */
-@import "compass";
-@import "modular-scale";
+//////////////////////////////
+// Import Required Extensions
+//////////////////////////////
 @import "breakpoint";
 
-// Singularity debug output
-$singularity-debug: false !default;
+//////////////////////////////
+// Default Variables
+//////////////////////////////
 
-// Can be a number or a list of non-uniform column widths
-$columns: 12 !default;
-
-// Must be of the same unit type of defined columns
-$gutter: .25 !default;
-
-// Grid padding can be any type of unit
-$padding: 0 !default;
-
-// Layout direction?
-// options are ltr, rtl, both
-$dir: ltr !default;
-
-// Choose a selector for rtl layouts when using 'both'
-$rtl-selector: '[dir="rtl"]' !default;
-
-// Options for Multiple Grids
+// The grids being used
 $grids: () !default;
+
+// The gutters of the inner columns of the grid
 $gutters: () !default;
-$paddings: () !default;
 
-$grids-mobile-first: true !default;
+// Specifies whether or not you're building mobile-first grids. Defaults to true
+// $mobile-first: true;
 
-// Container Nonsense
-$container: 100% !default;
-$containers: () !default;
-$container-to-ems: false !default;
+// Default output style.
+$output: 'float' !default;
 
-// Base Font Size
-$base-font-size: 1em !default;
+// Whether or not to include border-box or clearfix with all spans
+$include-border-box:  false !default;
+$include-clearfix:    false !default;
 
-// Structural templates for grid
-$output: 'isolation' !default;
-
-
-@import "singularitygs/grid-structure";
-
-// Helpers return think like list sums and column counts
+//////////////////////////////
+// Import General Helpers
+//////////////////////////////
 @import "singularitygs/helpers";
 
-// Compound grid calculation function
-@import "singularitygs/grid-plugins";
+//////////////////////////////
+// Import Language Helpers
+//////////////////////////////
+@import "singularitygs/language";
 
-// Column math is isolated
-@import "singularitygs/column";
+//////////////////////////////
+// Import Math
+//////////////////////////////
+@import "singularitygs/math";
 
-// Gutter math is isolated
-@import "singularitygs/gutter";
+//////////////////////////////
+// Import Grid Helpers
+//////////////////////////////
+@import "singularitygs/grids";
 
-// Grid math combines column and gutter math
-@import "singularitygs/grid";
+//////////////////////////////
+// Import Gutters Helpers
+//////////////////////////////
+@import "singularitygs/gutters";
 
-// Mixins to write
-@import "singularitygs/mixins";
-
-// Mixins to write
-@import "singularitygs/grid-test";
-
-// Mixins to write
-@import "singularitygs/background-grid";
+//////////////////////////////
+// Import APIs
+//////////////////////////////
+@import "singularitygs/api";

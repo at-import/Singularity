@@ -1,10 +1,12 @@
+@import "modular-scale";
+
 // centralize spiral steps.
 @function ratio-spiral-i($i) {
   @return (($i * 2) + 1);
 }
 
 @function ratio-spiral($depth: 5, $ratio: golden(), $invert: false) {
-  
+
   // write the middle most column, a little out of step from the other columns.
   $list: ms(ratio-spiral-i(-$depth) + 1, 100, $ratio);
 
