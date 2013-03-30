@@ -60,13 +60,3 @@
 
   margin-left: $gutter;
 }
-
-@mixin isolate-float($span, $location, $columns: false, $gutter: false) {
-
-  // Find the columns and gutters
-  $columns: find-grid($columns);
-  $gutter: find-gutter($gutter);
-
-  @include push-float($span, $location, $columns, $gutter);
-  margin-right: -100%;
-}

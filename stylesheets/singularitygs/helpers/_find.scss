@@ -2,7 +2,6 @@
 // Find Object
 //
 // Finds relevant object
-// From Singularity
 // Must be using Breakpoint to work properly
 //////////////////////////////
 @function find-object($haystack, $user-object: false) {
@@ -30,9 +29,10 @@
       $largest: nth(nth($reverse-haystack, 1), 2);
       $context: $query-min;
 
-      // @if not ($mobile-first) {
-      //   $context: $query-max;
-      // }
+      @if not ($mobile-first) {
+        $context: $query-max;
+      }
+
 
       // If it's smallest than the smallest MQ, use the 1st grid
       @if $context < $smallest {
@@ -42,21 +42,33 @@
       @else if $context >= $largest {
         @return nth(nth($reverse-haystack, 1), 1);
       }
+      // If it's in between the smallest and largest, go run a check.
       @else {
-        // Loop through each MQ. If the MQ is greather than or equal to the the MQ in question, use it!
+        // Loop through each MQ.
         @for $j from 1 through $rg-length {
           $query: nth(nth($reverse-haystack, $j), 2);
-          @if $context >= $query {
-            @return nth(nth($reverse-haystack, $j), 1);
+
+          // If the MQ is greather than or equal to the the MQ in question, use it! (mobile first)
+          @if ($mobile-first) {
+            @if $context >= $query {
+              @return nth(nth($reverse-haystack, $j), 1);
+            }
+          }
+          // If the MQ is less than or equal to the the MQ in question, use it! (not mobile first)
+          @else {
+            @if $context <= $query {
+              @return nth(nth($reverse-haystack, $j), 1);
+            }
           }
         }
       }
-
     }
+    // All else fails, return the first grid
     @else {
       @return nth($haystack, 1);
     }
   }
+  // All else fails, return the first grid
   @else {
     @return nth($haystack, 1);
   }

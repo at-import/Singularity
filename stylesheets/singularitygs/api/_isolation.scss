@@ -1,15 +1,40 @@
 @mixin output-isolation($span, $location, $columns, $gutter, $options: false) {
-  @include output-float($span, $location, $columns, $gutter);
 
-  clear: none;
+  @if $options == false {
+    $options: 'right';
+  }
 
-  @if not end-row($span, $location, $columns) and $location != 1 {
-    @include isolate-float($location - 1, 1, $columns, $gutter);
+  @if $direction == 'ltr' or $direction == 'both' {
+    // Set the CSS direction to ltr
+    $cssdir: 'ltr';
+    // Find the CSS named direction and opposite direction
+    $dir: named-direction($cssdir);
+    $opp: opposite-direction($dir);
+
+    width: column-span($span, $location, $columns);
+    margin-#{$dir}: column-span($location - 1, 1, $columns);
+    margin-#{$opp}: -100%;
+    float: $dir;
+    clear: $options;
   }
-  @else {
-    margin-right: 0%;
-    margin-left: -100%;
+
+  @if $direction == 'rtl' or $direction == 'both' {
+    // Set the CSS direction to ltr
+    $cssdir: 'rtl';
+    // Find the CSS named direction and opposite direction
+    $dir: named-direction($cssdir);
+    $opp: opposite-direction($dir);
+
+    [dir="#{$cssdir}"] & {
+      width: column-span($span, $location, $columns);
+      margin-#{$dir}: column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns);
+      margin-#{$opp}: -100%;
+      float: $dir;
+      clear: $options;
+    }
   }
+
+  @include span-shared;
 
 }
 
