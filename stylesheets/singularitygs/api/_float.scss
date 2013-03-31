@@ -35,21 +35,25 @@
     }
   }
 
-  @if $dir == 'rtl' or $direction == 'both' {
+  @if $direction == 'rtl' or $direction == 'both' {
     // Set the CSS direction to ltr
     $cssdir: 'rtl';
     // Find the CSS named direction and opposite direction
     $dir: named-direction($cssdir);
     $opp: opposite-direction($dir);
 
-    clear: $opp;
 
-    @if $end-row {
-      float: $opp;
-    }
-    @else {
-      float: $dir;
-      margin-#{$opp}: gutter-span($gutter, $columns);
+    [dir="#{$cssdir}"] & {
+      clear: $opp;
+
+      @if $end-row {
+        float: $opp;
+      }
+      @else {
+        float: $dir;
+        margin-#{$dir}: 0;
+        margin-#{$opp}: gutter-span($gutter, $columns);
+      }
     }
   }
 
