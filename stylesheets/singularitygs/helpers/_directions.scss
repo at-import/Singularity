@@ -3,16 +3,16 @@
 //////////////////////////////
 @function opposite-direction($dir) {
   @if $dir == 'left' {
-    @return 'right';
+    @return right;
   }
   @else if  $dir == 'right' {
-    @return 'left';
+    @return left;
   }
   @else if $dir == 'ltr' {
-    @return 'rtl';
+    @return rtl;
   }
   @else if $dir == 'rtl' {
-    @return 'ltr';
+    @return ltr;
   }
   @else {
     @warn "#{$dir} is not a direction! Make sure your direction is all lowercase!";
@@ -25,10 +25,10 @@
 //////////////////////////////
 @function named-direction($dir) {
   @if $dir == 'ltr' {
-    @return 'left';
+    @return left;
   }
   @else if $dir == 'rtl' {
-    @return 'right';
+    @return right;
   }
   @else {
     @warn "#{$dir} is not a valid HTML direction! Make sure you are using a valid HTML direction";
