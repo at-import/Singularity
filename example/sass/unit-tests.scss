@@ -1,11 +1,77 @@
 // Singularity unit tests
 @import "singularitygs";
 
-$grids: add-grid(12);
-$gutters: add-gutter(.25);
+@function test-round($n) {
+  // move decimal point three spaces
+  $n: $n * 1000;
+  // round
+  $n: round($n);
+  // move decimal point back
+  $n: $n / 1000;
 
-$direction: 'both';
+  @return $n;
+}
 
-#foo {
-  @include grid-span(3, 2, $options: 'both');
+// column-span tests
+@if test-round(column-span(3, 2, 1 3 5 3.3 2, 1.2)) != 71.728% {
+  @debug "column-span failed with non-uniform columns";
+  @debug "column-span(3, 2, 1 3 5 3.3 2, 1.2) was #{column-span(3, 2, 1 3 5 3.3 2, 1.2)}";
+  @debug "should have been: 71.728%";
+  @debug "";
+}
+@if test-round(column-span(3, 2, 12, 1.2)) != 21.429% {
+  @debug "column-span failed with uniform columns";
+  @debug "column-span(3, 2, 12, 1.2) was #{column-span(3, 2, 12, 1.2)}";
+  @debug "should have been: 21.42857%";
+  @debug "";
+}
+
+// column-sum tests
+@if column-sum(1 3 5 3.3 2, 1.2) != 19.1 {
+  @debug "column-sum failed with non-uniform columns";
+  @debug "column-sum(1 3 5 3.3 2, 1.2) was #{column-sum(1 3 5 3.3 2, 1.2)}";
+  @debug "should have been: 19.1";
+  @debug "";
+}
+@if column-sum(12, 1.2) != 25.2 {
+  @debug "column-sum failed with uniform columns";
+  @debug "column-sum(12, 1.2) was #{column-sum(12, 1.2)}";
+  @debug "should have been: 25.2";
+  @debug "";
+}
+
+// column-count tests
+@if column-count(1 3 5 3.3 2) != 5 {
+  @debug "column-count failed with non-uniform columns";
+  @debug "column-count(1 3 5 3.3 2) was #{column-count(1 3 5 3.3 2)}";
+  @debug "should have been: 5";
+  @debug "";
+}
+@if column-count(12) != 12 {
+  @debug "column-count failed with uniform columns";
+  @debug "column-count(12) was #{column-count(12)}";
+  @debug "should have been: 12";
+  @debug "";
+}
+
+// context test
+@if context(37%, 83%) != 30.71 {
+  @debug "context failed";
+  @debug "context(37%, 83%) was #{context(37%, 83%)}";
+  @debug "should have been: 30.71";
+  @debug "";
+}
+
+// gutter-span test
+@if test-round(gutter-span(1.2, 1 3 5 3.3 2)) != 6.283% {
+  @debug "gutter-span failed with non-uniform columns";
+  @debug "gutter-span(1.2, 1 3 5 3.3 2) was #{gutter-span(1.2, 1 3 5 3.3 2)}";
+  @debug "should have been: 6.283%";
+  @debug "";
+}
+@if test-round(gutter-span(1.2, 12)) != 4.762% {
+  @debug "gutter-span failed with uniform columns";
+  @debug "gutter-span(1.2, 12) was #{gutter-span(1.2, 12)}";
+  @debug "should have been: 4.762%";
+  @debug "";
 }
