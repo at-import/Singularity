@@ -1,1 +1,11 @@
 // Singularity unit tests
+@import "singularitygs";
+
+$grids: add-grid(12);
+$gutters: add-gutter(.25);
+
+$direction: 'both';
+
+#foo {
+  @include grid-span(3, 2, $options: 'both');
+}
