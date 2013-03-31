@@ -17,7 +17,7 @@
     margin-#{$dir}: column-span($location - 1, 1, $columns);
     margin-#{$opp}: -100%;
     float: $dir;
-    clear: $options;
+    clear: unquote($options);
   }
 
   @if $direction == 'rtl' or $direction == 'both' {
@@ -31,7 +31,7 @@
       margin-#{$dir}: column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns);
       margin-#{$opp}: -100%;
       float: $dir;
-      clear: $options;
+      clear: unquote($options);
     }
   }
 
