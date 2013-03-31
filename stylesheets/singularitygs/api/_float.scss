@@ -13,17 +13,44 @@
   }
 
   $gutter: find-gutter($gutter);
+  $end-row: end-row($span, $location, $columns);
 
   width: column-span($span, $location-holder, $columns, $gutter);
-  clear: right;
-  // @include clearfix;
 
-  @if end-row($span, $location, $columns) {
-    float: right;
+  @if $direction == 'ltr' or $direction == 'both' {
+    // Set the CSS direction to ltr
+    $cssdir: 'ltr';
+    // Find the CSS named direction and opposite direction
+    $dir: named-direction($cssdir);
+    $opp: opposite-direction($dir);
+
+    clear: $opp;
+
+    @if $end-row {
+      float: $opp;
+    }
+    @else {
+      float: $dir;
+      margin-#{$opp}: gutter-span($gutter, $columns);
+    }
   }
-  @else {
-    float: left;
-    margin-right: gutter-span($gutter, $columns);
+
+  @if $dir == 'rtl' or $direction == 'both' {
+    // Set the CSS direction to ltr
+    $cssdir: 'rtl';
+    // Find the CSS named direction and opposite direction
+    $dir: named-direction($cssdir);
+    $opp: opposite-direction($dir);
+
+    clear: $opp;
+
+    @if $end-row {
+      float: $opp;
+    }
+    @else {
+      float: $dir;
+      margin-#{$opp}: gutter-span($gutter, $columns);
+    }
   }
 
   @include span-shared;

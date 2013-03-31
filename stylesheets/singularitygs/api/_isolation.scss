@@ -4,6 +4,8 @@
     $options: 'right';
   }
 
+  $gutter: find-gutter($gutter);
+
   @if $direction == 'ltr' or $direction == 'both' {
     // Set the CSS direction to ltr
     $cssdir: 'ltr';
@@ -26,7 +28,6 @@
     $opp: opposite-direction($dir);
 
     [dir="#{$cssdir}"] & {
-      width: column-span($span, $location, $columns);
       margin-#{$dir}: column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns);
       margin-#{$opp}: -100%;
       float: $dir;
