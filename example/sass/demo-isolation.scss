@@ -1,0 +1,132 @@
+@import "singularitygs";
+
+$break: 700px;
+$break2: 900px;
+$break3: 1200px;
+
+$grids: add-grid(2);
+$grids: add-grid(2 8 2 1 at $break);
+$grids: add-grid(12 at $break2);
+$grids: add-grid(1 3 5 7 9 at $break3);
+$gutters: add-gutter(1/3);
+// $gutters: add-gutter(.25 at $break);
+// $output: 'float';
+
+body {
+  margin: 0;
+  padding: 0;
+  @include background-grid;
+}
+
+div {
+  height: 50px;
+}
+
+#foo {
+  background: red;
+  height: 30px;
+  @include grid-span(1, 2);
+
+  @include breakpoint($break) {
+    @include grid-span(1, 4);
+  }
+
+  @include breakpoint($break2) {
+    @include grid-span(2, 11);
+  }
+
+  @include breakpoint($break3) {
+    @include grid-span(1, 3);
+  }
+}
+
+#bar {
+  background: green;
+  height: 20px;
+  @include grid-span(1, 1);
+
+  @include breakpoint($break) {
+    @include grid-span(2, 2);
+  }
+
+  @include breakpoint($break2) {
+    @include grid-span(8, 3)
+  }
+
+  @include breakpoint($break3) {
+    @include grid-span(1, 1);
+  }
+
+}
+
+#baz {
+  background: purple;
+  @include grid-span(1, 1, $options: 'both');
+
+  @include breakpoint($break) {
+    @include grid-span(1, 1);
+  }
+
+  @include breakpoint($break2) {
+    @include grid-span(2, 1);
+  }
+
+  @include breakpoint($break3) {
+    @include grid-span(1, 5);
+  }
+}
+
+#qux {
+  background: yellow;
+
+  @include grid-span(1, 1, $options: 'left');
+
+  @include breakpoint($break) {
+    @include grid-span(3, 2, $options: 'left');
+  }
+
+  @include breakpoint($break2) {
+    @include grid-span(3, 4, $options: 'both');
+  }
+
+  @include breakpoint($break3) {
+    @include grid-span(1, 2);
+  }
+}
+
+#waldo {
+  background: blue;
+  height: 70px;
+
+  @include grid-span(1, 2, $options: 'right');
+
+  @include breakpoint($break) {
+    @include grid-span(1, 1, $options: 'left');
+  }
+
+  @include breakpoint($break2) {
+    @include grid-span(3, 1, $options: 'right');
+  }
+
+  @include breakpoint($break3) {
+    @include grid-span(1, 4);
+  }
+}
+
+#garfield {
+  background: orange;
+
+  @include grid-span(2, 1, $options: 'left');
+
+  @include breakpoint($break) {
+    @include isolation-span(4, 1, 'both');
+  }
+
+  @include breakpoint($break2) {
+    @include grid-span(5, 8);
+  }
+
+  @include breakpoint($break3) {
+    @include grid-span(2, 3, $options: 'both');
+  }
+}
