@@ -8,7 +8,7 @@
 
   @if $bs == 'border-box' {
     @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-      *behavior: url("../behaviors/box-sizing/boxsizing.php");
+      *behavior: stylesheet-url("../behaviors/box-sizing/boxsizing.php");
     }
   }
   @else {
