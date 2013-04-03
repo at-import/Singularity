@@ -113,8 +113,8 @@
 //
 // Makes working with Float easier, as it allows you to walk the grid for symmetric grids and easy applying of 'last' and 'first', as well as automatically building the verbose grid-span mixin call
 //////////////////////////////
-@mixin float-span($span, $location: false, $columns: false, $gutter: false) {
-  $grid: find-grid($columns);
+@mixin float-span($span, $location: false, $grid: false, $gutter: false) {
+  $grid: find-grid($grid);
   $gutter: find-gutter($gutter);
   $row: false;
 
