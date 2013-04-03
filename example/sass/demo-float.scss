@@ -144,7 +144,7 @@ div {
   @include grid-span(2, 1);
 
   @include breakpoint($break) {
-    @include isolation(4, 1);
+    @include float-span(4, 1);
   }
 
   @include breakpoint($break2) {
