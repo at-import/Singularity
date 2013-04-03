@@ -7,26 +7,36 @@
   $columns: find-grid($columns);
   $gutter: find-gutter($gutter);
 
+  // @debug $columns;
+  // @debug $gutter;
+
   // Combine the columns and gutters
   $columns-and-gutters: column-sum($columns, $gutter);
 
+  // @debug $columns-and-gutters;
+
   // Equal width columns are easy! Deal with them!
   @if type-of($columns) == 'number' or length($columns) == 1 {
-    $span-and-gutters: $span + (($span - 1) * nth($gutter, 1));
+    $span-and-gutters: $span + $gutter * ($span - 1);
     @return $span-and-gutters / $columns-and-gutters * 100%;
   }
   // Asymmetric lists are harder, so we're going to treat them as their own columns
   @else if type-of($columns) == 'list' or length($columns) > 1 {
-    // Build a fake column set
-    $sum: 0;
-    $holder: ();
+    $span-and-gutters: 0;
 
-    @for $i from $location to ($location + $span) {
-      $holder: append($holder, nth(nth($columns, $i), 1), comma);
+    @if $location == 1 and $span >= 1 {
+      @for $i from 1 through $span {
+        $span-and-gutters: $span-and-gutters + nth($columns, $i) + $gutter;
+      }
     }
+    @else {
+      $total: $location + $span - 1;
+      @for $i from $location through $total {
+        $span-and-gutters: $span-and-gutters + nth($columns, $i) + $gutter;
+      }
+    }
+    $span-and-gutters: $span-and-gutters - $gutter;
 
-    // Get sub-column sum
-    $span-and-gutters: column-sum($holder, $gutter);
     @return $span-and-gutters / $columns-and-gutters * 100%;
   }
   @else {
