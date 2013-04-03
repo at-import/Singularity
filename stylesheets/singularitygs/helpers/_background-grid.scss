@@ -48,11 +48,13 @@ $overlay-position: relative !default;
 // Set the position of the switch.
 $overlay-switch-position: left bottom !default;
 
+$background-grid-color: Chocolate !default;
+
 @mixin grid-overlay (
   $selector: 'body',
   $columns: false,
   $gutter: false,
-  $color: rgba(Chocolate, .5)
+  $color: $background-grid-color
 ) {
 
   $vert: nth($overlay-switch-position, 1);
@@ -106,7 +108,7 @@ $overlay-switch-position: left bottom !default;
 @mixin grid-toggle(
   $columns: false,
   $gutter: false,
-  $color: rgba(Chocolate, .5)
+  $color: $background-grid-color
   ) {
 
   [data-development-grid="show"] {
@@ -120,7 +122,7 @@ $overlay-switch-position: left bottom !default;
 @mixin background-grid(
   $columns: false,
   $gutter: false,
-  $color: Chocolate
+  $color: $background-grid-color
 ) {
 
   $background-length: length($grids);
