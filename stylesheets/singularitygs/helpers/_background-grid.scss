@@ -120,25 +120,27 @@ $overlay-switch-position: left bottom !default;
 @mixin background-grid(
   $columns: false,
   $gutter: false,
-  $color: rgba(Chocolate, .5)
+  $color: Chocolate
 ) {
 
   $background-length: length($grids);
 
-  @if not ($columns) {
-    @for $i from 1 through $background-length {
-      @if $i == 1 {
-        @include background-build($columns, $gutter, $color);
-      }
-      @else {
+  @if (not $columns) {
+    $grid: find-grid($columns);
+    @include background-build($grid, $gutter, $color);
+    @if ($grid != $grids) {
+      @for $i from 2 through $background-length {
         $mq: nth(nth($grids, $i), 2);
-
         $grid: nth(nth($grids, $i), 1);
+
         @include breakpoint($mq) {
           @include background-build($grid, $gutter, $color);
         }
       }
     }
+  }
+  @else {
+    @include background-build($columns, $gutter, $color);
   }
 }
 
@@ -146,41 +148,86 @@ $overlay-switch-position: left bottom !default;
   $columns: find-grid($columns);
   $gutter: find-gutter($gutter);
 
-  $stops: background-gradient-stops($columns, $gutter, $color);
+  $widths: ();
+  $colors: ();
 
-  @include background(
-    linear-gradient(
-      left, $stops
-    )
-  );
-}
-
-//////////////////////////////
-// Get the stops of the gradient
-//////////////////////////////
-@function background-gradient-stops($columns, $gutter, $color) {
-  $bkg: ();
-  $count: column-count($columns);
-
-  @for $i from 1 through column-count($columns) {
-    $bkg: join($bkg, background-column-gradient($i, $columns, $gutter, $color), comma);
+  $length: length($columns);
+  $symmetric: false;
+  @if type-of($columns) == 'number' or $length == 1 {
+    $symmetric: true;
+    $length: nth($columns, 1);
   }
 
-  @return $bkg;
+
+  @for $i from 1 through $length {
+    $column-span: column-span($i, 1, $columns);
+    $gutter-span: $column-span + gutter-span($gutter, $columns);
+
+    @if $i != $columns {
+      $widths: append($widths, $column-span);
+      $colors: append($colors, rgba($color, .5));
+      $widths: append($widths, $gutter-span);
+      $colors: append($colors, rgba($color, .25));
+    }
+    @else {
+      $widths: append($widths, $column-span);
+      $colors: append($colors, rgba($color, .5));
+    }
+  }
+
+  @include background-gradient-generate($widths, $colors);
+
 }
 
 //////////////////////////////
 // Get the columns
 //////////////////////////////
-@function background-column-gradient($location, $columns, $gutter, $color) {
+@mixin background-gradient-generate($widths, $colors, $direction: left) {
+  @if (length($widths) != length($colors)) and (length($widths) != length($colors) - 1)  {
+    @warn 'You either need an equal number of widths and colors or one less width than color, in which case it is assumed that the last width goes to 100%. Please provide the correct amount of widths and colors.';
+  }
+  @else {
+    $stops: ();
 
-  @if $location == 1 {
-    @return lighten($color, 5%) 0%, darken($color, 5%) column-span(1, 1, $columns), lighten($color, 30%) column-span(1, 1, $columns);
+    @if length($widths) == (length($colors) - 1) {
+      $widths: append($widths, 100%);
+    }
+
+    $i: 1;
+
+    @each $width in $widths {
+      $width: nth($widths, $i);
+      $color: nth($colors, $i);
+
+      @if $i == 1 {
+        $stops: join($stops, build-gradient-piece($width, $color), comma);
+      }
+      @else {
+        $position: nth($widths, $i - 1);
+        $stops: join($stops, build-gradient-piece($width, $color, $position), comma);
+      }
+
+      $i: $i + 1;
+    }
+
+    // @debug $stops;
+
+
+
+    @include background-image(
+      linear-gradient($direction, $stops)
+    );
   }
-  @if $location == column-count($columns) {
-    @return lighten($color, 30%) column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), lighten($color, 5%) column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), darken($color, 5%) 100%;
+}
+
+@function build-gradient-piece($width, $color, $position: false) {
+  @if ($position == 'last') {
+    @return ($color $width);
   }
-  @if $location > 1 {
-    @return lighten($color, 30%) column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), lighten($color, 5%) column-span($location - 1, 1, $columns) + gutter-span($gutter, $columns), darken($color, 5%) column-span($location, 1, $columns), lighten($color, 30%) column-span($location, 1, $columns);
+  @else if ($position != false) {
+    @return $color $position, $color $width;
+  }
+  @else {
+    @return $color, $color $width;
   }
 }
