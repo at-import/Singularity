@@ -13,3 +13,12 @@
     }
   }
 }
+
+@function start-row($location) {
+  @if $location == 1 {
+    @return true;
+  }
+  @else {
+    @return false;
+  }
+}
