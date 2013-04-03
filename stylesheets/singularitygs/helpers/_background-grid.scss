@@ -112,7 +112,7 @@ $background-grid-color: Chocolate !default;
   ) {
 
   [data-development-grid="show"] {
-    @include background-grid;
+    @include background-grid($columns, $gutter, $color);
   }
 }
 
