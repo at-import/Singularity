@@ -118,7 +118,7 @@
   $gutter: find-gutter($gutter);
   $row: false;
 
-  @if type-of($grid) == 'number' or length($grid) == 1 {
+  @if type-of($grid) == 'number' and length($grid) == 1 {
     @if $location == 'last' or $location == 'omega' {
       $location: length($grid) - $span + 1;
     }
@@ -134,6 +134,9 @@
     @if $row {
       clear: both;
     }
+  }
+  @else if type-of($grid) == 'list' and $location != false {
+    @include grid-span($span, $location, $grid, $gutter, 'float');
   }
   @else {
     @warn 'Asymmetric Grids need a Location value as well as a span value in order to know where on the grid you are! Please include a location value!';

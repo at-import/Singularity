@@ -98,8 +98,5 @@
 // Makes working with Isolation easier, as it moves Clear to a 1st class citizen of the mixin, and automatically builds the verbose grid-span mixin call
 //////////////////////////////
 @mixin isolation-span($span, $location, $clear: false, $columns: false, $gutter: false) {
-  $grid: find-grid($columns);
-  $gutter: find-gutter($gutter);
-
-  @include grid-span($span, $location, $grid, $gutter, 'isolation', $clear);
+  @include grid-span($span, $location, $columns, $gutter, 'isolation', $clear);
 }
