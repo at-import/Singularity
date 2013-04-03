@@ -14,6 +14,8 @@
 
   $gutter: find-gutter($gutter);
   $end-row: end-row($span, $location, $columns);
+  $start-row: start-row($location);
+
 
   width: column-span($span, $location-holder, $columns, $gutter);
 
@@ -31,7 +33,13 @@
     }
     @else {
       float: $dir;
-      margin-#{$opp}: gutter-span($gutter, $columns);
+
+      @if $start-row {
+        margin-#{$dir}: 0%;
+      }
+      @else {
+        margin-#{$opp}: gutter-span($gutter, $columns);
+      }
     }
   }
 
@@ -51,6 +59,14 @@
       }
       @else {
         float: $dir;
+
+        @if $start-row {
+          margin-#{$dir}: 0%;
+        }
+        @else {
+          margin-#{$opp}: gutter-span($gutter, $columns);
+        }
+
         margin-#{$dir}: 0;
         margin-#{$opp}: gutter-span($gutter, $columns);
       }
@@ -90,4 +106,36 @@
   $gutter: (column-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns)) * -1;
 
   margin-left: $gutter;
+}
+
+//////////////////////////////
+// Happy Syntax for Float
+//
+// Makes working with Float easier, as it allows you to walk the grid for symmetric grids and easy applying of 'last' and 'first', as well as automatically building the verbose grid-span mixin call
+//////////////////////////////
+@mixin float-span($span, $location: false, $columns: false, $gutter: false) {
+  $grid: find-grid($columns);
+  $gutter: find-gutter($gutter);
+  $row: false;
+
+  @if type-of($grid) == 'number' or length($grid) == 1 {
+    @if $location == 'last' or $location == 'omega' {
+      $location: length($grid) - $span + 1;
+    }
+    @else {
+      @if $location == 'first' or $location == 'alpha' {
+        $row: true;
+      }
+      $location: 1;
+    }
+
+    @include grid-span($span, $location, $grid, $gutter, 'float');
+
+    @if $row {
+      clear: both;
+    }
+  }
+  @else {
+    @warn 'Asymmetric Grids need a Location value as well as a span value in order to know where on the grid you are! Please include a location value!';
+  }
 }
