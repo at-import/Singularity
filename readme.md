@@ -1,6 +1,6 @@
 # Singularity.gs
 
-## Grids Without Limits
+** Grids Without Limits **
 
 Singularity is a next generation grid framework built from the ground up to be responsive. What makes Singularity different? Well, a lot of things. Singularity is based on internal ratios instead of context based which allows for better gutter consistency across breakpoints. Ratio based math also allows for non-uniform grids in *any* unit you want to use.
 
