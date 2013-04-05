@@ -27,5 +27,5 @@ Gem::Specification.new do |s|
   # Dependent Gems
   s.add_dependency 'sass',                ">= 3.2.1"
   s.add_dependency 'compass',             ">= 0.12.2"
-  s.add_dependency 'breakpoint',          ">= 1.1.1"
+  s.add_dependency 'breakpoint',          ">= 2.0.1"
 end
