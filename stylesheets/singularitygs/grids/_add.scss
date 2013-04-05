@@ -10,7 +10,7 @@
 //                                    Defaults to $grids if none is specified.
 @function add-grid($grid-definition, $append-to-list: $grids) {
   $parsed:      parse-add($grid-definition); // Converts the definiton to a temporary format:
-                                             // either `((grid))` or `((<grid>) (<breakpoint>))`
+                                             // either `((<grid>))` or `((<grid>) (<breakpoint>))`
   $grid:        nth($parsed, 1); // E. g. `(<grid>)`.
   $breakpoint:  nth($parsed, 2); // Either `(<breakpoint>)` or false.
   $list-length: length($append-to-list);
