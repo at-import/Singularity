@@ -1,8 +1,8 @@
 description "Singularity Demos"
 
 discover :stylesheets
-file 'isolation.html', :to => 'isolation.html'
-file 'float.html', :to => 'float.html'
+file 'isolation.html.erb', :to => 'isolation.html', :erb => true
+file 'float.html.erb', :to => 'float.html', :erb => true
 
 help %Q{
   For help with Singularity, please ask a question on Stack Overflow (http://stackoverflow.com/questions/ask) tagged with "singularitygs".
