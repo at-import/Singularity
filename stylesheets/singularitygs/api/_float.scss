@@ -30,16 +30,16 @@
 
     @if $end-row {
       float: $opp;
+      margin-#{$opp}: 0%;
     }
     @else {
       float: $dir;
 
       @if $start-row {
         margin-#{$dir}: 0%;
+
       }
-      @else {
-        margin-#{$opp}: gutter-span($gutter, $columns);
-      }
+      margin-#{$opp}: gutter-span($gutter, $columns);
     }
   }
 
@@ -56,6 +56,7 @@
 
       @if $end-row {
         float: $opp;
+        margin-#{$opp}: 0%;
       }
       @else {
         float: $dir;
@@ -63,11 +64,6 @@
         @if $start-row {
           margin-#{$dir}: 0%;
         }
-        @else {
-          margin-#{$opp}: gutter-span($gutter, $columns);
-        }
-
-        margin-#{$dir}: 0;
         margin-#{$opp}: gutter-span($gutter, $columns);
       }
     }
