@@ -13,5 +13,5 @@
     $user-gutter: .25;
   }
 
-  @return find-object($gutters, $user-gutter);
+  @return nth(find-object($gutters, $user-gutter), 1);
 }
