@@ -21,6 +21,12 @@
     // Returns the first item of the list, e. g. `(<grid>)`
     @return $grid;
   }
+  // IF the list is initiated with a list of grid columns need to start off
+  // a comma seprated list.
+  @elseif $list-length > 1 and length(nth($append-to-list, 2)) == 1 {
+    // Seed the first value and grid + breakpoint seperated by a comma.
+    @return $append-to-list, ($grid $breakpoint);
+  }
   @else {
     // Appends to a comma-separated list of definitions in the internal format
     // and returns it, e. g. `(<grid>), (<grid> <breakpoint>), (<grid> <breakpoint>)`
