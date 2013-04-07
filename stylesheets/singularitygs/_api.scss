@@ -1,4 +1,4 @@
-@mixin grid-span($span, $location, $grid: false, $gutter: false, $output-style: $output, $options: false) {
+@mixin grid-span($span, $location: 1, $grid: false, $gutter: false, $output-style: $output, $options: false) {
 
   @if $output-style == 'float' {
     @include output-float($span, $location, $grid, $gutter, $options);
