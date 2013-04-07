@@ -1,16 +1,15 @@
 @import "singularitygs";
 
 $grids: 10;
-$gutters: .1;
+$gutters: .2;
 $output: "float";
 
 strong {
   display: block;
 }
 div {
-  border: 1px solid red;
   text-align: center;
-  @include box-sizing(border-box);
+  background: rgba(#266FBD, .2);
 }
 
 .ag1 {
