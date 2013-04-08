@@ -6,6 +6,8 @@ Singularity is a next generation grid framework built from the ground up to be r
 
 ## Full documentation is available on the [Singularity Wiki](https://github.com/Team-Sass/Singularity/wiki)
 
+## A video walkthrough of Singularity 1.0 is [available here](http://vimeo.com/63509346)
+
 ## Getting Help with Singularity
 
 * For help with Singularity, please ask a question on [Stack Overflow](http://stackoverflow.com/questions/ask) tagged with "singularitygs".
