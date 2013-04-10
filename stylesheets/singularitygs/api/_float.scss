@@ -114,9 +114,14 @@
   $gutter: find-gutter($gutter);
   $row: false;
 
+  // Working around SASS treating a number like a list with one element
+  @if type-of($grid) == 'list' and length($grid) == 1 {
+    $grid: nth($grid, 1);
+  }
+
   @if type-of($grid) == 'number' and length($grid) == 1 {
     @if $location == 'last' or $location == 'omega' {
-      $location: length($grid) - $span + 1;
+      $location: $grid - $span + 1;
     }
     @else {
       @if $location == 'first' or $location == 'alpha' {
