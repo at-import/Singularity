@@ -28,6 +28,10 @@ Having been designed to be extensible, the ability to create plugins for Singula
 
 * [Singularity Extras](https://github.com/Team-Sass/Singularity-Extras)
 
+## Websites using Singularity
+
+* [The Verge features](http://www.theverge.com/2013/4/5/4162478/tasers-axon-flex-cop-camera-takes-aim-at-privacy)
+
 ## Licence
 
 Dual licence MIT/GPL
