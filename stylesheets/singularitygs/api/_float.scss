@@ -119,6 +119,7 @@
     $grid: nth($grid, 1);
   }
 
+  // Working with a symmetric grid
   @if type-of($grid) == 'number' {
     @if $location == 'last' or $location == 'omega' {
       $location: $grid - $span + 1;
@@ -136,6 +137,7 @@
       clear: both;
     }
   }
+  // Working with an asymmetric grid, should have location provided
   @else if type-of($grid) == 'list' and $location != false {
     @include grid-span($span, $location, $grid, $gutter, 'float');
   }
