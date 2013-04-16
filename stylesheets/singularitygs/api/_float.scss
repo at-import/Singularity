@@ -119,7 +119,7 @@
     $grid: nth($grid, 1);
   }
 
-  @if type-of($grid) == 'number' and length($grid) == 1 {
+  @if type-of($grid) == 'number' {
     @if $location == 'last' or $location == 'omega' {
       $location: $grid - $span + 1;
     }
