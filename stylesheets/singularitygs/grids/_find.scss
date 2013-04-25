@@ -13,5 +13,11 @@
     $user-columns: 12;
   }
 
-  @return find-object($grids, $user-columns);
+  $found: find-object($grids, $user-columns);
+
+  @if length($found) == 1 {
+    $found: nth($found, 1);
+  }
+
+  @return $found;
 }
