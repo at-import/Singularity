@@ -14,6 +14,10 @@ Singularity is a next generation grid framework built from the ground up to be r
 * To file an issue with Singularity, be it a feature request or a bug report, please use our [Issue Queue](https://github.com/Team-Sass/Singularity/issues).
 * If you are in IRC, the maintainers and many fellow users tend to hang out in the #sass and #compass rooms on irc.freenode.net. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
 
+## Contributing to Singularity
+
+We love contributors! Yes we do! If you would like to contribute to Singularity, please follow the [Contributing Guidelines](https://github.com/Team-Sass/Singularity/blob/1.x.x/CONTRIBUTING.md)
+
 ## Singularity Plugins
 
 Having been designed to be extensible, the ability to create plugins for Singularity is great and we expect to see great things. From new [Output Span](https://github.com/Team-Sass/Singularity/wiki/Spanning-The-Grid#output-span) syntaxes to new [Output Styles](https://github.com/Team-Sass/Singularity/wiki/Output-Styles) to new [Grid Generators](https://github.com/Team-Sass/Singularity/wiki/Grid-Generators), we are excited to see what the community will come up with. Below are a list of Singularity Plugins available. If you would like to add your Plugin to the list, please issue a Pull Request to add it to the list!
