@@ -43,12 +43,15 @@
 // The overlay is painted over your container's ::after pseudo-element, so we must
 // give position to the container itself, if relative doesn't suit your layout
 // it can be replaced by absolute/fixed.
-$overlay-position: relative !default;
+$overlay-position:        relative      !default;
 
 // Set the position of the switch.
-$overlay-switch-position: left bottom !default;
+$overlay-switch-position: left bottom   !default;
 
-$background-grid-color: Chocolate !default;
+$background-grid-color:   Chocolate     !default;
+
+// Global variable to show or hide the grid background at will.
+$show-grid-backgrounds:   true          !default;
 
 @mixin grid-overlay (
   $selector: 'body',
@@ -125,24 +128,28 @@ $background-grid-color: Chocolate !default;
   $color: $background-grid-color
 ) {
 
-  $background-length: length($grids);
+  @if $show-grid-backgrounds {
+    $background-length: length($grids);
 
-  @if (not $columns) {
-    $grid: find-grid($columns);
-    @include background-build($grid, $gutter, $color);
-    @if ($grid != $grids) {
-      @for $i from 2 through $background-length {
-        $mq: nth(nth($grids, $i), 2);
-        $grid: nth(nth($grids, $i), 1);
+    @if (not $columns) {
+      $grid: find-grid($columns);
+      @include background-build($grid, $gutter, $color);
+      @if ($grid != $grids) {
+        @for $i from 2 through $background-length {
+          $mq: nth(nth($grids, $i), 2);
+          $grid: nth(nth($grids, $i), 1);
 
-        @include breakpoint($mq) {
-          @include background-build($grid, $gutter, $color);
+          @include breakpoint($mq) {
+            @include background-build($grid, $gutter, $color);
+          }
         }
       }
     }
-  }
-  @else {
-    @include background-build($columns, $gutter, $color);
+    @else {
+      @include background-build($columns, $gutter, $color);
+    }
+
+
   }
 }
 
