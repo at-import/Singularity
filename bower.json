@@ -1,0 +1,13 @@
+{
+  "name": "singularity",
+  "version": "1.7.2",
+  "main": "stylesheets/_singularitygs.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "compass-breakpoint": ">=2.0.1"
+  }
+}
