@@ -50,7 +50,7 @@ div {
   }
 
   @include breakpoint($break2) {
-    @include grid-span(8, 3)
+    @include grid-span(8, 3);
   }
 
   @include breakpoint($break3) {
