@@ -26,7 +26,8 @@ Having been designed to be extensible, the ability to create plugins for Singula
 
 ## Websites using Singularity
 
-* [The Verge features](http://www.theverge.com/2013/4/5/4162478/tasers-axon-flex-cop-camera-takes-aim-at-privacy)
+* [SensesLab](http://www.senseslab.com/)
+* The Verge [features](http://www.theverge.com/label/feature) and [reviews](http://www.theverge.com/reviews)
 
 ## Licence
 
