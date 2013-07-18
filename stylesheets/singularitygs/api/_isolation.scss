@@ -1,8 +1,21 @@
 @mixin output-isolation($span, $location, $columns, $gutter, $options: false) {
 
   $gutter: find-gutter($gutter);
+  $gutter-span: gutter-span($gutter, $columns);
   $end-row: end-row($span, $location, $columns);
   $start-row: start-row($location);
+
+  $gutter-style: find-gutter-style();
+  $fixed-gutter: fixed-gutter($columns, $gutter);
+  $gutter-property: gutter-property($columns, $gutter);
+  $split: index($gutter-style, split);
+
+  $margin-span: column-span(($location - 1), 1, $columns);
+
+  @if not $fixed-gutter {
+    $margin-span: $margin-span + $gutter-span;
+  }
+
 
   // @debug $options;
 
@@ -16,25 +29,38 @@
 
     width: column-span($span, $location, $columns);
 
-
-
     // If we are at the last item in the row, we float it the opposite direction
     @if ($end-row) {
       float: $opp;
       margin-#{$dir}: 0;
-      margin-#{$opp}: 0;
+      @if $split and not $fixed-gutter {
+	#{$gutter-property}-#{$opp}: $gutter-span / 2;
+      }
+      @else {
+	margin-#{$opp}: 0;
+      }
     }
     @else {
       float: $dir;
       margin-#{$opp}: -100%;
 
       @if $start-row {
-        margin-#{$dir}: 0%;
+	@if $split and not $fixed-gutter {
+	  margin-#{$dir}: $gutter-span / 2;
+	}
+	@else {
+	  margin-#{$dir}: 0%;
+	}
       }
       @else {
-        margin-#{$dir}: column-span(($location - 1), 1, $columns) + gutter-span($gutter, $columns);
-      }
+	@if $split and not $fixed-gutter {
+	  margin-#{$dir}: $margin-span + $gutter-span / 2;
+	}
+	@else {
+	  margin-#{$dir}: $margin-span;
+	}
 
+      }
     }
 
     // If options are set, we clear to that option, otherwise no clear!
@@ -43,6 +69,16 @@
     }
     @else {
       clear: none;
+    }
+
+    @if $fixed-gutter {
+      @if index($gutter-style, split) {
+	#{$gutter-property}-#{$dir}: $gutter-span / 2;
+	#{$gutter-property}-#{$opp}: $gutter-span / 2;
+      }
+      @else {
+	#{$gutter-property}-#{$opp}: $gutter-span;
+      }
     }
   }
 
@@ -57,16 +93,34 @@
       // If we are at the last item in the row, we float it the opposite direction
       @if ($end-row) {
         float: $opp;
+	margin-#{$dir}: 0;
+	@if $split and not $fixed-gutter {
+	  #{$gutter-property}-#{$opp}: $gutter-span / 2;
+	}
+	@else {
+	  margin-#{$opp}: 0;
+	}
       }
       @else {
         float: $dir;
         margin-#{$opp}: -100%;
 
         @if $start-row {
-          margin-#{$dir}: 0%;
+	  @if $split and not $fixed-gutter {
+	    margin-#{$dir}: $gutter-span / 2;
+	  }
+	  @else {
+	    margin-#{$dir}: 0%;
+	  }
         }
         @else {
-          margin-#{$dir}: column-span(($location - 1), 1, $columns) + gutter-span($gutter, $columns);
+	  @if $split and not $fixed-gutter {
+	    margin-#{$dir}: $margin-span + $gutter-span / 2;
+	  }
+	  @else {
+	    margin-#{$dir}: $margin-span;
+	  }
+
         }
       }
 
@@ -76,6 +130,21 @@
       }
       @else {
         clear: none;
+      }
+
+      @if $fixed-gutter {
+	@if $direction == 'rtl' {
+	  @if index($gutter-style, split) {
+	    #{$gutter-property}-#{$dir}: $gutter-span / 2;
+	    #{$gutter-property}-#{$opp}: $gutter-span / 2;
+	  }
+	  @else {
+	    #{$gutter-property}-#{$opp}: $gutter-span;
+	  }
+	}
+	@else if not index($gutter-style, split) {
+	  #{$gutter-property}-#{$opp}: $gutter-span;
+	}
       }
     }
   }

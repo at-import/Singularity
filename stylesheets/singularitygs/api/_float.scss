@@ -13,9 +13,13 @@
   }
 
   $gutter: find-gutter($gutter);
+  $gutter-span: gutter-span($gutter, $columns);
   $end-row: end-row($span, $location, $columns);
   $start-row: start-row($location);
 
+  $gutter-style: find-gutter-style();
+  $fixed-gutter: fixed-gutter($columns, $gutter);
+  $gutter-property: gutter-property($columns, $gutter);
 
   width: column-span($span, $location-holder, $columns, $gutter);
 
@@ -30,16 +34,38 @@
 
     @if $end-row {
       float: $opp;
-      margin-#{$opp}: 0%;
+      @if index($gutter-style, split) and not $fixed-gutter {
+	#{$gutter-property}-#{$dir}: 0;
+	#{$gutter-property}-#{$opp}: $gutter-span / 2;
+      }
+      @else if not $fixed-gutter {
+	#{$gutter-property}-#{$opp}: 0;
+      }
     }
     @else {
       float: $dir;
 
       @if $start-row {
-        margin-#{$dir}: 0%;
+	@if index($gutter-style, split) and not $fixed-gutter {
+	  #{$gutter-property}-#{$dir}: $gutter-span / 2;
+	  #{$gutter-property}-#{$opp}: $gutter-span / 2;
+	}
+	@else if not $fixed-gutter {
+	  #{$gutter-property}-#{$dir}: 0;
+	  #{$gutter-property}-#{$opp}: $gutter-span;
+	}
 
       }
-      margin-#{$opp}: gutter-span($gutter, $columns);
+    }
+
+    @if $fixed-gutter {
+      @if index($gutter-style, split) {
+	#{$gutter-property}-#{$dir}: $gutter-span / 2;
+	#{$gutter-property}-#{$opp}: $gutter-span / 2;
+      }
+      @else {
+	#{$gutter-property}-#{$opp}: $gutter-span;
+      }
     }
   }
 
@@ -56,15 +82,42 @@
 
       @if $end-row {
         float: $opp;
-        margin-#{$opp}: 0%;
+	@if index($gutter-style, split) and not $fixed-gutter {
+	  #{$gutter-property}-#{$dir}: 0;
+	  #{$gutter-property}-#{$opp}: $gutter-span / 2;
+	}
+	@else if not $fixed-gutter {
+	  #{$gutter-property}-#{$opp}: 0;
+	}
       }
       @else {
         float: $dir;
 
         @if $start-row {
-          margin-#{$dir}: 0%;
+	  @if index($gutter-style, split) and not $fixed-gutter {
+	    #{$gutter-property}-#{$dir}: $gutter-span / 2;
+	    #{$gutter-property}-#{$opp}: $gutter-span / 2;
+	  }
+	  @else if not $fixed-gutter {
+	    #{$gutter-property}-#{$dir}: 0;
+	    #{$gutter-property}-#{$opp}: $gutter-span;
+	  }
+	}
+      }
+
+      @if $fixed-gutter {
+	@if $direction == 'rtl' {
+	  @if index($gutter-style, split) {
+	    #{$gutter-property}-#{$dir}: $gutter-span / 2;
+	    #{$gutter-property}-#{$opp}: $gutter-span / 2;
+	  }
+	  @else {
+	    #{$gutter-property}-#{$opp}: $gutter-span;
+	  }
+	}
+	@else if not index($gutter-style, split) {
+	  #{$gutter-property}-#{$opp}: $gutter-span;
         }
-        margin-#{$opp}: gutter-span($gutter, $columns);
       }
     }
   }
