@@ -13,8 +13,12 @@ $grids: () !default;
 // The gutters of the inner columns of the grid
 $gutters: () !default;
 
+// The gutter styles
+// Options: opposite/split (fixed)
+$gutter-styles: () !default;
+
 // Specifies whether or not you're building mobile-first grids. Defaults to true
-$mobile-first: true;
+$mobile-first: true !default;
 
 // Default output style.
 $output: 'isolation' !default;
@@ -50,6 +54,11 @@ $include-clearfix:    false !default;
 // Import Gutters Helpers
 //////////////////////////////
 @import "singularitygs/gutters";
+
+//////////////////////////////
+// Import Gutter Styles
+//////////////////////////////
+@import "singularitygs/gutter-styles";
 
 //////////////////////////////
 // Import APIs

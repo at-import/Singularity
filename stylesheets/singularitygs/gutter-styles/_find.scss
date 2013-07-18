@@ -1,0 +1,16 @@
+//////////////////////////////
+// Find gutter style
+//
+// Finds the gutter style that you are working with.
+// From Singularity
+// Must be using Breakpoint to work properly
+//////////////////////////////
+@function find-gutter-style($user-gutter-style: false) {
+
+  // We supply a default if the user hasn't set any gutter style and hasn't passed in a custom gutter
+  @if length($gutter-styles) == 0 and $user-gutter-style == false {
+    $user-gutter-style: opposite;
+  }
+
+  @return find-object($gutter-styles, $user-gutter-style);
+}

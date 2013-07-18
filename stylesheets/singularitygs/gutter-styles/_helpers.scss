@@ -1,0 +1,38 @@
+@function fixed-gutter($user-columns: false, $user-gutter: false, $user-gutter-style: false) {
+  $grid: find-grid($user-columns);
+  $gutter: find-gutter($user-gutter);
+  $gutter-style: find-gutter-style($user-gutter-style);
+
+  @debug $grid;
+  @debug $gutter;
+  @debug $gutter-style;
+
+  @if index($gutter-style, fixed) {
+    // @debug 'Fixed in output style';
+    @return true;
+  }
+  @else if type-of($grid) == 'number' and not unitless($gutter) {
+    // @debug 'Equal columns with a unit based gutter';
+    @return true;
+  }
+  @else if type-of($grid) == 'list' {
+    @if unit(nth($grid, 1)) != unit($gutter) {
+      // @debug 'Columns and gutters are different units';
+      @return true;
+    }
+  }
+  @else {
+    @return false;
+  }
+
+  @return false;
+}
+
+@function gutter-property($user-columns: false, $user-gutter: false, $user-gutter-style: false) {
+  @if fixed-gutter($user-columns, $user-gutter, $user-gutter-style) {
+    @return 'padding';
+  }
+  @else {
+    @return 'margin';
+  }
+}
