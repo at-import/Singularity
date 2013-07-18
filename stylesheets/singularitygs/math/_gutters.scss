@@ -5,7 +5,7 @@
   $gutter: find-gutter($gutter);
 
   @if fixed-gutter($grid, $gutter, $gutter-style) {
-    $gutter: 0;
+    @return nth($gutter, 1);
   }
 
   // Combine the columns and gutters
