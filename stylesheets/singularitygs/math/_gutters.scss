@@ -1,8 +1,12 @@
-@function gutter-span($gutter: false, $grid: false) {
+@function gutter-span($gutter: false, $grid: false, $gutter-style: false) {
 
   // Find the columns and gutters
   $grid: find-grid($grid);
   $gutter: find-gutter($gutter);
+
+  @if fixed-gutter($grid, $gutter, $gutter-style) {
+    $gutter: 0;
+  }
 
   // Combine the columns and gutters
   $grid-and-gutters: column-sum($grid, $gutter);
