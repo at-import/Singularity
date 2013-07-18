@@ -157,6 +157,10 @@ $show-grid-backgrounds:   true          !default;
   $columns: find-grid($columns);
   $gutter: find-gutter($gutter);
 
+  $gutter-style: find-gutter-style();
+  $fixed-gutter: fixed-gutter($columns, $gutter);
+  $split: index($gutter-style, split);
+
   $widths: ();
   $colors: ();
 
@@ -167,10 +171,28 @@ $show-grid-backgrounds:   true          !default;
     $length: nth($columns, 1);
   }
 
-
   @for $i from 1 through $length {
+
+    @if ($fixed-gutter or $gutter == 0) and $i % 2 == 0 {
+      $color: darken($color, 15%);
+    }
+    @else if ($fixed-gutter or $gutter == 0) and $i % 2 == 1 {
+      $color: lighten($color, 15%);
+    }
+
     $column-span: column-span($i, 1, $columns);
-    $gutter-span: $column-span + gutter-span($gutter, $columns);
+    $gutter-span: 0;
+    @if $fixed-gutter {
+      $gutter-span: $column-span;
+    }
+    @else {
+      $gutter-span: $column-span + gutter-span($gutter, $columns);
+    }
+
+    @if $i == 1 and $split and not $fixed-gutter {
+      $widths: append($widths, gutter-span($gutter, $columns) / 2);
+      $colors: append($colors, rgba($color, .25));
+    }
 
     @if $i != $columns {
       $widths: append($widths, $column-span);
@@ -181,6 +203,11 @@ $show-grid-backgrounds:   true          !default;
     @else {
       $widths: append($widths, $column-span);
       $colors: append($colors, rgba($color, .5));
+    }
+
+    @if $i == $length and $split and not $fixed-gutter {
+      $widths: append($widths, $column-span + gutter-span($gutter, $columns) / 2);
+      $colors: append($colors, rgba($color, .25));
     }
   }
 
