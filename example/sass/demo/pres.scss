@@ -1,0 +1,49 @@
+@import "compass";
+@import "singularitygs";
+
+$grids: 12;
+$grids: add-grid(2px 8px 2px at 500px);
+$gutters: 25px;
+$gutter-styles: split fixed;
+// $direction: 'both';
+
+* {
+  @include box-sizing('border-box');
+}
+
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  @include clearfix;
+  // background: black;
+  margin-bottom: 2em;
+
+  @include background-grid;
+}
+
+$colors: red orange yellow green blue;
+
+div {
+  min-height: 200px;
+  div {
+    min-height: 100px;
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+	  background: nth($colors, $i);
+      }
+    }
+  }
+}
+
+#foo {
+  @include grid-span(4, 1);
+}
+
+#bar {
+  @include grid-span(4, 5);
+}
+
+#baz {
+  @include grid-span(4, 9);
+}
