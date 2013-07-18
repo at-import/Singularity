@@ -3,10 +3,6 @@
   $gutter: find-gutter($user-gutter);
   $gutter-style: find-gutter-style($user-gutter-style);
 
-  @debug $grid;
-  @debug $gutter;
-  @debug $gutter-style;
-
   @if index($gutter-style, fixed) {
     // @debug 'Fixed in output style';
     @return true;
