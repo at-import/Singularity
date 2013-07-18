@@ -53,15 +53,28 @@
 // Find the total sum of the grid
 //////////////////////////////
 @function column-sum($grid, $gutter) {
+  $split: if(index(find-gutter-style(), split), true, false);
+
   @if type-of($grid) == 'number' or length($grid) == 1 {
-    @return nth($grid, 1) + ((column-count(nth($grid, 1)) - 1) * nth($gutter, 1));
+    @if $split {
+      @return nth($grid, 1) + ((column-count(nth($grid, 1))) * nth($gutter, 1));
+    }
+    @else {
+      @return nth($grid, 1) + ((column-count(nth($grid, 1)) - 1) * nth($gutter, 1));
+    }
+
   }
   @else if type-of($grid) == 'list' {
     $sum: 0;
     @each $column in $grid {
       $sum: $sum + nth($column, 1);
     }
-    $sum: $sum + (column-count($grid) - 1) * nth($gutter, 1);
+    @if $split {
+      $sum: $sum + (column-count($grid)) * nth($gutter, 1);
+    }
+    @else {
+      $sum: $sum + (column-count($grid) - 1) * nth($gutter, 1);
+    }
     @return $sum;
   }
 }
