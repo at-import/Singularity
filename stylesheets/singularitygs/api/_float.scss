@@ -21,7 +21,7 @@
   $fixed-gutter: fixed-gutter($columns, $gutter);
   $gutter-property: gutter-property($columns, $gutter);
 
-  width: column-span($span, $location-holder, $columns, $gutter);
+  width: column-span($span, $location-holder, $columns, $gutter, $gutter-style);
 
   @if $direction == 'ltr' or $direction == 'both' {
     // Set the CSS direction to ltr
