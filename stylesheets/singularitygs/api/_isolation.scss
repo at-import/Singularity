@@ -10,14 +10,11 @@
   $gutter-property: gutter-property($columns, $gutter);
   $split: index($gutter-style, split);
 
-  $margin-span: column-span(($location - 1), 1, $columns);
+  $margin-span: column-span(($location - 1), 1, $columns, $gutter, $gutter-style);
 
   @if not $fixed-gutter {
     $margin-span: $margin-span + $gutter-span;
   }
-
-
-  // @debug $options;
 
 
   @if $direction == 'ltr' or $direction == 'both' {
@@ -27,7 +24,7 @@
     $dir: named-direction($cssdir);
     $opp: opposite-direction($dir);
 
-    width: column-span($span, $location, $columns);
+    width: column-span($span, $location, $columns, $gutter, $gutter-style);
 
     // If we are at the last item in the row, we float it the opposite direction
     @if ($end-row) {
