@@ -16,14 +16,14 @@
     $margin-span: $margin-span + $gutter-span;
   }
 
-  width: column-span($span, $location, $columns, $gutter, $gutter-style);
-
   @if $direction == 'ltr' or $direction == 'both' {
     // Set the CSS direction to ltr
     $cssdir: 'ltr';
     // Find the CSS named direction and opposite direction
     $dir: named-direction($cssdir);
     $opp: opposite-direction($dir);
+    
+    width: column-span($span, $location, $columns, $gutter, $gutter-style);
 
     // If we are at the last item in the row, we float it the opposite direction
     @if ($end-row) {
@@ -86,6 +86,11 @@
     $opp: opposite-direction($dir);
 
     [dir="#{$cssdir}"] & {
+      // If we are only interested in rtl directions, add a width value
+       @if $direction == 'rtl' {
+       	 width: column-span($span, $location, $columns, $gutter, $gutter-style);
+       }
+      
       // If we are at the last item in the row, we float it the opposite direction
       @if ($end-row) {
         float: $opp;
