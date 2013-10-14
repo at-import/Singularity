@@ -22,7 +22,7 @@
     // Find the CSS named direction and opposite direction
     $dir: named-direction($cssdir);
     $opp: opposite-direction($dir);
-    
+
     width: column-span($span, $location, $columns, $gutter, $gutter-style);
 
     // If we are at the last item in the row, we float it the opposite direction
