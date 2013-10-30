@@ -1,4 +1,4 @@
-# Singularity.gs
+# Singularity.gs [![Gem Version](https://badge.fury.io/rb/singularitygs.png)](http://badge.fury.io/rb/singularitygs)
 
 **Grids Without Limits**
 
