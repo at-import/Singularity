@@ -2,6 +2,7 @@ require 'compass'
 require 'compass/exec'
 require 'test/unit'
 require 'diffy'
+require 'colorize'
 
 class TestCompassOutput < Test::Unit::TestCase
 
@@ -21,7 +22,7 @@ class TestCompassOutput < Test::Unit::TestCase
       control_file_pwd = "#{Dir.pwd}/controls/#{File.basename(test_file_pwd)}"
 
       begin
-        passed = assert FileUtils.compare_file(test_file_pwd, control_file_pwd), "Compiled output for #{File.basename(sass_file)} does not match control output!"
+        passed = assert FileUtils.compare_file(test_file_pwd, control_file_pwd), "Compiled output for #{File.basename(sass_file)} does not match control output!".red
       ensure
         if !passed
           test_file = File.open(test_file_pwd).read;
@@ -31,7 +32,7 @@ class TestCompassOutput < Test::Unit::TestCase
 
           File.open(diff_pwd, 'w') { |f| f.write(diff_content.to_s(:text)) }
 
-          puts "Diff of compiled file into control file available at #{diff_pwd}"
+          puts "Compiled->Control diff output to ".yellow + "tests/#{File.basename(test_file_pwd)}.diff".colorize( :color => :blue, :background => :black)
         end
       end
     end

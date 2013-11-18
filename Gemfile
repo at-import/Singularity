@@ -9,6 +9,7 @@ gem 'breakpoint',         ">= 2.0.0"
 group :test do
   gem 'rake'
   gem "diffy", "~> 3.0.1"
+  gem "colorize", "~> 0.6.0"
 end
 
 group :development do
