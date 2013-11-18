@@ -6,7 +6,7 @@ task :test do
   Dir.chdir('tests') do
     output_dir = 'tests'
     FileUtils.mkdir_p output_dir
-    ruby 'unit_tests.rb'
+    ruby '.unit_tests.rb'
     FileUtils.rm_rf output_dir
   end
 end
