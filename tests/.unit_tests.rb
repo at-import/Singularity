@@ -32,7 +32,7 @@ class TestCompassOutput < Test::Unit::TestCase
 
           File.open(diff_pwd, 'w') { |f| f.write(diff_content.to_s(:text)) }
 
-          puts "Compiled->Control diff output to ".yellow + "tests/#{File.basename(test_file_pwd)}.diff".colorize( :color => :blue, :background => :black)
+	  puts "Compiled->Control diff output to ".yellow + " tests/#{File.basename(test_file_pwd)}.diff ".colorize( :color => :blue, :background => :black)
         end
       end
     end
