@@ -12,11 +12,14 @@ class TestCompassOutput < Test::Unit::TestCase
     test_name = File.basename(sass_file, '.*')
 
     define_method "test_#{test_name}_compile " do
-      css_file = Compass.compiler.corresponding_css_file(sass_file)
-      Compass.compiler.compile sass_file, css_file  # Raises exception upon error
+      test_file_pwd = Compass.compiler.corresponding_css_file(sass_file)
+      Compass.compiler.compile sass_file, test_file_pwd  # Raises exception upon error
+      test_file = File.open(test_file_pwd).read;
 
-      baseline_file = "#{Dir.pwd}/controls/#{File.basename(css_file)}"
-      assert FileUtils.compare_file(css_file, baseline_file), "Compiled output for #{File.basename(sass_file)} does not match control output!"
+      control_file_pwd = "#{Dir.pwd}/controls/#{File.basename(test_file_pwd)}"
+      control_file = File.open(control_file_pwd).read;
+      assert FileUtils.compare_file(test_file_pwd, control_file_pwd), "Compiled output for #{File.basename(sass_file)} does not match control output!"
+
     end
   end
 
