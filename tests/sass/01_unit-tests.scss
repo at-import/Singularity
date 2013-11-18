@@ -1,0 +1,9 @@
+/* Basic Function */
+@function foo($bar) {
+  @return $bar;
+}
+
+.foo {
+  _test: "foo('Hello World')";
+  _results: foo('Hello World');
+}
