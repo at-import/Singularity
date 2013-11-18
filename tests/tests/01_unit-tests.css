@@ -1,0 +1,5 @@
+/* Basic Function */
+.foo {
+  _test: "foo('Hello World')";
+  _results: "Hello World";
+}
