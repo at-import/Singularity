@@ -16,7 +16,7 @@ class TestCompassOutput < Test::Unit::TestCase
   Compass.compiler.sass_files.each do |sass_file|
     test_name = File.basename(sass_file, '.*')
 
-    define_method "test_#{test_name}_compile" do
+    define_method "test_#{test_name}_compile " do
       # Compiled CSS file path
       test_file_pwd = Compass.compiler.corresponding_css_file(sass_file)
 
@@ -46,7 +46,7 @@ class TestCompassOutput < Test::Unit::TestCase
 
           File.open(diff_pwd, 'w') { |f| f.write(diff_content.to_s(:text)) }
 
-      	  puts "Control->Compiled diff output to ".yellow + " tests/#{relative_pwd}.diff ".colorize( :color => :blue, :background => :black)
+      	  puts "Control->Compiled diff output to ".yellow + " tests/tests/#{relative_pwd}.diff ".colorize( :color => :blue, :background => :black)
         end
       end
     end
