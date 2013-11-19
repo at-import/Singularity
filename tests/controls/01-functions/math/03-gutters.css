@@ -1,0 +1,2549 @@
+/**
+  * Column Span Function
+**/
+.gutter-span__symmetric {
+  /* Global Grid Setup */
+  _grids: "5";
+  _grids: "7 at 700px";
+  _grids: "9 at 900px";
+  _gutters: ".25";
+  _gutters: ".35 at 700px";
+  _gutters: ".45 at 900px";
+  _gutter-styles: 'opposite';
+  _gutter-styles: 'split at 700px';
+  _gutter-styles: 'opposite at 900px';
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 4.16667%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 7.14286%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 6)";
+  _result: 3.44828%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 4%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 6)";
+  _result: 5.88235%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+  _result: 3.33333%;
+  /* Full Override */
+  _test: "gutter-span(.5, 6, 'split')";
+  _result: 5.55556%;
+  /**
+    * Layout Tests
+  **/
+  _layout: "8";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 2.5641%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.34783%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 6)";
+  _result: 3.44828%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 2.5%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 6)";
+  _result: 5.88235%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+  _result: 3.33333%;
+  /* Full Override */
+  _test: "gutter-span(.5, 6, 'split')";
+  _result: 5.55556%;
+  _layout: "$gutter: .75";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 9.375%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 7.14286%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 6)";
+  _result: 7.69231%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 8.57143%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 6)";
+  _result: 5.88235%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+  _result: 7.14286%;
+  /* Full Override */
+  _test: "gutter-span(.5, 6, 'split')";
+  _result: 5.55556%;
+  _layout: "$gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 4%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 6.66667%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 6)";
+  _result: 3.33333%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 4%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 6)";
+  _result: 5.55556%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+  _result: 3.33333%;
+  /* Full Override */
+  _test: "gutter-span(.5, 6, 'split')";
+  _result: 5.55556%;
+  _layout: "8, .75";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 5.35714%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.16667%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 6)";
+  _result: 7.14286%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 5.35714%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 6)";
+  _result: 5.55556%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+  _result: 7.14286%;
+  /* Full Override */
+  _test: "gutter-span(.5, 6, 'split')";
+  _result: 5.55556%;
+  _layout: ".75, $gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 26.66667%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 44.44444%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 6)";
+  _result: 3.33333%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 26.66667%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 6)";
+  _result: 5.55556%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+  _result: 3.33333%;
+  /* Full Override */
+  _test: "gutter-span(.5, 6, 'split')";
+  _result: 5.55556%;
+  _layout: "8, .75, $gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 5.35714%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.16667%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 6)";
+  _result: 7.14286%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 5.35714%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 6)";
+  _result: 5.55556%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+  _result: 7.14286%;
+  /* Full Override */
+  _test: "gutter-span(.5, 6, 'split')";
+  _result: 5.55556%;
+}
+@media (min-width: 699px) {
+  .gutter-span__symmetric {
+    /* Global Grid Setup */
+    _grids: "5";
+    _grids: "7 at 700px";
+    _grids: "9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 4%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 3.33333%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 4%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 3.33333%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.5%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 3.33333%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.5%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 3.33333%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.375%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 7.14286%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.69231%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 8.57143%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.88235%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 4%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 3.33333%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 4%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 3.33333%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 26.66667%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 3.33333%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 26.66667%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 3.33333%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+  }
+}
+@media (min-width: 700px) {
+  .gutter-span__symmetric {
+    /* Global Grid Setup */
+    _grids: "5";
+    _grids: "7 at 700px";
+    _grids: "9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.24074%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.24074%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 6.52174%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 5%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.69231%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 6.12245%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.88235%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 34.5679%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 34.5679%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+  }
+}
+@media (min-width: 899px) {
+  .gutter-span__symmetric {
+    /* Global Grid Setup */
+    _grids: "5";
+    _grids: "7 at 700px";
+    _grids: "9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.24074%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.24074%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 6.52174%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 5%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.69231%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 6.12245%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.88235%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 34.5679%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 4.32099%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 34.5679%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 4.32099%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+  }
+}
+@media (min-width: 900px) {
+  .gutter-span__symmetric {
+    /* Global Grid Setup */
+    _grids: "5";
+    _grids: "7 at 700px";
+    _grids: "9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.44828%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.7037%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 5.17241%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.44828%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 5.17241%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.87931%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 5.17241%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.87931%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 5.17241%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.84615%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.69231%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 4.7619%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.88235%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.44828%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.7037%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 5.17241%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.44828%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 5.17241%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 41.37931%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 5.17241%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 41.37931%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 5.17241%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 6)";
+    _result: 7.14286%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 6)";
+    _result: 5.55556%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 6, $gutter-style: 'split')";
+    _result: 7.14286%;
+    /* Full Override */
+    _test: "gutter-span(.5, 6, 'split')";
+    _result: 5.55556%;
+  }
+}
+
+.gutter-span__asymmetric {
+  /* Global Grid Setup */
+  _grids: "1 3 5";
+  _grids: "3 5 7 at 700px";
+  _grids: "5 7 9 at 900px";
+  _gutters: ".25";
+  _gutters: ".35 at 700px";
+  _gutters: ".45 at 900px";
+  _gutter-styles: 'opposite';
+  _gutter-styles: 'split at 700px';
+  _gutter-styles: 'opposite at 900px';
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 2.63158%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 5%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 2%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 2.5641%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.84615%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  /**
+    * Layout Tests
+  **/
+  _layout: "3 2 1";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 3.84615%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 7.14286%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 2%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 3.7037%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.84615%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "$gutter: .75";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 7.14286%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 5%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 5.55556%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 6.66667%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.84615%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 5.26316%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "$gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 2.5641%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.7619%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 1.96078%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 2.5641%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "3 2 1, .75";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 9.09091%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 6.66667%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 5.26316%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 9.09091%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 5.26316%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: ".75, $gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 26.66667%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 44.44444%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 1.96078%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 26.66667%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "3 2 1, .75, $gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 9.09091%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 6.66667%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 5.26316%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 9.09091%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 5.26316%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+}
+@media (min-width: 699px) {
+  .gutter-span__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "3 5 7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.5641%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.5641%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "3 2 1";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 7.14286%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 5%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 6.66667%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.5641%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.5641%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 26.66667%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 26.66667%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
+@media (min-width: 700px) {
+  .gutter-span__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "3 5 7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.18069%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.0303%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.18069%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "3 2 1";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 4.96454%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 4.96454%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 4.54545%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.125%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 4.34783%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.18069%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.0303%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.18069%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 34.5679%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 34.5679%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
+@media (min-width: 899px) {
+  .gutter-span__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "3 5 7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.18069%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.0303%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.18069%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "3 2 1";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 4.96454%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 4.96454%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 4.54545%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.125%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 4.34783%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.18069%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 3.0303%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.18069%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 34.5679%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 34.5679%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
+@media (min-width: 900px) {
+  .gutter-span__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "3 5 7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.01342%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 2.22222%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.01342%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "3 2 1";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 6.12245%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 6.12245%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.33333%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 2.27273%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.22581%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.01342%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 2.22222%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.01342%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 41.37931%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 41.37931%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "3 2 1, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 9.09091%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 6.66667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 9.09091%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
+
+.gutter-span__mixed {
+  /* Global Grid Setup */
+  _grids: "1 3 5";
+  _grids: "7 at 700px";
+  _grids: "5 7 9 at 900px";
+  _gutters: ".25";
+  _gutters: ".35 at 700px";
+  _gutters: ".45 at 900px";
+  _gutter-styles: 'opposite';
+  _gutter-styles: 'split at 700px';
+  _gutter-styles: 'opposite at 900px';
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 2.63158%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 5%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 2%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 2.5641%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.84615%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  /**
+    * Layout Tests
+  **/
+  _layout: "8";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 2.5641%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.34783%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 2%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 2.5%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.84615%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "$gutter: .75";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 7.14286%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 5%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 5.55556%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 6.66667%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.84615%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 5.26316%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "$gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 2.5641%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.7619%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 1.96078%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 2.5641%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "8, .75";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 5.35714%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.16667%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 5.26316%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 5.35714%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 5.26316%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: ".75, $gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 26.66667%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 44.44444%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 1.96078%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 26.66667%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 1.96078%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+  _layout: "8, .75, $gutter-style: 'split'";
+  /* Basic Gutter Span */
+  _test: "gutter-span()";
+  _result: 5.35714%;
+  /* Gutter Override */
+  _test: "gutter-span(.5)";
+  _result: 4.16667%;
+  /* Grid Override */
+  _test: "gutter-span($grid: 2 4 6)";
+  _result: 5.26316%;
+  /* Gutter Style Override */
+  _test: "gutter-span($gutter-style: 'split')";
+  _result: 5.35714%;
+  /* Gutter and Grid Override */
+  _test: "gutter-span(.5, 2 4 6)";
+  _result: 3.7037%;
+  /* Grid and Gutter Style Override */
+  _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+  _result: 5.26316%;
+  /* Full Override */
+  _test: "gutter-span(.5, 2 4 6, 'split')";
+  _result: 3.7037%;
+}
+@media (min-width: 699px) {
+  .gutter-span__mixed {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.5641%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.5641%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.5%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.5%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 7.14286%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 5%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 6.66667%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.5641%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.5641%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 26.66667%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 1.96078%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 26.66667%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 1.96078%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
+@media (min-width: 700px) {
+  .gutter-span__mixed {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.24074%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.24074%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 6.52174%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 5%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 6.12245%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 34.5679%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 34.5679%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
+@media (min-width: 899px) {
+  .gutter-span__mixed {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.24074%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.24074%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 6.52174%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 5%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 6.12245%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.7037%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.7619%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.7037%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 34.5679%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 2.68199%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 34.5679%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 2.68199%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
+@media (min-width: 900px) {
+  .gutter-span__mixed {
+    /* Global Grid Setup */
+    _grids: "1 3 5";
+    _grids: "7 at 700px";
+    _grids: "5 7 9 at 900px";
+    _gutters: ".25";
+    _gutters: ".35 at 700px";
+    _gutters: ".45 at 900px";
+    _gutter-styles: 'opposite';
+    _gutter-styles: 'split at 700px';
+    _gutter-styles: 'opposite at 900px';
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.01342%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 2.22222%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.01342%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    /**
+      * Layout Tests
+    **/
+    _layout: "8";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.87931%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.87931%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter: .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 3.33333%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 2.27273%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.55556%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 3.22581%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.84615%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "$gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 2.01342%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 2.22222%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 2.01342%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: ".75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 41.37931%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 44.44444%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 3.37079%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 41.37931%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 3.37079%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+    _layout: "8, .75, $gutter-style: 'split'";
+    /* Basic Gutter Span */
+    _test: "gutter-span()";
+    _result: 5.35714%;
+    /* Gutter Override */
+    _test: "gutter-span(.5)";
+    _result: 4.16667%;
+    /* Grid Override */
+    _test: "gutter-span($grid: 2 4 6)";
+    _result: 5.26316%;
+    /* Gutter Style Override */
+    _test: "gutter-span($gutter-style: 'split')";
+    _result: 5.35714%;
+    /* Gutter and Grid Override */
+    _test: "gutter-span(.5, 2 4 6)";
+    _result: 3.7037%;
+    /* Grid and Gutter Style Override */
+    _test: "gutter-span($grid: 2 4 6, $gutter-style: 'split')";
+    _result: 5.26316%;
+    /* Full Override */
+    _test: "gutter-span(.5, 2 4 6, 'split')";
+    _result: 3.7037%;
+  }
+}
