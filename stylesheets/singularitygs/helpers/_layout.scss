@@ -1,11 +1,12 @@
 //////////////////////////////
 // Wrapper mixin for overriding the global contexts as a block
 //////////////////////////////
-@mixin layout($grid: false, $gutter: false, $output-style: false) {
+@mixin layout($grid: false, $gutter: false, $output-style: false, $gutter-style: false) {
   // Private holder for current global context
   $layout-private-grid-holder: $grids;
   $layout-private-gutter-holder: $gutters;
   $layout-private-output-holder: $output;
+  $layout-private-gutter-style-holder: $gutter-style;
 
   // Overides current global contexts, but only if needed
   @if $grid != false {
@@ -17,6 +18,9 @@
   @if $output-style != false {
     $output: $output-style;
   }
+  @if $gutter-style != false {
+    $gutter-styles: $gutter-style;
+  }
 
   // All the things!
   @content;
@@ -25,4 +29,5 @@
   $grids: $layout-private-grid-holder;
   $gutters: $layout-private-gutter-holder;
   $output: $layout-private-output-holder;
+  $gutter-styles: $layout-private-gutter-style-holder;
 }

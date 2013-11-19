@@ -15,7 +15,7 @@
   // @debug $gutter;
 
   // Combine the grid and gutters
-  $grid-and-gutters: column-sum($grid, $gutter);
+  $grid-and-gutters: column-sum($grid, $gutter, $gutter-style);
 
   // @debug $grid-and-gutters;
 
@@ -52,8 +52,8 @@
 //////////////////////////////
 // Find the total sum of the grid
 //////////////////////////////
-@function column-sum($grid, $gutter) {
-  $split: if(index(find-gutter-style(), split), true, false);
+@function column-sum($grid, $gutter, $gutter-style) {
+  $split: if($gutter-style == 'split', true, false);
 
   @if type-of($grid) == 'number' or length($grid) == 1 {
     @if $split {

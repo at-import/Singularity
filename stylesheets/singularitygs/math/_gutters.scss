@@ -3,13 +3,14 @@
   // Find the columns and gutters
   $grid: find-grid($grid);
   $gutter: find-gutter($gutter);
+  $gutter-style: find-gutter-style($gutter-style);
 
   @if fixed-gutter($grid, $gutter, $gutter-style) {
     @return nth($gutter, 1);
   }
 
   // Combine the columns and gutters
-  $grid-and-gutters: column-sum($grid, $gutter);
+  $grid-and-gutters: column-sum($grid, $gutter, $gutter-style);
 
   @return (nth($gutter, 1) / $grid-and-gutters) * 100%
 }
