@@ -31,4 +31,4 @@ Having been designed to be extensible, the ability to create plugins for Singula
 
 ## Licence
 
-Dual licence MIT/GPL
+Dual licence MIT/GPL-3.0
