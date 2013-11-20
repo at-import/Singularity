@@ -4,4 +4,4 @@
 *.gem
 example/css/
 Gemfile.lock
-/tests/tests
+/tests/output/

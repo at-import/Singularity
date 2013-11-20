@@ -2,8 +2,8 @@
 require 'breakpoint'
 
 # File system locations
-sass_dir              = 'sass'
-css_dir               = 'tests'
+sass_dir              = 'tests'
+css_dir               = 'output'
 # Import latest breakpoint library
 add_import_path       '../stylesheets'
 
