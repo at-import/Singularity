@@ -14,6 +14,12 @@
   @else if $dir == 'rtl' {
     @return ltr;
   }
+  @else if $dir == 'top' {
+    @return bottom;
+  }
+  @else if $dir == 'bottom' {
+    @return top;
+  }
   @else {
     @warn "#{$dir} is not a direction! Make sure your direction is all lowercase!";
     @return false;
