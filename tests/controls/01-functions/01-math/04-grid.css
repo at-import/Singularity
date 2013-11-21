@@ -1,5 +1,6 @@
 /**
-  * Column Span Function
+  * Grid Span Function
+  * - Returns the width, in percentage, of the given grid span (column + gutter span)
 **/
 .grid-span__symmetric {
   /* Global Grid Setup */

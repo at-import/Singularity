@@ -3,6 +3,7 @@
 
 /**
   * Column Count Function
+  * - Returns the number of columns in the column definition
 **/
 .column-count {
   /* Simple */
@@ -16,6 +17,7 @@
 
 /**
   * Column Sum Function
+  * - Returns the sum of all columns and gutters
 **/
 
 .column-sum__opposite-gutters {
@@ -40,6 +42,7 @@
 
 /**
   * Column Span Function
+  * - Returns the width, in percentage, of the given span and location
 **/
 
 //////////////////////////////

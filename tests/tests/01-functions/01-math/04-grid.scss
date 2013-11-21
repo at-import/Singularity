@@ -2,64 +2,92 @@
 @import "singularitygs";
 
 /**
-  * Column Span Function
+  * Grid Span Function
+  * - Returns the width, in percentage, of the given grid span (column + gutter span)
 **/
 
 //////////////////////////////
-// Column Span Testing Mixin
+// Grid Span Testing Mixin
 //////////////////////////////
-@mixin gutter-span-test($grid) {
-  /* Basic Gutter Span */
-  _test: "gutter-span()";
-  _result: gutter-span();
-  /* Gutter Override */
-  _test: "gutter-span(.5)";
-  _result: gutter-span(.5);
-  /* Grid Override */
-  _test: "gutter-span($grid: #{$grid})";
-  _result: gutter-span($grid: $grid);
-  /* Gutter Style Override */
-  _test: "gutter-span($gutter-style: 'split')";
-  _result: gutter-span($gutter-style: 'split');
-  /* Gutter and Grid Override */
-  _test: "gutter-span(.5, #{$grid})";
-  _result: gutter-span(.5, $grid);
-  /* Grid and Gutter Style Override */
-  _test: "gutter-span($grid: #{$grid}, $gutter-style: 'split')";
-  _result: gutter-span($grid: $grid, $gutter-style: 'split');
-  /* Full Override */
-  _test: "gutter-span(.5, #{$grid}, 'split')";
-  _result: gutter-span(.5, $grid, 'split');
+@mixin grid-span-test($grid) {
+  /* Single Column Span */
+  _test: "grid-span(1, 1)";
+  _result: grid-span(1, 1);
+  /* Multiple Column Span */
+  _test: "grid-span(2, 1)";
+  _result: grid-span(2, 1);
+  /* Grid Override, Single Column Span */
+  _test: "grid-span(1, 1, #{$grid})";
+  _result: grid-span(1, 1, $grid);
+  /* Grid Override, Multi Column Span */
+  _test: "grid-span(2, 1, #{$grid})";
+  _result: grid-span(2, 1, $grid);
+  /* Gutter Override, Single Column Span */
+  _test: "grid-span(1, 1, $gutter: .5)";
+  _result: grid-span(1, 1, $gutter: .5);
+  /* Gutter Override, Multi Column Span */
+  _test: "grid-span(2, 1, $gutter: .5)";
+  _result: grid-span(2, 1, $gutter: .5);
+  /* Gutter Style Override, Single Column Span */
+  _test: "grid-span(1, 1, $gutter-style: 'split')";
+  _result: grid-span(1, 1, $gutter-style: 'split');
+  /* Gutter Style Override, Multi Column Span */
+  _test: "grid-span(2, 1, $gutter-style: 'split')";
+  _result: grid-span(2, 1, $gutter-style: 'split');
+  /* Grid and Gutter Override, Single Column Span */
+  _test: "grid-span(1, 1, #{$grid}, .5)";
+  _result: grid-span(1, 1, $grid, .5);
+  /* Grid and Gutter Override, Multi Column Span */
+  _test: "grid-span(2, 1, #{$grid}, .5)";
+  _result: grid-span(2, 1, $grid, .5);
+  /* Grid and Gutter Style Override, Single Column Span */
+  _test: "grid-span(1, 1, #{$grid}, $gutter-style: 'split')";
+  _result: grid-span(1, 1, $grid, $gutter-style: 'split');
+  /* Grid and Gutter Style Override, Multi Column Span */
+  _test: "grid-span(2, 1, #{$grid}, $gutter-style: 'split')";
+  _result: grid-span(2, 1, $grid, $gutter-style: 'split');
+  /* Gutter and Gutter Style Override, Single Column Span */
+  _test: "grid-span(1, 1, $gutter: .5, $gutter-style: 'split')";
+  _result: grid-span(1, 1, $gutter: .5, $gutter-style: 'split');
+  /* Gutter and Gutter Style Override, Multi Column Span */
+  _test: "grid-span(2, 1, $gutter: .5, $gutter-style: 'split')";
+  _result: grid-span(2, 1, $gutter: .5, $gutter-style: 'split');
+  /* Full Override, Single Column Span */
+  _test: "grid-span(1, 1, #{$grid}, .5, 'split')";
+  _result: grid-span(1, 1, $grid, .5, 'split');
+  /* Full Override, Multi Column Span */
+  _test: "grid-span(2, 1, #{$grid}, .5, 'split')";
+  _result: grid-span(2, 1, $grid, .5, 'split');
 }
 
-@mixin adaptive-gutter-span-test($layout-grid, $grid) {
-  @include gutter-span-test($grid);
+@mixin adaptive-grid-span-test($layout-grid, $grid) {
+  @include grid-span-test($grid);
   /**
     * Layout Tests
   **/
   _layout: "#{$layout-grid}";
   @include layout($layout-grid) {
-    @include gutter-span-test($grid);
+    @include grid-span-test($grid);
   }
   _layout: "$gutter: .75";
   @include layout($gutter: .75) {
-    @include gutter-span-test($grid);
+    @include grid-span-test($grid);
   }
   _layout: "$gutter-style: 'split'";
   @include layout($gutter-style: 'split') {
-    @include gutter-span-test($grid);
+    @include grid-span-test($grid);
   }
   _layout: "#{$layout-grid}, .75";
   @include layout($layout-grid, .75) {
-    @include gutter-span-test($grid);
+    @include grid-span-test($grid);
   }
   _layout: ".75, $gutter-style: 'split'";
   @include layout(.75, $gutter-style: 'split') {
-    @include gutter-span-test($grid);
+    @include grid-span-test($grid);
   }
   _layout: "#{$layout-grid}, .75, $gutter-style: 'split'";
   @include layout($layout-grid, .75, $gutter-style: 'split') {
-    @include gutter-span-test($grid);
+    @include grid-span-test($grid);
   }
 }
 
@@ -73,7 +101,7 @@ $gutter-styles: 'opposite';
 $gutter-styles: add-gutter-style('split' at 700px);
 $gutter-styles: add-gutter-style('opposite' at 900px);
 
-.gutter-span__symmetric {
+.grid-span__symmetric {
   /* Global Grid Setup */
   _grids: "5";
   _grids: "7 at 700px";
@@ -85,7 +113,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
   _gutter-styles: 'split at 700px';
   _gutter-styles: 'opposite at 900px';
 
-  @include adaptive-gutter-span-test(8, 6);
+  @include adaptive-grid-span-test(8, 6);
 
   @include breakpoint(699px) {
     /* Global Grid Setup */
@@ -99,7 +127,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 6);
+    @include adaptive-grid-span-test(8, 6);
   }
   @include breakpoint(700px) {
     /* Global Grid Setup */
@@ -113,7 +141,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 6);
+    @include adaptive-grid-span-test(8, 6);
   }
   @include breakpoint(899px) {
     /* Global Grid Setup */
@@ -127,7 +155,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 6);
+    @include adaptive-grid-span-test(8, 6);
   }
   @include breakpoint(900px) {
     /* Global Grid Setup */
@@ -141,7 +169,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 6);
+    @include adaptive-grid-span-test(8, 6);
   }
 }
 
@@ -155,7 +183,7 @@ $gutter-styles: 'opposite';
 $gutter-styles: add-gutter-style('split' at 700px);
 $gutter-styles: add-gutter-style('opposite' at 900px);
 
-.gutter-span__asymmetric {
+.grid-span__asymmetric {
   /* Global Grid Setup */
   _grids: "1 3 5";
   _grids: "3 5 7 at 700px";
@@ -167,7 +195,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
   _gutter-styles: 'split at 700px';
   _gutter-styles: 'opposite at 900px';
 
-  @include adaptive-gutter-span-test(3 2 1, 2 4 6);
+  @include adaptive-grid-span-test(3 2 1, 2 4 6);
   @include breakpoint(699px) {
     /* Global Grid Setup */
     _grids: "1 3 5";
@@ -180,7 +208,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(3 2 1, 2 4 6);
+    @include adaptive-grid-span-test(3 2 1, 2 4 6);
   }
   @include breakpoint(700px) {
     /* Global Grid Setup */
@@ -194,7 +222,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(3 2 1, 2 4 6);
+    @include adaptive-grid-span-test(3 2 1, 2 4 6);
   }
   @include breakpoint(899px) {
     /* Global Grid Setup */
@@ -208,7 +236,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(3 2 1, 2 4 6);
+    @include adaptive-grid-span-test(3 2 1, 2 4 6);
   }
   @include breakpoint(900px) {
     /* Global Grid Setup */
@@ -222,7 +250,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(3 2 1, 2 4 6);
+    @include adaptive-grid-span-test(3 2 1, 2 4 6);
   }
 }
 
@@ -236,7 +264,7 @@ $gutter-styles: 'opposite';
 $gutter-styles: add-gutter-style('split' at 700px);
 $gutter-styles: add-gutter-style('opposite' at 900px);
 
-.gutter-span__mixed {
+.grid-span__mixed {
   /* Global Grid Setup */
   _grids: "1 3 5";
   _grids: "7 at 700px";
@@ -248,7 +276,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
   _gutter-styles: 'split at 700px';
   _gutter-styles: 'opposite at 900px';
 
-  @include adaptive-gutter-span-test(8, 2 4 6);
+  @include adaptive-grid-span-test(8, 2 4 6);
   @include breakpoint(699px) {
     /* Global Grid Setup */
     _grids: "1 3 5";
@@ -261,7 +289,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 2 4 6);
+    @include adaptive-grid-span-test(8, 2 4 6);
   }
   @include breakpoint(700px) {
     /* Global Grid Setup */
@@ -275,7 +303,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 2 4 6);
+    @include adaptive-grid-span-test(8, 2 4 6);
   }
   @include breakpoint(899px) {
     /* Global Grid Setup */
@@ -289,7 +317,7 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 2 4 6);
+    @include adaptive-grid-span-test(8, 2 4 6);
   }
   @include breakpoint(900px) {
     /* Global Grid Setup */
@@ -303,6 +331,6 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
     _gutter-styles: 'split at 700px';
     _gutter-styles: 'opposite at 900px';
 
-    @include adaptive-gutter-span-test(8, 2 4 6);
+    @include adaptive-grid-span-test(8, 2 4 6);
   }
 }
