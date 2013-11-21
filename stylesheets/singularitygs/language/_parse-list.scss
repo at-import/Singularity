@@ -4,9 +4,10 @@
 // Retrieve values from the natural language string.
 // parse-string($var, $list)
 //  $var  : <string>
-//        - at/span/of or any other keywords.
+//        - 'at'/'span'/'of' or any other keywords.
 //        - 'span' queries the unprefixed span declaration.
 //        - 'at' can also query first, last, alpha, and omega.
+//        - 'grid' will return the same as 'of'
 //  $list : <list>
 //        - A list like this: last 2 of (1 1 2) push 1
 //
@@ -19,7 +20,6 @@
 
   // Loop through list.
   @each $item in $list {
-
     // if 'span' - return the first numeric.
     // if keyword was found - return the following item.
     @if (type-of($item) == number and $var == span and $found != 'grid') or $found == true {
@@ -29,7 +29,7 @@
     }
 
     // Special handling for Grids
-    @else if $item == $var and $var == 'of' {
+    @else if ($item == $var or $item == 'grid' or $item == 'of') and ($var == 'of' or $var == 'grid') {
       $found: 'grid';
     }
 
