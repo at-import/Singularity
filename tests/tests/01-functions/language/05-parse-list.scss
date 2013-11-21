@@ -1,0 +1,26 @@
+@import "breakpoint";
+@import "singularitygs";
+
+/**
+  * Parse List Function
+**/
+.parse-list {
+  /* List Setup */
+  $list: last 2 of 1 1 2 push 1;
+  _list: "last 2 of 1 1 2 push 1";
+  /* Search "last" */
+  _test: "parse-span-list('last', $list)";
+  _result: parse-span-list('last', $list);
+  /* Search "push" */
+  _test: "parse-span-list('push', $list)";
+  _result: parse-span-list('push', $list);
+  /* Search "span" */
+  _test: "parse-span-list('span', $list)";
+  _result: parse-span-list('span', $list);
+  /* Search "grid" */
+  _test: "parse-span-list('grid', $list)";
+  _result: parse-span-list('grid', $list);
+  /* Search "foo" */
+  _test: "parse-span-list('foo', $list)";
+  _result: parse-span-list('foo', $list);
+}
