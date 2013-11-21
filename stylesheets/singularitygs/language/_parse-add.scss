@@ -1,3 +1,12 @@
+//////////////////////////////
+// Parse add string
+//
+// Retrieve add and media query values from a definition
+// parse-add($definition)
+//  $definition : <list>
+//        - A list like: .25 at 300px
+//
+//////////////////////////////
 @function parse-add($definition) {
   $grid: ();
   $mq: false;
