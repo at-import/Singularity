@@ -1,7 +1,10 @@
-@import "singularitygs/math/context";
+@import "breakpoint";
+@import "singularitygs";
 
+/**
+  * Context Function
+**/
 .context {
   _test: "context(50, 100)";
-  _expected: "50%";
-  _actual: context(50, 100);
+  _result: context(50, 100);
 }
