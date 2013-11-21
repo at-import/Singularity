@@ -1,0 +1,613 @@
+/**
+  * Start Row
+  * - Returns whether or not the location is 1
+**/
+.start-row {
+  /* First in Row */
+  _test: "start-row(1)";
+  _result: true;
+  /* Not First in Row */
+  _test: "start-row(2)";
+  _result: false;
+}
+
+/**
+  * Find Object Function
+  * - Finds the appropriate item given the current media query. May include an override. Testing with Grids
+**/
+.end-row__symmetric {
+  /* Global Grid Setup */
+  _grids: "5, 7 700px, 9 900px";
+  /* First item without override */
+  _test: "end-row(1, 1, false)";
+  _result: false;
+  /* First item with override */
+  _test: "end-row(1, 1, 6)";
+  _result: false;
+  /* Last item of current grid without override */
+  _test: "end-row(1, 5, false)";
+  _result: true;
+  /* Last item of current grid with override */
+  _test: "end-row(1, 5, 6)";
+  _result: false;
+  /* Last item of override with override */
+  _test: "end-row(1, 6, 6)";
+  _result: true;
+  /**
+    * Layout Test
+  **/
+  _layout: "8";
+  /* First item without override */
+  _test: "end-row(1, 1, false)";
+  _result: false;
+  /* First item with override */
+  _test: "end-row(1, 1, 6)";
+  _result: false;
+  /* Last item of current grid without override */
+  _test: "end-row(1, 8, false)";
+  _result: true;
+  /* Last item of current grid with override */
+  _test: "end-row(1, 8, 6)";
+  _result: false;
+  /* Last item of override with override */
+  _test: "end-row(1, 6, 6)";
+  _result: true;
+}
+@media (min-width: 699px) {
+  .end-row__symmetric {
+    /* Global Grid Setup */
+    _grids: "5, 7 700px, 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 5, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 5, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+  }
+}
+@media (min-width: 700px) {
+  .end-row__symmetric {
+    /* Global Grid Setup */
+    _grids: "5, 7 700px, 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 7, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 7, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+  }
+}
+@media (min-width: 899px) {
+  .end-row__symmetric {
+    /* Global Grid Setup */
+    _grids: "5, 7 700px, 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 7, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 7, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+  }
+}
+@media (min-width: 900px) {
+  .end-row__symmetric {
+    /* Global Grid Setup */
+    _grids: "5, 7 700px, 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 9, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 9, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 6)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 6)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 6, 6)";
+    _result: true;
+  }
+}
+
+.end-row__asymmetric {
+  /* Global Grid Setup */
+  _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+  /* First item without override */
+  _test: "end-row(1, 1, false)";
+  _result: false;
+  /* First item with override */
+  _test: "end-row(1, 1, 2 4 6 7)";
+  _result: false;
+  /* Last item of current grid without override */
+  _test: "end-row(1, 3, false)";
+  _result: true;
+  /* Last item of current grid with override */
+  _test: "end-row(1, 3, 2 4 6 7)";
+  _result: false;
+  /* Last item of override with override */
+  _test: "end-row(1, 4, 2 4 6 7)";
+  _result: true;
+  /**
+    * Layout Test
+  **/
+  _layout: "3 2 1 7";
+  /* First item without override */
+  _test: "end-row(1, 1, false)";
+  _result: false;
+  /* First item with override */
+  _test: "end-row(1, 1, 2 4 6 7)";
+  _result: false;
+  /* Last item of current grid without override */
+  _test: "end-row(1, 4, false)";
+  _result: true;
+  /* Last item of current grid with override */
+  _test: "end-row(1, 4, 2 4 6 7)";
+  _result: true;
+  /* Last item of override with override */
+  _test: "end-row(1, 4, 2 4 6 7)";
+  _result: true;
+}
+@media (min-width: 699px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 3, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 3, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "3 2 1 7";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 4, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
+@media (min-width: 700px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 3, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 3, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "3 2 1 7";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 4, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
+@media (min-width: 899px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 3, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 3, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "3 2 1 7";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 4, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
+@media (min-width: 900px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 3, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 3, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "3 2 1 7";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 4, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
+
+.end-row__asymmetric {
+  /* Global Grid Setup */
+  _grids: "1 3 5, 7 700px, 5 7 9 900px";
+  /* First item without override */
+  _test: "end-row(1, 1, false)";
+  _result: false;
+  /* First item with override */
+  _test: "end-row(1, 1, 2 4 6 7)";
+  _result: false;
+  /* Last item of current grid without override */
+  _test: "end-row(1, 3, false)";
+  _result: true;
+  /* Last item of current grid with override */
+  _test: "end-row(1, 3, 2 4 6 7)";
+  _result: false;
+  /* Last item of override with override */
+  _test: "end-row(1, 4, 2 4 6 7)";
+  _result: true;
+  /**
+    * Layout Test
+  **/
+  _layout: "8";
+  /* First item without override */
+  _test: "end-row(1, 1, false)";
+  _result: false;
+  /* First item with override */
+  _test: "end-row(1, 1, 2 4 6 7)";
+  _result: false;
+  /* Last item of current grid without override */
+  _test: "end-row(1, 8, false)";
+  _result: true;
+  /* Last item of current grid with override */
+  _test: "end-row(1, 8, 2 4 6 7)";
+  _result: false;
+  /* Last item of override with override */
+  _test: "end-row(1, 4, 2 4 6 7)";
+  _result: true;
+}
+@media (min-width: 699px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 3, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 3, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
+@media (min-width: 700px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 7, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 7, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
+@media (min-width: 899px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 7, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 7, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
+@media (min-width: 900px) {
+  .end-row__asymmetric {
+    /* Global Grid Setup */
+    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 3, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 3, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+    /**
+      * Layout Test
+    **/
+    _layout: "8";
+    /* First item without override */
+    _test: "end-row(1, 1, false)";
+    _result: false;
+    /* First item with override */
+    _test: "end-row(1, 1, 2 4 6 7)";
+    _result: false;
+    /* Last item of current grid without override */
+    _test: "end-row(1, 8, false)";
+    _result: true;
+    /* Last item of current grid with override */
+    _test: "end-row(1, 8, 2 4 6 7)";
+    _result: false;
+    /* Last item of override with override */
+    _test: "end-row(1, 4, 2 4 6 7)";
+    _result: true;
+  }
+}
