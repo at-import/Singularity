@@ -1,0 +1,54 @@
+/**
+  * List Sum Function
+  * - Returns the sum of all items in a list
+**/
+.list-sum {
+  /* Simple List Setup */
+  _list: "5";
+  /* Simple Sum List */
+  _test: "list-sum($list)";
+  _result: 5;
+  /* Complex List Setup */
+  _list: "1 3 5";
+  /* Complex Sum List */
+  _test: "list-sum($list)";
+  _result: 9;
+}
+
+/**
+  * Reverse List Function
+  * - Reverses a list
+**/
+.list-reverse {
+  /* Simple List Setup */
+  _list: "5";
+  /* Simple Reverse List */
+  _test: "reverse($list)";
+  _result: 5;
+  /* Complex List Setup */
+  _list: "1 3 5";
+  /* Complex Reverse List */
+  _test: "reverse($list)";
+  _result: 5 3 1;
+}
+
+/**
+  * Query List Function
+  * - Returns the position(s) in a list of a query
+**/
+.query-list {
+  /* List Setup */
+  _list: "1 1 2 3px 2 5";
+  /* Single Item Test */
+  _test: "query-list($list, 5)";
+  _result: 6;
+  /* Multiple Item Test */
+  _test: "query-list($list, 2)";
+  _result: 3 5;
+  /* Unit Test */
+  _test: "query-list($list, 'px', 'unit')";
+  _result: 4;
+  /* Not Found Test */
+  _test: "query-list($list, 7)";
+  _result: false;
+}
