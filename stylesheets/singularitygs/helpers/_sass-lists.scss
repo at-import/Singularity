@@ -65,7 +65,7 @@
   $length: length($list);
   $return: ();
   @for $i from 0 to $length {
-    $return: append($return, nth($list, $length - $i), comma);
+    $return: append($return, nth($list, $length - $i));
   }
   @return $return;
 }
