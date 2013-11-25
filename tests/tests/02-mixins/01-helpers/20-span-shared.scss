@@ -1,0 +1,44 @@
+@import "breakpoint";
+@import "singularitygs";
+
+/**
+  * Span Shared Mixin
+  * - Determines if box sizing/clearfix should be included.
+**/
+.span-shared__default {
+  /* Default options for Span Shared */
+  _test: "@include span-shared;";
+  @include span-shared;
+}
+
+.span-shared__no-clearfix-no-box-sizing {
+  /* Box Sizing, no Clearfix */
+  $include-border-box: false;
+  $include-clearfix: false;
+  _test: "@include span-shared;";
+  @include span-shared;
+}
+
+.span-shared__no-clearfix {
+  /* Box Sizing, no Clearfix */
+  $include-border-box: true;
+  $include-clearfix: false;
+  _test: "@include span-shared;";
+  @include span-shared;
+}
+
+.span-shared__no-box-sizing {
+  /* Box Sizing, no Clearfix */
+  $include-border-box: false;
+  $include-clearfix: true;
+  _test: "@include span-shared;";
+  @include span-shared;
+}
+
+.span-shared__clearfix-box-sizing {
+  /* Box Sizing, no Clearfix */
+  $include-border-box: true;
+  $include-clearfix: true;
+  _test: "@include span-shared;";
+  @include span-shared;
+}

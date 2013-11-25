@@ -1,0 +1,44 @@
+.span-shared__no-clearfix, .span-shared__clearfix-box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
+  * Span Shared Mixin
+  * - Determines if box sizing/clearfix should be included.
+**/
+.span-shared__default {
+  /* Default options for Span Shared */
+  _test: "@include span-shared;";
+}
+
+.span-shared__no-clearfix-no-box-sizing {
+  /* Box Sizing, no Clearfix */
+  _test: "@include span-shared;";
+}
+
+.span-shared__no-clearfix {
+  /* Box Sizing, no Clearfix */
+  _test: "@include span-shared;";
+}
+
+.span-shared__no-box-sizing {
+  /* Box Sizing, no Clearfix */
+  _test: "@include span-shared;";
+}
+.span-shared__no-box-sizing:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.span-shared__clearfix-box-sizing {
+  /* Box Sizing, no Clearfix */
+  _test: "@include span-shared;";
+}
+.span-shared__clearfix-box-sizing:after {
+  content: "";
+  display: table;
+  clear: both;
+}

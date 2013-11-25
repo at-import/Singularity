@@ -1,0 +1,101 @@
+/**
+  * Layout Mixin
+  * - Allows for overriding of global contexts
+**/
+.layout {
+  /* Global defaults */
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: opposite;
+  /* Grid Override */
+  _test: "@include layout(8)";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: opposite;
+  /* Gutter Override */
+  _test: "@include layout($gutter: .25)";
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: false;
+  /* Output Override */
+  _test: "@include layout($output-style: 'float')";
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: false;
+  /* Gutter Style Override */
+  _test: "@include layout($gutter-style: 'split')";
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: "split";
+  /* Grid, Gutter Overrides */
+  _test: "@include layout(8, .25)";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: "split";
+  /* Grid, Output Overrides */
+  _test: "@include layout(8, $output-style: 'float')";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: false;
+  /* Grid, Gutter Style Overrides */
+  _test: "@include layout(8, $gutter-style: 'split')";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: "split";
+  /* Grid, Gutter, Output Overrides */
+  _test: "@include layout(8, .25, 'float')";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: "split";
+  /* Grid, Gutter, Gutter Style Overrides */
+  _test: "@include layout(8, .25, $gutter-style: 'split')";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: "split";
+  /* Grid, Output, Gutter Style Overrides */
+  _test: "@include layout(8, $output-style: 'float', $gutter-style: 'split')";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: "split";
+  /* Gutter, Output Overrides */
+  _test: "@include layout($gutter: .25, $output-style: 'float')";
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: "split";
+  /* Gutter, Gutter Style Overrides */
+  _test: "@include layout($gutter: .25, $gutter-style: 'split')";
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "isolation";
+  _gutter-style: "split";
+  /* Gutter, Output, Gutter Style Overrides */
+  _test: "@include layout($gutter: .25, $output-style: 'float', $gutter-style: 'split')";
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: "split";
+  /* Output, Gutter Style Overrides */
+  _test: "@include layout($output-style: 'float', $gutter-style: 'split')";
+  _grid: 12;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: "split";
+  /* Grid, Gutter, Output, Gutter Style Overrides */
+  _test: "@include layout(8, .25, 'float', 'split')";
+  _grid: 8;
+  _gutter: 0.25;
+  _output: "float";
+  _gutter-style: "split";
+}

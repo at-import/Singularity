@@ -1,0 +1,93 @@
+@import "breakpoint";
+@import "singularitygs";
+
+@mixin layout-test {
+  _grid: find-grid();
+  _gutter: find-gutter();
+  _output: $output;
+  _gutter-style: find-gutter-style();
+}
+
+/**
+  * Layout Mixin
+  * - Allows for overriding of global contexts
+**/
+.layout {
+  /* Global defaults */
+  @include layout-test;
+  /* Grid Override */
+  _test: "@include layout(8)";
+  @include layout(8) {
+    @include layout-test;
+  }
+  /* Gutter Override */
+  _test: "@include layout($gutter: .25)";
+  @include layout($gutter: .25) {
+    @include layout-test;
+  }
+  /* Output Override */
+  _test: "@include layout($output-style: 'float')";
+  @include layout($output-style: 'float') {
+    @include layout-test;
+  }
+  /* Gutter Style Override */
+  _test: "@include layout($gutter-style: 'split')";
+  @include layout($gutter-style: 'split') {
+    @include layout-test;
+  }
+  /* Grid, Gutter Overrides */
+  _test: "@include layout(8, .25)";
+  @include layout(8, .25) {
+    @include layout-test;
+  }
+  /* Grid, Output Overrides */
+  _test: "@include layout(8, $output-style: 'float')";
+  @include layout(8, $output-style: 'float') {
+    @include layout-test;
+  }
+  /* Grid, Gutter Style Overrides */
+  _test: "@include layout(8, $gutter-style: 'split')";
+  @include layout(8, $gutter-style: 'split') {
+    @include layout-test;
+  }
+  /* Grid, Gutter, Output Overrides */
+  _test: "@include layout(8, .25, 'float')";
+  @include layout(8, .25, 'float') {
+    @include layout-test;
+  }
+  /* Grid, Gutter, Gutter Style Overrides */
+  _test: "@include layout(8, .25, $gutter-style: 'split')";
+  @include layout(8, .25, $gutter-style: 'split') {
+    @include layout-test;
+  }
+  /* Grid, Output, Gutter Style Overrides */
+  _test: "@include layout(8, $output-style: 'float', $gutter-style: 'split')";
+  @include layout(8, $output-style: 'float', $gutter-style: 'split') {
+    @include layout-test;
+  }
+  /* Gutter, Output Overrides */
+  _test: "@include layout($gutter: .25, $output-style: 'float')";
+  @include layout($gutter: .25, $output-style: 'float') {
+    @include layout-test;
+  }
+  /* Gutter, Gutter Style Overrides */
+  _test: "@include layout($gutter: .25, $gutter-style: 'split')";
+  @include layout($gutter: .25, $gutter-style: 'split') {
+    @include layout-test;
+  }
+  /* Gutter, Output, Gutter Style Overrides */
+  _test: "@include layout($gutter: .25, $output-style: 'float', $gutter-style: 'split')";
+  @include layout($gutter: .25, $output-style: 'float', $gutter-style: 'split') {
+    @include layout-test;
+  }
+  /* Output, Gutter Style Overrides */
+  _test: "@include layout($output-style: 'float', $gutter-style: 'split')";
+  @include layout($output-style: 'float', $gutter-style: 'split') {
+    @include layout-test;
+  }
+  /* Grid, Gutter, Output, Gutter Style Overrides */
+  _test: "@include layout(8, .25, 'float', 'split')";
+  @include layout(8, .25, 'float', 'split') {
+    @include layout-test;
+  }
+}

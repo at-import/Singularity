@@ -1,0 +1,47 @@
+.box-sizing__border-box, .box-sizing__extend-border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.box-sizing__content-box, .box-sizing__extend-content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  *behavior: none;
+}
+
+/**
+  * Box Sizing Mixin
+  * - Adds appropriate box-sizing and includes Behaviors fallback
+**/
+.box-sizing__border-box {
+  /* Box Sizing mixin, no extend */
+  _test: "@include box-sizing(border-box, false);";
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Box Sizing mixin, extend */
+  _test: "@include box-sizing(border-box, true);";
+}
+
+.box-sizing__content-box {
+  /* Box Sizing mixin, no extend */
+  _test: "@include box-sizing(content-box, false);";
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  *behavior: none;
+  /* Box Sizing mixin, extend */
+  _test: "@include box-sizing(border-box, true);";
+}
+
+.box-sizing__extend-border-box {
+  /* Box Sizing extend */
+  _test: "@extend %border-box;";
+}
+
+.box-sizing__extend-content-box {
+  /* Box Sizing extend */
+  _test: "@extend %content-box;";
+}
