@@ -1,0 +1,121 @@
+/**
+  * Find gutter-style Function
+  * - Finds the current gutter-style that should be used.
+**/
+.find-gutter-style__default {
+  /* No gutter-style Set */
+  _test: "find-gutter-style()";
+  _result: opposite;
+  /* No gutter-style Set, gutter-style Passed In */
+  _test: "find-gutter-style(fixed)";
+  _result: fixed;
+}
+
+.find-gutter-style {
+  /* Global gutter-style Setup */
+  _gutter-styles: "opposite, split 700px, split fixed 900px";
+  /* Simple Find */
+  _test: "find-gutter-style()";
+  _result: opposite;
+  /* Simple Find with Override */
+  _test: "find-gutter-style(opposite fixed)";
+  _result: opposite fixed;
+  /**
+    * Layout Test
+  **/
+  _layout: "fixed";
+  /* Simple Find */
+  _test: "find-gutter-style()";
+  _result: fixed;
+  /* Simple Find with Override */
+  _test: "find-gutter-style(opposite fixed)";
+  _result: opposite fixed;
+}
+@media (min-width: 699px) {
+  .find-gutter-style {
+    /* Global gutter-style Setup */
+    _gutter-styles: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+    /**
+      * Layout Test
+    **/
+    _layout: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+  }
+}
+@media (min-width: 700px) {
+  .find-gutter-style {
+    /* Global gutter-style Setup */
+    _gutter-styles: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+    /**
+      * Layout Test
+    **/
+    _layout: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+  }
+}
+@media (min-width: 899px) {
+  .find-gutter-style {
+    /* Global gutter-style Setup */
+    _gutter-styles: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+    /**
+      * Layout Test
+    **/
+    _layout: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+  }
+}
+@media (min-width: 900px) {
+  .find-gutter-style {
+    /* Global gutter-style Setup */
+    _gutter-styles: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+    /**
+      * Layout Test
+    **/
+    _layout: "fixed";
+    /* Simple Find */
+    _test: "find-gutter-style()";
+    _result: fixed;
+    /* Simple Find with Override */
+    _test: "find-gutter-style(opposite fixed)";
+    _result: opposite fixed;
+  }
+}
