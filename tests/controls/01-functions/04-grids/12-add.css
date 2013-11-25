@@ -1,0 +1,65 @@
+/**
+  * Add Grid Function
+  * - Parses grid definition and appends it to a list of grids and returns the resulting list.
+**/
+.add-grid__simple {
+  /* Add grid, no existing grid */
+  _test: "add-grid(3)";
+  _result: 3;
+  /* Add grid, existing grid */
+  _test: "add-grid(5 at 500px)";
+  _result: 3, 5 500px;
+  _length: 2;
+  _added-item: 5 500px;
+  _length-added: 2;
+  _added-item-grid: 5;
+  _added-item-query: 500px;
+  /* Add grid to empty alternative variable */
+  _test: "add-grid(7, $grids2)";
+  _result: 7;
+  _control: 3, 5 500px;
+}
+
+.add-grid__complex {
+  /* Add grid, no existing grid */
+  _test: "add-grid(1 3 5)";
+  _result: 1 3 5;
+  /* Add grid, existing grid */
+  _test: "add-grid(2 4 6 at 500px)";
+  _result: 1 3 5, 2 4 6 500px;
+  _length: 2;
+  _added-item: 2 4 6 500px;
+  _length-added: 2;
+  _added-item-grid: 2 4 6;
+  _added-item-query: 500px;
+  /* Add grid to empty alternative variable */
+  _test: "add-grid(5 7 9, $grids2)";
+  _result: 5 7 9;
+  _control: 1 3 5, 2 4 6 500px;
+}
+
+.add-grid__mixed {
+  /* Add grid, no existing grid */
+  _test: "add-grid(3)";
+  _result: 3;
+  /* Add grid, existing grid */
+  _test: "add-grid(2 4 6 at 500px)";
+  _result: 3, 2 4 6 500px;
+  _length: 2;
+  _added-item: 2 4 6 500px;
+  _length-added: 2;
+  _added-item-grid: 2 4 6;
+  _added-item-query: 500px;
+  /* Add grid, existing grid */
+  _test: "add-grid(5 at 900px)";
+  _result: 3, 2 4 6 500px, 5 900px;
+  _length: 3;
+  _added-item: 5 900px;
+  _length-added: 2;
+  _added-item-grid: 5;
+  _added-item-query: 900px;
+  /* Add grid to empty alternative variable */
+  _test: "add-grid(7, $grids2)";
+  _result: 7;
+  _control: 3, 2 4 6 500px, 5 900px;
+}
