@@ -1,0 +1,70 @@
+@import "breakpoint";
+@import "singularitygs";
+
+
+$grids: 5;
+$grids: add-grid(1 3 5 7 at 700px);
+$grids: add-grid(9 at 900px);
+$gutters: .25;
+$gutters: add-gutter(.5 at 700px);
+$gutters: add-gutter(.75 at 900px);
+
+$layout-grid: 8, .3;
+
+/**
+  * Grid Overlay Mixin
+  * - Adds a grid overlay
+**/
+.grid-overlay {
+  /* Global Grid Context */
+  _grids: "#{$grids}";
+  _gutters: "#{$gutters}";
+  /* Default Grid Overlay attaches to 'body' */
+  _test: "@include grid-overlay";
+}
+@include grid-overlay;
+
+@mixin grid-toggle-test {
+  /* Default Grid Toggle */
+  _test: "@include grid-toggle;";
+  @include grid-toggle;
+  /* Grid Toggle, Custom Columns */
+  _test: "@include grid-toggle(1 3 5);";
+  @include grid-toggle(1 3 5);
+  /* Grid Toggle, Custom Gutters */
+  _test: "@include grid-toggle($gutter: .3);";
+  @include grid-toggle($gutter: .3);
+  /* Grid Toggle, Custom Color */
+  _test: "@include grid-toggle($color: blue);";
+  @include grid-toggle($color: blue);
+  /* Grid Toggle, Custom Columns, Gutters, Color */
+  _test: "@include grid-toggle(1 3 5, .3, blue);";
+  @include grid-toggle(1 3 5, .3, blue);
+}
+
+@mixin grid-toggle-layout {
+  @include grid-toggle-test;
+  /**
+    * Layout Test
+  **/
+  _layout: "#{nth($layout-grid, 1)}";
+  @include layout(nth($layout-grid, 1)) {
+    @include grid-toggle-test;
+  }
+  _layout: "$gutter: nth($layout-grid, 2)}";
+  @include layout($gutter: nth($layout-grid, 2)) {
+    @include grid-toggle-test;
+  }
+  _layout: "#{$layout-grid}";
+  @include layout(nth($layout-grid, 1), nth($layout-grid, 2)) {
+    @include grid-toggle-test;
+  }
+}
+
+/**
+  * Grid Toggle Mixin
+  * - Adds a background to a grid toggle that can be triggered by JavaScript
+**/
+.grid-toggle {
+  @include grid-toggle-layout;
+}
