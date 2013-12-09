@@ -68,3 +68,80 @@ $layout-grid: 8, .3;
 .grid-toggle {
   @include grid-toggle-layout;
 }
+
+/**
+  * Background Grid Mixin
+  * - Finds the correct columns and gutters to use for Background Build mixin. If multiple grids are defined in $grids, will create a responsive background image
+**/
+.background-grid__default {
+  /* Global Grid Context */
+  _grids: "#{$grids}";
+  _gutters: "#{$gutters}";
+  @include background-grid();
+}
+
+.background-grid__custom-grid {
+  /* Global Grid Context */
+  _grids: "12";
+  _gutters: "#{$gutters}";
+  @include background-grid(12);
+}
+
+.background-grid__custom-gutter {
+  /* Global Grid Context */
+  _grids: "#{$grids}";
+  _gutters: ".25";
+  @include background-grid($gutter: .25);
+}
+
+.background-grid__custom-color {
+  /* Global Grid Context */
+  _grids: "#{$grids}";
+  _gutters: "#{$gutters}";
+  _color: "purple";
+  @include background-grid($color: purple);
+}
+
+.background-grid__custom-grid-gutter {
+  /* Global Grid Context */
+  _grids: "12";
+  _gutters: ".25";
+  @include background-grid(12, .25);
+}
+
+/**
+  * Background Build mixin
+  * - Generates a list of widths and colors to be passed into Background Gradient Generate which then gets added to the selector
+**/
+.background-build__symmetric {
+  _grids: "12";
+  _gutters: ".25";
+  _color: "green";
+  @include background-build(12, .25, green);
+}
+
+.background-build__asymmetric {
+  _grids: "2 4 6";
+  _gutters: ".2";
+  _color: "red";
+  @include background-build(2 4 6, .2, red);
+}
+
+/**
+  * Background Gradient Generate mixin
+  * - Generates a CSS gradient based on a list of widths and colors
+**/
+$widths: 25% 50% 75% 100%;
+$colors: red white blue green;
+.background-gradient-generate {
+  _widths: "#{$widths}";
+  _colors: "#{$colors}";
+  @include background-gradient-generate($widths, $colors);
+}
+
+.background-gradient-generate__custom-direction {
+  _widths: "#{$widths}";
+  _colors: "#{$colors}";
+  _direction: "top right";
+  @include background-gradient-generate($widths, $colors, top right);
+}
