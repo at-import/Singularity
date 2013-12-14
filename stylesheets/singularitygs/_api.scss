@@ -30,8 +30,8 @@
 
 @mixin isolate($span, $location, $grid: false, $gutter: false, $output-style: $output) {
 
-  @if $output-style == 'float' {
-    @include isolate-float($span, $location, $grid, $gutter);
+  @if $output-style == 'float' or $output-style == "isolation" {
+    @include push($span, $location, $grid, $gutter, "isolation");
   }
 }
 
