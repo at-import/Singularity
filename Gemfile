@@ -1,9 +1,9 @@
 # Pull gems from RubyGems
 source 'https://rubygems.org'
 
-gem 'sass',               "~> 3.2.1"
-gem 'compass',            "~> 0.12.2"
-gem 'breakpoint',         ">= 2.0.0"
+gem 'sass',               "~> 3.3.0.rc.2"
+gem 'compass',            "~> 1.0.0.alpha.13"
+gem 'breakpoint',         "~> 2.4.0"
 
 group :test do
   gem 'rake'
