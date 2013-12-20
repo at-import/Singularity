@@ -1,24 +1,25 @@
+.box-sizing__content-box, .box-sizing__extend-content-box {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
 .box-sizing__border-box, .box-sizing__extend-border-box {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.box-sizing__content-box, .box-sizing__extend-content-box {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  *behavior: none;
+.box-sizing__padding-box, .box-sizing__extend-padding-box {
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
 }
 
 /**
   * Box Sizing Mixin
-  * - Adds appropriate box-sizing and includes Behaviors fallback
+  * - Adds appropriate box-sizing
 **/
 .box-sizing__border-box {
   /* Box Sizing mixin, no extend */
   _test: "@include box-sizing(border-box, false);";
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* Box Sizing mixin, extend */
@@ -28,20 +29,32 @@
 .box-sizing__content-box {
   /* Box Sizing mixin, no extend */
   _test: "@include box-sizing(content-box, false);";
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  *behavior: none;
   /* Box Sizing mixin, extend */
-  _test: "@include box-sizing(border-box, true);";
+  _test: "@include box-sizing(content-box, true);";
+}
+
+.box-sizing__padding-box {
+  /* Box Sizing mixin, no extend */
+  _test: "@include box-sizing(padding-box, false);";
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
+  /* Box Sizing mixin, extend */
+  _test: "@include box-sizing(padding-box, true);";
 }
 
 .box-sizing__extend-border-box {
   /* Box Sizing extend */
-  _test: "@extend %border-box;";
+  _test: "@extend %singularity-border-box;";
 }
 
 .box-sizing__extend-content-box {
   /* Box Sizing extend */
-  _test: "@extend %content-box;";
+  _test: "@extend %singularity-content-box;";
+}
+
+.box-sizing__extend-padding-box {
+  /* Box Sizing extend */
+  _test: "@extend %singularity-padding-box;";
 }

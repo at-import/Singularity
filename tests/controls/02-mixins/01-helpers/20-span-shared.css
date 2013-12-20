@@ -15,7 +15,6 @@
 .span-shared__no-clearfix {
   /* Box Sizing, no Clearfix */
   _test: "@include span-shared;";
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -33,7 +32,6 @@
 .span-shared__clearfix-box-sizing {
   /* Box Sizing, no Clearfix */
   _test: "@include span-shared;";
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
