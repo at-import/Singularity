@@ -7,11 +7,11 @@
 **/
 .add-gutter {
   /* Add gutter, no existing gutter */
-  $gutters: add-gutter(.25);
+  $gutters: add-gutter(.25) !global;
   _test: "add-gutter(.25)";
   _result: $gutters;
   /* Add gutter, existing gutter */
-  $gutters: add-gutter(.5 at 500px);
+  $gutters: add-gutter(.5 at 500px) !global;
   _test: "add-gutter(.5 at 500px)";
   _result: $gutters;
   _length: length($gutters);

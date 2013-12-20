@@ -7,11 +7,11 @@
 **/
 .add-gutter-style {
   /* Add gutter-style, no existing gutter-style */
-  $gutter-styles: add-gutter-style(opposite);
+  $gutter-styles: add-gutter-style(opposite) !global;
   _test: "add-gutter-style(opposite)";
   _result: $gutter-styles;
   /* Add gutter-style, existing gutter-style */
-  $gutter-styles: add-gutter-style(split at 500px);
+  $gutter-styles: add-gutter-style(split at 500px) !global;
   _test: "add-gutter-style(split at 500px)";
   _result: $gutter-styles;
   _length: length($gutter-styles);
@@ -20,7 +20,7 @@
   _added-item-gutter-style: nth(nth($gutter-styles, 2), 1);
   _added-item-query: nth(nth($gutter-styles, 2), 2);
   /* Add gutter-style, existing gutter-style */
-  $gutter-styles: add-gutter-style(opposite fixed at 500px);
+  $gutter-styles: add-gutter-style(opposite fixed at 500px) !global;
   _test: "add-gutter-style(opposite fixed at 500px)";
   _result: $gutter-styles;
   _length: length($gutter-styles);

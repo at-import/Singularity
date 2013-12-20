@@ -7,11 +7,11 @@
 **/
 .add-grid__simple {
   /* Add grid, no existing grid */
-  $grids: add-grid(3);
+  $grids: add-grid(3) !global;
   _test: "add-grid(3)";
   _result: $grids;
   /* Add grid, existing grid */
-  $grids: add-grid(5 at 500px);
+  $grids: add-grid(5 at 500px) !global;
   _test: "add-grid(5 at 500px)";
   _result: $grids;
   _length: length($grids);
@@ -28,13 +28,13 @@
 }
 
 .add-grid__complex {
-  $grids: ();
+  $grids: () !global;
   /* Add grid, no existing grid */
-  $grids: add-grid(1 3 5);
+  $grids: add-grid(1 3 5) !global;
   _test: "add-grid(1 3 5)";
   _result: $grids;
   /* Add grid, existing grid */
-  $grids: add-grid(2 4 6 at 500px);
+  $grids: add-grid(2 4 6 at 500px) !global;
   _test: "add-grid(2 4 6 at 500px)";
   _result: $grids;
   _length: length($grids);
@@ -51,13 +51,13 @@
 }
 
 .add-grid__mixed {
-  $grids: ();
+  $grids: () !global;
   /* Add grid, no existing grid */
-  $grids: add-grid(3);
+  $grids: add-grid(3) !global;
   _test: "add-grid(3)";
   _result: $grids;
   /* Add grid, existing grid */
-  $grids: add-grid(2 4 6 at 500px);
+  $grids: add-grid(2 4 6 at 500px) !global;
   _test: "add-grid(2 4 6 at 500px)";
   _result: $grids;
   _length: length($grids);
@@ -66,7 +66,7 @@
   _added-item-grid: nth(nth($grids, 2), 1);
   _added-item-query: nth(nth($grids, 2), 2);
   /* Add grid, existing grid */
-  $grids: add-grid(5 at 900px);
+  $grids: add-grid(5 at 900px) !global;
   _test: "add-grid(5 at 900px)";
   _result: $grids;
   _length: length($grids);
