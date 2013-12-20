@@ -10,24 +10,24 @@
 
   // Overides current global contexts, but only if needed
   @if $grid != false {
-    $grids: $grid;
+    $grids: $grid !global;
   }
   @if $gutter != false {
-    $gutters: $gutter;
+    $gutters: $gutter !global;
   }
   @if $output-style != false {
-    $output: $output-style;
+    $output: $output-style !global;
   }
   @if $gutter-style != false {
-    $gutter-styles: $gutter-style;
+    $gutter-styles: $gutter-style !global;
   }
 
   // All the things!
   @content;
 
   // Resets global contexts
-  $grids: $layout-private-grid-holder;
-  $gutters: $layout-private-gutter-holder;
-  $output: $layout-private-output-holder;
-  $gutter-styles: $layout-private-gutter-style-holder;
+  $grids: $layout-private-grid-holder !global;
+  $gutters: $layout-private-gutter-holder !global;
+  $output: $layout-private-output-holder !global;
+  $gutter-styles: $layout-private-gutter-style-holder !global;
 }
