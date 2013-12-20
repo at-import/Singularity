@@ -11,11 +11,7 @@
     @return $user-object;
   }
   @else if $length > 1 {
-    //////////////////////////////
-    // @TODO! REplace with Native Sass Fucntion when vailable!
-    // https://github.com/nex3/sass/pull/689
-    //////////////////////////////
-    @if (is-breakpoint-list($haystack) != false) {
+    @if (list-separator($haystack) == 'comma') {
       $query-min: breakpoint-get-context('min-width');
       $query-max: breakpoint-get-context('max-width');
 
