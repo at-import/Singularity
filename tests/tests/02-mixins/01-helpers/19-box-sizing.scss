@@ -1,9 +1,8 @@
-@import "breakpoint";
-@import "singularitygs";
+@import "singularitygs/helpers/box-sizing";
 
 /**
   * Box Sizing Mixin
-  * - Adds appropriate box-sizing and includes Behaviors fallback
+  * - Adds appropriate box-sizing
 **/
 .box-sizing__border-box {
   /* Box Sizing mixin, no extend */
@@ -19,18 +18,33 @@
   _test: "@include box-sizing(content-box, false);";
   @include box-sizing(content-box, false);
   /* Box Sizing mixin, extend */
-  _test: "@include box-sizing(border-box, true);";
+  _test: "@include box-sizing(content-box, true);";
   @include box-sizing(content-box, true);
+}
+
+.box-sizing__padding-box {
+  /* Box Sizing mixin, no extend */
+  _test: "@include box-sizing(padding-box, false);";
+  @include box-sizing(padding-box, false);
+  /* Box Sizing mixin, extend */
+  _test: "@include box-sizing(padding-box, true);";
+  @include box-sizing(padding-box, true);
 }
 
 .box-sizing__extend-border-box {
   /* Box Sizing extend */
-  _test: "@extend %border-box;";
-  @extend %border-box;
+  _test: "@extend %singularity-border-box;";
+  @extend %singularity-border-box;
 }
 
 .box-sizing__extend-content-box {
   /* Box Sizing extend */
-  _test: "@extend %content-box;";
-  @extend %content-box;
+  _test: "@extend %singularity-content-box;";
+  @extend %singularity-content-box;
+}
+
+.box-sizing__extend-padding-box {
+  /* Box Sizing extend */
+  _test: "@extend %singularity-padding-box;";
+  @extend %singularity-padding-box;
 }

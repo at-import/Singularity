@@ -1,114 +1,14 @@
-@import "breakpoint";
-@import "singularitygs";
+@import "singularitygs/helpers/clearfix";
 
 /**
   * Clearfix Mixin
-  * - Determines clearfix needed based on level of legacy support needed
+  * - Writes a [modern clearfix](http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php). Should only be imported if no other clearfix mixin is used
 **/
-.clearfix__default {
+.clearfix {
   /* Clearfix mixin, no extend */
   _test: "@include clearfix(false);";
   @include clearfix(false);
   /* Clearfix mixin, extend */
   _test: "@include clearfix(true);";
   @include clearfix(true);
-}
-
-.clearfix__legacy_IE6 {
-  $legacy-support-for-ie6: true;
-  /* Clearfix mixin, no extend */
-  _test: "@include clearfix(false);";
-  @include clearfix(false);
-  /* Clearfix mixin, extend */
-  _test: "@include clearfix(true);";
-  @include clearfix(true);
-}
-
-.clearfix__legacy_IE7 {
-  $legacy-support-for-ie6: false;
-  $legacy-support-for-ie7: true;
-  /* Clearfix mixin, no extend */
-  _test: "@include clearfix(false);";
-  @include clearfix(false);
-  /* Clearfix mixin, extend */
-  _test: "@include clearfix(true);";
-  @include clearfix(true);
-}
-
-.clearfix__legacy_moz {
-  $legacy-support-for-ie6: false;
-  $legacy-support-for-ie7: false;
-  $legacy-support-for-mozilla: true;
-  /* Clearfix mixin, no extend */
-  _test: "@include clearfix(false);";
-  @include clearfix(false);
-  /* Clearfix mixin, extend */
-  _test: "@include clearfix(true);";
-  @include clearfix(true);
-}
-
-.clearfix__legacy_ie6-moz {
-  $legacy-support-for-ie6: true;
-  $legacy-support-for-ie7: false;
-  $legacy-support-for-mozilla: true;
-  /* Clearfix mixin, no extend */
-  _test: "@include clearfix(false);";
-  @include clearfix(false);
-  /* Clearfix mixin, extend */
-  _test: "@include clearfix(true);";
-  @include clearfix(true);
-}
-
-.clearfix__legacy_ie7-moz {
-  $legacy-support-for-ie6: false;
-  $legacy-support-for-ie7: true;
-  $legacy-support-for-mozilla: true;
-  /* Clearfix mixin, no extend */
-  _test: "@include clearfix(false);";
-  @include clearfix(false);
-  /* Clearfix mixin, extend */
-  _test: "@include clearfix(true);";
-  @include clearfix(true);
-}
-
-.clearfix__legacy_ie6-ie7 {
-  $legacy-support-for-ie6: true;
-  $legacy-support-for-ie7: true;
-  $legacy-support-for-mozilla: false;
-  /* Clearfix mixin, no extend */
-  _test: "@include clearfix(false);";
-  @include clearfix(false);
-  /* Clearfix mixin, extend */
-  _test: "@include clearfix(true);";
-  @include clearfix(true);
-}
-
-.clearfix__legacy_ie6--ie7-moz {
-  $legacy-support-for-ie6: true;
-  $legacy-support-for-ie7: true;
-  $legacy-support-for-mozilla: true;
-  /* Clearfix mixin, no extend */
-  _test: "@include clearfix(false);";
-  @include clearfix(false);
-  /* Clearfix mixin, extend */
-  _test: "@include clearfix(true);";
-  @include clearfix(true);
-}
-
-.clearfix__extend-legacy {
-  /* Clearfix extend */
-  _test: "@extend %clearfix-legacy;";
-  @extend %clearfix-legacy;
-}
-
-.clearfix__extend-micro {
-  /* Clearfix extend */
-  _test: "@extend %clearfix-micro;";
-  @extend %clearfix-micro;
-}
-
-.clearfix__extend {
-  /* Clearfix extend */
-  _test: "@extend %clearfix;";
-  @extend %clearfix;
 }
