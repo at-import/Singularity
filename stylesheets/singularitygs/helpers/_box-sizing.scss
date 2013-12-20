@@ -1,41 +1,26 @@
-@import "compass/css3/shared";
-
-$box-sizing-extend: true !default;
-$toolkit-box-sizing: false !default;
-
 //////////////////////////////
-// Updated Box Sizing mixin, allowing for behavior support
+// Box Sizing Mixin
 //////////////////////////////
-@mixin box-sizing($bs, $extend: $box-sizing-extend) {
-  @if $extend and $bs == 'border-box' {
-    @extend %border-box;
-  }
-  @else if $extend and $bs == 'content-box' {
-    @extend %content-box;
+$box-sizing-extend: false !default;
+
+@mixin box-sizing($value, $extend: $box-sizing-extend) {
+  @if $extend {
+    @extend %singularity-#{$value};
   }
   @else {
-    $bs: unquote($bs);
-    @include experimental(box-sizing, $bs,
-      -moz, -webkit, not -o, not -ms, not -khtml, official
-    );
-
-    @if $bs == 'border-box' {
-      @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-        *behavior: stylesheet-url("../behaviors/box-sizing/boxsizing.php");
-      }
-    }
-    @else {
-      *behavior: none;
-    }
+    -moz-box-sizing: $value;
+    box-sizing: $value;
   }
 }
 
-@if not $toolkit-box-sizing {
-  %border-box {
-    @include box-sizing('border-box', false);
-  }
+%singularity-content-box {
+  @include box-sizing(content-box, false);
+}
 
-  %content-box {
-    @include box-sizing('content-box', false);
-  }
+%singularity-border-box {
+  @include box-sizing(border-box, false);
+}
+
+%singularity-padding-box {
+  @include box-sizing(padding-box, false);
 }
