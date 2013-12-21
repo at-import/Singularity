@@ -1,13 +1,21 @@
 {
   "name": "singularity",
-  "version": "1.7.2",
+  "version": "1.2.0-alpha.1",
   "main": "stylesheets/_singularitygs.scss",
   "ignore": [
     "**/.*",
     "node_modules",
-    "components"
+    "components",
+    "Gemfile",
+    "Gemfile.lock",
+    "*.gemspec",
+    "lib",
+    "example",
+    "tests",
+    "Rakefile",
+    "templates"
   ],
   "dependencies": {
-    "compass-breakpoint": ">=2.0.1"
+    "compass-breakpoint": ">=2.4.0"
   }
 }
