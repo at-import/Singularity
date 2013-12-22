@@ -1,0 +1,74 @@
+//////////////////////////////
+// Deprecation Warnings for new Setting System
+//////////////////////////////
+$Singularity-Global-Vars: 'grids', 'gutters', 'gutter-styles', 'mobile-first', 'output', 'direction', 'include-border-box', 'include-clearfix';
+
+@each $var in $Singularity-Global-Vars {
+  @if global-variable-exists($var) {
+    $Singularity-Warning-Output: "DEPRECATION: In order to remove global variable naming conflicts, Singularity's settings have been moved into the single `$singularity` variable.";
+
+    @if $var == 'grids' or $var == 'gutters' or $var == 'gutter-styles' {
+      $Singularity-Singleton-Var: str_slice($var, 1, -2);
+      $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions, and all `add-#{$Singularity-Singleton-Var}()` calls to `@include add-#{$Singularity-Singleton-Var}()`";
+    }
+    @else {
+      // String Replace
+      $Singularity-Replace-Index: -1;
+      $Singularity-Replace-Holder: '';
+      $Singularity-Replace-Spaced: $var;
+      @while $Singularity-Replace-Index != 0 {
+        $Singularity-Replace-Index: str-index($Singularity-Replace-Spaced, '-');
+        @if $Singularity-Replace-Index != 0 {
+          $Singularity-Replace-Holder: str-slice($Singularity-Replace-Spaced, 1, $Singularity-Replace-Index - 1) + ' ';
+          $Singularity-Replace-Spaced: str-slice($Singularity-Replace-Spaced, $Singularity-Replace-Index + 1);
+          $Singularity-Replace-Spaced: $Singularity-Replace-Holder + $Singularity-Replace-Spaced;
+          $Singularity-Replace-Index: str-index($Singularity-Replace-Spaced, '-');
+        }
+      }
+      $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions with `@include change-singularity-setting('#{$Singularity-Replace-Spaced}', $value)`";
+    }
+
+    $Singularity-Warning-Output: $Singularity-Warning-Output + " In the next version of Singularity, this warning will be removed";
+
+    @warn $Singularity-Warning-Output;
+  }
+}
+
+//////////////////////////////
+// Has Setting
+//////////////////////////////
+@function singularity-has-setting($setting) {
+  @if map-has-key($singularity, $setting) {
+    @return true;
+  }
+  @else {
+    @return false;
+  }
+}
+
+//////////////////////////////
+// Get Settings
+//////////////////////////////
+@function singularity-get-setting($setting) {
+  @if singularity-has-setting($setting) {
+    @return map-get($singularity, $setting);
+  }
+  @else {
+    @return map-get($Singularity-Settings, $setting);
+  }
+}
+
+//////////////////////////////
+// Set Settings
+//////////////////////////////
+@function singularity-set-setting($setting, $value) {
+  @if str-index($setting, '-') > 0 {
+    @warn "Singularity settings should contain spaces, not dashes. Please replace dashes with spaces. Settings will not work as expected until changed.";
+  }
+  $singularity: map-merge($singularity, ($setting: $value)) !global;
+  @return true;
+}
+
+@mixin change-singularity-setting($setting, $value) {
+  $Change-Singularity-Setting: singularity-set-setting($setting, $value);
+}

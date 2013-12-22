@@ -1,29 +1,21 @@
 //////////////////////////////
-// Default Variables
+// Default Settings
 //////////////////////////////
+$Singularity-Settings: (
+  'grids': 12,
+  'gutters': .25,
+  'gutter styles': 'opposite',
+  'output': 'isolation',
+  'direction': 'ltr',
+  'mobile first': true,
+  'include border box': false,
+  'include clearfix': false
+);
 
-// The grids being used
-$grids: () !default;
-
-// The gutters of the inner columns of the grid
-$gutters: () !default;
-
-// The gutter styles
-// Options: opposite/split (fixed)
-$gutter-styles: () !default;
-
-// Specifies whether or not you're building mobile-first grids. Defaults to true
-$mobile-first: true !default;
-
-// Default output style.
-$output: 'isolation' !default;
-
-// Direction for your grid. Can be ltr, rtl, or both
-$direction: 'ltr' !default;
-
-// Whether or not to include border-box or clearfix with all spans
-$include-border-box:  false !default;
-$include-clearfix:    false !default;
+//////////////////////////////
+// User Settings
+//////////////////////////////
+$singularity: ();
 
 //////////////////////////////
 // Import General Helpers
