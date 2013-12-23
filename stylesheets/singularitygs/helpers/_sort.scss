@@ -9,10 +9,8 @@
 
   $QS-Length: length($list);
 
-  $QS-Seed: if(function-exists(random), random(1, $QS-Length), $QS-Length / 2);
-  @if $QS-Seed == 0 {
-    $QS-Seed: 1;
-  }
+  $QS-Seed: if(function-exists(random), random(1, $QS-Length), round($QS-Length / 2));
+  $QS-Seed: if($QS-Seed == 0, round($QS-Length / 2), $QS-Seed);
 
   @if $QS-Length > 1 {
     $QS-Seed: nth($list, $QS-Seed);
