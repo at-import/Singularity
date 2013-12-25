@@ -1,3 +1,5 @@
-$direction: 'both';
+$singularity: (
+  'direction': 'both'
+);
 
 @import "01-grid-span";

@@ -2,20 +2,3 @@
   * Add Gutter Function
   * - Parses gutter definition and appends it to a list of gutters and returns the resulting list.
 **/
-.add-gutter {
-  /* Add gutter, no existing gutter */
-  _test: "add-gutter(.25)";
-  _result: 0.25;
-  /* Add gutter, existing gutter */
-  _test: "add-gutter(.5 at 500px)";
-  _result: 0.25, 0.5 500px;
-  _length: 2;
-  _added-item: 0.5 500px;
-  _length-added: 2;
-  _added-item-gutter: 0.5;
-  _added-item-query: 500px;
-  /* Add gutter to empty alternative variable */
-  _test: "add-gutter(7, $gutters2)";
-  _result: 0.7;
-  _control: 0.25, 0.5 500px;
-}

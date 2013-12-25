@@ -13,32 +13,32 @@
 
 .span-shared__no-clearfix-no-box-sizing {
   /* Box Sizing, no Clearfix */
-  $include-border-box: false !global;
-  $include-clearfix: false !global;
+  $setting: singularity-set-setting('include border box', false);
+  $setting: singularity-set-setting('include clearfix', false);
   _test: "@include span-shared;";
   @include span-shared;
 }
 
 .span-shared__no-clearfix {
   /* Box Sizing, no Clearfix */
-  $include-border-box: true !global;
-  $include-clearfix: false !global;
+  $setting: singularity-set-setting('include border box', true);
+  $setting: singularity-set-setting('include clearfix', false);
   _test: "@include span-shared;";
   @include span-shared;
 }
 
 .span-shared__no-box-sizing {
   /* Box Sizing, no Clearfix */
-  $include-border-box: false !global;
-  $include-clearfix: true !global;
+  $setting: singularity-set-setting('include border box', false);
+  $setting: singularity-set-setting('include clearfix', true);
   _test: "@include span-shared;";
   @include span-shared;
 }
 
 .span-shared__clearfix-box-sizing {
   /* Box Sizing, no Clearfix */
-  $include-border-box: true !global;
-  $include-clearfix: true !global;
+  $setting: singularity-set-setting('include border box', true);
+  $setting: singularity-set-setting('include clearfix', true);
   _test: "@include span-shared;";
   @include span-shared;
 }

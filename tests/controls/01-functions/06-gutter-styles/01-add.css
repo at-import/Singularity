@@ -2,28 +2,3 @@
   * Add gutter-style Function
   * - Parses gutter-style definition and appends it to a list of gutter-styles and returns the resulting list.
 **/
-.add-gutter-style {
-  /* Add gutter-style, no existing gutter-style */
-  _test: "add-gutter-style(opposite)";
-  _result: opposite;
-  /* Add gutter-style, existing gutter-style */
-  _test: "add-gutter-style(split at 500px)";
-  _result: opposite, split 500px;
-  _length: 2;
-  _added-item: split 500px;
-  _length-added: 2;
-  _added-item-gutter-style: split;
-  _added-item-query: 500px;
-  /* Add gutter-style, existing gutter-style */
-  _test: "add-gutter-style(opposite fixed at 500px)";
-  _result: opposite, split 500px, opposite fixed 500px;
-  _length: 3;
-  _added-item: opposite fixed 500px;
-  _length-added: 2;
-  _added-item-gutter-style: opposite fixed;
-  _added-item-query: 500px;
-  /* Add gutter-style to empty alternative variable */
-  _test: "add-gutter-style(split, $gutter-styles2)";
-  _result: split;
-  _control: opposite, split 500px, opposite fixed 500px;
-}

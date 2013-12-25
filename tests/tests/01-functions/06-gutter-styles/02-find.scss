@@ -5,60 +5,60 @@
   * Find gutter-style Function
   * - Finds the current gutter-style that should be used.
 **/
-.find-gutter-style__default {
-  /* No gutter-style Set */
-  _test: "find-gutter-style()";
-  _result: find-gutter-style();
-  /* No gutter-style Set, gutter-style Passed In */
-  _test: "find-gutter-style(fixed)";
-  _result: find-gutter-style(fixed);
-}
+// .find-gutter-style__default {
+//   /* No gutter-style Set */
+//   _test: "find-gutter-style()";
+//   _result: find-gutter-style();
+//   /* No gutter-style Set, gutter-style Passed In */
+//   _test: "find-gutter-style(fixed)";
+//   _result: find-gutter-style(fixed);
+// }
 
-$gutter-styles: opposite;
-$gutter-styles: add-gutter-style(split at 700px);
-$gutter-styles: add-gutter-style(split fixed at 900px);
+// $gutter-styles: opposite;
+// $gutter-styles: add-gutter-style(split at 700px);
+// $gutter-styles: add-gutter-style(split fixed at 900px);
 
-$layout-gutter-style: fixed;
-$override: opposite fixed;
+// $layout-gutter-style: fixed;
+// $override: opposite fixed;
 
-@mixin find-gutter-style() {
-  /* Simple Find */
-  _test: "find-gutter-style()";
-  _result: find-gutter-style();
-  /* Simple Find with Override */
-  _test: "find-gutter-style(#{$override})";
-  _result: find-gutter-style($override);
-}
+// @mixin find-gutter-style() {
+//   /* Simple Find */
+//   _test: "find-gutter-style()";
+//   _result: find-gutter-style();
+//   /* Simple Find with Override */
+//   _test: "find-gutter-style(#{$override})";
+//   _result: find-gutter-style($override);
+// }
 
-@mixin find-gutter-style-test() {
-  /* Global gutter-style Setup */
-  _gutter-styles: "#{$gutter-styles}";
-  @include find-gutter-style;
-  /**
-    * Layout Test
-  **/
-  _layout: "#{$layout-gutter-style}";
-  @include layout($gutter-style: $layout-gutter-style) {
-    @include find-gutter-style;
-  }
-}
+// @mixin find-gutter-style-test() {
+//   /* Global gutter-style Setup */
+//   _gutter-styles: "#{$gutter-styles}";
+//   @include find-gutter-style;
+//   /**
+//     * Layout Test
+//   **/
+//   _layout: "#{$layout-gutter-style}";
+//   @include layout($gutter-style: $layout-gutter-style) {
+//     @include find-gutter-style;
+//   }
+// }
 
-.find-gutter-style {
-  @include find-gutter-style-test;
+// .find-gutter-style {
+//   @include find-gutter-style-test;
 
-  @include breakpoint(699px) {
-    @include find-gutter-style-test;
-  }
+//   @include breakpoint(699px) {
+//     @include find-gutter-style-test;
+//   }
 
-  @include breakpoint(700px) {
-    @include find-gutter-style-test;
-  }
+//   @include breakpoint(700px) {
+//     @include find-gutter-style-test;
+//   }
 
-  @include breakpoint(899px) {
-    @include find-gutter-style-test;
-  }
+//   @include breakpoint(899px) {
+//     @include find-gutter-style-test;
+//   }
 
-  @include breakpoint(900px) {
-    @include find-gutter-style-test;
-  }
-}
+//   @include breakpoint(900px) {
+//     @include find-gutter-style-test;
+//   }
+// }

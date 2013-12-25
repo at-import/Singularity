@@ -1,3 +1,5 @@
-$include-border-box: true;
+$singularity: (
+  'include border box': true
+);
 
 @import "01-grid-span";

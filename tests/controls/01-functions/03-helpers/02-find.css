@@ -4,327 +4,327 @@
 **/
 .find-object__symmetric {
   /* Global Grid Setup */
-  _grids: "5, 7 700px, 9 900px";
+  _grids: "(-1px: 5, 700px: 7, 900px: 9)";
   /* Simple Find */
-  _test: "find-object(5, 7 700px, 9 900px)";
+  _test: "find-object((-1px: 5, 700px: 7, 900px: 9))";
   _result: 5;
   /* Simple Find with Override */
-  _test: "find-object(5, 7 700px, 9 900px, 6)";
+  _test: "find-object((-1px: 5, 700px: 7, 900px: 9), 6)";
   _result: 6;
   /**
     * Layout Test
   **/
   _layout: "8";
   /* Simple Find */
-  _test: "find-object(8)";
+  _test: "find-object((-1px: 8))";
   _result: 8;
   /* Simple Find with Override */
-  _test: "find-object(8, 6)";
+  _test: "find-object((-1px: 8), 6)";
   _result: 6;
 }
 @media (min-width: 699px) {
   .find-object__symmetric {
     /* Global Grid Setup */
-    _grids: "5, 7 700px, 9 900px";
+    _grids: "(-1px: 5, 700px: 7, 900px: 9)";
     /* Simple Find */
-    _test: "find-object(5, 7 700px, 9 900px)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9))";
     _result: 5;
     /* Simple Find with Override */
-    _test: "find-object(5, 7 700px, 9 900px, 6)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9), 6)";
     _result: 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 6)";
+    _test: "find-object((-1px: 8), 6)";
     _result: 6;
   }
 }
 @media (min-width: 700px) {
   .find-object__symmetric {
     /* Global Grid Setup */
-    _grids: "5, 7 700px, 9 900px";
+    _grids: "(-1px: 5, 700px: 7, 900px: 9)";
     /* Simple Find */
-    _test: "find-object(5, 7 700px, 9 900px)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9))";
     _result: 7;
     /* Simple Find with Override */
-    _test: "find-object(5, 7 700px, 9 900px, 6)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9), 6)";
     _result: 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 6)";
+    _test: "find-object((-1px: 8), 6)";
     _result: 6;
   }
 }
 @media (min-width: 899px) {
   .find-object__symmetric {
     /* Global Grid Setup */
-    _grids: "5, 7 700px, 9 900px";
+    _grids: "(-1px: 5, 700px: 7, 900px: 9)";
     /* Simple Find */
-    _test: "find-object(5, 7 700px, 9 900px)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9))";
     _result: 7;
     /* Simple Find with Override */
-    _test: "find-object(5, 7 700px, 9 900px, 6)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9), 6)";
     _result: 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 6)";
+    _test: "find-object((-1px: 8), 6)";
     _result: 6;
   }
 }
 @media (min-width: 900px) {
   .find-object__symmetric {
     /* Global Grid Setup */
-    _grids: "5, 7 700px, 9 900px";
+    _grids: "(-1px: 5, 700px: 7, 900px: 9)";
     /* Simple Find */
-    _test: "find-object(5, 7 700px, 9 900px)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9))";
     _result: 9;
     /* Simple Find with Override */
-    _test: "find-object(5, 7 700px, 9 900px, 6)";
+    _test: "find-object((-1px: 5, 700px: 7, 900px: 9), 6)";
     _result: 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 6)";
+    _test: "find-object((-1px: 8), 6)";
     _result: 6;
   }
 }
 
 .find-object__asymmetric {
   /* Global Grid Setup */
-  _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+  _grids: "(-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9)";
   /* Simple Find */
-  _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px)";
+  _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9))";
   _result: 1 3 5;
   /* Simple Find with Override */
-  _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px, 2 4 6)";
+  _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9), 2 4 6)";
   _result: 2 4 6;
   /**
     * Layout Test
   **/
   _layout: "3 2 1";
   /* Simple Find */
-  _test: "find-object(3 2 1)";
+  _test: "find-object((-1px: 3 2 1))";
   _result: 3 2 1;
   /* Simple Find with Override */
-  _test: "find-object(3 2 1, 2 4 6)";
+  _test: "find-object((-1px: 3 2 1), 2 4 6)";
   _result: 2 4 6;
 }
 @media (min-width: 699px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9))";
     _result: 1 3 5;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "3 2 1";
     /* Simple Find */
-    _test: "find-object(3 2 1)";
+    _test: "find-object((-1px: 3 2 1))";
     _result: 3 2 1;
     /* Simple Find with Override */
-    _test: "find-object(3 2 1, 2 4 6)";
+    _test: "find-object((-1px: 3 2 1), 2 4 6)";
     _result: 2 4 6;
   }
 }
 @media (min-width: 700px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9))";
     _result: 3 5 7;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "3 2 1";
     /* Simple Find */
-    _test: "find-object(3 2 1)";
+    _test: "find-object((-1px: 3 2 1))";
     _result: 3 2 1;
     /* Simple Find with Override */
-    _test: "find-object(3 2 1, 2 4 6)";
+    _test: "find-object((-1px: 3 2 1), 2 4 6)";
     _result: 2 4 6;
   }
 }
 @media (min-width: 899px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9))";
     _result: 3 5 7;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "3 2 1";
     /* Simple Find */
-    _test: "find-object(3 2 1)";
+    _test: "find-object((-1px: 3 2 1))";
     _result: 3 2 1;
     /* Simple Find with Override */
-    _test: "find-object(3 2 1, 2 4 6)";
+    _test: "find-object((-1px: 3 2 1), 2 4 6)";
     _result: 2 4 6;
   }
 }
 @media (min-width: 900px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 3 5 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9))";
     _result: 5 7 9;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 3 5 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 3 5 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "3 2 1";
     /* Simple Find */
-    _test: "find-object(3 2 1)";
+    _test: "find-object((-1px: 3 2 1))";
     _result: 3 2 1;
     /* Simple Find with Override */
-    _test: "find-object(3 2 1, 2 4 6)";
+    _test: "find-object((-1px: 3 2 1), 2 4 6)";
     _result: 2 4 6;
   }
 }
 
 .find-object__asymmetric {
   /* Global Grid Setup */
-  _grids: "1 3 5, 7 700px, 5 7 9 900px";
+  _grids: "(-1px: 1 3 5, 700px: 7, 900px: 5 7 9)";
   /* Simple Find */
-  _test: "find-object(1 3 5, 7 700px, 5 7 9 900px)";
+  _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9))";
   _result: 1 3 5;
   /* Simple Find with Override */
-  _test: "find-object(1 3 5, 7 700px, 5 7 9 900px, 2 4 6)";
+  _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9), 2 4 6)";
   _result: 2 4 6;
   /**
     * Layout Test
   **/
   _layout: "8";
   /* Simple Find */
-  _test: "find-object(8)";
+  _test: "find-object((-1px: 8))";
   _result: 8;
   /* Simple Find with Override */
-  _test: "find-object(8, 2 4 6)";
+  _test: "find-object((-1px: 8), 2 4 6)";
   _result: 2 4 6;
 }
 @media (min-width: 699px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9))";
     _result: 1 3 5;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 2 4 6)";
+    _test: "find-object((-1px: 8), 2 4 6)";
     _result: 2 4 6;
   }
 }
 @media (min-width: 700px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9))";
     _result: 7;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 2 4 6)";
+    _test: "find-object((-1px: 8), 2 4 6)";
     _result: 2 4 6;
   }
 }
 @media (min-width: 899px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9))";
     _result: 7;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 2 4 6)";
+    _test: "find-object((-1px: 8), 2 4 6)";
     _result: 2 4 6;
   }
 }
 @media (min-width: 900px) {
   .find-object__asymmetric {
     /* Global Grid Setup */
-    _grids: "1 3 5, 7 700px, 5 7 9 900px";
+    _grids: "(-1px: 1 3 5, 700px: 7, 900px: 5 7 9)";
     /* Simple Find */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9))";
     _result: 5 7 9;
     /* Simple Find with Override */
-    _test: "find-object(1 3 5, 7 700px, 5 7 9 900px, 2 4 6)";
+    _test: "find-object((-1px: 1 3 5, 700px: 7, 900px: 5 7 9), 2 4 6)";
     _result: 2 4 6;
     /**
       * Layout Test
     **/
     _layout: "8";
     /* Simple Find */
-    _test: "find-object(8)";
+    _test: "find-object((-1px: 8))";
     _result: 8;
     /* Simple Find with Override */
-    _test: "find-object(8, 2 4 6)";
+    _test: "find-object((-1px: 8), 2 4 6)";
     _result: 2 4 6;
   }
 }

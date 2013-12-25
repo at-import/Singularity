@@ -130,15 +130,15 @@
   }
 }
 
-$grids: 5;
-$grids: add-grid(7 at 700px);
-$grids: add-grid(9 at 900px);
-$gutters: .25;
-$gutters: add-gutter(.35 at 700px);
-$gutters: add-gutter(.45 at 900px);
-$gutter-styles: 'opposite';
-$gutter-styles: add-gutter-style('split' at 700px);
-$gutter-styles: add-gutter-style('opposite' at 900px);
+@include add-grid(5);
+@include add-grid(7 at 700px);
+@include add-grid(9 at 900px);
+@include add-gutter(.25);
+@include add-gutter(.35 at 700px);
+@include add-gutter(.45 at 900px);
+@include add-gutter-style('opposite');
+@include add-gutter-style('split' at 700px);
+@include add-gutter-style('opposite' at 900px);
 
 .column-span__symmetric {
   /* Global Grid Setup */
@@ -212,15 +212,19 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
   }
 }
 
-$grids: 1 3 5;
-$grids: add-grid(3 5 7 at 700px);
-$grids: add-grid(5 7 9 at 900px);
-$gutters: .25;
-$gutters: add-gutter(.35 at 700px);
-$gutters: add-gutter(.45 at 900px);
-$gutter-styles: 'opposite';
-$gutter-styles: add-gutter-style('split' at 700px);
-$gutter-styles: add-gutter-style('opposite' at 900px);
+@include reset-singularity-setting('grids');
+@include reset-singularity-setting('gutters');
+@include reset-singularity-setting('gutter styles');
+
+@include add-grid(1 3 5);
+@include add-grid(3 5 7 at 700px);
+@include add-grid(5 7 9 at 900px);
+@include add-gutter(.25);
+@include add-gutter(.35 at 700px);
+@include add-gutter(.45 at 900px);
+@include add-gutter-style('opposite');
+@include add-gutter-style('split' at 700px);
+@include add-gutter-style('opposite' at 900px);
 
 .column-span__asymmetric {
   /* Global Grid Setup */
@@ -293,15 +297,19 @@ $gutter-styles: add-gutter-style('opposite' at 900px);
   }
 }
 
-$grids: 1 3 5;
-$grids: add-grid(7 at 700px);
-$grids: add-grid(5 7 9 at 900px);
-$gutters: .25;
-$gutters: add-gutter(.35 at 700px);
-$gutters: add-gutter(.45 at 900px);
-$gutter-styles: 'opposite';
-$gutter-styles: add-gutter-style('split' at 700px);
-$gutter-styles: add-gutter-style('opposite' at 900px);
+@include reset-singularity-setting('grids');
+@include reset-singularity-setting('gutters');
+@include reset-singularity-setting('gutter styles');
+
+@include add-grid(1 3 5);
+@include add-grid(7 at 700px);
+@include add-grid(5 7 9 at 900px);
+@include add-gutter(.25);
+@include add-gutter(.35 at 700px);
+@include add-gutter(.45 at 900px);
+@include add-gutter-style('opposite');
+@include add-gutter-style('split' at 700px);
+@include add-gutter-style('opposite' at 900px);
 
 .column-span__mixed {
   /* Global Grid Setup */

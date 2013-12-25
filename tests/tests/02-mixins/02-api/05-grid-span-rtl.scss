@@ -1,3 +1,5 @@
-$direction: 'rtl';
+$singularity: (
+  'direction': 'rtl'
+);
 
 @import "01-grid-span";

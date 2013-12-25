@@ -732,349 +732,349 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /**
       * Layout Tests
     **/
     _layout: "8";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "$output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "8, .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: ".75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "8, .75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
   }
 }
 @media (min-width: 899px) {
@@ -1091,349 +1091,349 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /**
       * Layout Tests
     **/
     _layout: "8";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "$output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "8, .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: ".75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.41935%;
+    margin-left: 17.22421%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 34.83871%;
+    margin-left: 34.64357%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     _layout: "8, .75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 6})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 6})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 6, .5})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 6, .5})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 6, $output-style: 'float'})";
-    margin-left: 17.94872%;
+    margin-left: 17.39927%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 6, $output-style: 'float'})";
-    margin-left: 35.89744%;
+    margin-left: 35.34799%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 6, .5, 'float'})";
-    margin-left: 17.64706%;
+    margin-left: 17.32026%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 6, .5, 'float'})";
-    margin-left: 35.29412%;
+    margin-left: 34.96732%;
   }
 }
 @media (min-width: 900px) {
@@ -2526,349 +2526,349 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /**
       * Layout Tests
     **/
     _layout: "3 2 1";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 50%;
+    margin-left: 49.74066%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 85.07463%;
+    margin-left: 84.81529%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.74066%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 85.07463%;
+    margin-left: 84.81529%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 22.72727%;
+    margin-left: 22.52964%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 57.57576%;
+    margin-left: 57.37813%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 22.72727%;
+    margin-left: 22.52964%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 57.57576%;
+    margin-left: 57.37813%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "3 2 1, .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: ".75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "3 2 1, .75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
   }
 }
 @media (min-width: 899px) {
@@ -2885,349 +2885,349 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /**
       * Layout Tests
     **/
     _layout: "3 2 1";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 50%;
+    margin-left: 49.74066%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 85.07463%;
+    margin-left: 84.81529%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.74066%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 85.07463%;
+    margin-left: 84.81529%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 22.72727%;
+    margin-left: 22.52964%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 57.57576%;
+    margin-left: 57.37813%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 22.72727%;
+    margin-left: 22.52964%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 57.57576%;
+    margin-left: 57.37813%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 21.33758%;
+    margin-left: 21.28897%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 55.41401%;
+    margin-left: 55.3654%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 21.875%;
+    margin-left: 21.7803%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 56.25%;
+    margin-left: 56.1553%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "3 2 1, .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: ".75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "3 2 1, .75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.09091%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 86.66667%;
+    margin-left: 85.75758%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 50%;
+    margin-left: 49.52381%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 85.71429%;
+    margin-left: 85.2381%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
   }
 }
 @media (min-width: 900px) {
@@ -4320,349 +4320,349 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /**
       * Layout Tests
     **/
     _layout: "8";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "8, .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: ".75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "8, .75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
   }
 }
 @media (min-width: 899px) {
@@ -4679,349 +4679,349 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /**
       * Layout Tests
     **/
     _layout: "8";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 12.91866%;
+    margin-left: 12.81012%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 25.83732%;
+    margin-left: 25.72878%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 15.21739%;
+    margin-left: 14.8181%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 30.43478%;
+    margin-left: 30.03549%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "$output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 14.83516%;
+    margin-left: 14.69271%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 29.67033%;
+    margin-left: 29.52788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 15%;
+    margin-left: 14.7619%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 30%;
+    margin-left: 29.7619%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "8, .75";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: ".75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 203.77358%;
+    margin-left: 185.5113%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 407.54717%;
+    margin-left: 389.28488%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 18.50394%;
+    margin-left: 18.43002%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 52.75591%;
+    margin-left: 52.68199%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 240%;
+    margin-left: 204.44444%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 480%;
+    margin-left: 444.44444%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     _layout: "8, .75, $output-style: 'float'";
     /* Single Column Span */
     _test: "push(1, 1})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Multiple Column Span */
     _test: "push(2, 1})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid Override, Single Column Span */
     _test: "push(1, 1, 2 4 6})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Output Override (float), Single Column Span */
     _test: "push(1, 1, $output-style: 'float'})";
-    margin-left: 13.20755%;
+    margin-left: 12.90431%;
     /* Output Style Override, Multi Column Span */
     _test: "push(2, 1, $output-style: 'float'})";
-    margin-left: 26.41509%;
+    margin-left: 26.11186%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
     /* Grid and Output Style Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 20.37037%;
+    margin-left: 20.07797%;
     /* Grid and Output Style Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, $output-style: 'float'})";
-    margin-left: 55.55556%;
+    margin-left: 55.26316%;
     /* Gutter and Output Style Override, Single Column Span */
     _test: "push(1, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 13.04348%;
+    margin-left: 12.86232%;
     /* Gutter and Output Style Override, Multi Column Span */
     _test: "push(2, 1, $gutter: .5, $output-style: 'float'})";
-    margin-left: 26.08696%;
+    margin-left: 25.9058%;
     /* Full Override, Single Column Span */
     _test: "push(1, 1, 2 4 6, .5, 'float'})";
-    margin-left: 19.23077%;
+    margin-left: 19.08832%;
     /* Full Override, Multi Column Span */
     _test: "push(2, 1, 2 4 6, .5, 'float'})";
-    margin-left: 53.84615%;
+    margin-left: 53.7037%;
   }
 }
 @media (min-width: 900px) {

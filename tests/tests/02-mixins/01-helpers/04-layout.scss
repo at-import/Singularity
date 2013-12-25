@@ -4,7 +4,7 @@
 @mixin layout-test {
   _grid: find-grid();
   _gutter: find-gutter();
-  _output: $output;
+  _output: singularity-get-setting('output');
   _gutter-style: find-gutter-style();
 }
 

@@ -5,114 +5,114 @@
   * Find Grid Function
   * - Finds the current grid that should be used.
 **/
-.find-grid__default {
-  /* No Grid Set */
-  _test: "find-grid()";
-  _result: find-grid();
-  /* No Grid Set, Grid Passed In */
-  _test: "find-grid(3)";
-  _result: find-grid(3);
-}
+// .find-grid__default {
+//   /* No Grid Set */
+//   _test: "find-grid()";
+//   _result: find-grid();
+//   /* No Grid Set, Grid Passed In */
+//   _test: "find-grid(3)";
+//   _result: find-grid(3);
+// }
 
-$grids: 5;
-$grids: add-grid(7 at 700px);
-$grids: add-grid(9 at 900px);
+// $grids: 5;
+// $grids: add-grid(7 at 700px);
+// $grids: add-grid(9 at 900px);
 
-$layout-grid: 8;
-$override: 6;
+// $layout-grid: 8;
+// $override: 6;
 
-@mixin find-grid() {
-  /* Simple Find */
-  _test: "find-grid()";
-  _result: find-grid();
-  /* Simple Find with Override */
-  _test: "find-grid(#{$override})";
-  _result: find-grid($override);
-}
+// @mixin find-grid() {
+//   /* Simple Find */
+//   _test: "find-grid()";
+//   _result: find-grid();
+//   /* Simple Find with Override */
+//   _test: "find-grid(#{$override})";
+//   _result: find-grid($override);
+// }
 
-@mixin find-grid-test() {
-  /* Global Grid Setup */
-  _grids: "#{$grids}";
-  @include find-grid;
-  /**
-    * Layout Test
-  **/
-  _layout: "#{$layout-grid}";
-  @include layout($layout-grid) {
-    @include find-grid;
-  }
-}
+// @mixin find-grid-test() {
+//   /* Global Grid Setup */
+//   _grids: "#{$grids}";
+//   @include find-grid;
+//   /**
+//     * Layout Test
+//   **/
+//   _layout: "#{$layout-grid}";
+//   @include layout($layout-grid) {
+//     @include find-grid;
+//   }
+// }
 
-.find-grid__symmetric {
-  @include find-grid-test;
+// .find-grid__symmetric {
+//   @include find-grid-test;
 
-  @include breakpoint(699px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(699px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(700px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(700px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(899px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(899px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(900px) {
-    @include find-grid-test;
-  }
-}
+//   @include breakpoint(900px) {
+//     @include find-grid-test;
+//   }
+// }
 
-$grids: 1 3 5;
-$grids: add-grid(3 5 7 at 700px);
-$grids: add-grid(5 7 9 at 900px);
+// $grids: 1 3 5;
+// $grids: add-grid(3 5 7 at 700px);
+// $grids: add-grid(5 7 9 at 900px);
 
-$layout-grid: 3 2 1;
-$override: 2 4 6;
+// $layout-grid: 3 2 1;
+// $override: 2 4 6;
 
-.find-grid__asymmetric {
-  @include find-grid-test;
+// .find-grid__asymmetric {
+//   @include find-grid-test;
 
-  @include breakpoint(699px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(699px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(700px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(700px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(899px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(899px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(900px) {
-    @include find-grid-test;
-  }
-}
+//   @include breakpoint(900px) {
+//     @include find-grid-test;
+//   }
+// }
 
-$grids: 1 3 5;
-$grids: add-grid(7 at 700px);
-$grids: add-grid(5 7 9 at 900px);
+// $grids: 1 3 5;
+// $grids: add-grid(7 at 700px);
+// $grids: add-grid(5 7 9 at 900px);
 
-$layout-grid: 8;
-$override: 2 4 6;
+// $layout-grid: 8;
+// $override: 2 4 6;
 
-.find-grid__asymmetric {
-  @include find-grid-test;
+// .find-grid__asymmetric {
+//   @include find-grid-test;
 
-  @include breakpoint(699px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(699px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(700px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(700px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(899px) {
-    @include find-grid-test;
-  }
+//   @include breakpoint(899px) {
+//     @include find-grid-test;
+//   }
 
-  @include breakpoint(900px) {
-    @include find-grid-test;
-  }
-}
+//   @include breakpoint(900px) {
+//     @include find-grid-test;
+//   }
+// }

@@ -15,9 +15,9 @@
   _result: start-row(2);
 }
 
-$grids: 5;
-$grids: add-grid(7 at 700px);
-$grids: add-grid(9 at 900px);
+@include add-grid(5);
+@include add-grid(7 at 700px);
+@include add-grid(9 at 900px);
 
 $layout-grid: 8;
 $override: 6;
@@ -42,8 +42,9 @@ $override: 6;
 }
 
 @mixin end-row-test() {
+  $grids: singularity-get-setting('grids');
   /* Global Grid Setup */
-  _grids: "#{$grids}";
+  _grids: "#{inspect($grids)}";
   @include end-row;
   /**
     * Layout Test
@@ -78,9 +79,13 @@ $override: 6;
   }
 }
 
-$grids: 1 3 5;
-$grids: add-grid(3 5 7 at 700px);
-$grids: add-grid(5 7 9 at 900px);
+@include reset-singularity-setting('grids');
+@include reset-singularity-setting('gutters');
+@include reset-singularity-setting('gutter styles');
+
+@include add-grid(1 3 5);
+@include add-grid(3 5 7 at 700px);
+@include add-grid(5 7 9 at 900px);
 
 $layout-grid: 3 2 1 7;
 $override: 2 4 6 7;
@@ -105,9 +110,13 @@ $override: 2 4 6 7;
   }
 }
 
-$grids: 1 3 5;
-$grids: add-grid(7 at 700px);
-$grids: add-grid(5 7 9 at 900px);
+@include reset-singularity-setting('grids');
+@include reset-singularity-setting('gutters');
+@include reset-singularity-setting('gutter styles');
+
+@include add-grid(1 3 5);
+@include add-grid(7 at 700px);
+@include add-grid(5 7 9 at 900px);
 
 $layout-grid: 8;
 $override: 2 4 6 7;
