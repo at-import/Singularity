@@ -1,4 +1,7 @@
 @mixin span-shared {
+  $include-border-box: singularity-get-setting('include border box');
+  $include-clearfix: singularity-get-setting('include clearfix');
+
   @if $include-border-box {
     @if mixin-exists(box-sizing) {
       @include box-sizing(border-box);
