@@ -3,7 +3,7 @@
   $gutter: find-gutter($user-gutter);
   $gutter-style: find-gutter-style($user-gutter-style);
 
-  @if index($gutter-style, fixed) {
+  @if index($gutter-style, 'fixed') {
     // @debug 'Fixed in output style';
     @return true;
   }
