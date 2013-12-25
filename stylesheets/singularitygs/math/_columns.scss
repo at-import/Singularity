@@ -1,7 +1,7 @@
 //////////////////////////////
 // Find width, in percentages, of the column span
 //////////////////////////////
-@function column-span($span, $location, $grid: false, $gutter: false, $gutter-style: false) {
+@function column-span($span, $location, $grid: null, $gutter: null, $gutter-style: null) {
 
   // Find the grid and gutters
   $grid: find-grid($grid);
@@ -53,7 +53,7 @@
 // Find the total sum of the grid
 //////////////////////////////
 @function column-sum($grid, $gutter, $gutter-style) {
-  $split: if($gutter-style == 'split', true, false);
+  $split: if(index($gutter-style, 'split'), true, false);
 
   @if type-of($grid) == 'number' or length($grid) == 1 {
     @if $split {
