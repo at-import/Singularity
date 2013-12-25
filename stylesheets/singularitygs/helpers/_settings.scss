@@ -1,38 +1,44 @@
 //////////////////////////////
 // Deprecation Warnings for new Setting System
 //////////////////////////////
-$Singularity-Global-Vars: 'grids', 'gutters', 'gutter-styles', 'mobile-first', 'output', 'direction', 'include-border-box', 'include-clearfix';
+@function singularity-deprecation-warning() {
+  $Singularity-Global-Vars: 'grids', 'gutters', 'gutter-styles', 'mobile-first', 'output', 'direction', 'include-border-box', 'include-clearfix';
 
-@each $var in $Singularity-Global-Vars {
-  @if global-variable-exists($var) {
-    $Singularity-Warning-Output: "DEPRECATION: In order to remove global variable naming conflicts, Singularity's settings have been moved into the single `$singularity` variable.";
+  @each $var in $Singularity-Global-Vars {
+    @if global-variable-exists($var) {
+      $Singularity-Warning-Output: "DEPRECATION: In order to remove global variable naming conflicts, Singularity's settings have been moved into the single `$singularity` variable.";
 
-    @if $var == 'grids' or $var == 'gutters' or $var == 'gutter-styles' {
-      $Singularity-Singleton-Var: str_slice($var, 1, -2);
-      $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions, and all `add-#{$Singularity-Singleton-Var}()` calls to `@include add-#{$Singularity-Singleton-Var}()`";
-    }
-    @else {
-      // String Replace
-      $Singularity-Replace-Index: -1;
-      $Singularity-Replace-Holder: '';
-      $Singularity-Replace-Spaced: $var;
-      @while $Singularity-Replace-Index != 0 {
-        $Singularity-Replace-Index: str-index($Singularity-Replace-Spaced, '-');
-        @if $Singularity-Replace-Index != 0 {
-          $Singularity-Replace-Holder: str-slice($Singularity-Replace-Spaced, 1, $Singularity-Replace-Index - 1) + ' ';
-          $Singularity-Replace-Spaced: str-slice($Singularity-Replace-Spaced, $Singularity-Replace-Index + 1);
-          $Singularity-Replace-Spaced: $Singularity-Replace-Holder + $Singularity-Replace-Spaced;
-          $Singularity-Replace-Index: str-index($Singularity-Replace-Spaced, '-');
-        }
+      @if $var == 'grids' or $var == 'gutters' or $var == 'gutter-styles' {
+        $Singularity-Singleton-Var: str_slice($var, 1, -2);
+        $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions, and all `add-#{$Singularity-Singleton-Var}()` calls to `@include add-#{$Singularity-Singleton-Var}()`";
       }
-      $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions with `@include change-singularity-setting('#{$Singularity-Replace-Spaced}', $value)`";
+      @else {
+        // String Replace
+        $Singularity-Replace-Index: -1;
+        $Singularity-Replace-Holder: '';
+        $Singularity-Replace-Spaced: $var;
+        @while $Singularity-Replace-Index != 0 {
+          $Singularity-Replace-Index: str-index($Singularity-Replace-Spaced, '-');
+          @if $Singularity-Replace-Index != 0 {
+            $Singularity-Replace-Holder: str-slice($Singularity-Replace-Spaced, 1, $Singularity-Replace-Index - 1) + ' ';
+            $Singularity-Replace-Spaced: str-slice($Singularity-Replace-Spaced, $Singularity-Replace-Index + 1);
+            $Singularity-Replace-Spaced: $Singularity-Replace-Holder + $Singularity-Replace-Spaced;
+            $Singularity-Replace-Index: str-index($Singularity-Replace-Spaced, '-');
+          }
+        }
+        $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions with `@include change-singularity-setting('#{$Singularity-Replace-Spaced}', $value)`";
+      }
+
+      $Singularity-Warning-Output: $Singularity-Warning-Output + " In the next version of Singularity, this warning will be removed";
+
+      @warn $Singularity-Warning-Output;
     }
-
-    $Singularity-Warning-Output: $Singularity-Warning-Output + " In the next version of Singularity, this warning will be removed";
-
-    @warn $Singularity-Warning-Output;
   }
+
+  @return false;
 }
+
+$DEPRECATE:singularity-deprecation-warning();
 
 //////////////////////////////
 // Has Setting
@@ -71,4 +77,22 @@ $Singularity-Global-Vars: 'grids', 'gutters', 'gutter-styles', 'mobile-first', '
 
 @mixin change-singularity-setting($setting, $value) {
   $Change-Singularity-Setting: singularity-set-setting($setting, $value);
+}
+
+//////////////////////////////
+// Remove Setting
+//////////////////////////////
+@function singularity-reset-setting($setting) {
+  $Return: ();
+
+  @each $Key, $Value in $singularity {
+    $Return: if($setting == $Key, $Return, map-merge($Return, ($Key: $Value)));
+  }
+
+  $singularity: $Return !global;
+  @return true;
+}
+
+@mixin reset-singularity-setting($setting) {
+  $Reset-Singularity-Setting: singularity-reset-setting($setting);
 }
