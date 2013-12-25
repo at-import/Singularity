@@ -55,5 +55,9 @@
     }
   }
 
+  @if $parse-mq and unit($parse-mq) == 'em' {
+    $parse-mq: $parse-mq / 1em * 16px;
+  }
+
   @return ($parse-find $parse-mq);
 }
