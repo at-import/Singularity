@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'sass',               "~> 3.3.0.rc.2"
 gem 'compass',            "1.0.0.alpha.15"
 gem 'breakpoint',         "~> 2.4.0"
+gem 'sassy-maps',         "~> 0.3.1"
 
 group :test do
   gem 'rake'
