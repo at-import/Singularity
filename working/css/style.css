@@ -1,0 +1,28 @@
+.foo {
+  background-image: linear-gradient(to right, chocolate 0%, chocolate 27.77778%, #dd8e56 27.77778%, #dd8e56 36.11111%, chocolate 36.11111%, chocolate 63.88889%, #dd8e56 63.88889%, #dd8e56 72.22222%, chocolate 72.22222%, chocolate);
+}
+@media (min-width: 500px) {
+  .foo {
+    background-image: linear-gradient(to right, chocolate 0%, chocolate 10.52632%, #dd8e56 10.52632%, #dd8e56 13.15789%, chocolate 13.15789%, chocolate 44.73684%, #dd8e56 44.73684%, #dd8e56 47.36842%, chocolate 47.36842%, chocolate);
+  }
+}
+@media (min-width: 700px) {
+  .foo {
+    background-image: linear-gradient(to right, #dd8e56, #dd8e56 1.28205%, chocolate 1.28205%, chocolate 11.53846%, #dd8e56 11.53846%, #dd8e56 14.10256%, chocolate 14.10256%, chocolate 44.87179%, #dd8e56 44.87179%, #dd8e56 47.4359%, chocolate 47.4359%, chocolate 98.71795%, #dd8e56 98.71795%, #dd8e56 100.0%);
+  }
+}
+@media (min-width: 800px) {
+  .foo {
+    background-image: linear-gradient(to right, #dd8e56, #dd8e56 1.42857%, chocolate 1.42857%, chocolate 12.85714%, #dd8e56 12.85714%, #dd8e56 15.71429%, chocolate 15.71429%, chocolate 27.14286%, #dd8e56 27.14286%, #dd8e56 30.0%, chocolate 30.0%, chocolate 41.42857%, #dd8e56 41.42857%, #dd8e56 44.28571%, chocolate 44.28571%, chocolate 55.71429%, #dd8e56 55.71429%, #dd8e56 58.57143%, chocolate 58.57143%, chocolate 70%, #dd8e56 70%, #dd8e56 72.85714%, chocolate 72.85714%, chocolate 84.28571%, #dd8e56 84.28571%, #dd8e56 87.14286%, chocolate 87.14286%, chocolate 98.57143%, #dd8e56 98.57143%, #dd8e56 100.0%);
+  }
+}
+@media (min-width: 900px) {
+  .foo {
+    background-image: linear-gradient(to right, chocolate 0%, chocolate 11.76471%, #dd8e56 11.76471%, #dd8e56 14.70588%, chocolate 14.70588%, chocolate 26.47059%, #dd8e56 26.47059%, #dd8e56 29.41176%, chocolate 29.41176%, chocolate 41.17647%, #dd8e56 41.17647%, #dd8e56 44.11765%, chocolate 44.11765%, chocolate 55.88235%, #dd8e56 55.88235%, #dd8e56 58.82353%, chocolate 58.82353%, chocolate 70.58824%, #dd8e56 70.58824%, #dd8e56 73.52941%, chocolate 73.52941%, chocolate 85.29412%, #dd8e56 85.29412%, #dd8e56 88.23529%, chocolate 88.23529%, chocolate);
+  }
+}
+@media (min-width: 1000px) {
+  .foo {
+    background-image: linear-gradient(to right, chocolate 0%, chocolate 23.52941%, #dd8e56 23.52941%, #dd8e56 26.47059%, chocolate 26.47059%, chocolate 73.52941%, #dd8e56 73.52941%, #dd8e56 76.47059%, chocolate 76.47059%, chocolate);
+  }
+}
