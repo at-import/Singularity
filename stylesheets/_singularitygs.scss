@@ -2,9 +2,9 @@
 // Default Settings
 //////////////////////////////
 $Singularity-Settings: (
-  'grids': 12,
-  'gutters': .25,
-  'gutter styles': 'opposite',
+  'grids': (-1px: 12),
+  'gutters': (-1px: .25),
+  'gutter styles': (-1px: 'opposite'),
   'output': 'isolation',
   'direction': 'ltr',
   'mobile first': true,
@@ -15,7 +15,7 @@ $Singularity-Settings: (
 //////////////////////////////
 // User Settings
 //////////////////////////////
-$singularity: ();
+$singularity: () !default;
 
 //////////////////////////////
 // Import General Helpers
