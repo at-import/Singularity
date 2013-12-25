@@ -1,14 +1,59 @@
-@mixin grid-span($span, $location: 1, $grid: false, $gutter: false, $output-style: $output, $options: false) {
+@mixin grid-span($span, $location: 1, $grid: null, $gutter: null, $output-style: null, $gutter-style: null, $options: null) {
 
-  @if $output-style == 'float' {
-    @include output-float($span, $location, $grid, $gutter, $options);
+  @if $output-style == null {
+    $output-style: singularity-get-setting('output');
   }
-  @else if $output-style == 'isolation' {
-    @include output-isolation($span, $location, $grid, $gutter, $options);
+
+  $Direction: singularity-get-setting('direction');
+
+  @if function-exists('output-#{$output-style}') {
+    // TODO: Memo Here
+    $Call: call('output-#{$output-style}', $span, $location, $grid, $gutter, $gutter-style, $options);
+
+    $Left: map-get($Call, 'left');
+    $Right: map-get($Call, 'right');
+    $Exclude: map-get($Call, 'exclude');
+    $Exclude-Left: map-get($Exclude, 'left');
+    $Exclude-Right: map-get($Exclude, 'right');
+
+    @if $Direction == 'ltr' or $Direction == 'both' {
+      @each $property, $value in $Left {
+        @if $Direction == 'both' {
+          @if not index($Exclude-Left, $property) {
+            #{$property}: $value;
+          }
+        }
+        @else {
+          #{$property}: $value;
+        }
+      }
+    }
+
+    @if $Direction == 'rtl' or $Direction == 'both' {
+      [dir="rtl"] {
+        @each $property, $value in $Right {
+          @if $Direction == 'both' {
+            @if not index($Exclude-Right, $property) {
+              #{$property}: $value;
+            }
+          }
+          @else {
+            #{$property}: $value;
+          }
+        }
+      }
+    }
+  }
+  @else {
+    @warn "There doesn't appear to be an output style named `#{$output-style}`. Please ensure that the function `output-#{$output-style}` and that the output style `#{$output-style}` are both available before trying to use them.";
   }
 }
 
-@mixin push($span, $location, $grid: false, $gutter: false, $output-style: $output) {
+@mixin push($span, $location, $grid: null, $gutter: null, $output-style: null) {
+
+  @if $output-style == null {
+    $output-style: singularity-get-setting('output');
+  }
 
   @if $output-style == 'float' {
     @include push-float($span, $location, $grid, $gutter);
@@ -18,7 +63,11 @@
   }
 }
 
-@mixin pull($span, $location, $grid: false, $gutter: false, $output-style: $output) {
+@mixin pull($span, $location, $grid: null, $gutter: null, $output-style: null) {
+
+  @if $output-style == null {
+    $output-style: singularity-get-setting('output');
+  }
 
   @if $output-style == 'float' {
     @include pull-float($span, $location, $grid, $gutter);
@@ -28,7 +77,11 @@
   }
 }
 
-@mixin isolate($span, $location, $grid: false, $gutter: false, $output-style: $output) {
+@mixin isolate($span, $location, $grid: null, $gutter: null, $output-style: null) {
+
+  @if $output-style == null {
+    $output-style: singularity-get-setting('output');
+  }
 
   @if $output-style == 'float' or $output-style == "isolation" {
     @include push($span, $location, $grid, $gutter, "isolation");
