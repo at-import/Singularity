@@ -35,6 +35,9 @@
   // IF the list is initiated with a list of grid columns need to start off
   // a comma seprated list.
   @else {
+    @if not (map-has-key($Grid-Map, -1px)) {
+      $Grid-Map: map-merge($Grid-Map, map-get($Singularity-Settings, 'grids'));
+    }
     $Grid-Map: map-merge($Grid-Map, ($Breakpoint: $Grid));
   }
 

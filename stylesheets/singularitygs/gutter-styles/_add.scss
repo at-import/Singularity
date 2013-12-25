@@ -35,6 +35,9 @@
   // IF the list is initiated with a list of gutter-style columns need to start off
   // a comma seprated list.
   @else {
+    @if not (map-has-key($Gutter-Style-Map, -1px)) {
+      $Gutter-Style-Map: map-merge($Gutter-Style-Map, map-get($Singularity-Settings, 'gutter styles'));
+    }
     $Gutter-Style-Map: map-merge($Gutter-Style-Map, ($Breakpoint: $Gutter-Style));
   }
 

@@ -35,6 +35,9 @@
   // IF the list is initiated with a list of Gutter columns need to start off
   // a comma seprated list.
   @else {
+    @if not (map-has-key($Gutter-Map, -1px)) {
+      $Gutter-Map: map-merge($Gutter-Map, map-get($Singularity-Settings, 'gutters'));
+    }
     $Gutter-Map: map-merge($Gutter-Map, ($Breakpoint: $Gutter));
   }
 
