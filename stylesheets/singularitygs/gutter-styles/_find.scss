@@ -5,12 +5,17 @@
 // From Singularity
 // Must be using Breakpoint to work properly
 //////////////////////////////
-@function find-gutter-style($user-gutter-style: false) {
+@function find-gutter-style($user-gutter-styles: null) {
 
-  // We supply a default if the user hasn't set any gutter style and hasn't passed in a custom gutter
-  @if length($gutter-styles) == 0 and $user-gutter-style == false {
-    $user-gutter-style: opposite;
+  // We supply a default if the user hasn't set any gutters and hasn't passed in a custom column set
+  // The default supplied is based on original Susy options
+  $Gutters-Styles: singularity-get-setting('gutter styles');
+
+  $Found: find-object($Gutters-Styles, $user-gutter-styles);
+
+  @if length($Found) == 1 {
+    $Found: nth($Found, 1);
   }
 
-  @return find-object($gutter-styles, $user-gutter-style);
+  @return $Found;
 }

@@ -9,10 +9,10 @@
 // - $append-to-list    : [list]        A list to append to.
 //                                      Defaults to $gutter-styles if none is specified.
 @function add-gutter-style($gutter-style-definition, $custom-map: false) {
-  $Parsed:      parse-add($gutter-style-definition); // Parses gutter-style definition to gutter-style/breakpoint
-  $Gutter-Style:        nth($Parsed, 1); // E. g. `(<gutter-style>)`.
-  $Breakpoint:  nth($Parsed, 2); // Either `(<breakpoint>)` or false.
-  $Mobile-First: singularity-get-setting('mobile first');
+  $Parsed:        parse-add($gutter-style-definition); // Parses gutter-style definition to gutter-style/breakpoint
+  $Gutter-Style:  nth($Parsed, 1); // E. g. `(<gutter-style>)`.
+  $Breakpoint:    nth($Parsed, 2); // Either `(<breakpoint>)` or false.
+  $Mobile-First:  singularity-get-setting('mobile first');
   $Gutter-Style-Map: ();
 
   // Determine if a custom map or the default maps should be used.
@@ -20,8 +20,8 @@
     $Gutter-Style-Map: $custom-map;
   }
   @else {
-    @if singularity-has-setting('gutter-styles') {
-      $Gutter-Style-Map: singularity-get-setting('gutter-styles');
+    @if singularity-has-setting('gutter styles') {
+      $Gutter-Style-Map: singularity-get-setting('gutter styles');
     }
   }
   $Gutter-Style-Key-Length: length(map-keys($Gutter-Style-Map));
@@ -45,5 +45,5 @@
 
 @mixin add-gutter-style($gutter-style-definition) {
   $Add-gutter-style: add-gutter-style($gutter-style-definition);
-  $HOLDER: singularity-set-setting('gutter-styles', $Add-gutter-style);
+  $HOLDER: singularity-set-setting('gutter styles', $Add-gutter-style);
 }

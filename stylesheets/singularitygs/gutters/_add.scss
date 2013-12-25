@@ -9,7 +9,7 @@
 // - $append-to-list    : [list]        A list to append to.
 //                                      Defaults to $gutters if none is specified.
 @function add-gutter($gutter-definition, $custom-map: false) {
-  $Parsed:      parse-add($Gutter-definition); // Parses Gutter definition to Gutter/breakpoint
+  $Parsed:      parse-add($gutter-definition); // Parses Gutter definition to Gutter/breakpoint
   $Gutter:        nth($Parsed, 1); // E. g. `(<Gutter>)`.
   $Breakpoint:  nth($Parsed, 2); // Either `(<breakpoint>)` or false.
   $Mobile-First: singularity-get-setting('mobile first');
@@ -44,6 +44,6 @@
 }
 
 @mixin add-gutter($gutter-definition) {
-  $Add-Gutter: add-Gutter($gutter-definition);
+  $Add-Gutter: add-gutter($gutter-definition);
   $HOLDER: singularity-set-setting('gutters', $Add-Gutter);
 }
