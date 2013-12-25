@@ -37,85 +37,8 @@
 
 // -----------------------------------------------
 // Grid Overlay
-
-// The overlay is painted over your container's ::after pseudo-element, so we must
-// give position to the container itself, if relative doesn't suit your layout
-// it can be replaced by absolute/fixed.
-$overlay-position:        relative      !default;
-
-// Set the position of the switch.
-$overlay-switch-position: left bottom   !default;
-
 $background-grid-color:   Chocolate     !default;
-
-// Global variable to show or hide the grid background at will.
 $show-grid-backgrounds:   true          !default;
-
-@mixin grid-overlay (
-  $selector: 'body',
-  $columns: false,
-  $gutter: false,
-  $color: $background-grid-color
-) {
-
-  $vert: nth($overlay-switch-position, 1);
-  $horz: nth($overlay-switch-position, 2);
-
-  head {
-    display: block;
-    position: fixed;
-    #{$horz}: 10px;
-    #{$vert}: 10px;
-    z-index: 99;
-    color: #333;
-    text-shadow: 0 0 3px #fff;
-    @include transition(all .4s);
-    &::before {
-      content: "||||";
-      display: block;
-      padding: 10px 14px;
-      letter-spacing: -1;
-      font: {
-        family: sans-serif;
-        size: 26px;
-        weight: bold;
-      }
-    }
-    &:hover {
-      color: #333;
-      text-shadow: 1px 1px #fff;
-      ~ body #{$selector} {
-        position: unquote($overlay-position);
-      }
-      ~ #{$selector}::after,
-      ~ body #{$selector}::after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 100%;
-        width: 100%;
-        @include background-grid($columns, $gutter, $color);
-      }
-    }
-  }
-}
-
-// -----------------------------------------------
-// Grid Toggle
-
-@mixin grid-toggle(
-  $columns: false,
-  $gutter: false,
-  $color: $background-grid-color
-  ) {
-
-  [data-development-grid="show"] {
-    @include background-grid($columns, $gutter, $color);
-  }
-}
 
 // -----------------------------------------------
 // Grid Background
@@ -141,21 +64,21 @@ $show-grid-backgrounds:   true          !default;
   $Gutters: ();
   $Styles: ();
 
-  @if type-of($columns) != 'map' {
+  @if $columns and type-of($columns) != 'map' {
     $Grids: (-1px: $columns);
   }
   @else {
     $Grids: singularity-get-setting('grids');
   }
 
-  @if type-of($gutters) != 'map' {
+  @if $gutters and type-of($gutters) != 'map' {
     $Gutters: (-1px: $gutters);
   }
   @else {
     $Gutters: singularity-get-setting('gutters');
   }
 
-  @if type-of($gutter-styles) != 'map' {
+  @if $gutter-styles and type-of($gutter-styles) != 'map' {
     $Styles: (-1px: $gutter-styles);
   }
   @else {
@@ -212,9 +135,10 @@ $show-grid-backgrounds:   true          !default;
   @for $i from 1 through length($Holder) {
     $Key: nth(nth($Holder, $i), 1);
     $Value: nth(nth($Holder, $i), 2);
+
     $Previous: ();
     @if $i > 1 {
-      $Previous: nth(nth($Holder, $i - 1), 2);
+      $Previous: nth(nth($Return, $i - 1), 2);
     }
 
     @if not map-has-key($Value, 'grid') {
