@@ -3,6 +3,13 @@
 // http://rosettacode.org/wiki/Sorting_algorithms/Quicksort
 //////////////////////////////
 @function quicksort($list) {
+  @if $Memo-Exists {
+    $return: memo-get(singularity, quicksort $list);
+
+    @if $return != null {
+      @return $return;
+    }
+  }
   $QS-Less: ();
   $QS-Equal: ();
   $QS-Large: ();
@@ -29,7 +36,15 @@
 
     $QS-Return: join($QS-Less, $QS-Equal);
     $QS-Return: join($QS-Return, $QS-Large);
+
+    @if $Memo-Exists {
+    $return: memo-set(singularity, quicksort $list, $QS-Return);
+  }
     @return $QS-Return;
+  }
+
+  @if $Memo-Exists {
+    $return: memo-set(singularity, quicksort $list, $list);
   }
   @return $list;
 }
