@@ -12,8 +12,6 @@ $Singularity-Settings: (
   'include clearfix': false
 );
 
-$Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
-
 //////////////////////////////
 // User Settings
 //////////////////////////////
