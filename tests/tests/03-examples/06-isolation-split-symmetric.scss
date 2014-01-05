@@ -1,0 +1,17 @@
+@import "breakpoint";
+@import "singularitygs";
+
+@include add-grid(5);
+@include add-gutter(1);
+@include add-gutter-style('split');
+
+.thumbnail {
+  @for $i from 1 through 5 {
+    &:nth-of-type(5n + #{$i}) {
+      @include grid-span(1, $i);
+      @if $i == 1 {
+        clear: both;
+      }
+    }
+  }
+}

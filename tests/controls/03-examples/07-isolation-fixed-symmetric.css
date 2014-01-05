@@ -1,0 +1,40 @@
+.thumbnail:nth-of-type(5n + 1) {
+  width: 20%;
+  float: left;
+  margin-right: -100%;
+  clear: none;
+  padding-right: 1em;
+  clear: both;
+}
+.thumbnail:nth-of-type(5n + 2) {
+  width: 20%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 20%;
+  clear: none;
+  padding-right: 1em;
+}
+.thumbnail:nth-of-type(5n + 3) {
+  width: 20%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 40%;
+  clear: none;
+  padding-right: 1em;
+}
+.thumbnail:nth-of-type(5n + 4) {
+  width: 20%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 60%;
+  clear: none;
+  padding-right: 1em;
+}
+.thumbnail:nth-of-type(5n + 5) {
+  width: 20%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  padding-right: 1em;
+}

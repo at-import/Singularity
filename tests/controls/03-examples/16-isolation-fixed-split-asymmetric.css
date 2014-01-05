@@ -1,0 +1,45 @@
+.thumbnail:nth-of-type(5n + 1) {
+  width: 6.66667%;
+  float: left;
+  margin-right: -100%;
+  clear: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  clear: both;
+}
+.thumbnail:nth-of-type(5n + 2) {
+  width: 13.33333%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 6.66667%;
+  clear: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.thumbnail:nth-of-type(5n + 3) {
+  width: 20%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 20%;
+  clear: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.thumbnail:nth-of-type(5n + 4) {
+  width: 26.66667%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 40%;
+  clear: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.thumbnail:nth-of-type(5n + 5) {
+  width: 33.33333%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}

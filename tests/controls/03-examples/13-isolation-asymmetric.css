@@ -1,0 +1,36 @@
+.thumbnail:nth-of-type(5n + 1) {
+  width: 5.26316%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0;
+  clear: none;
+  clear: both;
+}
+.thumbnail:nth-of-type(5n + 2) {
+  width: 10.52632%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 10.52632%;
+  clear: none;
+}
+.thumbnail:nth-of-type(5n + 3) {
+  width: 15.78947%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 26.31579%;
+  clear: none;
+}
+.thumbnail:nth-of-type(5n + 4) {
+  width: 21.05263%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 47.36842%;
+  clear: none;
+}
+.thumbnail:nth-of-type(5n + 5) {
+  width: 26.31579%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+}

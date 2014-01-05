@@ -1,0 +1,32 @@
+.thumbnail:nth-of-type(5n + 1) {
+  width: 5.26316%;
+  clear: right;
+  float: left;
+  margin-left: 0;
+  margin-right: 5.26316%;
+  clear: both;
+}
+.thumbnail:nth-of-type(5n + 2) {
+  width: 10.52632%;
+  clear: right;
+  float: left;
+  margin-right: 5.26316%;
+}
+.thumbnail:nth-of-type(5n + 3) {
+  width: 15.78947%;
+  clear: right;
+  float: left;
+  margin-right: 5.26316%;
+}
+.thumbnail:nth-of-type(5n + 4) {
+  width: 21.05263%;
+  clear: right;
+  float: left;
+  margin-right: 5.26316%;
+}
+.thumbnail:nth-of-type(5n + 5) {
+  width: 21.05263%;
+  clear: right;
+  float: right;
+  margin-right: 0;
+}
