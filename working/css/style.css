@@ -1,80 +1,50 @@
-strong {
-  display: block;
+.container {
+  max-width: 90%;
+  background: red;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
 }
 
-div {
-  text-align: center;
-  background: rgba(38, 111, 189, 0.2);
+.thumbnail {
+  min-height: 45vh;
+  background: blue;
+  margin-bottom: 5vh;
 }
 
-.ag1 {
-  width: 18.64407%;
-  clear: right;
+.thumbnail:nth-of-type(5n + 1) {
+  width: 10%;
   float: left;
-  margin-left: 0;
-  margin-right: 1.69492%;
-}
-
-.ag2 {
-  width: 59.32203%;
-  clear: right;
-  float: left;
-  margin-left: 0;
-  margin-right: 1.69492%;
-}
-
-.ag3 {
-  width: 18.64407%;
-  clear: right;
-  float: right;
-  margin-right: 0;
-}
-
-.ag4 {
-  width: 48.57143%;
-  clear: right;
-  float: left;
-  margin-left: 0;
-  margin-right: 2.85714%;
-}
-
-.ag5 {
-  width: 48.57143%;
-  clear: right;
-  float: right;
-  margin-right: 0;
-}
-
-.ag6 {
-  width: 31.42857%;
-  clear: right;
-  float: left;
-  margin-left: 0;
-  margin-right: 2.85714%;
-}
-
-.ag7 {
-  width: 65.71429%;
-  clear: right;
-  float: right;
-  margin-right: 0;
-}
-
-.ag8 {
-  width: 47.82609%;
-  clear: right;
-  float: left;
-  margin-left: 0;
-  margin-right: 4.34783%;
-}
-
-.ag9 {
-  width: 47.82609%;
-  clear: right;
-  float: right;
-  margin-right: 0;
-}
-
-.ag10 {
+  margin-right: -100%;
+  margin-left: 5%;
+  clear: none;
   clear: both;
+}
+.thumbnail:nth-of-type(5n + 2) {
+  width: 10%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 25%;
+  clear: none;
+}
+.thumbnail:nth-of-type(5n + 3) {
+  width: 10%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 45%;
+  clear: none;
+}
+.thumbnail:nth-of-type(5n + 4) {
+  width: 10%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 65%;
+  clear: none;
+}
+.thumbnail:nth-of-type(5n + 5) {
+  width: 10%;
+  float: right;
+  margin-left: 0;
+  margin-right: 5%;
+  clear: none;
 }

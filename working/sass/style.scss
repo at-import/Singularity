@@ -1,48 +1,35 @@
+@import "compass";
 @import "breakpoint";
 @import "singularitygs";
 
-$singularity: (
-  'output style': 'float'
-);
+// $singularity: (
+//   'output': 'float'
+// );
 
-@include add-grid(10);
-@include add-gutter(.2);
-
-strong {
-  display: block;
-}
-div {
-  text-align: center;
-  background: rgba(#266FBD, .2);
+.container {
+  max-width: 90%;
+  background: red;
+  margin: 0 auto;
+  @include clearfix();
 }
 
-.ag1 {
-  @include float-span(2);
+.thumbnail {
+  min-height: 45vh;
+  background: blue;
+  margin-bottom: 5vh;
 }
-.ag2 {
-  @include float-span(6);
-}
-.ag3 {
-  @include float-span(2, last);
-}
-.ag4 {
-  @include float-span(3, $grid: 6);
-}
-.ag5 {
-  @include float-span(3, last, $grid: 6);
-}
-.ag6 {
-  @include float-span(2, $grid: 6);
-}
-.ag7 {
-  @include float-span(4, last, $grid: 6);
-}
-.ag8 {
-  @include float-span(2, $grid: 4);
-}
-.ag9 {
-  @include float-span(2, last, $grid: 4);
-}
-.ag10 {
-  clear: both;
+
+@include add-grid(5);
+@include add-gutter(1);
+@include add-gutter-style('split');
+
+.thumbnail {
+  @for $i from 1 through 5 {
+    &:nth-of-type(5n + #{$i}) {
+      @include grid-span(1, $i);
+      @if $i == 1 {
+        clear: both;
+      }
+    }
+  }
 }
