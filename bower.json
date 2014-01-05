@@ -1,6 +1,6 @@
 {
   "name": "singularity",
-  "version": "1.2.0-alpha.1",
+  "version": "1.2.0-alpha.2",
   "main": "stylesheets/_singularitygs.scss",
   "ignore": [
     "**/.*",
@@ -16,6 +16,6 @@
     "templates"
   ],
   "dependencies": {
-    "compass-breakpoint": ">=2.4.0"
+    "breakpoint-sass": ">=2.4.0"
   }
 }
