@@ -165,22 +165,22 @@
   _layout: "$gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 20.66667%;
+  _result: 20%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 41.5%;
+  _result: 40%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 6)";
-  _result: 17.12644%;
+  _result: 16.66667%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 6)";
-  _result: 34.36782%;
+  _result: 33.33333%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 20.95238%;
+  _result: 20%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 42.38095%;
+  _result: 40.0%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 20%;
@@ -189,10 +189,10 @@
   _result: 40%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 6, .5)";
-  _result: 17.32026%;
+  _result: 16.66667%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 6, .5)";
-  _result: 34.96732%;
+  _result: 33.33333%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
   _result: 16.66667%;
@@ -263,22 +263,22 @@
   _layout: ".75, $gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 172.12121%;
+  _result: 133.33333%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 353.93939%;
+  _result: 266.66667%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 6)";
-  _result: 17.12644%;
+  _result: 16.66667%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 6)";
-  _result: 34.36782%;
+  _result: 33.33333%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 204.44444%;
+  _result: 133.33333%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 444.44444%;
+  _result: 266.66667%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 133.33333%;
@@ -287,10 +287,10 @@
   _result: 266.66667%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 6, .5)";
-  _result: 17.32026%;
+  _result: 16.66667%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 6, .5)";
-  _result: 34.96732%;
+  _result: 33.33333%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
   _result: 16.66667%;
@@ -312,22 +312,22 @@
   _layout: "8, .75, $gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 12.90431%;
+  _result: 12.5%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 26.11186%;
+  _result: 25%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 6)";
-  _result: 17.39927%;
+  _result: 16.66667%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 6)";
-  _result: 35.34799%;
+  _result: 33.33333%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 12.86232%;
+  _result: 12.5%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 25.9058%;
+  _result: 25%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 12.5%;
@@ -336,10 +336,10 @@
   _result: 25%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 6, .5)";
-  _result: 17.32026%;
+  _result: 16.66667%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 6, .5)";
-  _result: 34.96732%;
+  _result: 33.33333%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
   _result: 16.66667%;
@@ -523,22 +523,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 20.66667%;
+    _result: 20%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 41.5%;
+    _result: 40%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.12644%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.36782%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 20.95238%;
+    _result: 20%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 42.38095%;
+    _result: 40.0%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 20%;
@@ -547,10 +547,10 @@
     _result: 40%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -621,22 +621,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 172.12121%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 353.93939%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.12644%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.36782%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -645,10 +645,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -670,22 +670,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -694,10 +694,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -732,22 +732,22 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -756,10 +756,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -784,22 +784,22 @@
     _layout: "8";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.81012%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 25.72878%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -808,10 +808,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -833,22 +833,22 @@
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.8181%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 30.03549%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -857,10 +857,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -882,22 +882,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -906,10 +906,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -931,22 +931,22 @@
     _layout: "8, .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -955,10 +955,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -980,22 +980,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 185.5113%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 389.28488%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -1004,10 +1004,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1029,22 +1029,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -1053,10 +1053,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1091,22 +1091,22 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -1115,10 +1115,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1143,22 +1143,22 @@
     _layout: "8";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.81012%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 25.72878%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -1167,10 +1167,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1192,22 +1192,22 @@
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.8181%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 30.03549%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -1216,10 +1216,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1241,22 +1241,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -1265,10 +1265,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1290,22 +1290,22 @@
     _layout: "8, .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -1314,10 +1314,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1339,22 +1339,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 185.5113%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 389.28488%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.22421%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.64357%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -1363,10 +1363,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1388,22 +1388,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -1412,10 +1412,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1600,22 +1600,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 11.38478%;
+    _result: 11.11111%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 22.89272%;
+    _result: 22.22222%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.29363%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.86938%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 11.39601%;
+    _result: 11.11111%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 22.93447%;
+    _result: 22.22222%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 11.11111%;
@@ -1624,10 +1624,10 @@
     _result: 22.22222%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1698,22 +1698,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 198.24206%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 425.69304%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.29363%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 34.86938%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -1722,10 +1722,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1747,22 +1747,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 6)";
-    _result: 17.39927%;
+    _result: 16.66667%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 6)";
-    _result: 35.34799%;
+    _result: 33.33333%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -1771,10 +1771,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 6, .5)";
-    _result: 17.32026%;
+    _result: 16.66667%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 6, .5)";
-    _result: 34.96732%;
+    _result: 33.33333%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 6, $gutter-style: 'split')";
     _result: 16.66667%;
@@ -1959,22 +1959,22 @@
   _layout: "$gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 13.09042%;
+  _result: 12.82051%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 47.30094%;
+  _result: 46.15385%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6)";
-  _result: 17.96078%;
+  _result: 17.64706%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6)";
-  _result: 51.96078%;
+  _result: 50.98039%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 14.7619%;
+  _result: 14.28571%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 49.7619%;
+  _result: 47.61905%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 12.82051%;
@@ -1983,10 +1983,10 @@
   _result: 46.15385%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, .5)";
-  _result: 19.08832%;
+  _result: 18.51852%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6, .5)";
-  _result: 53.7037%;
+  _result: 51.85185%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
   _result: 17.64706%;
@@ -2057,22 +2057,22 @@
   _layout: ".75, $gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 172.12121%;
+  _result: 133.33333%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 353.93939%;
+  _result: 266.66667%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6)";
-  _result: 17.96078%;
+  _result: 17.64706%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6)";
-  _result: 51.96078%;
+  _result: 50.98039%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 204.44444%;
+  _result: 133.33333%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 444.44444%;
+  _result: 266.66667%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 133.33333%;
@@ -2081,10 +2081,10 @@
   _result: 266.66667%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, .5)";
-  _result: 19.08832%;
+  _result: 18.51852%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6, .5)";
-  _result: 53.7037%;
+  _result: 51.85185%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
   _result: 17.64706%;
@@ -2106,22 +2106,22 @@
   _layout: "3 2 1, .75, $gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 49.09091%;
+  _result: 45.45455%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 85.75758%;
+  _result: 78.78788%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6)";
-  _result: 20.07797%;
+  _result: 19.29825%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6)";
-  _result: 55.26316%;
+  _result: 52.63158%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 49.52381%;
+  _result: 46.66667%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 85.2381%;
+  _result: 80%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 45.45455%;
@@ -2130,10 +2130,10 @@
   _result: 78.78788%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, .5)";
-  _result: 19.08832%;
+  _result: 18.51852%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6, .5)";
-  _result: 53.7037%;
+  _result: 51.85185%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
   _result: 19.29825%;
@@ -2317,22 +2317,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 13.09042%;
+    _result: 12.82051%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 47.30094%;
+    _result: 46.15385%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 17.96078%;
+    _result: 17.64706%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 51.96078%;
+    _result: 50.98039%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 49.7619%;
+    _result: 47.61905%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.82051%;
@@ -2341,10 +2341,10 @@
     _result: 46.15385%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 17.64706%;
@@ -2415,22 +2415,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 172.12121%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 353.93939%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 17.96078%;
+    _result: 17.64706%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 51.96078%;
+    _result: 50.98039%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -2439,10 +2439,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 17.64706%;
@@ -2464,22 +2464,22 @@
     _layout: "3 2 1, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.09091%;
+    _result: 45.45455%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 85.75758%;
+    _result: 78.78788%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 45.45455%;
@@ -2488,10 +2488,10 @@
     _result: 78.78788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -2526,22 +2526,22 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 21.28897%;
+    _result: 20.87227%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 55.3654%;
+    _result: 54.20561%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 21.7803%;
+    _result: 21.21212%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 56.1553%;
+    _result: 54.54545%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 20.87227%;
@@ -2550,10 +2550,10 @@
     _result: 54.20561%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -2578,22 +2578,22 @@
     _layout: "3 2 1";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.74066%;
+    _result: 47.51773%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 84.81529%;
+    _result: 80.85106%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 47.51773%;
@@ -2602,10 +2602,10 @@
     _result: 80.85106%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -2627,22 +2627,22 @@
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 22.52964%;
+    _result: 21.73913%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 57.37813%;
+    _result: 55.07246%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 21.7803%;
+    _result: 21.21212%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 56.1553%;
+    _result: 54.54545%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 21.73913%;
@@ -2651,10 +2651,10 @@
     _result: 55.07246%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -2676,22 +2676,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 21.28897%;
+    _result: 20.87227%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 55.3654%;
+    _result: 54.20561%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 21.7803%;
+    _result: 21.21212%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 56.1553%;
+    _result: 54.54545%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 20.87227%;
@@ -2700,10 +2700,10 @@
     _result: 54.20561%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -2725,22 +2725,22 @@
     _layout: "3 2 1, .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.09091%;
+    _result: 45.45455%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 85.75758%;
+    _result: 78.78788%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 45.45455%;
@@ -2749,10 +2749,10 @@
     _result: 78.78788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -2774,22 +2774,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 185.5113%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 389.28488%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -2798,10 +2798,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -2823,22 +2823,22 @@
     _layout: "3 2 1, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.09091%;
+    _result: 45.45455%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 85.75758%;
+    _result: 78.78788%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 45.45455%;
@@ -2847,10 +2847,10 @@
     _result: 78.78788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -2885,22 +2885,22 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 21.28897%;
+    _result: 20.87227%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 55.3654%;
+    _result: 54.20561%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 21.7803%;
+    _result: 21.21212%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 56.1553%;
+    _result: 54.54545%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 20.87227%;
@@ -2909,10 +2909,10 @@
     _result: 54.20561%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -2937,22 +2937,22 @@
     _layout: "3 2 1";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.74066%;
+    _result: 47.51773%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 84.81529%;
+    _result: 80.85106%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 47.51773%;
@@ -2961,10 +2961,10 @@
     _result: 80.85106%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -2986,22 +2986,22 @@
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 22.52964%;
+    _result: 21.73913%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 57.37813%;
+    _result: 55.07246%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 21.7803%;
+    _result: 21.21212%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 56.1553%;
+    _result: 54.54545%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 21.73913%;
@@ -3010,10 +3010,10 @@
     _result: 55.07246%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -3035,22 +3035,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 21.28897%;
+    _result: 20.87227%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 55.3654%;
+    _result: 54.20561%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 21.7803%;
+    _result: 21.21212%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 56.1553%;
+    _result: 54.54545%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 20.87227%;
@@ -3059,10 +3059,10 @@
     _result: 54.20561%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -3084,22 +3084,22 @@
     _layout: "3 2 1, .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.09091%;
+    _result: 45.45455%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 85.75758%;
+    _result: 78.78788%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 45.45455%;
@@ -3108,10 +3108,10 @@
     _result: 78.78788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -3133,22 +3133,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 185.5113%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 389.28488%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -3157,10 +3157,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -3182,22 +3182,22 @@
     _layout: "3 2 1, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.09091%;
+    _result: 45.45455%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 85.75758%;
+    _result: 78.78788%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 45.45455%;
@@ -3206,10 +3206,10 @@
     _result: 78.78788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -3394,22 +3394,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 24.84447%;
+    _result: 24.38479%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 58.86274%;
+    _result: 57.71812%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.87466%;
+    _result: 18.35206%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 53.37079%;
+    _result: 51.68539%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 24.94949%;
+    _result: 24.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 59.0404%;
+    _result: 57.77778%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 24.38479%;
@@ -3418,10 +3418,10 @@
     _result: 57.71812%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.35206%;
@@ -3492,22 +3492,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 198.24206%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 425.69304%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.87466%;
+    _result: 18.35206%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 53.37079%;
+    _result: 51.68539%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -3516,10 +3516,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.35206%;
@@ -3541,22 +3541,22 @@
     _layout: "3 2 1, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 49.09091%;
+    _result: 45.45455%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 85.75758%;
+    _result: 78.78788%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 49.52381%;
+    _result: 46.66667%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 85.2381%;
+    _result: 80%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 45.45455%;
@@ -3565,10 +3565,10 @@
     _result: 78.78788%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -3753,22 +3753,22 @@
   _layout: "$gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 13.09042%;
+  _result: 12.82051%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 47.30094%;
+  _result: 46.15385%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6)";
-  _result: 17.96078%;
+  _result: 17.64706%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6)";
-  _result: 51.96078%;
+  _result: 50.98039%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 14.7619%;
+  _result: 14.28571%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 49.7619%;
+  _result: 47.61905%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 12.82051%;
@@ -3777,10 +3777,10 @@
   _result: 46.15385%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, .5)";
-  _result: 19.08832%;
+  _result: 18.51852%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6, .5)";
-  _result: 53.7037%;
+  _result: 51.85185%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
   _result: 17.64706%;
@@ -3851,22 +3851,22 @@
   _layout: ".75, $gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 172.12121%;
+  _result: 133.33333%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 353.93939%;
+  _result: 266.66667%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6)";
-  _result: 17.96078%;
+  _result: 17.64706%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6)";
-  _result: 51.96078%;
+  _result: 50.98039%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 204.44444%;
+  _result: 133.33333%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 444.44444%;
+  _result: 266.66667%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 133.33333%;
@@ -3875,10 +3875,10 @@
   _result: 266.66667%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, .5)";
-  _result: 19.08832%;
+  _result: 18.51852%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6, .5)";
-  _result: 53.7037%;
+  _result: 51.85185%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
   _result: 17.64706%;
@@ -3900,22 +3900,22 @@
   _layout: "8, .75, $gutter-style: 'split'";
   /* Single Column Span */
   _test: "grid-span(1, 1)";
-  _result: 12.90431%;
+  _result: 12.5%;
   /* Multiple Column Span */
   _test: "grid-span(2, 1)";
-  _result: 26.11186%;
+  _result: 25%;
   /* Grid Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6)";
-  _result: 20.07797%;
+  _result: 19.29825%;
   /* Grid Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6)";
-  _result: 55.26316%;
+  _result: 52.63158%;
   /* Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter: .5)";
-  _result: 12.86232%;
+  _result: 12.5%;
   /* Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, $gutter: .5)";
-  _result: 25.9058%;
+  _result: 25%;
   /* Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, $gutter-style: 'split')";
   _result: 12.5%;
@@ -3924,10 +3924,10 @@
   _result: 25%;
   /* Grid and Gutter Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, .5)";
-  _result: 19.08832%;
+  _result: 18.51852%;
   /* Grid and Gutter Override, Multi Column Span */
   _test: "grid-span(2, 1, 2 4 6, .5)";
-  _result: 53.7037%;
+  _result: 51.85185%;
   /* Grid and Gutter Style Override, Single Column Span */
   _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
   _result: 19.29825%;
@@ -4111,22 +4111,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 13.09042%;
+    _result: 12.82051%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 47.30094%;
+    _result: 46.15385%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 17.96078%;
+    _result: 17.64706%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 51.96078%;
+    _result: 50.98039%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 49.7619%;
+    _result: 47.61905%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.82051%;
@@ -4135,10 +4135,10 @@
     _result: 46.15385%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 17.64706%;
@@ -4209,22 +4209,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 172.12121%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 353.93939%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 17.96078%;
+    _result: 17.64706%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 51.96078%;
+    _result: 50.98039%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -4233,10 +4233,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 17.64706%;
@@ -4258,22 +4258,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -4282,10 +4282,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -4320,22 +4320,22 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -4344,10 +4344,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4372,22 +4372,22 @@
     _layout: "8";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.81012%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 25.72878%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -4396,10 +4396,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4421,22 +4421,22 @@
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.8181%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 30.03549%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -4445,10 +4445,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -4470,22 +4470,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -4494,10 +4494,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4519,22 +4519,22 @@
     _layout: "8, .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -4543,10 +4543,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -4568,22 +4568,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 185.5113%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 389.28488%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -4592,10 +4592,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4617,22 +4617,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -4641,10 +4641,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -4679,22 +4679,22 @@
     _gutter-styles: 'opposite at 900px';
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -4703,10 +4703,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4731,22 +4731,22 @@
     _layout: "8";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.81012%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 25.72878%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -4755,10 +4755,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4780,22 +4780,22 @@
     _layout: "$gutter: .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.8181%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 30.03549%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -4804,10 +4804,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -4829,22 +4829,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 14.69271%;
+    _result: 14.28571%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 29.52788%;
+    _result: 28.57143%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 14.7619%;
+    _result: 14.28571%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 29.7619%;
+    _result: 28.57143%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 14.28571%;
@@ -4853,10 +4853,10 @@
     _result: 28.57143%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4878,22 +4878,22 @@
     _layout: "8, .75";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -4902,10 +4902,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -4927,22 +4927,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 185.5113%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 389.28488%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.43002%;
+    _result: 18.00766%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 52.68199%;
+    _result: 51.341%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -4951,10 +4951,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.00766%;
@@ -4976,22 +4976,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -5000,10 +5000,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
@@ -5188,22 +5188,22 @@
     _layout: "$gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 24.84447%;
+    _result: 24.38479%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 58.86274%;
+    _result: 57.71812%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.87466%;
+    _result: 18.35206%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 53.37079%;
+    _result: 51.68539%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 24.94949%;
+    _result: 24.44444%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 59.0404%;
+    _result: 57.77778%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 24.38479%;
@@ -5212,10 +5212,10 @@
     _result: 57.71812%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.35206%;
@@ -5286,22 +5286,22 @@
     _layout: ".75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 198.24206%;
+    _result: 133.33333%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 425.69304%;
+    _result: 266.66667%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 18.87466%;
+    _result: 18.35206%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 53.37079%;
+    _result: 51.68539%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 204.44444%;
+    _result: 133.33333%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 444.44444%;
+    _result: 266.66667%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 133.33333%;
@@ -5310,10 +5310,10 @@
     _result: 266.66667%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 18.35206%;
@@ -5335,22 +5335,22 @@
     _layout: "8, .75, $gutter-style: 'split'";
     /* Single Column Span */
     _test: "grid-span(1, 1)";
-    _result: 12.90431%;
+    _result: 12.5%;
     /* Multiple Column Span */
     _test: "grid-span(2, 1)";
-    _result: 26.11186%;
+    _result: 25%;
     /* Grid Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6)";
-    _result: 20.07797%;
+    _result: 19.29825%;
     /* Grid Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6)";
-    _result: 55.26316%;
+    _result: 52.63158%;
     /* Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter: .5)";
-    _result: 12.86232%;
+    _result: 12.5%;
     /* Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, $gutter: .5)";
-    _result: 25.9058%;
+    _result: 25%;
     /* Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, $gutter-style: 'split')";
     _result: 12.5%;
@@ -5359,10 +5359,10 @@
     _result: 25%;
     /* Grid and Gutter Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, .5)";
-    _result: 19.08832%;
+    _result: 18.51852%;
     /* Grid and Gutter Override, Multi Column Span */
     _test: "grid-span(2, 1, 2 4 6, .5)";
-    _result: 53.7037%;
+    _result: 51.85185%;
     /* Grid and Gutter Style Override, Single Column Span */
     _test: "grid-span(1, 1, 2 4 6, $gutter-style: 'split')";
     _result: 19.29825%;
