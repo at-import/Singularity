@@ -10,7 +10,7 @@
 
   // Overides current global contexts, but only if needed
   @if $grid != false {
-    @include reset-singularity-setting('grids');
+    @include sgs-reset('grids');
     @if type-of($grid) != 'map' {
       @include sgs-change('grids', (-1px: $grid));
     }
@@ -19,7 +19,7 @@
     }
   }
   @if $gutter != false {
-    @include reset-singularity-setting('gutters');
+    @include sgs-reset('gutters');
     @if type-of($gutter) != 'map' {
       @include sgs-change('gutters', (-1px: $gutter));
     }
@@ -28,11 +28,11 @@
     }
   }
   @if $output-style != false {
-    @include reset-singularity-setting('output');
+    @include sgs-reset('output');
     @include sgs-change('output', $output-style);
   }
   @if $gutter-style != false {
-    @include reset-singularity-setting('gutter styles');
+    @include sgs-reset('gutter styles');
     @if type-of($gutter-style) != 'map' {
       @include sgs-change('gutter styles', (-1px: $gutter-style));
     }
@@ -45,10 +45,10 @@
   @content;
 
   // REset ALL the settings
-  @include reset-singularity-setting('grids');
-  @include reset-singularity-setting('gutters');
-  @include reset-singularity-setting('output');
-  @include reset-singularity-setting('gutter styles');
+  @include sgs-reset('grids');
+  @include sgs-reset('gutters');
+  @include sgs-reset('output');
+  @include sgs-reset('gutter styles');
   // Resets global contexts
   @include sgs-change('grids', $layout-private-grid-holder);
   @include sgs-change('gutters', $layout-private-gutter-holder);

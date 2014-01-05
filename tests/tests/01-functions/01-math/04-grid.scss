@@ -174,9 +174,9 @@
   }
 }
 
-@include reset-singularity-setting('grids');
-@include reset-singularity-setting('gutters');
-@include reset-singularity-setting('gutter styles');
+@include sgs-reset('grids');
+@include sgs-reset('gutters');
+@include sgs-reset('gutter styles');
 
 @include add-grid(1 3 5);
 @include add-grid(3 5 7 at 700px);
@@ -259,9 +259,9 @@
   }
 }
 
-@include reset-singularity-setting('grids');
-@include reset-singularity-setting('gutters');
-@include reset-singularity-setting('gutter styles');
+@include sgs-reset('grids');
+@include sgs-reset('gutters');
+@include sgs-reset('gutter styles');
 
 @include add-grid(1 3 5);
 @include add-grid(7 at 700px);

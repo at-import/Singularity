@@ -93,6 +93,6 @@ $DEPRECATE:singularity-deprecation-warning();
   @return true;
 }
 
-@mixin reset-singularity-setting($setting) {
-  $Reset-Singularity-Setting: sgs-reset($setting);
+@mixin sgs-reset($setting) {
+  $sgs-reset: sgs-reset($setting);
 }
