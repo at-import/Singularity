@@ -51,9 +51,9 @@ $show-grid-backgrounds:   true          !default;
 ) {
 
   @if $show-grid-backgrounds {
-    $columns: if($columns != null, $columns, singularity-get-setting('grids'));
-    $gutter: if($gutter != null, $gutter, singularity-get-setting('gutters'));
-    $gutter-style: if($gutter-style != null, $gutter-style, singularity-get-setting('gutter styles'));
+    $columns: if($columns != null, $columns, sgs-get('grids'));
+    $gutter: if($gutter != null, $gutter, sgs-get('gutters'));
+    $gutter-style: if($gutter-style != null, $gutter-style, sgs-get('gutter styles'));
 
     @include background-build($columns, $gutter, $gutter-style, $color)
   }
@@ -68,21 +68,21 @@ $show-grid-backgrounds:   true          !default;
     $Grids: (-1px: $columns);
   }
   @else {
-    $Grids: singularity-get-setting('grids');
+    $Grids: sgs-get('grids');
   }
 
   @if $gutters and type-of($gutters) != 'map' {
     $Gutters: (-1px: $gutters);
   }
   @else {
-    $Gutters: singularity-get-setting('gutters');
+    $Gutters: sgs-get('gutters');
   }
 
   @if $gutter-styles and type-of($gutter-styles) != 'map' {
     $Styles: (-1px: $gutter-styles);
   }
   @else {
-    $Styles: singularity-get-setting('gutter styles');
+    $Styles: sgs-get('gutter styles');
   }
 
   // Build 1st Depth Map
@@ -168,7 +168,7 @@ $show-grid-backgrounds:   true          !default;
   $Column-Color: $color;
   $Inverse-Column-Color: mix(black, $color, 15%);
   $Gutter-Color: mix(white, $color, 25%);
-  $Direction: named-direction(singularity-get-setting('direction'));
+  $Direction: named-direction(sgs-get('direction'));
 
   @each $bkpt, $def in $Background-Map {
     $Grid: map-get($def, 'grid');

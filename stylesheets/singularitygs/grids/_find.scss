@@ -9,7 +9,7 @@
 
   // We supply a default if the user hasn't set any grids and hasn't passed in a custom column set
   // The default supplied is based on original Susy options
-  $Grids: singularity-get-setting('grids');
+  $Grids: sgs-get('grids');
 
   $Found: find-object($Grids, $user-columns);
 

@@ -26,7 +26,7 @@
             $Singularity-Replace-Index: str-index($Singularity-Replace-Spaced, '-');
           }
         }
-        $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions with `@include change-singularity-setting('#{$Singularity-Replace-Spaced}', $value)`";
+        $Singularity-Warning-Output: $Singularity-Warning-Output + " Please replace all `$#{$var}` definitions with `@include sgs-change('#{$Singularity-Replace-Spaced}', $value)`";
       }
 
       $Singularity-Warning-Output: $Singularity-Warning-Output + " In the next version of Singularity, this warning will be removed";
@@ -43,7 +43,7 @@ $DEPRECATE:singularity-deprecation-warning();
 //////////////////////////////
 // Has Setting
 //////////////////////////////
-@function singularity-has-setting($setting) {
+@function sgs-has($setting) {
   @if map-has-key($singularity, $setting) {
     @return true;
   }
@@ -55,8 +55,8 @@ $DEPRECATE:singularity-deprecation-warning();
 //////////////////////////////
 // Get Settings
 //////////////////////////////
-@function singularity-get-setting($setting) {
-  @if singularity-has-setting($setting) {
+@function sgs-get($setting) {
+  @if sgs-has($setting) {
     @return map-get($singularity, $setting);
   }
   @else {
@@ -67,7 +67,7 @@ $DEPRECATE:singularity-deprecation-warning();
 //////////////////////////////
 // Set Settings
 //////////////////////////////
-@function singularity-set-setting($setting, $value) {
+@function sgs-set($setting, $value) {
   @if str-index($setting, '-') > 0 {
     @warn "Singularity settings should contain spaces, not dashes. Please replace dashes with spaces. Settings will not work as expected until changed.";
   }
@@ -75,14 +75,14 @@ $DEPRECATE:singularity-deprecation-warning();
   @return true;
 }
 
-@mixin change-singularity-setting($setting, $value) {
-  $Change-Singularity-Setting: singularity-set-setting($setting, $value);
+@mixin sgs-change($setting, $value) {
+  $sgs-change: sgs-set($setting, $value);
 }
 
 //////////////////////////////
 // Remove Setting
 //////////////////////////////
-@function singularity-reset-setting($setting) {
+@function sgs-reset($setting) {
   $Return: ();
 
   @each $Key, $Value in $singularity {
@@ -94,5 +94,5 @@ $DEPRECATE:singularity-deprecation-warning();
 }
 
 @mixin reset-singularity-setting($setting) {
-  $Reset-Singularity-Setting: singularity-reset-setting($setting);
+  $Reset-Singularity-Setting: sgs-reset($setting);
 }

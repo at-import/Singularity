@@ -24,35 +24,40 @@
 // Must be using Breakpoint to work properly
 //////////////////////////////
 @function find-object($haystack, $user-object: null) {
+  // If a user object has been passed in, bypass the whole function and just return that object.
+  @if $user-object != null and $user-object != false {
+    @return $user-object;
+  }
+
   $Deprecate-Warning: singularity-deprecation-warning();
   $Length: length($haystack);
-  $Mobile-First: singularity-get-setting('mobile first');
+  $Mobile-First: sgs-get('mobile first');
 
+  // Haystack must be map
   @if type-of($haystack) != 'map' {
     @warn "DEPRECATION: In order to remove global variable naming conflicts, Singularity's settings have been moved into the single `$singularity` variable. Please refer to our documentation (https://github.com/Team-Sass/Singularity/wiki) on how to update your settings. In the next version of Singularity, this warning will be removed. #{nth($haystack, 1)} has been returned.";
     @return nth($haystack, 1);
   }
 
-  @if $user-object != null and $user-object != false {
-    @return $user-object;
+  // Grab Breakpoint Context
+  @if not function-exists(breakpoint-get-context) {
+    @warn "Responsive contexts require Breakpoint (https://github.com/Team-Sass/breakpoint). Please ensure that Breakpoint is imported and available for Singularity to use. First item used.";
+    @return map-get($haystack, -1px);
   }
-  @else if $Length > 1 {
-    @if not function-exists(breakpoint-get-context) {
-      @warn "Responsive contexts require Breakpoint (https://github.com/Team-Sass/breakpoint). Please ensure that Breakpoint is imported and available for Singularity to use. First item used.";
-      @return map-get($haystack, -1px);
-    }
-    // Get Breakpoint Contexts
-    $Query-Min: breakpoint-get-context('min-width');
-    $Query-Max: breakpoint-get-context('max-width');
+  // Get Breakpoint Contexts
+  $Query-Min: breakpoint-get-context('min-width');
+  $Query-Max: breakpoint-get-context('max-width');
 
-    @if length($Query-Min) == 1 {
-      $Query-Min: nth($Query-Min, 1);
-    }
-    @else if length($Query-Min) > 1 {
-      @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Default context is used.";
-      @return map-get($haystack, -1px);
-    }
+  @if length($Query-Min) == 1 {
+    $Query-Min: nth($Query-Min, 1);
+  }
+  @else if length($Query-Min) > 1 {
+    @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Default context is used.";
+    @return map-get($haystack, -1px);
+  }
 
+
+  @if $Length > 1 {
     @if length($Query-Max) == 1 {
       $Query-Max: nth($Query-Max, 1);
     }
@@ -63,7 +68,8 @@
 
     // If there is no min or max context, return first item
     @if $Query-Min == false and $Query-Max == false {
-      @return map-get($haystack, -1px);
+      $RETURN: map-get($haystack, -1px);
+      @return $RETURN;
     }
 
     // Convert to PX
@@ -90,11 +96,13 @@
       @if $Query-Context != false {
         // If it's smallest than the smallest MQ, use the 1st grid
         @if $Query-Context < $Smallest {
-          @return map-get($haystack, -1px);
+          $RETURN: map-get($haystack, -1px);
+          @return $RETURN;
         }
         // If it's larger than or equal to the largest MQ, use the last grid
         @else if $Query-Context >= $Largest {
-          @return map-get($haystack, $Largest);
+          $RETURN: map-get($haystack, $Largest);
+          @return $RETURN;
         }
         // If it's in between the smallest and largest, go run a check.
         @else {
@@ -105,13 +113,15 @@
             // If the MQ is greather than or equal to the the MQ in question, use it! (mobile first)
             @if ($Mobile-First) {
               @if $Query-Context >= $Query {
-                @return map-get($haystack, nth($Reverse-Haystack, $j));
+                $RETURN: map-get($haystack, nth($Reverse-Haystack, $j));
+                @return $RETURN;
               }
             }
             // If the MQ is less than or equal to the the MQ in question, use it! (not mobile first)
             @else {
               @if $Query-Context <= $Query {
-                @return map-get($haystack, nth($Reverse-Haystack, $j));
+                $RETURN: map-get($haystack, nth($Reverse-Haystack, $j));
+                @return $RETURN;
               }
             }
           }
@@ -121,6 +131,7 @@
   }
   // All else fails, return the first item
   @else {
-    @return map-get($haystack, -1px);
+    $RETURN: map-get($haystack, -1px);
+    @return $RETURN;
   }
 }

@@ -12,7 +12,7 @@
   $Parsed:      parse-add($grid-definition); // Parses grid definition to grid/breakpoint
   $Grid:        nth($Parsed, 1); // E. g. `(<grid>)`.
   $Breakpoint:  nth($Parsed, 2); // Either `(<breakpoint>)` or false.
-  $Mobile-First: singularity-get-setting('mobile first');
+  $Mobile-First: sgs-get('mobile first');
   $Grid-Map: ();
 
   // Determine if a custom map or the default maps should be used.
@@ -20,8 +20,8 @@
     $Grid-Map: $custom-map;
   }
   @else {
-    @if singularity-has-setting('grids') {
-      $Grid-Map: singularity-get-setting('grids');
+    @if sgs-has('grids') {
+      $Grid-Map: sgs-get('grids');
     }
   }
   $Grid-Key-Length: length(map-keys($Grid-Map));
@@ -49,5 +49,5 @@
 
 @mixin add-grid($grid-definition) {
   $Add-Grid: add-grid($grid-definition);
-  $HOLDER: singularity-set-setting('grids', $Add-Grid);
+  $HOLDER: sgs-set('grids', $Add-Grid);
 }

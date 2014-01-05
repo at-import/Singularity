@@ -9,7 +9,7 @@
 
   // We supply a default if the user hasn't set any gutters and hasn't passed in a custom column set
   // The default supplied is based on original Susy options
-  $Gutters-Styles: singularity-get-setting('gutter styles');
+  $Gutters-Styles: sgs-get('gutter styles');
 
   $Found: find-object($Gutters-Styles, $user-gutter-styles);
 

@@ -12,7 +12,7 @@
   $Parsed:      parse-add($gutter-definition); // Parses Gutter definition to Gutter/breakpoint
   $Gutter:        nth($Parsed, 1); // E. g. `(<Gutter>)`.
   $Breakpoint:  nth($Parsed, 2); // Either `(<breakpoint>)` or false.
-  $Mobile-First: singularity-get-setting('mobile first');
+  $Mobile-First: sgs-get('mobile first');
   $Gutter-Map: ();
 
   // Determine if a custom map or the default maps should be used.
@@ -20,8 +20,8 @@
     $Gutter-Map: $custom-map;
   }
   @else {
-    @if singularity-has-setting('gutters') {
-      $Gutter-Map: singularity-get-setting('gutters');
+    @if sgs-has('gutters') {
+      $Gutter-Map: sgs-get('gutters');
     }
   }
   $Gutter-Key-Length: length(map-keys($Gutter-Map));
@@ -48,5 +48,5 @@
 
 @mixin add-gutter($gutter-definition) {
   $Add-Gutter: add-gutter($gutter-definition);
-  $HOLDER: singularity-set-setting('gutters', $Add-Gutter);
+  $HOLDER: sgs-set('gutters', $Add-Gutter);
 }

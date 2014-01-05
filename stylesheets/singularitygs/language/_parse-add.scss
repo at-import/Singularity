@@ -11,7 +11,7 @@
   $parse-find: ();
   $parse-mq: null;
   $parse-mq-find: false;
-  $Mobile-First: singularity-get-setting('mobile first');
+  $Mobile-First: sgs-get('mobile first');
 
   @each $item in $definition {
     @if $item != 'at' and $parse-mq-find != true {
