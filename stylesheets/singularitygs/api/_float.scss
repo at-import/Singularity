@@ -1,4 +1,4 @@
-@function output-float($span, $location, $columns, $gutter, $gutter-style, $options: null) {
+@function output-float($Span-Map) {
   // Set up Left/Right maps
   $Return: (
     'exclude': (
@@ -6,34 +6,37 @@
     )
   );
 
-  // Backwards Compatibility for Options
-  @if type-of($options) != 'map' and $options != null {
-    $options: ('clear': unquote(nth($options, 1)));
-  }
+  $Span: map-get($Span-Map, 'span');
+  $Location: map-get($Span-Map, 'location');
 
+  $Grid: map-get($Span-Map, 'grid');
+  $Gutter: map-get($Span-Map, 'gutter');
+  $Style: map-get($Span-Map, 'style');
 
+  $Start-Row: map-get($Span-Map, 'start row');
+  $End-Row: map-get($Span-Map, 'end row');
 
-  $Grid: find-grid($columns);
-  $Gutter: find-gutter($gutter);
-  $Style: find-gutter-style($gutter-style);
+  $Fixed-Gutter: map-get($Span-Map, 'fixed gutter');
+  $Split-Gutter: map-get($Span-Map, 'split gutter');
+  $Gutter-Property: map-get($Span-Map, 'gutter property');
 
-  $Start-Row: start-row($location);
-  $End-Row: end-row($span, $location, $Grid);
+  $Options: map-get($Span-Map, 'options');
 
   @if $Start-Row {
-    $location: 1;
+    $Location: 1;
   }
   @else if $End-Row {
-    $location: column-count($Grid) - $span;
+    $Location: column-count($Grid) - $Span;
   }
 
-  $Fixed-Gutter: fixed-gutter($Grid, $Gutter, $Style);
-  $Split-Gutter: index($Style, 'split');
-  $Gutter-Property: gutter-property($Grid, $Gutter, $Style);
-
-  $Width: column-span($span, $location, $Grid, $Gutter, $Style);
-  $Margin-Span: column-span(($location - 1), 1, $Grid, $Gutter, $Style);
+  $Width: column-span($Span, $Location, $Grid, $Gutter, $Style);
+  $Margin-Span: column-span(($Location - 1), 1, $Grid, $Gutter, $Style);
   $Gutter-Span: gutter-span($Gutter, $Grid);
+
+  // Backwards Compatibility for Options
+  @if type-of($Options) != 'map' and $Options != null {
+    $Options: ('clear': unquote(nth($Options, 1)));
+  }
 
   $directions: 'ltr' 'rtl';
 
@@ -75,8 +78,8 @@
       }
     }
     // If options are set, we merge them in!
-    @if ($options) {
-      $Holder: map-merge($Holder, $options);
+    @if ($Options) {
+      $Holder: map-merge($Holder, $Options);
     }
 
     // If CLear isn't already available, set it!
@@ -101,172 +104,12 @@
   @return $Return;
 }
 
-@mixin output-float($span, $location, $columns, $gutter, $options: false) {
-
-  $location-holder: $location;
-  $direction: singularity-get-setting('direction');
-
-  @if type-of($location) == string {
-    @if end-row($span, $location, $columns) {
-      $grid-length: length(find-grid($columns));
-      $location-holder: $grid-length - $span;
-    }
-    @else {
-      $location-holder: 1;
-    }
-  }
-
-  $gutter: find-gutter($gutter);
-  $gutter-span: gutter-span($gutter, $columns);
-  $end-row: end-row($span, $location, $columns);
-  $start-row: start-row($location);
-
-  $gutter-style: find-gutter-style();
-  $fixed-gutter: fixed-gutter($columns, $gutter);
-  $gutter-property: gutter-property($columns, $gutter);
-
-  width: column-span($span, $location-holder, $columns, $gutter, $gutter-style);
-
-  @if $direction == 'ltr' or $direction == 'both' {
-    // Set the CSS direction to ltr
-    $cssdir: 'ltr';
-    // Find the CSS named direction and opposite direction
-    $dir: named-direction($cssdir);
-    $opp: opposite-direction($dir);
-
-    clear: $opp;
-
-    @if $end-row {
-      float: $opp;
-      @if index($gutter-style, split) and not $fixed-gutter {
-      	#{$gutter-property}-#{$dir}: 0;
-      	#{$gutter-property}-#{$opp}: $gutter-span / 2;
-      }
-      @else if not $fixed-gutter {
-      	#{$gutter-property}-#{$opp}: 0;
-      }
-    }
-    @else {
-      float: $dir;
-
-      @if $start-row {
-      	@if index($gutter-style, split) and not $fixed-gutter {
-      	  #{$gutter-property}-#{$dir}: $gutter-span / 2;
-      	  #{$gutter-property}-#{$opp}: $gutter-span / 2;
-	}
-	@else if not $fixed-gutter {
-	  #{$gutter-property}-#{$dir}: 0;
-	  #{$gutter-property}-#{$opp}: $gutter-span;
-	}
-
-      }
-    }
-
-    @if $fixed-gutter {
-      @if index($gutter-style, split) {
-	#{$gutter-property}-#{$dir}: $gutter-span / 2;
-	#{$gutter-property}-#{$opp}: $gutter-span / 2;
-      }
-      @else {
-	#{$gutter-property}-#{$opp}: $gutter-span;
-      }
-    }
-  }
-
-  @if $direction == 'rtl' or $direction == 'both' {
-    // Set the CSS direction to ltr
-    $cssdir: 'rtl';
-    // Find the CSS named direction and opposite direction
-    $dir: named-direction($cssdir);
-    $opp: opposite-direction($dir);
-
-
-    [dir="#{$cssdir}"] & {
-      clear: $opp;
-
-      @if $end-row {
-        float: $opp;
-	@if index($gutter-style, split) and not $fixed-gutter {
-	  #{$gutter-property}-#{$dir}: 0;
-	  #{$gutter-property}-#{$opp}: $gutter-span / 2;
-	}
-	@else if not $fixed-gutter {
-	  #{$gutter-property}-#{$opp}: 0;
-	}
-      }
-      @else {
-        float: $dir;
-
-        @if $start-row {
-	  @if index($gutter-style, split) and not $fixed-gutter {
-	    #{$gutter-property}-#{$dir}: $gutter-span / 2;
-	    #{$gutter-property}-#{$opp}: $gutter-span / 2;
-	  }
-	  @else if not $fixed-gutter {
-	    #{$gutter-property}-#{$dir}: 0;
-	    #{$gutter-property}-#{$opp}: $gutter-span;
-	  }
-	}
-      }
-
-      @if $fixed-gutter {
-	@if $direction == 'rtl' {
-	  @if index($gutter-style, split) {
-	    #{$gutter-property}-#{$dir}: $gutter-span / 2;
-	    #{$gutter-property}-#{$opp}: $gutter-span / 2;
-	  }
-	  @else {
-	    #{$gutter-property}-#{$opp}: $gutter-span;
-	  }
-	}
-	@else if not index($gutter-style, split) {
-	  #{$gutter-property}-#{$opp}: $gutter-span;
-        }
-      }
-    }
-  }
-
-  @include span-shared;
-}
-
-@mixin push-float($span, $location, $columns: false, $gutter: false) {
-
-  @if type-of($location) == string {
-    $location: 1;
-  }
-
-  // Find the columns and gutters
-  $columns: find-grid($columns);
-  $gutter: find-gutter($gutter);
-
-  // Combine the columns and gutters
-  $gutter: column-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns);
-
-  margin-left: $gutter;
-}
-
-@mixin pull-float($span, $location, $columns: false, $gutter: false) {
-
-  @if type-of($location) == string {
-    $location: 1;
-  }
-
-  // Find the columns and gutters
-  $columns: find-grid($columns);
-  $gutter: find-gutter($gutter);
-
-  // Combine the columns and gutters
-  $gutter: (column-span($span, $location, $columns, $gutter) + gutter-span($gutter, $columns)) * -1;
-
-  margin-left: $gutter;
-}
-
 //////////////////////////////
 // Happy Syntax for Float
 //
 // Makes working with Float easier, as it allows you to walk the grid for symmetric grids and easy applying of 'last' and 'first', as well as automatically building the verbose grid-span mixin call
 //////////////////////////////
-@mixin float-span($span, $location: false, $grid: false, $gutter: false) {
+@mixin float-span($Span, $Location: false, $grid: false, $gutter: false) {
   $grid: find-grid($grid);
   $gutter: find-gutter($gutter);
   $row: false;
@@ -279,27 +122,27 @@
   // Working with a symmetric grid
   @if type-of($grid) == 'number' {
     // Special treatment for non-numeric location
-    @if type-of($location) != 'number' {
-      @if $location == 'last' or $location == 'omega' {
-        $location: $grid - $span + 1;
+    @if type-of($Location) != 'number' {
+      @if $Location == 'last' or $Location == 'omega' {
+        $Location: $grid - $Span + 1;
       }
       @else {
-        @if $location == 'first' or $location == 'alpha' {
+        @if $Location == 'first' or $Location == 'alpha' {
           $row: true;
         }
-        $location: 1;
+        $Location: 1;
       }
     }
 
-    @include grid-span($span, $location, $grid, $gutter, 'float');
+    @include grid-span($Span, $Location, $grid, $gutter, 'float');
 
     @if $row {
       clear: both;
     }
   }
   // Working with an asymmetric grid, should have location provided
-  @else if type-of($grid) == 'list' and $location != false {
-    @include grid-span($span, $location, $grid, $gutter, 'float');
+  @else if type-of($grid) == 'list' and $Location != false {
+    @include grid-span($Span, $Location, $grid, $gutter, 'float');
   }
   @else {
     @warn 'Asymmetric Grids need a Location value as well as a span value in order to know where on the grid you are! Please include a location value!';
