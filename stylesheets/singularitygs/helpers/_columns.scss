@@ -1,6 +1,4 @@
 @function end-row($span, $location, $columns) {
-  $columns: find-grid($columns);
-
   @if $location == 'last' or $location == 'omega' {
     @return true;
   }
