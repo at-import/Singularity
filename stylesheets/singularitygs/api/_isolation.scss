@@ -74,6 +74,9 @@
         @else if not $Fixed-Gutter {
           $Holder: map-merge($Holder, ('margin-#{$Dir}': $Margin-Span + $Gutter-Span));
         }
+        @else {
+          $Holder: map-merge($Holder, ('margin-#{$Dir}': $Margin-Span));
+        }
       }
     }
     // If options are set, we merge them in!
@@ -88,7 +91,7 @@
 
     // Left Fixed Gutters
     @if $Fixed-Gutter {
-      @if index($Gutter-Style, 'split') {
+      @if index($Style, 'split') {
         $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
         $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
       }

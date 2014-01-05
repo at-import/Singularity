@@ -89,7 +89,7 @@
 
     // Left Fixed Gutters
     @if $Fixed-Gutter {
-      @if index($Gutter-Style, 'split') {
+      @if index($Style, 'split') {
         $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
         $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
       }
