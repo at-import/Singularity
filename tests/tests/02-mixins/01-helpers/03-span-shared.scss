@@ -1,4 +1,4 @@
-@import "memo";
+//@import "memo";
 @import "breakpoint";
 @import "singularitygs";
 
@@ -14,32 +14,32 @@
 
 .span-shared__no-clearfix-no-box-sizing {
   /* Box Sizing, no Clearfix */
-  $setting: singularity-set-setting('include border box', false);
-  $setting: singularity-set-setting('include clearfix', false);
+  $setting: sgs-set('include border box', false);
+  $setting: sgs-set('include clearfix', false);
   _test: "@include span-shared;";
   @include span-shared;
 }
 
 .span-shared__no-clearfix {
   /* Box Sizing, no Clearfix */
-  $setting: singularity-set-setting('include border box', true);
-  $setting: singularity-set-setting('include clearfix', false);
+  $setting: sgs-set('include border box', true);
+  $setting: sgs-set('include clearfix', false);
   _test: "@include span-shared;";
   @include span-shared;
 }
 
 .span-shared__no-box-sizing {
   /* Box Sizing, no Clearfix */
-  $setting: singularity-set-setting('include border box', false);
-  $setting: singularity-set-setting('include clearfix', true);
+  $setting: sgs-set('include border box', false);
+  $setting: sgs-set('include clearfix', true);
   _test: "@include span-shared;";
   @include span-shared;
 }
 
 .span-shared__clearfix-box-sizing {
   /* Box Sizing, no Clearfix */
-  $setting: singularity-set-setting('include border box', true);
-  $setting: singularity-set-setting('include clearfix', true);
+  $setting: sgs-set('include border box', true);
+  $setting: sgs-set('include clearfix', true);
   _test: "@include span-shared;";
   @include span-shared;
 }

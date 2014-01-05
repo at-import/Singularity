@@ -1,4 +1,4 @@
-@import "memo";
+//@import "memo";
 @import "breakpoint";
 @import "singularitygs";
 
@@ -17,9 +17,9 @@
   * - Finds the correct columns and gutters to use for Background Build mixin. If multiple grids are defined in $grids, will create a responsive background image
 **/
 .background-grid__default {
-  $grids: singularity-get-setting('grids');
-  $gutters: singularity-get-setting('gutters');
-  $gutter-styles: singularity-get-setting('gutter styles');
+  $grids: sgs-get('grids');
+  $gutters: sgs-get('gutters');
+  $gutter-styles: sgs-get('gutter styles');
   /* Global Grid Context */
   _grids: "#{inspect($grids)}";
   _gutters: "#{inspect($gutters)}";

@@ -1,4 +1,4 @@
-@import "memo";
+//@import "memo";
 @import "breakpoint";
 @import "singularitygs";
 
@@ -25,15 +25,15 @@ $override: 6;
 
 @mixin end-row() {
   /* First item without override */
-  _test: "end-row(1, 1, false)";
-  _result: end-row(1, 1, false);
+  _test: "end-row(1, 1, find-grid())";
+  _result: end-row(1, 1, find-grid());
   /* First item with override */
   _test: "end-row(1, 1, #{$override})";
   _result: end-row(1, 1, $override);
    /* Last item of current grid without override */
    $grid: find-grid(false);
-  _test: "end-row(1, #{column-count($grid)}, false)";
-  _result: end-row(1, column-count($grid), false);
+  _test: "end-row(1, #{column-count($grid)}, find-grid())";
+  _result: end-row(1, column-count($grid), find-grid());
   /* Last item of current grid with override */
   _test: "end-row(1, #{column-count($grid)}, #{$override})";
   _result: end-row(1, column-count($grid), $override);
@@ -43,7 +43,7 @@ $override: 6;
 }
 
 @mixin end-row-test() {
-  $grids: singularity-get-setting('grids');
+  $grids: sgs-get('grids');
   /* Global Grid Setup */
   _grids: "#{inspect($grids)}";
   @include end-row;

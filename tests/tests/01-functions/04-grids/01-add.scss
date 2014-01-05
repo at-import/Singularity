@@ -1,4 +1,4 @@
-@import "memo";
+//@import "memo";
 @import "breakpoint";
 @import "singularitygs";
 
@@ -8,29 +8,29 @@
 **/
 // .add-grid__simple {
 //   /* Add grid, no existing grid */
-//   $grids: singularity-set-setting('grids', add-grid(3));
-//   _test: "singularity-set-setting('grids', add-grid(3))";
-//   _result: inspect(singularity-get-setting('grids'));
+//   $grids: sgs-set('grids', add-grid(3));
+//   _test: "sgs-set('grids', add-grid(3))";
+//   _result: inspect(sgs-get('grids'));
 //   /* Add grid, existing grid */
-//   $grids: singularity-set-setting('grids', add-grid(5 at 500px));
-//   _test: "singularity-set-setting('grids', add-grid(5 at 500px))";
-//   _result: inspect(singularity-get-setting('grids'););
+//   $grids: sgs-set('grids', add-grid(5 at 500px));
+//   _test: "sgs-set('grids', add-grid(5 at 500px))";
+//   _result: inspect(sgs-get('grids'););
 //   /* Add grid to empty alternative variable */
 //   $grids2: ();
 //   $grids2: add-grid(7, $grids2);
 //   _test: "add-grid(7, $grids2)";
 //   _result: $grids2;
-//   _control: singularity-get-setting('grids');
+//   _control: sgs-get('grids');
 // }
 
 // .add-grid__complex {
 //   @include reset-singularity-setting('grids');
 //   /* Add grid, no existing grid */
-//   $grids: singularity-set-setting('grids', add-grid(1 3 5));
+//   $grids: sgs-set('grids', add-grid(1 3 5));
 //   _test: "add-grid(1 3 5)";
-//   _result: singularity-get-setting('grids');
+//   _result: sgs-get('grids');
 //   /* Add grid, existing grid */
-//   $grids: singularity-set-setting('grids', add-grid(2 4 6 at 500px));
+//   $grids: sgs-set('grids', add-grid(2 4 6 at 500px));
 //   _test: "add-grid(2 4 6 at 500px)";
 //   _result: $grids;
 //   _length: length($grids);
@@ -43,23 +43,23 @@
 //   $grids2: add-grid(5 7 9, $grids2);
 //   _test: "add-grid(5 7 9, $grids2)";
 //   _result: $grids2;
-//   _control: singularity-get-setting('grids');
+//   _control: sgs-get('grids');
 // }
 
 // .add-grid__mixed {
 //   @include reset-singularity-setting('grids');
 //   /* Add grid, no existing grid */
-//   $grids: singularity-set-setting('grids', add-grid(3));
+//   $grids: sgs-set('grids', add-grid(3));
 //   _test: "add-grid(3)";
-//   _result: singularity-get-setting('grids');
+//   _result: sgs-get('grids');
 //   /* Add grid, existing grid */
-//   $grids: singularity-set-setting('grids', add-grid(2 4 6 at 500px));
+//   $grids: sgs-set('grids', add-grid(2 4 6 at 500px));
 //   _test: "add-grid(2 4 6 at 500px)";
-//   _result: singularity-get-setting('grids');
+//   _result: sgs-get('grids');
 //   /* Add grid, existing grid */
-//   $grids: singularity-set-setting('grids', add-grid(5 at 900px));
+//   $grids: sgs-set('grids', add-grid(5 at 900px));
 //   _test: "add-grid(5 at 900px)";
-//   _result: singularity-get-setting('grids');
+//   _result: sgs-get('grids');
 //   _length: length($grids);
 //   _added-item: nth($grids, 3);
 //   _length-added: length(nth($grids, 3));
@@ -70,5 +70,5 @@
 //   $grids2: add-grid(7, $grids2);
 //   _test: "add-grid(7, $grids2)";
 //   _result: $grids2;
-//   _control: singularity-get-setting('grids');
+//   _control: sgs-get('grids');
 // }

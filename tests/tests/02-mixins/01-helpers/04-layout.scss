@@ -1,11 +1,11 @@
-@import "memo";
+//@import "memo";
 @import "breakpoint";
 @import "singularitygs";
 
 @mixin layout-test {
   _grid: find-grid();
   _gutter: find-gutter();
-  _output: singularity-get-setting('output');
+  _output: sgs-get('output');
   _gutter-style: find-gutter-style();
 }
 

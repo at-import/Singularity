@@ -1,4 +1,4 @@
-@import "memo";
+//@import "memo";
 @import "breakpoint";
 @import "singularitygs";
 
@@ -10,7 +10,7 @@ $layout-grid: 8;
 $override: 6;
 
 @mixin find-object() {
-  $grids: singularity-get-setting('grids');
+  $grids: sgs-get('grids');
   /* Simple Find */
   _test: "find-object(#{inspect($grids)})";
   _result: find-object($grids);
@@ -20,7 +20,7 @@ $override: 6;
 }
 
 @mixin find-object-test() {
-  $grids: singularity-get-setting('grids');
+  $grids: sgs-get('grids');
   /* Global Grid Setup */
   _grids: "#{inspect($grids)}";
   @include find-object;
