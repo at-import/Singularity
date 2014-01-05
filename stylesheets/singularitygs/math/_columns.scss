@@ -6,6 +6,7 @@
   // Find the grid and gutters
   $grid: find-grid($grid);
   $gutter: find-gutter($gutter);
+  $gutter-style: find-gutter-style($gutter-style);
 
   @if fixed-gutter($grid, $gutter, $gutter-style) {
     $gutter: 0;
