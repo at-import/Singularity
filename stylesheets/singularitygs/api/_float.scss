@@ -66,15 +66,15 @@
     @else {
       $Holder: map-merge($Holder, ('float': $Dir));
 
-      @if $Start-Row {
-        @if $Split-Gutter and not $Fixed-Gutter {
-          $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
-          $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
-        }
-        @else if not $Fixed-Gutter {
+      @if $Split-Gutter and not $Fixed-Gutter {
+        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
+        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
+      }
+      @else if not $Fixed-Gutter {
+        @if $Start-Row {
           $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': 0));
-          $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span));
         }
+        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span));
       }
     }
     // If options are set, we merge them in!

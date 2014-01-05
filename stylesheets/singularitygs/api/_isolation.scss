@@ -63,8 +63,16 @@
         @if $Split-Gutter and not $Fixed-Gutter {
           $Holder: map-merge($Holder, ('margin-#{$Dir}': $Gutter-Span / 2));
         }
-        @else {
+        @else if not $Fixed-Gutter {
           $Holder: map-merge($Holder, ('margin-#{$Dir}': 0));
+        }
+      }
+      @else {
+        @if $Split-Gutter and not $Fixed-Gutter {
+          $Holder: map-merge($Holder, ('margin-#{$Dir}': $Margin-Span + $Gutter-Span + $Gutter-Span / 2));
+        }
+        @else if not $Fixed-Gutter {
+          $Holder: map-merge($Holder, ('margin-#{$Dir}': $Margin-Span + $Gutter-Span));
         }
       }
     }
