@@ -1,10 +1,6 @@
 @function output-float($Span-Map) {
   // Set up Left/Right maps
-  $Return: (
-    'exclude': (
-      'right': 'width'
-    )
-  );
+  $Return: ();
 
   $Span: map-get($Span-Map, 'span');
   $Location: map-get($Span-Map, 'location');
@@ -20,6 +16,7 @@
   $Split-Gutter: map-get($Span-Map, 'split gutter');
   $Gutter-Property: map-get($Span-Map, 'gutter property');
 
+  $Direction: map-get($Span-Map, 'direction');
   $Options: map-get($Span-Map, 'options');
 
   @if $Start-Row {
@@ -38,72 +35,61 @@
     $Options: ('clear': unquote(nth($Options, 1)));
   }
 
-  $directions: 'ltr' 'rtl';
+  $Dir: $Direction;
+  $Opp: opposite-direction($Dir);
 
-  @each $direction in $directions {
-    // Set up direction and holder
-    $Holder: ();
-    $CSSDir: $direction;
-    // Find the CSS named direction and opposite direction
+  $Return: map-merge($Return, ('width': $Width));
+  $Return: map-merge($Return, ('clear': $Opp));
 
-    $Dir: named-direction($CSSDir);
-    $Opp: opposite-direction($Dir);
+  @if ($End-Row) {
+    $Return: map-merge($Return, ('float': $Opp));
 
-    $Holder: map-merge($Holder, ('width': $Width));
-    $Holder: map-merge($Holder, ('clear': $Opp));
+    @if $Split-Gutter and not $Fixed-Gutter {
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Dir}': 0));
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
+    }
+    @else if not $Fixed-Gutter {
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': 0));
+    }
+  }
+  @else {
+    $Return: map-merge($Return, ('float': $Dir));
 
-    @if ($End-Row) {
-      $Holder: map-merge($Holder, ('float': $Opp));
-
-      @if $Split-Gutter and not $Fixed-Gutter {
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': 0));
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
+    @if $Split-Gutter and not $Fixed-Gutter {
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
+    }
+    @else if not $Fixed-Gutter {
+      @if $Start-Row {
+        $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Dir}': 0));
       }
-      @else if not $Fixed-Gutter {
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': 0));
-      }
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span));
+    }
+  }
+  // If options are set, we merge them in!
+  @if ($Options) {
+    $Return: map-merge($Return, $Options);
+  }
+
+  // If CLear isn't already available, set it!
+  @if not map-has-key($Return, 'clear') {
+    $Return: map-merge($Return, ('clear': none));
+  }
+
+  // Left Fixed Gutters
+  @if $Fixed-Gutter {
+    @if index($Style, 'split') {
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
     }
     @else {
-      $Holder: map-merge($Holder, ('float': $Dir));
-
-      @if $Split-Gutter and not $Fixed-Gutter {
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
-      }
-      @else if not $Fixed-Gutter {
-        @if $Start-Row {
-          $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': 0));
-        }
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span));
-      }
-    }
-    // If options are set, we merge them in!
-    @if ($Options) {
-      $Holder: map-merge($Holder, $Options);
-    }
-
-    // If CLear isn't already available, set it!
-    @if not map-has-key($Holder, 'clear') {
-      $Holder: map-merge($Holder, ('clear': none));
-    }
-
-    // Left Fixed Gutters
-    @if $Fixed-Gutter {
-      @if index($Style, 'split') {
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
-        $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
+      @if not $End-Row {
+        $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span));
       }
       @else {
-        @if not $End-Row {
-          $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span));
-        }
-        @else {
-          $Holder: map-merge($Holder, ('#{$Gutter-Property}-#{$Opp}': 0));
-        }
+        $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': 0));
       }
     }
-
-    $Return: map-merge($Return, ('#{$Dir}': $Holder));
   }
 
   @return $Return;
@@ -114,10 +100,12 @@
 //
 // Makes working with Float easier, as it allows you to walk the grid for symmetric grids and easy applying of 'last' and 'first', as well as automatically building the verbose grid-span mixin call
 //////////////////////////////
-@mixin float-span($Span, $Location: false, $grid: false, $gutter: false) {
+@mixin float-span($Span, $Location: false, $grid: false, $gutter: false, $gutter-style: false, $from: false) {
   $grid: find-grid($grid);
   $gutter: find-gutter($gutter);
   $row: false;
+
+  $Options: if($from, ('from': $from), null);
 
   // Working around SASS treating a number like a list with one element
   @if type-of($grid) == 'list' and length($grid) == 1 {
@@ -139,7 +127,7 @@
       }
     }
 
-    @include grid-span($Span, $Location, $grid, $gutter, 'float');
+    @include grid-span($Span, $Location, $grid, $gutter, 'float', $gutter-style, $Options);
 
     @if $row {
       clear: both;
@@ -147,7 +135,7 @@
   }
   // Working with an asymmetric grid, should have location provided
   @else if type-of($grid) == 'list' and $Location != false {
-    @include grid-span($Span, $Location, $grid, $gutter, 'float');
+    @include grid-span($Span, $Location, $grid, $gutter, 'float', $gutter-style, $Options);
   }
   @else {
     @warn 'Asymmetric Grids need a Location value as well as a span value in order to know where on the grid you are! Please include a location value!';

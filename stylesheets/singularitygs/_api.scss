@@ -22,6 +22,14 @@
   $Gutter-Property: gutter-property($Grid, $Gutter, $Style);
 
   $Direction: sgs-get('direction');
+  $From: if($options and type-of($options) == 'map', if(map-get($options, 'from'), map-get($options, 'from'), $Direction), $Direction);
+  $From: if($From == 'ltr' or $From == 'rtl', named-direction($From), $From);
+
+  $Holder: ();
+  @each $k, $v in $options {
+    $Holder: if($k == 'from', $Holder, map-merge($Holder, ($k: $v)));
+  }
+  $options: if(length($Holder) > 0, $Holder, null);
 
   $Span-Map: (
     'span': $span,
@@ -39,38 +47,48 @@
 
 
   @if function-exists('output-#{$output-style}') {
-    $Call: call('output-#{$output-style}', $Span-Map);
+    $Left: ();
+    $Right: ();
 
-    $Left: map-get($Call, 'left');
-    $Right: map-get($Call, 'right');
-    $Exclude: map-get($Call, 'exclude');
-    $Exclude-Left: map-get($Exclude, 'left');
-    $Exclude-Right: map-get($Exclude, 'right');
+    @if $Direction == 'both' or $From == 'left' or ($Direction == 'rtl' and $From == 'opposite') {
+      $Left: call('output-#{$output-style}', map-merge($Span-Map, ('direction': left)));
+    }
 
-    @if $Direction == 'ltr' or $Direction == 'both' {
-      @each $property, $value in $Left {
-        @if $Direction == 'both' {
-          @if not index($Exclude-Left, $property) {
-            #{$property}: $value;
-          }
-        }
-        @else {
-          #{$property}: $value;
+    @if $Direction == 'both' or $From == 'right' or ($Direction == 'ltr' and $From == 'opposite') {
+      $Right: call('output-#{$output-style}', map-merge($Span-Map, ('direction': right)));
+    }
+
+    $Left-Keys: map-keys($Left);
+    $Right-Keys: map-keys($Right);
+    $Exclude: ();
+
+    @each $key in $Left-Keys {
+      @if index($Right-Keys, $key) {
+        @if map-get($Right, $key) == map-get($Left, $key) {
+          $Exclude: append($Exclude, $key);
         }
       }
     }
 
-    @if $Direction == 'rtl' or $Direction == 'both' {
-      [dir="rtl"] {
+    // Always try and print the Left value
+    @each $property, $value in $Left {
+      #{$property}: $value;
+    }
+
+    // If Direction is Both or RTL, add the RTL attribute selector
+    @if $Direction == 'both' or $Direction == 'rtl' {
+      [dir="rtl"] & {
         @each $property, $value in $Right {
-          @if $Direction == 'both' {
-            @if not index($Exclude-Right, $property) {
-              #{$property}: $value;
-            }
-          }
-          @else {
+          @if not index($Exclude, $property) {
             #{$property}: $value;
           }
+        }
+      }
+    }
+    @else {
+      @each $property, $value in $Right {
+        @if not index($Exclude, $property) {
+          #{$property}: $value;
         }
       }
     }
