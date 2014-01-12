@@ -1,6 +1,6 @@
 {
   "name": "singularity",
-  "version": "1.2.0-alpha.2",
+  "version": "1.2.0-rc.1",
   "main": "stylesheets/_singularitygs.scss",
   "ignore": [
     "**/.*",
@@ -13,7 +13,9 @@
     "example",
     "tests",
     "Rakefile",
-    "templates"
+    "templates",
+    "working",
+    "CONTRIBUTING.md"
   ],
   "dependencies": {
     "breakpoint-sass": ">=2.4.0"
