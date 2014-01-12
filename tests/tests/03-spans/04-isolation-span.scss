@@ -1,0 +1,38 @@
+$basic-settings: true;
+@import "../shared";
+
+.isolation-span {
+  $grid: find-grid();
+  $column-count: column-count($grid);
+
+  _grid: $grid;
+  _gutter: find-gutter();
+  _gutter-style: find-gutter-style();
+  _isolation-span-start: "@include isolation-span(1, 1)";
+  @include isolation-span(1, 1);
+
+  _isolation-span-end: "@include isolation-span(1, #{$column-count})";
+  @include isolation-span(1, $column-count);
+
+  _isolation-span-multiple: "@include isolation-span(2, 2)";
+  @include isolation-span(2, 2);
+
+  @each $bkpt in $bkpts {
+    @include breakpoint($bkpt) {
+      $grid: find-grid();
+      $column-count: column-count($grid);
+
+      _grid: $grid;
+      _gutter: find-gutter();
+      _gutter-style: find-gutter-style();
+      _isolation-span-start: "@include isolation-span(1, 1)";
+      @include isolation-span(1, 1);
+
+      _isolation-span-end: "@include isolation-span(1, #{$column-count})";
+      @include isolation-span(1, $column-count);
+
+      _isolation-span-multiple: "@include isolation-span(2, 2)";
+      @include isolation-span(2, 2);
+    }
+  }
+}

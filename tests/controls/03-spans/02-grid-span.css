@@ -1,0 +1,140 @@
+.settings {
+  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false)';
+  _user-settings: '("grids": ((-1px: 3, 500px: 5, 700px: 1 3 5 7)), "gutters": ((-1px: 0.25, 500px: 10px, 700px: 1em)), "gutter styles": ((-1px: "split", 700px: "opposite")))';
+}
+
+.grid-span {
+  _grid: 3;
+  _gutter: 0.25;
+  _gutter-style: "split";
+  _grid-span-start: "@include grid-span(1, 1)";
+  width: 26.66667%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 3.33333%;
+  clear: none;
+  _grid-span-end: "@include grid-span(1, 3)";
+  width: 26.66667%;
+  float: right;
+  margin-left: 0;
+  margin-right: 3.33333%;
+  clear: none;
+  _grid-span-multiple: "@include grid-span(2, 2)";
+  width: 60%;
+  float: right;
+  margin-left: 0;
+  margin-right: 3.33333%;
+  clear: none;
+}
+@media (min-width: 499px) {
+  .grid-span {
+    _grid: 3;
+    _gutter: 0.25;
+    _gutter-style: "split";
+    _grid-span-start: "@include grid-span(1, 1)";
+    width: 26.66667%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 3.33333%;
+    clear: none;
+    _grid-span-end: "@include grid-span(1, 3)";
+    width: 26.66667%;
+    float: right;
+    margin-left: 0;
+    margin-right: 3.33333%;
+    clear: none;
+    _grid-span-multiple: "@include grid-span(2, 2)";
+    width: 60%;
+    float: right;
+    margin-left: 0;
+    margin-right: 3.33333%;
+    clear: none;
+  }
+}
+@media (min-width: 500px) {
+  .grid-span {
+    _grid: 5;
+    _gutter: 10px;
+    _gutter-style: "split";
+    _grid-span-start: "@include grid-span(1, 1)";
+    width: 20%;
+    float: left;
+    margin-right: -100%;
+    clear: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    _grid-span-end: "@include grid-span(1, 5)";
+    width: 20%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    _grid-span-multiple: "@include grid-span(2, 2)";
+    width: 40%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 20%;
+    clear: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+@media (min-width: 699px) {
+  .grid-span {
+    _grid: 5;
+    _gutter: 10px;
+    _gutter-style: "split";
+    _grid-span-start: "@include grid-span(1, 1)";
+    width: 20%;
+    float: left;
+    margin-right: -100%;
+    clear: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    _grid-span-end: "@include grid-span(1, 5)";
+    width: 20%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    _grid-span-multiple: "@include grid-span(2, 2)";
+    width: 40%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 20%;
+    clear: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+@media (min-width: 700px) {
+  .grid-span {
+    _grid: 1 3 5 7;
+    _gutter: 1em;
+    _gutter-style: "opposite";
+    _grid-span-start: "@include grid-span(1, 1)";
+    width: 6.25%;
+    float: left;
+    margin-right: -100%;
+    clear: none;
+    padding-right: 1em;
+    _grid-span-end: "@include grid-span(1, 4)";
+    width: 43.75%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    padding-right: 0;
+    _grid-span-multiple: "@include grid-span(2, 2)";
+    width: 50%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 6.25%;
+    clear: none;
+    padding-right: 1em;
+  }
+}

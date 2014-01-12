@@ -1,0 +1,28 @@
+@import "../shared";
+
+$add-gutter-style: 'split', 'fixed' at 500px, 'opposite fixed' at 700px;
+
+.add-gutter-style-basic {
+  @include show-settings;
+  @each $gutter-style in $add-gutter-style {
+    @include add-gutter-style($gutter-style);
+    _gutter-style: '@include add-gutter-style(#{$gutter-style})';
+  }
+  @include show-settings;
+}
+
+@include sgs-reset('gutter-styles');
+
+$bkpt-1: 500px ('min-resolution' 1.5dppx);
+$bkpt-2: 700px, 'no-query' '.no-mq';
+
+$add-gutter-style: 'split', 'fixed' at $bkpt-1, 'opposite fixed' at $bkpt-2;
+
+.add-gutter-style-breakpoint {
+  @include show-settings;
+  @each $gutter-style in $add-gutter-style {
+    @include add-gutter-style($gutter-style);
+    _gutter-style: '@include add-gutter-style(#{$gutter-style})';
+  }
+  @include show-settings;
+}

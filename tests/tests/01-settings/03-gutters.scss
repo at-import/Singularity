@@ -1,0 +1,28 @@
+@import "../shared";
+
+$add-gutter: .25, .35 at 500px, .55 at 700px;
+
+.add-gutter-basic {
+  @include show-settings;
+  @each $gutter in $add-gutter {
+    @include add-gutter($gutter);
+    _gutter: '@include add-gutter(#{$gutter})';
+  }
+  @include show-settings;
+}
+
+@include sgs-reset('gutters');
+
+$bkpt-1: 500px ('min-resolution' 1.5dppx);
+$bkpt-2: 700px, 'no-query' '.no-mq';
+
+$add-gutter: .25, .35 at $bkpt-1, .55 at $bkpt-2;
+
+.add-gutter-breakpoint {
+  @include show-settings;
+  @each $gutter in $add-gutter {
+    @include add-gutter($gutter);
+    _gutter: '@include add-gutter(#{$gutter})';
+  }
+  @include show-settings;
+}
