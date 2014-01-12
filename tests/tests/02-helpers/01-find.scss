@@ -1,0 +1,55 @@
+@import "../shared";
+
+$add-grid: 3, 5 at 500px, 1 3 5 at 700px;
+$add-gutter: .25, .35 at 500px, .55 at 700px;
+$add-gutter-style: 'split', 'fixed' at 500px, 'opposite fixed' at 700px;
+
+$bkpts: 499px, 500px, 699px, 700px;
+
+@each $grid in $add-grid {
+  @include add-grid($grid);
+}
+
+@each $gutter in $add-gutter {
+  @include add-gutter($gutter);
+}
+
+@each $gutter-style in $add-gutter-style {
+  @include add-gutter-style($gutter-style);
+}
+
+@mixin find-stuff($func, $override) {
+  $name: "find-#{$func}";
+  $funcname: $func;
+  @if $funcname == 'gutter-style' {
+    $funcname: 'gutter style';
+  }
+  $funcname: "#{$funcname}s";
+  _#{$func}: "#{inspect(sgs-get($funcname))}";
+  _find-no-override: "#{call($name)}";
+  _find-override: "#{call($name, $override)}";
+
+  @each $bkpt in $bkpts {
+    @include breakpoint($bkpt) {
+      _#{$func}: "#{inspect(sgs-get($funcname))}";
+      _find-no-override: "#{call($name)}";
+      _find-override: "#{call($name, $override)}";
+    }
+  }
+}
+
+.settings {
+  @include show-settings;
+}
+
+.find-grid {
+  @include find-stuff('grid', 2 4 6);
+}
+
+.find-gutter {
+  @include find-stuff('gutter', .4);
+}
+
+.find-gutter-style {
+  @include find-stuff('gutter-style', 'split fixed');
+}

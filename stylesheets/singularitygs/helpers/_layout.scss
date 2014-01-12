@@ -3,31 +3,55 @@
 //////////////////////////////
 @mixin layout($grid: false, $gutter: false, $output-style: false, $gutter-style: false) {
   // Private holder for current global context
-  $layout-private-grid-holder: $grids;
-  $layout-private-gutter-holder: $gutters;
-  $layout-private-output-holder: $output;
-  $layout-private-gutter-style-holder: $gutter-style;
+  $layout-private-grid-holder: sgs-get('grids');
+  $layout-private-gutter-holder: sgs-get('gutters');
+  $layout-private-output-holder: sgs-get('output');
+  $layout-private-gutter-style-holder: sgs-get('gutter styles');
 
   // Overides current global contexts, but only if needed
   @if $grid != false {
-    $grids: $grid;
+    @include sgs-reset('grids');
+    @if type-of($grid) != 'map' {
+      @include sgs-change('grids', (-1px: $grid));
+    }
+    @else {
+      @include sgs-change('grids', $grid);
+    }
   }
   @if $gutter != false {
-    $gutters: $gutter;
+    @include sgs-reset('gutters');
+    @if type-of($gutter) != 'map' {
+      @include sgs-change('gutters', (-1px: $gutter));
+    }
+    @else {
+      @include sgs-change('gutters', $gutter);
+    }
   }
   @if $output-style != false {
-    $output: $output-style;
+    @include sgs-reset('output');
+    @include sgs-change('output', $output-style);
   }
   @if $gutter-style != false {
-    $gutter-styles: $gutter-style;
+    @include sgs-reset('gutter styles');
+    @if type-of($gutter-style) != 'map' {
+      @include sgs-change('gutter styles', (-1px: $gutter-style));
+    }
+    @else {
+      @include sgs-change('gutter styles', $gutter-style);
+    }
   }
 
   // All the things!
   @content;
 
+  // REset ALL the settings
+  @include sgs-reset('grids');
+  @include sgs-reset('gutters');
+  @include sgs-reset('output');
+  @include sgs-reset('gutter styles');
   // Resets global contexts
-  $grids: $layout-private-grid-holder;
-  $gutters: $layout-private-gutter-holder;
-  $output: $layout-private-output-holder;
-  $gutter-styles: $layout-private-gutter-style-holder;
+  @include sgs-change('grids', $layout-private-grid-holder);
+  @include sgs-change('gutters', $layout-private-gutter-holder);
+  @include sgs-change('output', $layout-private-output-holder);
+  @include sgs-change('gutter styles', $layout-private-gutter-style-holder);
 }

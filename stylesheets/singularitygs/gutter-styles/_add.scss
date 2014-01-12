@@ -1,29 +1,52 @@
-// Accepts a gutter style definition in the human-readable format. Converts it to the internal format,
-// appends it to a list of gutter styles and returns the resulting list.
+// Accepts a gutter-style style definition in the human-readable format. Converts it to the internal format,
+// appends it to a list of gutter-style styles and returns the resulting list.
 //
 // Note that this function only returns a new list, it does not modify the source list.
 //
-// add-gutter-style($gutter-style-definition, $append-to-list)
-// - $gutter-definition : <definition>  See documentation for syntax:
+// add-gutter-style-style($gutter-style-style-definition, $append-to-list)
+// - $gutter-style-definition : <definition>  See documentation for syntax:
 //                                      https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
 // - $append-to-list    : [list]        A list to append to.
-//                                      Defaults to $gutters if none is specified.
-@function add-gutter-style($gutter-style-definition, $append-to-list: $gutter-styles) {
-  $parsed: parse-add($gutter-style-definition); // Converts the definition to a temporary format:
-					  // either `((<gutter-style>))` or `((<gutter-style>) (<breakpoint>))`
-  $gutter-style:      nth($parsed, 1); // E. g. `(<gutter-style>)`.
-  $breakpoint:        nth($parsed, 2); // Either `(<breakpoint>)` or false.
-  $list-length:       length($append-to-list);
+//                                      Defaults to $gutter-styles if none is specified.
+@function add-gutter-style($gutter-style-definition, $custom-map: false) {
+  $Parsed:        parse-add($gutter-style-definition); // Parses gutter-style definition to gutter-style/breakpoint
+  $Gutter-Style:  nth($Parsed, 1); // E. g. `(<gutter-style>)`.
+  $Breakpoint:    nth($Parsed, 2); // Either `(<breakpoint>)` or false.
+  $Mobile-First:  sgs-get('mobile first');
+  $Gutter-Style-Map: ();
+
+  // Determine if a custom map or the default maps should be used.
+  @if $custom-map {
+    $Gutter-Style-Map: $custom-map;
+  }
+  @else {
+    @if sgs-has('gutter styles') {
+      $Gutter-Style-Map: sgs-get('gutter styles');
+    }
+  }
+  $Gutter-Style-Key-Length: length(map-keys($Gutter-Style-Map));
 
   // Check whether the definition will be the first one in the list
   // and whether it has no breakpoint specified.
-  @if $breakpoint == false and $list-length == 0 {
+  @if $Breakpoint == null {
     // Returns the first item of the list, e. g. `(<gutter-style>)`
-    @return $gutter-style;
+    $Gutter-Style-Map: map-merge($Gutter-Style-Map, (-1px: $Gutter-Style));
   }
+  // IF the list is initiated with a list of gutter-style columns need to start off
+  // a comma seprated list.
   @else {
-    // Appends to a comma-separated list of definitions in the internal format
-    // and returns it, e. g. `(<gutter>), (<gutter> <breakpoint>), (<gutter> <breakpoint>)`
-    @return append($append-to-list, ($gutter-style $breakpoint), 'comma');
+    @if not (map-has-key($Gutter-Style-Map, -1px)) {
+      $Gutter-Style-Map: map-merge($Gutter-Style-Map, map-get($Singularity-Settings, 'gutter styles'));
+    }
+    $Gutter-Style-Map: map-merge($Gutter-Style-Map, ($Breakpoint: $Gutter-Style));
   }
+
+  $Gutter-Style-Map: sort-map($Gutter-Style-Map, not $Mobile-First);
+
+  @return $Gutter-Style-Map;
+}
+
+@mixin add-gutter-style($gutter-style-definition) {
+  $Add-gutter-style: add-gutter-style($gutter-style-definition);
+  $HOLDER: sgs-set('gutter styles', $Add-gutter-style);
 }

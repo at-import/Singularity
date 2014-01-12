@@ -1,0 +1,56 @@
+//////////////////////////////
+// Quicksort
+// http://rosettacode.org/wiki/Sorting_algorithms/Quicksort
+//////////////////////////////
+@function quicksort($list) {
+
+  $QS-Less: ();
+  $QS-Equal: ();
+  $QS-Large: ();
+
+  $QS-Length: length($list);
+
+  $QS-Seed: round($QS-Length / 2);
+
+  @if $QS-Length > 1 {
+    $QS-Seed: nth($list, $QS-Seed);
+    @each $Item in $list {
+      @if $Item < $QS-Seed {
+        $QS-Less: append($QS-Less, $Item);
+      }
+      @else if $Item == $QS-Seed {
+        $QS-Equal: append($QS-Equal, $Item);
+      }
+      @else {
+        $QS-Large: append($QS-Large, $Item);
+      }
+    }
+    $QS-Less: quicksort($QS-Less);
+    $QS-Large: quicksort($QS-Large);
+
+    $QS-Return: join($QS-Less, $QS-Equal);
+    $QS-Return: join($QS-Return, $QS-Large);
+
+    @return $QS-Return;
+  }
+
+  @return $list;
+}
+
+//////////////////////////////
+// Sort Map function
+//////////////////////////////
+@function sort-map($map, $reverse: false) {
+  $Sort-Map-Keys: quicksort(map-keys($map));
+  $Sort-Map-Map: ();
+
+  @if $reverse {
+    $Sort-Map-Keys: reverse($Sort-Map-Keys);
+  }
+
+  @each $key in $Sort-Map-Keys {
+    $Sort-Map-Map: map-merge($Sort-Map-Map, ($key: map-get($map, $key)));
+  }
+
+  @return $Sort-Map-Map;
+}

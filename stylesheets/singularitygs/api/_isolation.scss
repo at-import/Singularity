@@ -1,165 +1,100 @@
-@mixin output-isolation($span, $location, $columns, $gutter, $options: false) {
+@function output-isolation($Span-Map) {
+  // Set up Left/Right maps
+  $Return: ();
 
-  $gutter: find-gutter($gutter);
-  $gutter-span: gutter-span($gutter, $columns);
-  $end-row: end-row($span, $location, $columns);
-  $start-row: start-row($location);
+  $Span: map-get($Span-Map, 'span');
+  $Location: map-get($Span-Map, 'location');
 
-  $gutter-style: find-gutter-style();
-  $fixed-gutter: fixed-gutter($columns, $gutter);
-  $gutter-property: gutter-property($columns, $gutter);
-  $split: index($gutter-style, split);
+  $Grid: map-get($Span-Map, 'grid');
+  $Gutter: map-get($Span-Map, 'gutter');
+  $Style: map-get($Span-Map, 'style');
 
-  $margin-span: column-span(($location - 1), 1, $columns, $gutter, $gutter-style);
+  $Start-Row: map-get($Span-Map, 'start row');
+  $End-Row: map-get($Span-Map, 'end row');
 
-  @if not $fixed-gutter {
-    $margin-span: $margin-span + $gutter-span;
+  $Fixed-Gutter: map-get($Span-Map, 'fixed gutter');
+  $Split-Gutter: map-get($Span-Map, 'split gutter');
+  $Gutter-Property: map-get($Span-Map, 'gutter property');
+
+  $Direction: map-get($Span-Map, 'direction');
+  $Options: map-get($Span-Map, 'options');
+
+  $Width: column-span($Span, $Location, $Grid, $Gutter, $Style);
+  $Margin-Span: column-span(($Location - 1), 1, $Grid, $Gutter, $Style);
+  $Gutter-Span: gutter-span($Gutter, $Grid);
+
+  // Backwards Compatibility for Options
+  @if type-of($Options) != 'map' and $Options != null {
+    $Options: ('clear': unquote(nth($Options, 1)));
   }
 
-  @if $direction == 'ltr' or $direction == 'both' {
-    // Set the CSS direction to ltr
-    $cssdir: 'ltr';
-    // Find the CSS named direction and opposite direction
-    $dir: named-direction($cssdir);
-    $opp: opposite-direction($dir);
+  $Dir: $Direction;
+  $Opp: opposite-direction($Dir);
 
-    width: column-span($span, $location, $columns, $gutter, $gutter-style);
+  $Return: map-merge($Return, ('width': $Width));
 
-    // If we are at the last item in the row, we float it the opposite direction
-    @if ($end-row) {
-      float: $opp;
-      margin-#{$dir}: 0;
-      @if $split and not $fixed-gutter {
-	#{$gutter-property}-#{$opp}: $gutter-span / 2;
+  @if ($End-Row) {
+    $Return: map-merge($Return, ('float': $Opp));
+    $Return: map-merge($Return, ('margin-#{$Dir}': 0));
+
+    @if $Split-Gutter and not $Fixed-Gutter {
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
+    }
+    @else {
+      $Return: map-merge($Return, ('margin-#{$Opp}': 0));
+    }
+  }
+  @else {
+    $Return: map-merge($Return, ('float': $Dir));
+    $Return: map-merge($Return, ('margin-#{$Opp}': -100%));
+
+    @if $Start-Row {
+      @if $Split-Gutter and not $Fixed-Gutter {
+        $Return: map-merge($Return, ('margin-#{$Dir}': $Gutter-Span / 2));
       }
-      @else {
-	margin-#{$opp}: 0;
+      @else if not $Fixed-Gutter {
+        $Return: map-merge($Return, ('margin-#{$Dir}': 0));
       }
     }
     @else {
-      float: $dir;
-      margin-#{$opp}: -100%;
-
-      @if $start-row {
-	@if $split and not $fixed-gutter {
-	  margin-#{$dir}: $gutter-span / 2;
-	}
-	@else {
-	  margin-#{$dir}: 0%;
-	}
+      @if $Split-Gutter and not $Fixed-Gutter {
+        $Return: map-merge($Return, ('margin-#{$Dir}': $Margin-Span + $Gutter-Span + $Gutter-Span / 2));
+      }
+      @else if not $Fixed-Gutter {
+        $Return: map-merge($Return, ('margin-#{$Dir}': $Margin-Span + $Gutter-Span));
       }
       @else {
-	@if $split and not $fixed-gutter {
-	  margin-#{$dir}: $margin-span + $gutter-span / 2;
-	}
-	@else {
-	  margin-#{$dir}: $margin-span;
-	}
-
+        $Return: map-merge($Return, ('margin-#{$Dir}': $Margin-Span));
       }
     }
+  }
+  // If options are set, we merge them in!
+  @if ($Options) {
+    $Return: map-merge($Return, $Options);
+  }
 
-    // If options are set, we clear to that option, otherwise no clear!
-    @if ($options) {
-      clear: unquote($options);
+  // If CLear isn't already available, set it!
+  @if not map-has-key($Return, 'clear') {
+    $Return: map-merge($Return, ('clear': none));
+  }
+
+  // Left Fixed Gutters
+  @if $Fixed-Gutter {
+    @if index($Style, 'split') {
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Dir}': $Gutter-Span / 2));
+      $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span / 2));
     }
     @else {
-      clear: none;
-    }
-
-    @if $fixed-gutter {
-      @if index($gutter-style, split) {
-	#{$gutter-property}-#{$dir}: $gutter-span / 2;
-	#{$gutter-property}-#{$opp}: $gutter-span / 2;
+      @if not $End-Row {
+        $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': $Gutter-Span));
       }
       @else {
-	#{$gutter-property}-#{$opp}: $gutter-span;
+        $Return: map-merge($Return, ('#{$Gutter-Property}-#{$Opp}': 0));
       }
     }
   }
 
-  @if $direction == 'rtl' or $direction == 'both' {
-    // Set the CSS direction to ltr
-    $cssdir: 'rtl';
-    // Find the CSS named direction and opposite direction
-    $dir: named-direction($cssdir);
-    $opp: opposite-direction($dir);
-
-    [dir="#{$cssdir}"] & {
-      // If we are only interested in rtl directions, add a width value
-       @if $direction == 'rtl' {
-       	 width: column-span($span, $location, $columns, $gutter, $gutter-style);
-       }
-      
-      // If we are at the last item in the row, we float it the opposite direction
-      @if ($end-row) {
-        float: $opp;
-	margin-#{$dir}: 0;
-	@if $split and not $fixed-gutter {
-	  #{$gutter-property}-#{$opp}: $gutter-span / 2;
-	}
-	@else {
-	  margin-#{$opp}: 0;
-	}
-      }
-      @else {
-        float: $dir;
-        margin-#{$opp}: -100%;
-
-        @if $start-row {
-	  @if $split and not $fixed-gutter {
-	    margin-#{$dir}: $gutter-span / 2;
-	  }
-	  @else {
-	    margin-#{$dir}: 0%;
-	  }
-        }
-        @else {
-	  @if $split and not $fixed-gutter {
-	    margin-#{$dir}: $margin-span + $gutter-span / 2;
-	  }
-	  @else {
-	    margin-#{$dir}: $margin-span;
-	  }
-
-        }
-      }
-
-      // If options are set, we clear to that option, otherwise no clear!
-      @if ($options) {
-        clear: unquote($options);
-      }
-      @else {
-        clear: none;
-      }
-
-      @if $fixed-gutter {
-	@if $direction == 'rtl' {
-	  @if index($gutter-style, split) {
-	    #{$gutter-property}-#{$dir}: $gutter-span / 2;
-	    #{$gutter-property}-#{$opp}: $gutter-span / 2;
-	  }
-	  @else {
-	    #{$gutter-property}-#{$opp}: $gutter-span;
-	  }
-	}
-	@else if not index($gutter-style, split) {
-	  #{$gutter-property}-#{$opp}: $gutter-span;
-	}
-      }
-    }
-  }
-
-  @include span-shared;
-
-}
-
-@mixin push-isolation($span, $location, $columns: false, $gutter: false) {
-  @include push-float($span, $location, $columns, $gutter);
-}
-
-@mixin pull-isolation($span, $location, $columns: false, $gutter: false) {
-  @include pull-float($span, $location, $columns, $gutter);
+  @return $Return;
 }
 
 //////////////////////////////
@@ -167,6 +102,15 @@
 //
 // Makes working with Isolation easier, as it moves Clear to a 1st class citizen of the mixin, and automatically builds the verbose grid-span mixin call
 //////////////////////////////
-@mixin isolation-span($span, $location, $clear: false, $grid: false, $gutter: false) {
-  @include grid-span($span, $location, $grid, $gutter, 'isolation', $clear);
+@mixin isolation-span($Span, $Location, $clear: false, $grid: false, $gutter: false, $gutter-style: false, $from: false) {
+  $Options: ();
+  @if $clear {
+    $Options: map-merge($Options, ('clear': $clear));
+  }
+  @if $from {
+    $Options: map-merge($Options, ('from': $from));
+  }
+
+  $Options: if(length($Options) > 0, $Options, null);
+  @include grid-span($Span, $Location, $grid, $gutter, 'isolation', $gutter-style, $Options);
 }

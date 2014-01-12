@@ -1,0 +1,35 @@
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+
+// $singularity: (
+//   'output': 'float'
+// );
+
+.container {
+  max-width: 90%;
+  background: red;
+  margin: 0 auto;
+  @include clearfix();
+}
+
+.thumbnail {
+  min-height: 45vh;
+  background: blue;
+  margin-bottom: 5vh;
+}
+
+@include add-grid(5);
+@include add-gutter(1);
+@include add-gutter-style('split');
+
+.thumbnail {
+  @for $i from 1 through 5 {
+    &:nth-of-type(5n + #{$i}) {
+      @include grid-span(1, $i);
+      @if $i == 1 {
+        clear: both;
+      }
+    }
+  }
+}

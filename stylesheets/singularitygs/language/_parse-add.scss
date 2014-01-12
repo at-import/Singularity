@@ -8,21 +8,56 @@
 //
 //////////////////////////////
 @function parse-add($definition) {
-  $grid: ();
-  $mq: false;
-  $mq-find: false;
+  $parse-find: ();
+  $parse-mq: null;
+  $parse-mq-find: false;
+  $Mobile-First: sgs-get('mobile first');
 
   @each $item in $definition {
-    @if $item != 'at' and $mq-find != true {
-      $grid: append($grid, $item, 'space');
+    @if $item != 'at' and $parse-mq-find != true {
+      $parse-find: append($parse-find, $item, 'space');
     }
     @else if $item == 'at' {
-      $mq-find: true;
+      $parse-mq-find: true;
     }
     @else {
-      $mq: $item;
+      $parse-mq: $item;
     }
   }
 
-  @return ($grid $mq);
+  @if $parse-mq {
+    @if not function-exists(breakpoint) {
+      @warn "Responsive contexts require Breakpoint (https://github.com/Team-Sass/breakpoint). Please ensure that Breakpoint is imported and available for Singularity to use. Context set to -1px.";
+      $parse-mq: -1px;
+    }
+    @else {
+      $breakpoint-parse: breakpoint($parse-mq);
+      $breakpoint-parse: map-get($breakpoint-parse, 'context holder');
+      $breakpoint-mq: null;
+      @if $Mobile-First {
+        $breakpoint-mq: map-get($breakpoint-parse, 'min-width');
+      }
+      @else {
+        $breakpoint-mq: map-get($breakpoint-parse, 'max-width');
+      }
+
+      @if length($breakpoint-mq) > 1 {
+        @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Context set to -1px.";
+        $parse-mq: 1px;
+      }
+      @else if length($breakpoint-mq) < 1 {
+        @warn "No " + if($Mobile-First, 'min-width', 'max-width') + ' context found. Please use a media query with the correct context. Context set to -1px.';
+        $parse-mq: -1px;
+      }
+      @else {
+        $parse-mq: nth($breakpoint-mq, 1);
+      }
+    }
+  }
+
+  @if $parse-mq and unit($parse-mq) == 'em' {
+    $parse-mq: $parse-mq / 1em * 16px;
+  }
+
+  @return ($parse-find $parse-mq);
 }

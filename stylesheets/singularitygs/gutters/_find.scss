@@ -5,13 +5,17 @@
 // From Singularity
 // Must be using Breakpoint to work properly
 //////////////////////////////
-@function find-gutter($user-gutter: false) {
+@function find-gutter($user-gutters: null) {
 
-  // We supply a default if the user hasn't set any gutters and hasn't passed in a custom gutter
+  // We supply a default if the user hasn't set any gutters and hasn't passed in a custom column set
   // The default supplied is based on original Susy options
-  @if length($gutters) == 0 and $user-gutter == false {
-    $user-gutter: .25;
+  $Gutters: sgs-get('gutters');
+
+  $Found: find-object($Gutters, $user-gutters);
+
+  @if length($Found) == 1 {
+    $Found: nth($Found, 1);
   }
 
-  @return nth(find-object($gutters, $user-gutter), 1);
+  @return $Found;
 }

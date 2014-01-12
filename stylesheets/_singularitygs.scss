@@ -1,34 +1,21 @@
 //////////////////////////////
-// Import Required Extensions
+// Default Settings
 //////////////////////////////
-@import "breakpoint";
+$Singularity-Settings: (
+  'grids': (-1px: 12),
+  'gutters': (-1px: .25),
+  'gutter styles': (-1px: 'opposite'),
+  'output': 'isolation',
+  'direction': 'ltr',
+  'mobile first': true,
+  'include border box': false,
+  'include clearfix': false
+);
 
 //////////////////////////////
-// Default Variables
+// User Settings
 //////////////////////////////
-
-// The grids being used
-$grids: () !default;
-
-// The gutters of the inner columns of the grid
-$gutters: () !default;
-
-// The gutter styles
-// Options: opposite/split (fixed)
-$gutter-styles: () !default;
-
-// Specifies whether or not you're building mobile-first grids. Defaults to true
-$mobile-first: true !default;
-
-// Default output style.
-$output: 'isolation' !default;
-
-// Direction for your grid. Can be ltr, rtl, or both
-$direction: 'ltr' !default;
-
-// Whether or not to include border-box or clearfix with all spans
-$include-border-box:  false !default;
-$include-clearfix:    false !default;
+$singularity: () !default;
 
 //////////////////////////////
 // Import General Helpers

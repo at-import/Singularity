@@ -5,19 +5,17 @@
 // From Singularity
 // Must be using Breakpoint to work properly
 //////////////////////////////
-@function find-grid($user-columns: false) {
+@function find-grid($user-columns: null) {
 
   // We supply a default if the user hasn't set any grids and hasn't passed in a custom column set
   // The default supplied is based on original Susy options
-  @if length($grids) == 0 and $user-columns == false {
-    $user-columns: 12;
+  $Grids: sgs-get('grids');
+
+  $Found: find-object($Grids, $user-columns);
+
+  @if length($Found) == 1 {
+    $Found: nth($Found, 1);
   }
 
-  $found: find-object($grids, $user-columns);
-
-  @if length($found) == 1 {
-    $found: nth($found, 1);
-  }
-
-  @return $found;
+  @return $Found;
 }

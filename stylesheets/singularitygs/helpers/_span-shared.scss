@@ -1,9 +1,27 @@
 @mixin span-shared {
+  $include-border-box: sgs-get('include border box');
+  $include-clearfix: sgs-get('include clearfix');
+
   @if $include-border-box {
-    @include box-sizing('border-box', false);
+    @if mixin-exists(box-sizing) {
+      @include box-sizing(border-box);
+    }
+    @else {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
   }
 
   @if $include-clearfix {
-    @include clearfix(false);
+    @if mixin-exists(clearfix) {
+      @include clearfix;
+    }
+    @else {
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
   }
 }

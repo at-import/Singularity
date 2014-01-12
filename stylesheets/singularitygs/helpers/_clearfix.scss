@@ -1,106 +1,21 @@
-$legacy-support-for-ie6: false !default;
-$legacy-support-for-ie7: false !default;
-$legacy-support-for-mozilla: false !default;
-
 //////////////////////////////
-// Massive Clearfix Mixin
-//
-// Clearfix mixin for all of your clearfixing needs. Will choose the right mixin for you.
-// Can choose whether to extend or to write.
+// Clearfix Mixin
 //////////////////////////////
 $clearfix-extend: false !default;
-$clearfix-direct: false !default;
-$toolkit-clearfix: false !default;
 
-@mixin clearfix($extend: $clearfix-extend, $direct: $clearfix-direct) {
-  @if (($legacy-support-for-ie6 or $legacy-support-for-ie7) and not $legacy-support-for-mozilla and $direct != 'legacy' and $direct != 'modern') or ($direct == 'micro') {
-    @if $extend {
-      @extend %clearfix-micro;
-    }
-    @else {
-      /* for IE 6/7 */
-      *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-      /* non-JS fallback */
-      *zoom: 1;
-
-      &:before,
-      &:after {
-        content: "";
-        display: table;
-      }
-
-      &:after {
-        clear: both;
-      }
-    }
-  }
-  @else if (($legacy-support-for-ie6 or $legacy-support-for-ie7) and $legacy-support-for-mozilla and $direct != 'micro' and $direct != 'modern') or ($direct == 'legacy') {
-    @if $extend {
-      @extend %clearfix-legacy;
-    }
-    @else {
-      /* for IE 6/7 */
-      *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-      /* non-JS fallback */
-      *zoom: 1;
-
-      &:before,
-      &:after {
-        content: ".";
-        display: block;
-        height: 0;
-        overflow: hidden;
-      }
-
-      &:after {
-        clear: both;
-      }
-    }
+@mixin clearfix($extend: $clearfix-extend) {
+  @if $extend {
+    @extend %singularity-clearfix;
   }
   @else {
-    @if $extend {
-      @extend %clearfix
-    }
-    @else {
-      &:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
     }
   }
 }
 
-@if not $toolkit-clearfix {
-  //////////////////////////////
-  // Legacy Clearfix
-  //
-  // For when you need full Legacy support, including old IE and old Firefox
-  //
-  // From http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
-  //////////////////////////////
-  %clearfix-legacy {
-    @include clearfix(false, 'legacy');
-  }
-
-  //////////////////////////////
-  // Micro Clearfix
-  //
-  // For when you need old IE support, but not concerned with old Firefox
-  // From http://nicolasgallagher.com/better-float-containment-in-ie/
-  //////////////////////////////
-  %clearfix-micro {
-    @include clearfix(false, 'micro');
-  }
-
-  //////////////////////////////
-  // Modern Clearfix
-  //
-  // Clearfix for modern browsers, especiall when using border-box
-  //
-  // From http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
-  //////////////////////////////
-  %clearfix {
-    @include clearfix(false, 'modern');
-  }
+%singularity-clearfix {
+  @include clearfix(false);
 }

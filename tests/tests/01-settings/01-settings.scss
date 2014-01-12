@@ -1,0 +1,32 @@
+@import "../shared";
+
+.setting-get {
+  @include show-settings;
+  _test: "sgs-get('output')";
+  _result: sgs-get('output');
+}
+
+.setting-set {
+  @include show-settings;
+  _default: sgs-get('direction');
+  _test: "@include sgs-change('direction', 'rtl')";
+  @include sgs-change('direction', 'rtl');
+  _new: sgs-get('direction');
+  @include show-settings;
+}
+
+.setting-has {
+  @include show-settings;
+  _test: "sgs-has('output')";
+  _result: sgs-has('output');
+  _test: "sgs-has('direction')";
+  _result: sgs-has('direction');
+}
+
+.setting-reset {
+  @include show-settings;
+  _test: "@include sgs-reset('direction')";
+  @include sgs-reset('direction');
+  _exists: sgs-has('direction');
+  @include show-settings;
+}

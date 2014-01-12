@@ -8,28 +8,46 @@
 //                                    https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
 // - $append-to-list  : [list]        A list to append to.
 //                                    Defaults to $grids if none is specified.
-@function add-grid($grid-definition, $append-to-list: $grids) {
-  $parsed:      parse-add($grid-definition); // Converts the definiton to a temporary format:
-                                             // either `((<grid>))` or `((<grid>) (<breakpoint>))`
-  $grid:        nth($parsed, 1); // E. g. `(<grid>)`.
-  $breakpoint:  nth($parsed, 2); // Either `(<breakpoint>)` or false.
-  $list-length: length($append-to-list);
-  
+@function add-grid($grid-definition, $custom-map: false) {
+  $Parsed:      parse-add($grid-definition); // Parses grid definition to grid/breakpoint
+  $Grid:        nth($Parsed, 1); // E. g. `(<grid>)`.
+  $Breakpoint:  nth($Parsed, 2); // Either `(<breakpoint>)` or false.
+  $Mobile-First: sgs-get('mobile first');
+  $Grid-Map: ();
+
+  // Determine if a custom map or the default maps should be used.
+  @if $custom-map {
+    $Grid-Map: $custom-map;
+  }
+  @else {
+    @if sgs-has('grids') {
+      $Grid-Map: sgs-get('grids');
+    }
+  }
+  $Grid-Key-Length: length(map-keys($Grid-Map));
+
   // Check whether the definition will be the first one in the list
   // and whether it has no breakpoint specified.
-  @if $breakpoint == false and $list-length == 0 {
+  @if $Breakpoint == null {
     // Returns the first item of the list, e. g. `(<grid>)`
-    @return $grid;
+    $Grid-Map: map-merge($Grid-Map, (-1px: $Grid));
   }
   // IF the list is initiated with a list of grid columns need to start off
   // a comma seprated list.
-  @elseif $list-length > 1 and length(nth($append-to-list, 2)) == 1 {
-    // Seed the first value and grid + breakpoint seperated by a comma.
-    @return $append-to-list, ($grid $breakpoint);
-  }
   @else {
-    // Appends to a comma-separated list of definitions in the internal format
-    // and returns it, e. g. `(<grid>), (<grid> <breakpoint>), (<grid> <breakpoint>)`
-    @return append($append-to-list, ($grid $breakpoint), 'comma');
+    @if not (map-has-key($Grid-Map, -1px)) {
+      $Grid-Map: map-merge($Grid-Map, map-get($Singularity-Settings, 'grids'));
+    }
+    $Grid-Map: map-merge($Grid-Map, ($Breakpoint: $Grid));
   }
+
+  $Grid-Map: sort-map($Grid-Map, not $Mobile-First);
+
+  @return $Grid-Map;
+}
+
+
+@mixin add-grid($grid-definition) {
+  $Add-Grid: add-grid($grid-definition);
+  $HOLDER: sgs-set('grids', $Add-Grid);
 }

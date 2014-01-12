@@ -1,0 +1,34 @@
+.setting-get {
+  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false)';
+  _user-settings: "()";
+  _test: "sgs-get('output')";
+  _result: "isolation";
+}
+
+.setting-set {
+  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false)';
+  _user-settings: "()";
+  _default: "ltr";
+  _test: "@include sgs-change('direction', 'rtl')";
+  _new: "rtl";
+  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false)';
+  _user-settings: '("direction": "rtl")';
+}
+
+.setting-has {
+  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false)';
+  _user-settings: '("direction": "rtl")';
+  _test: "sgs-has('output')";
+  _result: false;
+  _test: "sgs-has('direction')";
+  _result: true;
+}
+
+.setting-reset {
+  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false)';
+  _user-settings: '("direction": "rtl")';
+  _test: "@include sgs-reset('direction')";
+  _exists: false;
+  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false)';
+  _user-settings: "()";
+}

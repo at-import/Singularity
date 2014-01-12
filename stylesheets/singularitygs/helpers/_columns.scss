@@ -1,6 +1,4 @@
 @function end-row($span, $location, $columns) {
-  $columns: find-grid($columns);
-
   @if $location == 'last' or $location == 'omega' {
     @return true;
   }
@@ -15,7 +13,10 @@
 }
 
 @function start-row($location) {
-  @if $location == 1 {
+  @if $location == 'first' or $location == 'alpha' {
+    @return true;
+  }
+  @else if $location == 1 {
     @return true;
   }
   @else {

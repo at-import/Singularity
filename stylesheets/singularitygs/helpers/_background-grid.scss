@@ -34,237 +34,210 @@
 
 
 // -----------------------------------------------
-// Imports
-@import "compass/css3/images";
-@import "compass/css3/transition";
 
 // -----------------------------------------------
 // Grid Overlay
-
-// The overlay is painted over your container's ::after pseudo-element, so we must
-// give position to the container itself, if relative doesn't suit your layout
-// it can be replaced by absolute/fixed.
-$overlay-position:        relative      !default;
-
-// Set the position of the switch.
-$overlay-switch-position: left bottom   !default;
-
 $background-grid-color:   Chocolate     !default;
-
-// Global variable to show or hide the grid background at will.
 $show-grid-backgrounds:   true          !default;
-
-@mixin grid-overlay (
-  $selector: 'body',
-  $columns: false,
-  $gutter: false,
-  $color: $background-grid-color
-) {
-
-  $vert: nth($overlay-switch-position, 1);
-  $horz: nth($overlay-switch-position, 2);
-
-  head {
-    display: block;
-    position: fixed;
-    #{$horz}: 10px;
-    #{$vert}: 10px;
-    z-index: 99;
-    color: #333;
-    text-shadow: 0 0 3px #fff;
-    @include transition(all .4s);
-    &::before {
-      content: "||||";
-      display: block;
-      padding: 10px 14px;
-      letter-spacing: -1;
-      font: {
-        family: sans-serif;
-        size: 26px;
-        weight: bold;
-      }
-    }
-    &:hover {
-      color: #333;
-      text-shadow: 1px 1px #fff;
-      ~ body #{$selector} {
-        position: unquote($overlay-position);
-      }
-      ~ #{$selector}::after,
-      ~ body #{$selector}::after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 100%;
-        width: 100%;
-        @include background-grid($columns, $gutter, $color);
-      }
-    }
-  }
-}
-
-// -----------------------------------------------
-// Grid Toggle
-
-@mixin grid-toggle(
-  $columns: false,
-  $gutter: false,
-  $color: $background-grid-color
-  ) {
-
-  [data-development-grid="show"] {
-    @include background-grid($columns, $gutter, $color);
-  }
-}
 
 // -----------------------------------------------
 // Grid Background
 
 @mixin background-grid(
-  $columns: false,
-  $gutter: false,
+  $columns: null,
+  $gutter: null,
+  $gutter-style: null,
   $color: $background-grid-color
 ) {
 
   @if $show-grid-backgrounds {
-    $background-length: length($grids);
+    $columns: if($columns != null, $columns, sgs-get('grids'));
+    $gutter: if($gutter != null, $gutter, sgs-get('gutters'));
+    $gutter-style: if($gutter-style != null, $gutter-style, sgs-get('gutter styles'));
 
-    @if (not $columns) {
-      $grid: find-grid($columns);
-      @include background-build($grid, $gutter, $color);
-      @if ($grid != $grids) {
-        @for $i from 2 through $background-length {
-          $mq: nth(nth($grids, $i), 2);
-          $grid: nth(nth($grids, $i), 1);
-
-          @include breakpoint($mq) {
-            @include background-build($grid, $gutter, $color);
-          }
-        }
-      }
-    }
-    @else {
-      @include background-build($columns, $gutter, $color);
-    }
-
-
+    @include background-build($columns, $gutter, $gutter-style, $color)
   }
 }
 
-@mixin background-build($columns, $gutter, $color) {
-  $columns: find-grid($columns);
-  $gutter: find-gutter($gutter);
+@function background-map($columns, $gutters, $gutter-styles) {
+  $Grids: ();
+  $Gutters: ();
+  $Styles: ();
 
-  $gutter-style: find-gutter-style();
-  $fixed-gutter: fixed-gutter($columns, $gutter);
-  $split: index($gutter-style, split);
-
-  $widths: ();
-  $colors: ();
-
-  $length: length($columns);
-  $symmetric: false;
-  @if type-of($columns) == 'number' or $length == 1 {
-    $symmetric: true;
-    $length: nth($columns, 1);
-  }
-
-  @for $i from 1 through $length {
-
-    @if ($fixed-gutter or $gutter == 0) and $i % 2 == 0 {
-      $color: darken($color, 15%);
-    }
-    @else if ($fixed-gutter or $gutter == 0) and $i % 2 == 1 {
-      $color: lighten($color, 15%);
-    }
-
-    $column-span: column-span($i, 1, $columns);
-    $gutter-span: 0;
-    @if $fixed-gutter {
-      $gutter-span: $column-span;
-    }
-    @else {
-      $gutter-span: $column-span + gutter-span($gutter, $columns);
-    }
-
-    @if $i == 1 and $split and not $fixed-gutter {
-      $widths: append($widths, gutter-span($gutter, $columns) / 2);
-      $colors: append($colors, rgba($color, .25));
-    }
-
-    @if $i != $columns {
-      $widths: append($widths, $column-span);
-      $colors: append($colors, rgba($color, .5));
-      $widths: append($widths, $gutter-span);
-      $colors: append($colors, rgba($color, .25));
-    }
-    @else {
-      $widths: append($widths, $column-span);
-      $colors: append($colors, rgba($color, .5));
-    }
-
-    @if $i == $length and $split and not $fixed-gutter {
-      $widths: append($widths, $column-span + gutter-span($gutter, $columns) / 2);
-      $colors: append($colors, rgba($color, .25));
-    }
-  }
-
-  @include background-gradient-generate($widths, $colors);
-
-}
-
-//////////////////////////////
-// Get the columns
-//////////////////////////////
-@mixin background-gradient-generate($widths, $colors, $direction: left) {
-  @if (length($widths) != length($colors)) and (length($widths) != length($colors) - 1)  {
-    @warn 'You either need an equal number of widths and colors or one less width than color, in which case it is assumed that the last width goes to 100%. Please provide the correct amount of widths and colors.';
+  @if $columns and type-of($columns) != 'map' {
+    $Grids: (-1px: $columns);
   }
   @else {
-    $stops: ();
+    $Grids: sgs-get('grids');
+  }
 
-    @if length($widths) == (length($colors) - 1) {
-      $widths: append($widths, 100%);
+  @if $gutters and type-of($gutters) != 'map' {
+    $Gutters: (-1px: $gutters);
+  }
+  @else {
+    $Gutters: sgs-get('gutters');
+  }
+
+  @if $gutter-styles and type-of($gutter-styles) != 'map' {
+    $Styles: (-1px: $gutter-styles);
+  }
+  @else {
+    $Styles: sgs-get('gutter styles');
+  }
+
+  // Build 1st Depth Map
+  $Holder: ();
+
+  // Grids
+  @each $k, $v in $Grids {
+    $Holder: map-merge($Holder, ($k: ('grid': $v)));
+  }
+  // Gutters
+  @each $k, $v in $Gutters {
+    $Grid: map-get($Holder, $k);
+
+    $Map: ('gutter': $v);
+    @if $Grid != null {
+      $Grid: map-get($Grid, 'grid');
+      @if $Grid != null {
+        $Map: map-merge($Map, ('grid': $Grid));
+      }
     }
 
-    $i: 1;
+    $Holder: map-merge($Holder, ($k: $Map));
+  }
+  // Style
+  @each $k, $v in $Styles {
+    $Grid: map-get($Holder, $k);
+    $Gutter: map-get($Holder, $k);
 
-    @each $width in $widths {
-      $width: nth($widths, $i);
-      $color: nth($colors, $i);
+    $Map: ('style': $v);
+    @if $Grid != null {
+      $Grid: map-get($Grid, 'grid');
+      @if $Grid != null {
+        $Map: map-merge($Map, ('grid': $Grid));
+      }
+    }
+    @if $Gutter != null {
+      $Gutter: map-get($Gutter, 'gutter');
+      @if $Gutter != null {
+        $Map: map-merge($Map, ('gutter': $Gutter));
+      }
+    }
 
-      @if $i == 1 {
-        $stops: join($stops, build-gradient-piece($width, $color), comma);
+    $Holder: map-merge($Holder, ($k: $Map));
+  }
+
+  $Holder: sort-map($Holder);
+  $Return: ();
+
+  // Build full stack for each breakpoint
+  @for $i from 1 through length($Holder) {
+    $Key: nth(nth($Holder, $i), 1);
+    $Value: nth(nth($Holder, $i), 2);
+
+    $Previous: ();
+    @if $i > 1 {
+      $Previous: nth(nth($Return, $i - 1), 2);
+    }
+
+    @if not map-has-key($Value, 'grid') {
+      $Sort-Grid: map-get($Previous, 'grid');
+      $Value: map-merge($Value, ('grid': $Sort-Grid));
+    }
+
+    @if not map-has-key($Value, 'gutter') {
+      $Sort-Gutter: map-get($Previous, 'gutter');
+      $Value: map-merge($Value, ('gutter': $Sort-Gutter));
+    }
+
+    @if not map-has-key($Value, 'style') {
+      $Sort-Style: map-get($Previous, 'style');
+      $Value: map-merge($Value, ('style': $Sort-Style));
+    }
+
+    $Return: map-merge($Return, ($Key: $Value));
+  }
+
+  @return $Return;
+}
+
+@mixin background-build($columns, $gutters, $gutter-styles, $color) {
+  $Background-Map: background-map($columns, $gutters, $gutter-styles);
+
+  $Column-Color: $color;
+  $Inverse-Column-Color: mix(black, $color, 15%);
+  $Gutter-Color: mix(white, $color, 25%);
+  $Direction: named-direction(sgs-get('direction'));
+
+  @each $bkpt, $def in $Background-Map {
+    $Grid: map-get($def, 'grid');
+    $Gutter: map-get($def, 'gutter');
+    $Style: map-get($def, 'style');
+
+    $Grid-Count: column-count($Grid);
+
+    $Gradient: ();
+
+    $Gutter-Width: gutter-span($Gutter, $Grid, $Style);
+
+    @if $Style == 'fixed' {
+      $Gutter-Width: 0%;
+    }
+    $Counter-Width: 0%;
+    $holder: ();
+
+    @for $i from 1 through $Grid-Count {
+      $Holder-Gradient: ();
+      $Loop-Width: column-span(1, $i, $Grid, $Gutter, $Style);
+
+      @if index($Style, 'split') and $i == 1 {
+        $Counter-Width: ($Gutter-Width / 2);
+        $Gradient: append($Gradient, ($Gutter-Color, $Gutter-Color $Counter-Width), 'comma');
+      }
+
+      $Loop-Color: $Column-Color;
+      @if (index($Style, 'fixed') or $Gutter == 0) and ($i % 2 == 0 ) {
+        $Loop-Color: $Inverse-Column-Color;
+      }
+
+      @if $i != $Grid-Count {
+        $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
+        $Counter-Width: $Counter-Width + $Loop-Width;
+        $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
+        $Counter-Width: $Counter-Width + $Gutter-Width;
+      }
+      @else if $i == 1 {
+        $Gradient: append($Gradient, ($Loop-Color, $Loop-Color $Counter-Width, $Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
+        $Counter-Width: $Counter-Width + $Loop-Width + $Gutter-Width;
+      }
+      @else if $i == $Grid-Count and index($Style, 'split') {
+        $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
+        $Counter-Width: $Counter-Width + $Loop-Width;
+        $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + ($Gutter-Width / 2))), 'comma');
       }
       @else {
-        $position: nth($widths, $i - 1);
-        $stops: join($stops, build-gradient-piece($width, $color, $position), comma);
+        $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color), 'comma');
       }
-
-      $i: $i + 1;
     }
 
-    // @debug $stops;
-
-
-
-    @include background-image(
-      linear-gradient($direction, $stops)
-    );
-  }
-}
-
-@function build-gradient-piece($width, $color, $position: false) {
-  @if ($position == 'last') {
-    @return ($color $width);
-  }
-  @else if ($position != false) {
-    @return $color $position, $color $width;
-  }
-  @else {
-    @return $color, $color $width;
+    @if $bkpt != -1px {
+      @include breakpoint($bkpt) {
+        @if mixin-exists(background-image) and function-exists(linear-gradient) {
+          @include background-image(
+            linear-gradient($Direction, $Gradient)
+          );
+        }
+        background-image: linear-gradient(to opposite-direction($Direction), $Gradient);
+      }
+    }
+    @else {
+      @if mixin-exists(background-image) and function-exists(linear-gradient) {
+        @include background-image(
+            linear-gradient($Direction, $Gradient)
+        );
+      }
+      background-image: linear-gradient(to opposite-direction($Direction), $Gradient);
+    }
   }
 }

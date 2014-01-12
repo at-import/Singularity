@@ -3,27 +3,50 @@
 //
 // Note that this function only returns a new list, it does not modify the source list.
 //
-// add-gutter($grid-definition, $append-to-list)
+// add-gutter($Gutter-definition, $append-to-list)
 // - $gutter-definition : <definition>  See documentation for syntax:
-//                                      https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
+//                                      https://github.com/Team-Sass/Singularity/wiki/Creating-Gutters
 // - $append-to-list    : [list]        A list to append to.
 //                                      Defaults to $gutters if none is specified.
-@function add-gutter($gutter-definition, $append-to-list: $gutters) {
-  $parsed: parse-add($gutter-definition); // Converts the definiton to a temporary format:
-                                          // either `((<gutter>))` or `((<gutter>) (<breakpoint>))`
-  $gutter:      nth($parsed, 1); // E. g. `(<gutter>)`.
-  $breakpoint:  nth($parsed, 2); // Either `(<breakpoint>)` or false.
-  $list-length: length($append-to-list);
+@function add-gutter($gutter-definition, $custom-map: false) {
+  $Parsed:      parse-add($gutter-definition); // Parses Gutter definition to Gutter/breakpoint
+  $Gutter:        nth($Parsed, 1); // E. g. `(<Gutter>)`.
+  $Breakpoint:  nth($Parsed, 2); // Either `(<breakpoint>)` or false.
+  $Mobile-First: sgs-get('mobile first');
+  $Gutter-Map: ();
+
+  // Determine if a custom map or the default maps should be used.
+  @if $custom-map {
+    $Gutter-Map: $custom-map;
+  }
+  @else {
+    @if sgs-has('gutters') {
+      $Gutter-Map: sgs-get('gutters');
+    }
+  }
+  $Gutter-Key-Length: length(map-keys($Gutter-Map));
 
   // Check whether the definition will be the first one in the list
   // and whether it has no breakpoint specified.
-  @if $breakpoint == false and $list-length == 0 {
-    // Returns the first item of the list, e. g. `(<gutter>)`
-    @return $gutter;
+  @if $Breakpoint == null {
+    // Returns the first item of the list, e. g. `(<Gutter>)`
+    $Gutter-Map: map-merge($Gutter-Map, (-1px: $Gutter));
   }
+  // IF the list is initiated with a list of Gutter columns need to start off
+  // a comma seprated list.
   @else {
-    // Appends to a comma-separated list of definitions in the internal format
-    // and returns it, e. g. `(<gutter>), (<gutter> <breakpoint>), (<gutter> <breakpoint>)`
-    @return append($append-to-list, ($gutter $breakpoint), 'comma');
+    @if not (map-has-key($Gutter-Map, -1px)) {
+      $Gutter-Map: map-merge($Gutter-Map, map-get($Singularity-Settings, 'gutters'));
+    }
+    $Gutter-Map: map-merge($Gutter-Map, ($Breakpoint: $Gutter));
   }
+
+  $Gutter-Map: sort-map($Gutter-Map, not $Mobile-First);
+
+  @return $Gutter-Map;
+}
+
+@mixin add-gutter($gutter-definition) {
+  $Add-Gutter: add-gutter($gutter-definition);
+  $HOLDER: sgs-set('gutters', $Add-Gutter);
 }

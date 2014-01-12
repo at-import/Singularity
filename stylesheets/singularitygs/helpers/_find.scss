@@ -1,89 +1,137 @@
 //////////////////////////////
+// Find Object Keys
+//
+// Returns
+//////////////////////////////
+@function find-object-keys($haystack) {
+  $Keys: map-keys($haystack);
+  $List: ();
+  @each $Key in $Keys {
+    @if $Key != -1px {
+      @if unit($Key) == 'em' {
+        $Key: $Key / 1em * 16px;
+      }
+      $List: append($List, $Key);
+    }
+  }
+  @return quicksort($List);
+}
+
+//////////////////////////////
 // Find Object
 //
 // Finds relevant object
 // Must be using Breakpoint to work properly
 //////////////////////////////
-@function find-object($haystack, $user-object: false) {
-  $length: length($haystack);
-
-  @if $user-object != false {
+@function find-object($haystack, $user-object: null) {
+  // If a user object has been passed in, bypass the whole function and just return that object.
+  @if $user-object != null and $user-object != false {
     @return $user-object;
   }
-  @else if $length > 1 {
-    //////////////////////////////
-    // @TODO! REplace with Native Sass Fucntion when vailable!
-    // https://github.com/nex3/sass/pull/689
-    //////////////////////////////
-    @if (is-breakpoint-list($haystack) != false) {
-      $query-min: breakpoint-get-context('min-width');
-      $query-max: breakpoint-get-context('max-width');
 
-      // If we've got a min-width or max-width
-      @if $query-min or $query-max {
-        // Reverse the grid so we can step through it
-        $reverse-haystack: ();
-        @for $i from 2 through $length {
-          $reverse-haystack: append($reverse-haystack, nth($haystack, $i), comma);
+  $Deprecate-Warning: singularity-deprecation-warning();
+  $Length: length($haystack);
+  $Mobile-First: sgs-get('mobile first');
+
+  // Haystack must be map
+  @if type-of($haystack) != 'map' {
+    @warn "DEPRECATION: In order to remove global variable naming conflicts, Singularity's settings have been moved into the single `$singularity` variable. Please refer to our documentation (https://github.com/Team-Sass/Singularity/wiki) on how to update your settings. In the next version of Singularity, this warning will be removed. #{nth($haystack, 1)} has been returned.";
+    @return nth($haystack, 1);
+  }
+
+  // Grab Breakpoint Context
+  @if not function-exists(breakpoint-get-context) {
+    @warn "Responsive contexts require Breakpoint (https://github.com/Team-Sass/breakpoint). Please ensure that Breakpoint is imported and available for Singularity to use. First item used.";
+    @return map-get($haystack, -1px);
+  }
+  // Get Breakpoint Contexts
+  $Query-Min: breakpoint-get-context('min-width');
+  $Query-Max: breakpoint-get-context('max-width');
+
+  @if length($Query-Min) == 1 {
+    $Query-Min: nth($Query-Min, 1);
+  }
+  @else if length($Query-Min) > 1 {
+    @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Default context is used.";
+    @return map-get($haystack, -1px);
+  }
+
+
+  @if $Length > 1 {
+    @if length($Query-Max) == 1 {
+      $Query-Max: nth($Query-Max, 1);
+    }
+    @else if length($Query-Max) > 1 {
+      @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Default context is used.";
+      @return map-get($haystack, -1px);
+    }
+
+    // If there is no min or max context, return first item
+    @if $Query-Min == false and $Query-Max == false {
+      $RETURN: map-get($haystack, -1px);
+      @return $RETURN;
+    }
+
+    // Convert to PX
+    @if $Query-Min != false and  unit($Query-Min) == 'em' {
+      $Query-Min: $Query-Min / 1em * 16px;
+    }
+    @if $Query-Max != false and unit($Query-Max) == 'em' {
+      $Query-Max: $Query-Max / 1em * 16px;
+    }
+
+    $Find-Haystack: find-object-keys($haystack);
+    $Reverse-Haystack: reverse($Find-Haystack);
+
+    $Smallest: nth($Find-Haystack, 1);
+    $Largest: nth($Reverse-Haystack, 1);
+    $Context: $Query-Min;
+
+    @if not $Mobile-First {
+      $Context: $Query-Max;
+    }
+
+    // Loop over each item in Context to find if any of the items pass.
+    @each $Query-Context in $Context {
+      @if $Query-Context != false {
+        // If it's smallest than the smallest MQ, use the 1st grid
+        @if $Query-Context < $Smallest {
+          $RETURN: map-get($haystack, -1px);
+          @return $RETURN;
         }
-        $reverse-haystack: reverse($reverse-haystack);
-        $rg-length: $length - 1;
-
-        // Grab the largest and smallest MQs
-        $smallest: nth(nth($haystack, 2), 2);
-        $largest: nth(nth($reverse-haystack, 1), 2);
-        $context: $query-min;
-
-        @if not ($mobile-first) {
-          $context: $query-max;
+        // If it's larger than or equal to the largest MQ, use the last grid
+        @else if $Query-Context >= $Largest {
+          $RETURN: map-get($haystack, $Largest);
+          @return $RETURN;
         }
+        // If it's in between the smallest and largest, go run a check.
+        @else {
+          // Loop through each MQ.
+          @for $j from 1 through length($Reverse-Haystack) {
+            $Query: nth($Reverse-Haystack, $j);
 
-	// Loop over each item in Context to find if any of the items pass.
-	@each $query-context in $context {
-	  @if $query-context != false {
-	    // If it's smallest than the smallest MQ, use the 1st grid
-	    @if $query-context < $smallest {
-	      @return nth($haystack, 1);
-	    }
-	    // If it's larger than or equal to the largest MQ, use the last grid
-	    @else if $query-context >= $largest {
-	      @return nth(nth($reverse-haystack, 1), 1);
+            // If the MQ is greather than or equal to the the MQ in question, use it! (mobile first)
+            @if ($Mobile-First) {
+              @if $Query-Context >= $Query {
+                $RETURN: map-get($haystack, nth($Reverse-Haystack, $j));
+                @return $RETURN;
+              }
             }
-	    // If it's in between the smallest and largest, go run a check.
+            // If the MQ is less than or equal to the the MQ in question, use it! (not mobile first)
             @else {
-	      // Loop through each MQ.
-	      @for $j from 1 through $rg-length {
-		$query: nth(nth($reverse-haystack, $j), 2);
-
-		// If the MQ is greather than or equal to the the MQ in question, use it! (mobile first)
-		@if ($mobile-first) {
-		  @if $query-context >= $query {
-		    @return nth(nth($reverse-haystack, $j), 1);
-		  }
-		}
-		// If the MQ is less than or equal to the the MQ in question, use it! (not mobile first)
-		@else {
-		  @if $query-context <= $query {
-		    @return nth(nth($reverse-haystack, $j), 1);
-		  }
-		}
+              @if $Query-Context <= $Query {
+                $RETURN: map-get($haystack, nth($Reverse-Haystack, $j));
+                @return $RETURN;
               }
             }
           }
         }
-	@return nth($haystack, 1);
       }
-      // All else fails, return the first grid
-      @else {
-        @return nth($haystack, 1);
-      }
-    }
-    @else {
-      @return $haystack;
     }
   }
-  // All else fails, return the first grid
+  // All else fails, return the first item
   @else {
-    @return nth($haystack, 1);
+    $RETURN: map-get($haystack, -1px);
+    @return $RETURN;
   }
 }

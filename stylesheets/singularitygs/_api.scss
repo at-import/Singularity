@@ -1,39 +1,99 @@
-@mixin grid-span($span, $location: 1, $grid: false, $gutter: false, $output-style: $output, $options: false) {
-
-  @if $output-style == 'float' {
-    @include output-float($span, $location, $grid, $gutter, $options);
-  }
-  @else if $output-style == 'isolation' {
-    @include output-isolation($span, $location, $grid, $gutter, $options);
-  }
-}
-
-@mixin push($span, $location, $grid: false, $gutter: false, $output-style: $output) {
-
-  @if $output-style == 'float' {
-    @include push-float($span, $location, $grid, $gutter);
-  }
-  @else if $output-style == 'isolation' {
-    @include push-isolation($span, $location, $grid, $gutter);
-  }
-}
-
-@mixin pull($span, $location, $grid: false, $gutter: false, $output-style: $output) {
-
-  @if $output-style == 'float' {
-    @include pull-float($span, $location, $grid, $gutter);
-  }
-  @else if $output-style == 'isolation' {
-    @include pull-isolation($span, $location, $grid, $gutter);
-  }
-}
-
-@mixin isolate($span, $location, $grid: false, $gutter: false, $output-style: $output) {
-
-  @if $output-style == 'float' or $output-style == "isolation" {
-    @include push($span, $location, $grid, $gutter, "isolation");
-  }
-}
-
 @import "api/float";
 @import "api/isolation";
+
+//////////////////////////////
+// Master Grid Span mixin
+//////////////////////////////
+@mixin grid-span($span, $location: 1, $grid: null, $gutter: null, $output-style: null, $gutter-style: null, $options: null) {
+
+  @if $output-style == null {
+    $output-style: sgs-get('output');
+  }
+
+  $Grid: find-grid($grid);
+  $Gutter: find-gutter($gutter);
+  $Style: find-gutter-style($gutter-style);
+
+  $Start-Row: start-row($location);
+  $End-Row: end-row($span, $location, $Grid);
+
+  $Fixed-Gutter: fixed-gutter($Grid, $Gutter, $Style);
+  $Split-Gutter: index($Style, 'split');
+  $Gutter-Property: gutter-property($Grid, $Gutter, $Style);
+
+  $Direction: sgs-get('direction');
+  $From: if($options and type-of($options) == 'map', if(map-get($options, 'from'), map-get($options, 'from'), $Direction), $Direction);
+  $From: if($From == 'ltr' or $From == 'rtl', named-direction($From), $From);
+
+  $Holder: ();
+  @each $k, $v in $options {
+    $Holder: if($k == 'from', $Holder, map-merge($Holder, ($k: $v)));
+  }
+  $options: if(length($Holder) > 0, $Holder, null);
+
+  $Span-Map: (
+    'span': $span,
+    'location': $location,
+    'grid': $Grid,
+    'gutter': $Gutter,
+    'style': $Style,
+    'start row': $Start-Row,
+    'end row': $End-Row,
+    'fixed gutter': $Fixed-Gutter,
+    'split gutter': $Split-Gutter,
+    'gutter property': $Gutter-Property,
+    'options': $options
+  );
+
+
+  @if function-exists('output-#{$output-style}') {
+    $Left: ();
+    $Right: ();
+
+    @if $Direction == 'both' or $From == 'left' or ($Direction == 'rtl' and $From == 'opposite') {
+      $Left: call('output-#{$output-style}', map-merge($Span-Map, ('direction': left)));
+    }
+
+    @if $Direction == 'both' or $From == 'right' or ($Direction == 'ltr' and $From == 'opposite') {
+      $Right: call('output-#{$output-style}', map-merge($Span-Map, ('direction': right)));
+    }
+
+    $Left-Keys: map-keys($Left);
+    $Right-Keys: map-keys($Right);
+    $Exclude: ();
+
+    @each $key in $Left-Keys {
+      @if index($Right-Keys, $key) {
+        @if map-get($Right, $key) == map-get($Left, $key) {
+          $Exclude: append($Exclude, $key);
+        }
+      }
+    }
+
+    // Always try and print the Left value
+    @each $property, $value in $Left {
+      #{$property}: $value;
+    }
+
+    // If Direction is Both or RTL, add the RTL attribute selector
+    @if $Direction == 'both' or $Direction == 'rtl' {
+      [dir="rtl"] & {
+        @each $property, $value in $Right {
+          @if not index($Exclude, $property) {
+            #{$property}: $value;
+          }
+        }
+      }
+    }
+    @else {
+      @each $property, $value in $Right {
+        @if not index($Exclude, $property) {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+  @else {
+    @warn "There doesn't appear to be an output style named `#{$output-style}`. Please ensure that the function `output-#{$output-style}` and that the output style `#{$output-style}` are both available before trying to use them.";
+  }
+}
