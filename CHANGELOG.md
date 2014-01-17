@@ -1,5 +1,10 @@
 # Singularity Changelog
 
+## v1.2.0.rc.3
+#### January 17, 2013
+
+* **Change** Better warning error for `sgs-set` so settings can contain dashes as long as words are set with spaces. Added errors for underscores as well.
+
 ## v1.2.0.rc.2
 #### January 17, 2013
 

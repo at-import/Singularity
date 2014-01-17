@@ -68,8 +68,8 @@ $DEPRECATE:singularity-deprecation-warning();
 // Set Settings
 //////////////////////////////
 @function sgs-set($setting, $value) {
-  @if str-index($setting, '-') > 0 {
-    @warn "Singularity settings should contain spaces, not dashes. Please replace dashes with spaces. Settings will not work as expected until changed.";
+  @if (str-index($setting, '-') > 0 or str-index($setting, '_') > 0) and str-index($setting, ' ') == 0 {
+    @warn "Words in Singularity settings should be spaces, not dashes or underscores. Please replace dashes and underscores between words with spaces. Settings will not work as expected until changed.";
   }
   $singularity: map-merge($singularity, ($setting: $value)) !global;
   @return true;
