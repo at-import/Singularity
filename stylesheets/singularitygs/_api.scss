@@ -71,29 +71,43 @@
     }
 
     // Always try and print the Left value
-    @each $property, $value in $Left {
-      #{$property}: $value;
-    }
+    @include grid-span-build-exclude($Left, $Exclude, false);
 
     // If Direction is Both or RTL, add the RTL attribute selector
     @if $Direction == 'both' or $Direction == 'rtl' {
       [dir="rtl"] & {
-        @each $property, $value in $Right {
-          @if not index($Exclude, $property) {
-            #{$property}: $value;
-          }
-        }
+        @include grid-span-build-exclude($Right, $Exclude, true);
       }
     }
     @else {
-      @each $property, $value in $Right {
-        @if not index($Exclude, $property) {
-          #{$property}: $value;
-        }
-      }
+      @include grid-span-build-exclude($Right, $Exclude, true);
     }
   }
   @else {
     @warn "There doesn't appear to be an output style named `#{$output-style}`. Please ensure that the function `output-#{$output-style}` and that the output style `#{$output-style}` are both available before trying to use them.";
+  }
+}
+
+@mixin grid-span-build($property, $value) {
+  @if type-of($value) != 'map' {
+    #{$property}: $value;
+  }
+  @else {
+    @each $prefix, $val in $value {
+      #{$property}: $val;
+    }
+  }
+}
+
+@mixin grid-span-build-exclude($properties, $delta, $exclude: false) {
+  @each $property, $value in $properties {
+    @if $exclude {
+      @if not index($delta, $property) {
+        @include grid-span-build($property, $value);
+      }
+    }
+    @else {
+      @include grid-span-build($property, $value);
+    }
   }
 }
