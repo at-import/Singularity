@@ -1,17 +1,23 @@
 # Singularity Changelog
 
+## v1.2.0.rc.4
+#### January 31, 2014
+
+* **Fix** Years in the Changelog were 2013, but was actually done in 2014
+* **Fix** Breakpoint dependency should be >= 2.4.0 and < 3.0.0, which is accomplished with `~>2.4`
+
 ## v1.2.0.rc.3
-#### January 17, 2013
+#### January 17, 2014
 
 * **Change** Better warning error for `sgs-set` so settings can contain dashes as long as words are set with spaces. Added errors for underscores as well.
 
 ## v1.2.0.rc.2
-#### January 17, 2013
+#### January 17, 2014
 
 * **New** **Change** Output functions can now set the value of a property to a map to have multiple properties printed with different values. The primary two use cases for this is to provide fallbacks for the same property or to provide a way to have experimental values for properties. The map should have a descriptive key (for experimental properties, the prefix plus `standard` for the standard property, or for fallbacks a `fallback` and `standard` key) and the value should be the value to be printed.
 
 ## v1.2.0.rc.1
-#### January 12, 2013
+#### January 12, 2014
 
 * **New** Sass 3.3.0 and Compass 1.0.0 compatibility
 	* Sass 3.3.0 minimum required version
