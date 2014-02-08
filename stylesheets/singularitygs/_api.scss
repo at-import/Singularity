@@ -45,6 +45,10 @@
     'options': $options
   );
 
+  @if sgs-get('debug') != false {
+    -sgs-span-settings: inspect($Span-Map);
+  }
+
 
   @if function-exists('output-#{$output-style}') {
     $Left: ();
