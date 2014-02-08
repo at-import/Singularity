@@ -13,6 +13,7 @@
 }
 
 .thumbnail:nth-of-type(5n + 1) {
+  -sgs-span-settings: ("span": 1, "location": 1, "grid": 5, "gutter": 1, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 10%;
   float: left;
   margin-right: -100%;
@@ -21,6 +22,7 @@
   clear: both;
 }
 .thumbnail:nth-of-type(5n + 2) {
+  -sgs-span-settings: ("span": 1, "location": 2, "grid": 5, "gutter": 1, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 10%;
   float: left;
   margin-right: -100%;
@@ -28,6 +30,7 @@
   clear: none;
 }
 .thumbnail:nth-of-type(5n + 3) {
+  -sgs-span-settings: ("span": 1, "location": 3, "grid": 5, "gutter": 1, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 10%;
   float: left;
   margin-right: -100%;
@@ -35,6 +38,7 @@
   clear: none;
 }
 .thumbnail:nth-of-type(5n + 4) {
+  -sgs-span-settings: ("span": 1, "location": 4, "grid": 5, "gutter": 1, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 10%;
   float: left;
   margin-right: -100%;
@@ -42,6 +46,7 @@
   clear: none;
 }
 .thumbnail:nth-of-type(5n + 5) {
+  -sgs-span-settings: ("span": 1, "location": 5, "grid": 5, "gutter": 1, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 10%;
   float: right;
   margin-left: 0;

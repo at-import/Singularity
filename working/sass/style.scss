@@ -22,6 +22,7 @@
 @include add-grid(5);
 @include add-gutter(1);
 @include add-gutter-style('split');
+@include sgs-change('debug', true);
 
 .thumbnail {
   @for $i from 1 through 5 {
