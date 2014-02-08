@@ -9,7 +9,10 @@ $Singularity-Settings: (
   'direction': 'ltr',
   'mobile first': true,
   'include border box': false,
-  'include clearfix': false
+  'include clearfix': false,
+  'background grid color': chocolate,
+  'asymmetric output': 'isolation',
+  'debug': false
 );
 
 //////////////////////////////

@@ -32,14 +32,6 @@
 //
 // Note: Sub-pixel rounding can lead to several pixels of variation between browsers.
 
-
-// -----------------------------------------------
-
-// -----------------------------------------------
-// Grid Overlay
-$background-grid-color:   Chocolate     !default;
-$show-grid-backgrounds:   true          !default;
-
 // -----------------------------------------------
 // Grid Background
 
@@ -47,10 +39,12 @@ $show-grid-backgrounds:   true          !default;
   $columns: null,
   $gutter: null,
   $gutter-style: null,
-  $color: $background-grid-color
+  $color: null
 ) {
 
-  @if $show-grid-backgrounds {
+  $color: if($color != null, $color, sgs-get('background grid color'));
+
+  @if sgs-get('debug') != false {
     $columns: if($columns != null, $columns, sgs-get('grids'));
     $gutter: if($gutter != null, $gutter, sgs-get('gutters'));
     $gutter-style: if($gutter-style != null, $gutter-style, sgs-get('gutter styles'));
