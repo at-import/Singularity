@@ -114,3 +114,22 @@
   $Options: if(length($Options) > 0, $Options, null);
   @include grid-span($Span, $Location, $grid, $gutter, 'isolation', $gutter-style, $Options);
 }
+
+//////////////////////////////
+// Happy Syntax of Asymmetric Grids
+//
+// Makes working with asymmetric grids easier!
+//////////////////////////////
+@mixin asymmetric-span($Location, $Span: false, $grid: false, $gutter: false, $gutter-style: false, $from: false, $output-style: false) {
+
+  $Span: if($Span != false, $Span, 1);
+  $output-style: if($output-style != false, $output-style, sgs-get('asymmetric output'));
+
+  $Options: ();
+  @if $from {
+    $Options: map-merge($Options, ('from': $from));
+  }
+  $Options: if(length($Options) > 0, $Options, null);
+
+  @include grid-span($Span, $Location, $grid, $gutter, $output-style, $gutter-style, $Options);
+}
