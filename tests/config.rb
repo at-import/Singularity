@@ -1,7 +1,5 @@
 # Require any additional compass plugins here.]
 require 'breakpoint'
-require 'sassy-maps'
-require 'bourbon-compass'
 
 # File system locations
 sass_dir              = 'tests'
