@@ -2,7 +2,6 @@
 // Find width, in percentages, of the column span
 //////////////////////////////
 @function column-span($span, $location, $grid: null, $gutter: null, $gutter-style: null) {
-
   // Find the grid and gutters
   $grid: find-grid($grid);
   $gutter: find-gutter($gutter);
@@ -36,8 +35,10 @@
     }
     @else {
       $total: $location + $span - 1;
-      @for $i from $location through $total {
-        $span-and-gutters: $span-and-gutters + nth($grid, $i) + $gutter;
+      @if $total != 0 {
+        @for $i from $location through $total {
+          $span-and-gutters: $span-and-gutters + nth($grid, $i) + $gutter;
+        }
       }
     }
     $span-and-gutters: $span-and-gutters - $gutter;
