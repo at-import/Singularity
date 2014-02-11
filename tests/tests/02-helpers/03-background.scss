@@ -4,6 +4,8 @@ $add-grid: 3, 5 at 500px, 1 3 5 at 700px;
 $add-gutter: .25, .35 at 450px, .55 at 650px;
 $add-gutter-style: 'split', 'fixed' at 400px, 'opposite fixed' at 600px;
 
+@include sgs-change('debug', true);
+
 @each $grid in $add-grid {
   @include add-grid($grid);
 }
