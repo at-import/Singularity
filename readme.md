@@ -1,4 +1,4 @@
-## Singularity development is now offically stopped as it is rolled into [Susy Next](http://oddbird.net/2013/01/29/susy-next-alpha-1/).
+## The current active branch of Singularity is [1.x.x](https://github.com/Team-Sass/Singularity/tree/1.x.x)
 
 # Singularity.gs
 
