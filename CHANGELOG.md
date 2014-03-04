@@ -3,7 +3,13 @@
 ## v1.2.0.rc.6
 #### February 11, 2014
 
-* **Fix** Sass 3.3.0.rc.3 updated how some core functions return; updated for that.
+* **Fix** Sass 3.3.0.rc.3 updated how some core functions work; updates for that.
+* **New** Added an `asymmetric-span` mixin for the common use case of only needing to change location in an asymmetric span.
+* **New** Global setting `'asymetric output'` (defaults to `'isolation'`)
+* **Change** Moved Background Grid settings to global settings.
+  * `$background-grid-color` is now `'background grid color'` (defaults to `'chocolate'`)
+  * `$show-grid-background` is now `'debug'` (defaults to `false`)
+* **New** If setting `'debug'` is set to `true`, full settings map passed to output function will be output to the `-sgs-span-settings` property. Inspired by [Susy Issue 293](https://github.com/ericam/susy/issues/293)
 
 ## v1.2.0.rc.4
 #### January 31, 2014
