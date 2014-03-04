@@ -1,5 +1,10 @@
 # Singularity Changelog
 
+## v1.2.0.rc.6
+#### February 11, 2014
+
+* **Fix** Sass 3.3.0.rc.3 updated how some core functions return; updated for that.
+
 ## v1.2.0.rc.4
 #### January 31, 2014
 
