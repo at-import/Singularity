@@ -1,6 +1,5 @@
-require 'breakpoint'
-
 if (defined? Compass)
+  require 'breakpoint'
   Compass::Frameworks.register(
     "singularitygs",
     :path => "#{File.dirname(__FILE__)}/.."
