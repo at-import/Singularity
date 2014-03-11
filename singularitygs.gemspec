@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   # Project Description
   s.description = "Advanced responsive grid system for Sass and Compass"
-  s.summary = "Singularity is a fluid grid system that can generate uniform columns as well as asymmetric and compound grids. It is designed to be extensable, adding additional outputs or grid generators are easy, and the core syntax is simple to build upon for custom input syntaxes."
+  s.summary = "Singularity is a fluid grid system that can generate uniform columns as well as asymmetric and compound grids. It is designed to be extensible, adding additional outputs or grid generators are easy, and the core syntax is simple to build upon for custom input syntaxes."
 
   # Files to Include
   s.files = Dir.glob("lib/*.*")
