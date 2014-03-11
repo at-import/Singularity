@@ -217,20 +217,10 @@
 
     @if $bkpt != -1px {
       @include breakpoint($bkpt) {
-        @if mixin-exists(background-image) and function-exists(linear-gradient) {
-          @include background-image(
-            linear-gradient($Direction, $Gradient)
-          );
-        }
         background-image: linear-gradient(to opposite-direction($Direction), $Gradient);
       }
     }
     @else {
-      @if mixin-exists(background-image) and function-exists(linear-gradient) {
-        @include background-image(
-            linear-gradient($Direction, $Gradient)
-        );
-      }
       background-image: linear-gradient(to opposite-direction($Direction), $Gradient);
     }
   }
