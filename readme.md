@@ -4,9 +4,7 @@
 
 Singularity is a next generation grid framework built from the ground up to be responsive. What makes Singularity different? Well, a lot of things. Singularity is based on internal ratios instead of context based which allows for better gutter consistency across breakpoints. Ratio based math also allows for non-uniform grids in *any* unit you want to use.
 
-## If you are working with Singularity 1.2.0, please read the [Changelog](https://github.com/Team-Sass/Singularity/blob/1.x.x/CHANGELOG.md) for important changes made to Singularity!
-
-Once we have a full 1.2.0 release, documentation and walkthrough video will be updated accordingly.
+## If you are working with Singularity 1.2.0, please read the [Changelog](https://github.com/Team-Sass/Singularity/blob/1.x.x/CHANGELOG.md) for important changes made to Singularity! The documentation will be updated soon!
 
 ## Full documentation is available on the [Singularity Wiki](https://github.com/Team-Sass/Singularity/wiki)
 
