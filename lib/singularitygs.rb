@@ -7,6 +7,6 @@ if (defined? Compass)
 end
 
 module SingularityGS
-  VERSION = "1.2.0"
-  DATE = "2014-03-11"
+  VERSION = "1.2.1"
+  DATE = "2014-05-03"
 end
