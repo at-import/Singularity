@@ -217,11 +217,11 @@
 
     @if $bkpt != -1px {
       @include breakpoint($bkpt) {
-        background-image: linear-gradient(to opposite-direction($Direction), $Gradient);
+        background-image: unquote('linear-gradient(to #{opposite-direction($Direction)}, #{$Gradient})');
       }
     }
     @else {
-      background-image: linear-gradient(to opposite-direction($Direction), $Gradient);
+      background-image: unquote('linear-gradient(to #{opposite-direction($Direction)}, #{$Gradient})');
     }
   }
 }
