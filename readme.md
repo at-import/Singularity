@@ -30,6 +30,7 @@ Having been designed to be extensible, the ability to create plugins for Singula
 
 * [SensesLab](http://www.senseslab.com/)
 * The Verge [features](http://www.theverge.com/label/feature) and [reviews](http://www.theverge.com/reviews)
+* [Minerva Foods](http://minervafoods.com)
 
 ## Licence
 
