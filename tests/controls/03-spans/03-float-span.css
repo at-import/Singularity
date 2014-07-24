@@ -112,7 +112,7 @@
     float: left;
     padding-right: 1em;
     _float-span-end: "@include float-span(1, 4)";
-    width: 31.25%;
+    width: 43.75%;
     clear: right;
     float: right;
     padding-right: 0;
