@@ -23,7 +23,7 @@
     $Location: 1;
   }
   @else if $End-Row {
-    $Location: column-count($Grid) - $Span;
+    $Location: column-count($Grid) - $Span + 1;
   }
 
   $Width: column-span($Span, $Location, $Grid, $Gutter, $Style);
