@@ -8,7 +8,7 @@ Singularity is a next generation grid framework built from the ground up to be r
 
 * For help with Singularity, please ask a question on [Stack Overflow](http://stackoverflow.com/questions/ask) tagged with `singularitygs`.
 * To file an issue with Singularity, be it a feature request or a bug report, please use our [Issue Queue](https://github.com/Team-Sass/Singularity/issues).
-* If you are in IRC, the maintainers and many fellow users tend to hang out in the #sass and #compass rooms on irc.freenode.net. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
+* If you are in IRC, the maintainers and many fellow users tend to hang out in the `#sass` and `#compass` rooms on `irc.freenode.net`. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
 
 ## Singularity Quickstart
 
