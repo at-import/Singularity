@@ -1,9 +1,13 @@
 # Singularity Changelog
 
 ## v1.3.0
-#### August 11, 2014
 * **New** Sass 3.4 support
 * **New** `layout-at` mixin for defining a layout override and writing a media query at the same time
+* **New** `sgs-reset()` mixin and layout now allow for comma-separated list of settings to reset
+* **Change** Deprecation warning is now deprecated as Sass 3.4 will ensure this is no longer an issue
+* **Fix** Grid Visualization now doesn't explode with fixed width gutters
+* **New** Quickstart in the README
+* **Fix** Quotes in `isolation-span` clear now unquote correctly
 
 ## v1.2.0.rc.6
 #### February 11, 2014
