@@ -1,6 +1,7 @@
 # Singularity Changelog
 
 ## v1.3.0
+#### August 11, 2014
 * **New** Sass 3.4 support
 * **New** `layout-at` mixin for defining a layout override and writing a media query at the same time
 * **New** `sgs-reset()` mixin and layout now allow for comma-separated list of settings to reset
@@ -9,6 +10,7 @@
 * **New** Quickstart in the README
 * **Fix** Quotes in `isolation-span` clear now unquote correctly
 * **Removed** Singularity demo installs and box sizing polyfill as they are available in other, more useful means
+* **Fix** `SASS_PATH` issues to make Singularity usable w/o Compass and as a Ruby gem
 
 ## v1.2.0.rc.6
 #### February 11, 2014
