@@ -8,6 +8,7 @@
 * **Fix** Grid Visualization now doesn't explode with fixed width gutters
 * **New** Quickstart in the README
 * **Fix** Quotes in `isolation-span` clear now unquote correctly
+* **Removed** Singularity demo installs and box sizing polyfill as they are available in other, more useful means
 
 ## v1.2.0.rc.6
 #### February 11, 2014
