@@ -105,7 +105,7 @@
 @mixin isolation-span($Span, $Location, $clear: false, $grid: false, $gutter: false, $gutter-style: false, $from: false) {
   $Options: ();
   @if $clear {
-    $Options: map-merge($Options, ('clear': $clear));
+    $Options: map-merge($Options, ('clear': unquote($clear)));
   }
   @if $from {
     $Options: map-merge($Options, ('from': $from));
