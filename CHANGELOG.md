@@ -1,5 +1,10 @@
 # Singularity Changelog
 
+## v1.3.0
+#### August 11, 2014
+* **New** Sass 3.4 support
+* **New** `layout-at` mixin for defining a layout override and writing a media query at the same time
+
 ## v1.2.0.rc.6
 #### February 11, 2014
 
