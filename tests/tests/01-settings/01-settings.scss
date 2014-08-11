@@ -29,4 +29,21 @@
   @include sgs-reset('direction');
   _exists: sgs-has('direction');
   @include show-settings;
+
+  &--multiple {
+    @include show-settings;
+
+    _test: "@include add-grid('2 4 6')";
+    @include add-grid('2 4 6');
+    _test: "@include add-gutter('.25')";
+    @include add-gutter('.25');
+    _test: "@include sgs-change('direction', 'rtl')";
+    @include sgs-change('direction', 'rtl');
+
+    @include show-settings;
+
+    _test: "@include sgs-reset('grids', 'gutters')";
+    @include sgs-reset('grids', 'gutters');
+    @include show-settings;
+  }
 }

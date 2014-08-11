@@ -82,17 +82,17 @@ $DEPRECATE:singularity-deprecation-warning();
 //////////////////////////////
 // Remove Setting
 //////////////////////////////
-@function sgs-reset($setting) {
-  $Return: ();
-
-  @each $Key, $Value in $singularity {
-    $Return: if($setting == $Key, $Return, map-merge($Return, ($Key: $Value)));
+@function sgs-reset($settings...) {
+  @if length($settings) == 1 {
+    $settings: nth($settings, 1);
   }
 
-  $singularity: $Return !global;
+  @each $setting in $settings {
+    $singularity: map-remove($singularity, $setting) !global;
+  }
   @return true;
 }
 
-@mixin sgs-reset($setting) {
-  $sgs-reset: sgs-reset($setting);
+@mixin sgs-reset($settings...) {
+  $sgs-reset: sgs-reset($settings);
 }
