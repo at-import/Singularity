@@ -174,6 +174,9 @@
     $Gradient: ();
 
     $Gutter-Width: gutter-span($Gutter, $Grid, $Style);
+    @if unit($Gutter-Width) != '%' and unit($Gutter-Width) != '' {
+      $Gutter-Width: 0%;
+    }
 
     @if $Style == 'fixed' {
       $Gutter-Width: 0%;
@@ -191,7 +194,7 @@
       }
 
       $Loop-Color: $Column-Color;
-      @if (index($Style, 'fixed') or $Gutter == 0) and ($i % 2 == 0 ) {
+      @if (index($Style, 'fixed') or $Gutter-Width == 0%) and ($i % 2 == 0 ) {
         $Loop-Color: $Inverse-Column-Color;
       }
 

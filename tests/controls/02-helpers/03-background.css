@@ -1,6 +1,6 @@
 .settings {
   _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "debug": false)';
-  _user-settings: '("debug": true, "grids": ((-1px: 3, 500px: 5, 700px: 1 3 5)), "gutters": ((-1px: 0.25, 450px: 0.35, 650px: 0.55)), "gutter styles": ((-1px: "split", 400px: "fixed", 600px: "opposite fixed")))';
+  _user-settings: '("debug": true, "grids": ((-1px: 3, 500px: 5, 700px: 1 3 5)), "gutters": ((-1px: 0.25, 450px: 0.35, 650px: 1em)), "gutter styles": ((-1px: "split", 400px: "fixed", 600px: "opposite fixed")))';
 }
 
 .background {
@@ -28,11 +28,11 @@
 }
 @media (min-width: 650px) {
   .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 13.88889%, #dd8e56 13.88889%, #dd8e56 21.52778%, chocolate 21.52778%, chocolate 35.41667%, #dd8e56 35.41667%, #dd8e56 43.05556%, chocolate 43.05556%, chocolate 56.94444%, #dd8e56 56.94444%, #dd8e56 64.58333%, chocolate 64.58333%, chocolate 78.47222%, #dd8e56 78.47222%, #dd8e56 86.11111%, chocolate 86.11111%, chocolate);
+    background-image: linear-gradient(to right, chocolate 0%, chocolate 20%, #dd8e56 20%, #dd8e56 20%, #b25919 20%, #b25919 40%, #dd8e56 40%, #dd8e56 40%, chocolate 40%, chocolate 60%, #dd8e56 60%, #dd8e56 60%, #b25919 60%, #b25919 80%, #dd8e56 80%, #dd8e56 80%, chocolate 80%, chocolate);
   }
 }
 @media (min-width: 700px) {
   .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 9.90099%, #dd8e56 9.90099%, #dd8e56 15.34653%, chocolate 15.34653%, chocolate 45.0495%, #dd8e56 45.0495%, #dd8e56 50.49505%, chocolate 50.49505%, chocolate);
+    background-image: linear-gradient(to right, chocolate 0%, chocolate 11.11111%, #dd8e56 11.11111%, #dd8e56 11.11111%, #b25919 11.11111%, #b25919 44.44444%, #dd8e56 44.44444%, #dd8e56 44.44444%, chocolate 44.44444%, chocolate);
   }
 }
