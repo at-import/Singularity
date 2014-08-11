@@ -1,0 +1,91 @@
+@import "../shared";
+
+$add-grid: 3, 5 at 500px, 1 3 5 at 700px;
+$add-gutter: .25, .35 at 500px, .55 at 700px;
+$add-gutter-style: 'split', 'fixed' at 500px, 'opposite fixed' at 700px;
+
+$bkpts: 499px, 500px, 699px, 700px;
+
+$grid-override: 2 4 6;
+$gutter-override: .4;
+$gutter-style-override: 'split fixed';
+
+@each $grid in $add-grid {
+  @include add-grid($grid);
+}
+
+@each $gutter in $add-gutter {
+  @include add-gutter($gutter);
+}
+
+@each $gutter-style in $add-gutter-style {
+  @include add-gutter-style($gutter-style);
+}
+
+// @mixin layout-grid($override) {
+//   _find: "#{call('find-grid')}";
+//   @include layout($grid: $override) {
+//     _find-layout: "#{call('find-grid')}";
+//   }
+// }
+
+@mixin layout-grid-no-map($override) {
+  _map: 'false';
+  _find: "#{call('find-grid')}";
+  @each $bkpt in $bkpts {
+    @include layout-at($override, $bkpt) {
+      _map: 'false';
+      _find-layout: "#{call('find-grid')}";
+    }
+  }
+}
+
+@mixin layout-grid-map($override) {
+  _map: 'true';
+  _find: "#{call('find-grid')}";
+  @each $bkpt in $bkpts {
+    @include layout-at(('grid': $override), $bkpt) {
+      _map: 'true';
+      _find-layout: "#{call('find-grid')}";
+    }
+  }
+}
+
+
+@mixin layout-gutter($override) {
+  _find: "#{call('find-gutter')}";
+  @each $bkpt in $bkpts {
+    @include layout-at(('gutter': $override), $bkpt) {
+      _find-layout: "#{call('find-gutter')}";
+    }
+  }
+}
+
+@mixin layout-gutter-style($override) {
+  _find: "#{call('find-gutter-style')}";
+  @each $bkpt in $bkpts {
+    @include layout-at(('gutter style': $override), $bkpt) {
+      _find-layout: "#{call('find-gutter-style')}";
+    }
+  }
+}
+
+.settings {
+  @include show-settings;
+  _grid-override: $grid-override;
+  _gutter-override: $gutter-override;
+  _gutter-style-override: $gutter-style-override;
+}
+
+.find-grid {
+  @include layout-grid-no-map($grid-override);
+  @include layout-grid-map($grid-override);
+}
+
+.find-gutter {
+  @include layout-gutter($gutter-override);
+}
+
+.find-gutter-style {
+  @include layout-gutter-style($gutter-style-override);
+}

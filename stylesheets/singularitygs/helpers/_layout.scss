@@ -55,3 +55,45 @@
   @include sgs-change('output', $layout-private-output-holder);
   @include sgs-change('gutter styles', $layout-private-gutter-style-holder);
 }
+
+//////////////////////////////
+// Layout At
+// Wrapper mixin for a combined Breakpoint/Layout call
+//////////////////////////////
+@mixin layout-at($layout, $breakpoint) {
+  @include breakpoint($breakpoint) {
+    // If a single value is passed in, assume it's a grid
+    @if type-of($layout) != map {
+      @include layout($layout) {
+        @content;
+      }
+    }
+    // If it is a map, we've got key/values to work with
+    @else {
+      $grid: false;
+      $gutter: false;
+      $output-style: false;
+      $gutter-style: false;
+
+      @if map-has-key($layout, 'grid') {
+        $grid: map-get($layout, 'grid');
+      }
+
+      @if map-has-key($layout, 'gutter') {
+        $gutter: map-get($layout, 'gutter');
+      }
+
+      @if map-has-key($layout, 'output style') {
+        $output-style: map-get($layout, 'output style');
+      }
+
+      @if map-has-key($layout, 'gutter style') {
+        $gutter-style: map-get($layout, 'gutter style');
+      }
+
+      @include layout($grid, $gutter, $output-style, $gutter-style) {
+        @content;
+      }
+    }
+  }
+}
