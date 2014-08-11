@@ -4,6 +4,12 @@
 
 Singularity is a next generation grid framework built from the ground up to be responsive. What makes Singularity different? Well, a lot of things. Singularity is based on internal ratios instead of context based which allows for better gutter consistency across breakpoints. Ratio based math also allows for non-uniform grids in *any* unit you want to use.
 
+## Getting Help with Singularity
+
+* For help with Singularity, please ask a question on [Stack Overflow](http://stackoverflow.com/questions/ask) tagged with "singularitygs".
+* To file an issue with Singularity, be it a feature request or a bug report, please use our [Issue Queue](https://github.com/Team-Sass/Singularity/issues).
+* If you are in IRC, the maintainers and many fellow users tend to hang out in the #sass and #compass rooms on irc.freenode.net. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
+
 ## Singularity Quickstart
 
 **Full documentation is available on the [Singularity Wiki](https://github.com/Team-Sass/Singularity/wiki)**
@@ -107,12 +113,6 @@ The second way to provide responsive grids is with either of the use of the [Con
     }
 }
 ```
-
-## Getting Help with Singularity
-
-* For help with Singularity, please ask a question on [Stack Overflow](http://stackoverflow.com/questions/ask) tagged with "singularitygs".
-* To file an issue with Singularity, be it a feature request or a bug report, please use our [Issue Queue](https://github.com/Team-Sass/Singularity/issues).
-* If you are in IRC, the maintainers and many fellow users tend to hang out in the #sass and #compass rooms on irc.freenode.net. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
 
 ## Contributing to Singularity
 
