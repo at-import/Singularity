@@ -18,9 +18,9 @@ Singularity is a next generation grid framework built from the ground up to be r
 
 ### Installation
 
-* Singularity should be installed and run through [Bundler](https://github.com/Team-Sass/Singularity/wiki/Installation#installation) if running with Compass, although it can be installed through Bower
-
-* Singularity requires a Sass compiler with full feature parity with the Ruby Sass 3.3 implementation to work
+* Singularity should be [installed and compiled](https://github.com/Team-Sass/Singularity/wiki/Installation#installation) through [Bundler](http://bundler.io/) if running with Compass
+* Alternatively, Singularity can be installed with Bower (`bower install singularity --save`)
+* Singularity requires a Sass compiler with full feature parity with the Ruby Sass 3.3 implementation in order to work
 
 ### Setting Up a Basic Grid
 
