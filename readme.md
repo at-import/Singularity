@@ -124,14 +124,6 @@ Having been designed to be extensible, the ability to create plugins for Singula
 
 * [Singularity Extras](https://github.com/Team-Sass/Singularity-Extras)
 
-
-
-## Websites using Singularity
-
-* [SensesLab](http://www.senseslab.com/)
-* The Verge [features](http://www.theverge.com/label/feature) and [reviews](http://www.theverge.com/reviews)
-* [Minerva Foods](http://minervafoods.com)
-
 ## Licence
 
 Dual licence MIT/GPL-3.0
