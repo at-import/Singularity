@@ -12,8 +12,8 @@
   _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "debug": false)';
   _user-settings: "()";
   _grid: "@include add-grid(3)";
-  _grid: '@include add-grid(5 at 500px "min-resolution" 1.5dppx)';
-  _grid: '@include add-grid(1 3 5 at 700px, "no-query" ".no-mq")';
+  _grid: "@include add-grid(5 at 500px min-resolution 1.5dppx)";
+  _grid: "@include add-grid(1 3 5 at 700px, no-query .no-mq)";
   _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "debug": false)';
   _user-settings: '("grids": ((-1px: 3, 500px: 5, 700px: 1 3 5)))';
 }
