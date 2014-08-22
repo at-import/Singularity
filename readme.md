@@ -4,6 +4,12 @@
 
 Singularity is a next generation grid framework built from the ground up to be responsive. What makes Singularity different? Well, a lot of things. Singularity is based on internal ratios instead of context based which allows for better gutter consistency across breakpoints. Ratio based math also allows for non-uniform grids in *any* unit you want to use.
 
+## Getting Help with Singularity
+
+* For help with Singularity, please ask a question on [Stack Overflow](http://stackoverflow.com/questions/ask) tagged with `singularitygs`.
+* To file an issue with Singularity, be it a feature request or a bug report, please use our [Issue Queue](https://github.com/Team-Sass/Singularity/issues).
+* If you are in IRC, the maintainers and many fellow users tend to hang out in the `#sass` and `#compass` rooms on `irc.freenode.net`. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
+
 ## Singularity Quickstart
 
 **Full documentation is available on the [Singularity Wiki](https://github.com/Team-Sass/Singularity/wiki)**
@@ -12,9 +18,9 @@ Singularity is a next generation grid framework built from the ground up to be r
 
 ### Installation
 
-* Singularity should be installed and run through [Bundler](https://github.com/Team-Sass/Singularity/wiki/Installation#installation) if running with Compass, although it can be installed through Bower
-
-* Singularity requires a Sass compiler with full feature parity with the Ruby Sass 3.3 implementation to work
+* Singularity should be [installed and compiled](https://github.com/Team-Sass/Singularity/wiki/Installation#installation) through [Bundler](http://bundler.io/) if compiling with Ruby
+* Alternatively, Singularity can be installed with Bower (`bower install singularity --save`)
+* Singularity requires a Sass compiler with full feature parity with the Ruby Sass 3.3 implementation in order to work
 
 ### Setting Up a Basic Grid
 
@@ -107,12 +113,6 @@ The second way to provide responsive grids is with either of the use of the [Con
     }
 }
 ```
-
-## Getting Help with Singularity
-
-* For help with Singularity, please ask a question on [Stack Overflow](http://stackoverflow.com/questions/ask) tagged with "singularitygs".
-* To file an issue with Singularity, be it a feature request or a bug report, please use our [Issue Queue](https://github.com/Team-Sass/Singularity/issues).
-* If you are in IRC, the maintainers and many fellow users tend to hang out in the #sass and #compass rooms on irc.freenode.net. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
 
 ## Contributing to Singularity
 
