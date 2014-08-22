@@ -2,6 +2,25 @@
 // Wrapper mixin for overriding the global contexts as a block
 //////////////////////////////
 @mixin layout($grid: false, $gutter: false, $output-style: false, $gutter-style: false) {
+
+  @if type-of($grid) == 'map' {
+    @if map-has-key($grid, 'grid') {
+      $grid: map-get($layout, 'grid');
+    }
+
+    @if map-has-key($grid, 'gutter') {
+      $gutter: map-get($layout, 'gutter');
+    }
+
+    @if map-has-key($grid, 'output style') {
+      $output-style: map-get($layout, 'output style');
+    }
+
+    @if map-has-key($grid, 'gutter style') {
+      $gutter-style: map-get($layout, 'gutter style');
+    }
+  }
+
   // Private holder for current global context
   $layout-private-grid-holder: sgs-get('grids');
   $layout-private-gutter-holder: sgs-get('gutters');
