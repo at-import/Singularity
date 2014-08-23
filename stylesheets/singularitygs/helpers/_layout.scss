@@ -4,19 +4,20 @@
 @mixin layout($grid: false, $gutter: false, $output-style: false, $gutter-style: false) {
 
   @if type-of($grid) == 'map' {
-    @if map-has-key($grid, 'grid') {
+    $layout: $grid;
+    @if map-has-key($layout, 'grid') {
       $grid: map-get($layout, 'grid');
     }
 
-    @if map-has-key($grid, 'gutter') {
+    @if map-has-key($layout, 'gutter') {
       $gutter: map-get($layout, 'gutter');
     }
 
-    @if map-has-key($grid, 'output style') {
+    @if map-has-key($layout, 'output style') {
       $output-style: map-get($layout, 'output style');
     }
 
-    @if map-has-key($grid, 'gutter style') {
+    @if map-has-key($layout, 'gutter style') {
       $gutter-style: map-get($layout, 'gutter style');
     }
   }
