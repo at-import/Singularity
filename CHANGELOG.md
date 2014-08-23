@@ -1,7 +1,9 @@
 # Singularity Changelog
 
-#### August 21, 2014
+## v1.4.0
+### August 23, 2014
 * **New** Allow for a map of options to be passed to the `layout` mixin in the same way that you can for `layout-at`
+* **New** Allow `output` keyword in `layout-at` mixin map
 
 ## v1.3.0
 #### August 11, 2014
