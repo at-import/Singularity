@@ -16,6 +16,9 @@
     @if map-has-key($layout, 'output style') {
       $output-style: map-get($layout, 'output style');
     }
+    @if map-has-key($layout, 'output') {
+      $output-style: map-get($layout, 'output');
+    }
 
     @if map-has-key($layout, 'gutter style') {
       $gutter-style: map-get($layout, 'gutter style');
@@ -105,6 +108,9 @@
 
       @if map-has-key($layout, 'output style') {
         $output-style: map-get($layout, 'output style');
+      }
+      @if map-has-key($layout, 'output') {
+        $output-style: map-get($layout, 'output');
       }
 
       @if map-has-key($layout, 'gutter style') {
