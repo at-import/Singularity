@@ -88,7 +88,7 @@ To use, simply call `add-grid` multiple times, each time telling it when you wou
 @include add-gutter(.25 at 900px);
 ```
 
-The second way to provide responsive grids is with either of the use of the [Context Override](https://github.com/Team-Sass/Singularity/wiki/Spanning-The-Grid#group-context-overrides) mixins. Singularity provides two, `layout` which will override context **Global Grid Context** for any content nested underneath it, and `layout-at`, which will do the same but allows you to define and use a media query at the same time. `layout-at` will accept any Breakpoint media query definition. Both of these options provide more fine-grain control over your **Global Grid Context** overrides as compared to the **Responsive Grid Context** if you need that.
+The second way to provide responsive grids is with either of the use of the [Context Override](https://github.com/Team-Sass/Singularity/wiki/Spanning-The-Grid#group-context-overrides) mixins. Singularity provides two, `layout` which will override context **Global Grid Context** for any content nested underneath it, and `layout-at`, which will do the same but allows you to define and use a media query at the same time. `layout-at` will accept any Breakpoint media query definition. Both of these options provide more fine-grain control over your **Global Grid Context** overrides as compared to the **Responsive Grid Context**, if you need that.
 
 ```scss
 @include add-grid(12);
@@ -96,8 +96,19 @@ The second way to provide responsive grids is with either of the use of the [Con
 
 .foo {
   @include layout(1 3 5, .5) {
-    // Everything in here will use a `1 3 5` grid with `.5` gutter
+    // Everything in here will use a `1 3 5` grid with `.5` gutter.
+    // Arguments (in order): $grid, $gutter, $output-style, $gutter-style
   }
+
+  @include layout((
+    'grid': 1 3 5,
+    'gutter': .5
+  )) {
+    // Everything in here will use a `1 3 5` grid with `.5` gutter
+
+    // Also available: 'gutter style' and 'output'
+  }
+
 
   @include layout-at(2 4 6, 500px) {
     // Everything in here will be wrapped in a `min-width: 500px` media query
@@ -105,12 +116,14 @@ The second way to provide responsive grids is with either of the use of the [Con
   }
 
   @include layout-at((
-      'grid': 1 3 5,
-      'gutter': .5
-    ), 700px) {
-      // Everything in here will be wrapped in a `min-width: 700px` media query
-      //   and use a `1 3 5` grid with `.5` gutter
-    }
+    'grid': 1 3 5,
+    'gutter': .5
+  ), 700px) {
+    // Everything in here will be wrapped in a `min-width: 700px` media query
+    //   and use a `1 3 5` grid with `.5` gutter
+
+    // Also available: 'gutter style' and 'output'
+  }
 }
 ```
 
