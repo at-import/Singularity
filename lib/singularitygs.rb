@@ -12,6 +12,6 @@ else
 end
 
 module SingularityGS
-  VERSION = "1.3.0"
-  DATE = "2014-08-11"
+  VERSION = "1.4.0"
+  DATE = "2014-08-23"
 end
