@@ -1,5 +1,11 @@
 # Singularity Changelog
 
+## v1.5.0
+### January 17, 2015
+* **New** Moved [Calc Output Style](http://snugug.com/musings/bulletproof-combo-fixed-and-fluid-grids-css3-calc) from [Singularity Extras](https://github.com/at-import/singularity-extras) into Core
+* **New** Added `sgs-set()` mixin to mirror `sgs-change()` mixin (getters and setters FTW)
+* **New** `background-grid` mixin now throws a warning instead of a unit error if it's unable to generate a CSS Gradient for the given grid
+
 ## v1.4.0
 ### August 23, 2014
 * **New** Allow for a map of options to be passed to the `layout` mixin in the same way that you can for `layout-at`

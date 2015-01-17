@@ -1,0 +1,40 @@
+$basic-settings: true;
+$add-grid: 300px 1 3, 2 100px 1 5 200px at 500px, 1 3 5 7 at 700px;
+$add-gutter: 10px, 1em at 500px, 3% at 700px;
+@import "../shared";
+
+.calc-span {
+  $grid: find-grid();
+  $column-count: column-count($grid);
+
+  _grid: $grid;
+  _gutter: find-gutter();
+  _gutter-style: find-gutter-style();
+  _calc-span-start: "@include calc-span(1, 1)";
+  @include calc-span(1, 1);
+
+  _calc-span-end: "@include calc-span(1, #{$column-count})";
+  @include calc-span(1, $column-count);
+
+  _calc-span-multiple: "@include calc-span(2, 2)";
+  @include calc-span(2, 2);
+
+  @each $bkpt in $bkpts {
+    @include breakpoint($bkpt) {
+      $grid: find-grid();
+      $column-count: column-count($grid);
+
+      _grid: $grid;
+      _gutter: find-gutter();
+      _gutter-style: find-gutter-style();
+      _calc-span-start: "@include calc-span(1, 1)";
+      @include calc-span(1, 1);
+
+      _calc-span-end: "@include calc-span(1, #{$column-count})";
+      @include calc-span(1, $column-count);
+
+      _calc-span-multiple: "@include calc-span(2, 2)";
+      @include calc-span(2, 2);
+    }
+  }
+}

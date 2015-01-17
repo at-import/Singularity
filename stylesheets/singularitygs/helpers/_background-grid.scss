@@ -158,6 +158,7 @@
 
 @mixin background-build($columns, $gutters, $gutter-styles, $color) {
   $Background-Map: background-map($columns, $gutters, $gutter-styles);
+  $Display: true;
 
   $Column-Color: $color;
   $Inverse-Column-Color: mix(black, $color, 15%);
@@ -199,32 +200,54 @@
       }
 
       @if $i != $Grid-Count {
-        $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
-        $Counter-Width: $Counter-Width + $Loop-Width;
-        $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
-        $Counter-Width: $Counter-Width + $Gutter-Width;
+        @if unit($Counter-Width) == unit($Loop-Width) {
+          $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
+          $Counter-Width: $Counter-Width + $Loop-Width;
+          $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
+          $Counter-Width: $Counter-Width + $Gutter-Width;
+        }
+        @else {
+          $Display: false;
+        }
+
       }
       @else if $i == 1 {
-        $Gradient: append($Gradient, ($Loop-Color, $Loop-Color $Counter-Width, $Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
-        $Counter-Width: $Counter-Width + $Loop-Width + $Gutter-Width;
+        @if unit($Counter-Width) == unit($Loop-Width) {
+          $Gradient: append($Gradient, ($Loop-Color, $Loop-Color $Counter-Width, $Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
+          $Counter-Width: $Counter-Width + $Loop-Width + $Gutter-Width;
+        }
+        @else {
+          $Display: false;
+        }
+
       }
       @else if $i == $Grid-Count and index($Style, 'split') {
-        $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
-        $Counter-Width: $Counter-Width + $Loop-Width;
-        $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + ($Gutter-Width / 2))), 'comma');
+        @if unit($Counter-Width) == unit($Loop-Width) {
+          $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
+          $Counter-Width: $Counter-Width + $Loop-Width;
+          $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + ($Gutter-Width / 2))), 'comma');
+        }
+        @else {
+          $Display: false;
+        }
       }
       @else {
         $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color), 'comma');
       }
     }
 
-    @if $bkpt != -1px {
-      @include breakpoint($bkpt) {
+    @if $Display {
+      @if $bkpt != -1px {
+        @include breakpoint($bkpt) {
+          background-image: unquote('linear-gradient(to #{opposite-direction($Direction)}, #{$Gradient})');
+        }
+      }
+      @else {
         background-image: unquote('linear-gradient(to #{opposite-direction($Direction)}, #{$Gradient})');
       }
     }
     @else {
-      background-image: unquote('linear-gradient(to #{opposite-direction($Direction)}, #{$Gradient})');
+      @warn 'Cannot generate a CSS gradient for grid `#{$Grid}` with gutters `#{$Gutter}` and gutter style `#{$Style}`';
     }
   }
 }

@@ -1,0 +1,201 @@
+@function output-calc($Span-Map) {
+  // Set up Left/Right maps
+  $Return: ();
+
+  $Span: map-get($Span-Map, 'span');
+  $Location: map-get($Span-Map, 'location');
+
+  $Grid: map-get($Span-Map, 'grid');
+  $Gutter: map-get($Span-Map, 'gutter');
+  $Style: map-get($Span-Map, 'style');
+
+  @if unitless($Gutter) {
+    @error "Calc output style uses fixed gutters (gutters with units). Please define fixed gutters to use calc";
+    @return $Return;
+  }
+
+  @if type-of($Grid) == 'number' {
+    @error "Calc output style is designed to be used with asymmetric grids, especially with a mix of fixed and fluid columns. Please define an asymmetric grid or use another output style.";
+  }
+
+  $Start-Row: map-get($Span-Map, 'start row');
+  $End-Row: map-get($Span-Map, 'end row');
+
+  $Split-Gutter: map-get($Span-Map, 'split gutter');
+
+  $Direction: map-get($Span-Map, 'direction');
+  $Options: map-get($Span-Map, 'options');
+
+  $Dir: $Direction;
+  $Opp: opposite-direction($Dir);
+
+  $Width: '';
+  $Margin: null;
+  $Min-Width: '(';
+
+  $Fixed: ();
+  $Fluid: ();
+  $Fixed-Totals: ('px': 0, 'em': 0, '%': 0);
+  $Gutter-Totals: if(str-index($Style, 'split'), $Gutter * length($Grid), $Gutter * (length($Grid) - 1));
+  $Fluid-Totals: 0;
+  $Fluid-Fixed-Sum: '';
+  $Single-Fluid: '';
+
+  @for $i from 1 through length($Grid) {
+    $Item: nth($Grid, $i);
+    @if not unitless($Item) {
+      $Fixed: map-merge($Fixed, ($i: $Item));
+    }
+    @else {
+      $Fluid: map-merge($Fluid, ($i: $Item));
+    }
+  }
+
+  @each $k, $v in $Fixed {
+    $Unit: unit($v);
+    $Running: map-get($Fixed-Totals, $Unit) + $v;
+    $Fixed-Totals: map-merge($Fixed-Totals, ($Unit: $Running));
+  }
+
+  @each $k, $v in $Fluid {
+    $Fluid-Totals: $Fluid-Totals + $v;
+  }
+
+  @each $k, $v in $Fixed-Totals {
+
+    @if $v != 0 {
+      $Fluid-Fixed-Sum: '#{$Fluid-Fixed-Sum}#{$v} + ';
+    }
+  }
+
+  // Width of a single fluid item, for calc()
+  $Single-Fluid: '((100% - (#{$Fluid-Fixed-Sum}#{$Gutter-Totals})) / (#{$Fluid-Totals}))';
+
+  // Margin Calculation
+  @if not $Start-Row or not $End-Row {
+    @if $Split-Gutter {
+      $Margin: '#{$Gutter / 2} + ';
+    }
+
+    @for $i from 1 to $Location {
+      @if unitless(nth($Grid, $i)) {
+        $Margin: '#{$Margin}(#{$Single-Fluid} * #{nth($Grid, $i)} + #{$Gutter}) + ';
+      }
+      @else {
+        $Margin: '#{$Margin}(#{nth($Grid, $i)} + #{$Gutter}) + ';
+      }
+    }
+  }
+  @if $Margin != null {
+    $Margin: str-slice($Margin, 0, -4);
+  }
+
+
+  // Width Calculation
+  @if $Span == 1 {
+    @if map-has-key($Fixed, $Location) {
+      $Return: map-merge($Return, ('width': map-get($Fixed, $Location)));
+    }
+    @else if map-has-key($Fluid, $Location) {
+      $Math: '(#{$Single-Fluid}) * #{nth($Grid, $Location)}';
+      $Span-Map: ('width': ('webkit': -webkit-calc(#{unquote($Math)}), 'standard': calc(#{unquote($Math)})));
+      $Return: map-merge($Return, $Span-Map);
+    }
+  }
+  @else {
+    $Location-End: $Location + ($Span - 1);
+    $Fixed-Counter: 0;
+    @for $i from $Location through $Location-End {
+      @if unitless(nth($Grid, $i)) {
+        $Width: '#{$Width}(#{$Single-Fluid} * #{nth($Grid, $i)}';
+      }
+      @else {
+        $Fixed-Counter: $Fixed-Counter + 1;
+        $Min-Width: '#{$Min-Width}#{nth($Grid, $i)} + #{$Gutter} + ';
+        $Width: '#{$Width}(#{nth($Grid, $i)}';
+      }
+
+
+      @if $i != $Location-End {
+        $Width: '#{$Width} + #{$Gutter}) + ';
+      }
+      @else {
+        $Min-Width: str-slice($Min-Width, 0, -4);
+        @if $Fixed-Counter == 1 {
+          $Min-Width: '#{$Min-Width} - #{$Gutter}';
+        }
+        $Min-Width: '#{$Min-Width})';
+        $Width: '#{$Width})';
+      }
+    }
+
+    $Min-Map: ('min-width': ('webkit' : -webkit-calc(#{unquote($Min-Width)}), 'standard': calc(#{unquote($Min-Width)}) ));
+    $Span-Map: ('width': ('webkit': -webkit-calc(#{unquote($Width)}), 'standard': calc(#{unquote($Width)}) ) );
+
+    @if sgs-get('calc include min-width') {
+      $Return: map-merge($Return, $Min-Map);
+    }
+    $Return: map-merge($Return, $Span-Map);
+  }
+
+  // Build margins and Floats
+  @if ($End-Row) {
+    $Return: map-merge($Return, ('float': $Opp));
+    $Return: map-merge($Return, ('margin-#{$Dir}': 0));
+
+    @if $Split-Gutter {
+      $Return: map-merge($Return, ('margin-#{$Opp}': $Gutter / 2));
+    }
+    @else {
+      $Return: map-merge($Return, ('margin-#{$Opp}': 0));
+    }
+  }
+  @else {
+    $Return: map-merge($Return, ('float': $Dir));
+    $Return: map-merge($Return, ('margin-#{$Opp}': -100%));
+
+    @if $Start-Row {
+      @if $Split-Gutter {
+        $Return: map-merge($Return, ('margin-#{$Dir}': $Gutter / 2));
+      }
+      @else {
+        $Return: map-merge($Return, ('margin-#{$Dir}': 0));
+      }
+    }
+    @else {
+      $Margin-Map: ('margin-#{$Dir}': ('webkit': -webkit-calc(#{unquote($Margin)}), 'standard': calc(#{unquote($Margin)})));
+      $Return: map-merge($Return, $Margin-Map);
+    }
+  }
+
+  @return $Return;
+}
+
+
+
+//////////////////////////////
+// Happy Syntax for Calc
+//
+// Makes working with Calc easier, as it moves Clear to a 1st class citizen of the mixin, and automatically builds the verbose grid-span mixin call
+//////////////////////////////
+@mixin calc-span($Span, $Location, $clear: false, $grid: false, $gutter: false, $gutter-style: false, $from: false) {
+
+  @if $gutter != false and unitless($gutter) {
+    @warn "Calc output style uses fixed gutters (gutters with units). Please define fixed gutters to use calc";
+  }
+
+  @if $grid != false and type-of($grid) == 'number' {
+    @warn "Calc output style is designed to be used with asymmetric grids, especially with a mix of fixed and fluid columns. Please define an asymmetric grid.";
+  }
+
+  $Options: ();
+  @if $clear {
+    $Options: map-merge($Options, ('clear': $clear));
+  }
+  @if $from {
+    $Options: map-merge($Options, ('from': $from));
+  }
+
+  $Options: if(length($Options) > 0, $Options, null);
+  @include grid-span($Span, $Location, $grid, $gutter, 'calc', $gutter-style, $Options);
+}
