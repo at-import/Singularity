@@ -15,7 +15,7 @@
   }
 
   @if type-of($Grid) == 'number' {
-    @warn "Calc output style is designed to be used with asymmetric grids, especially with a mix of fixed and fluid columns. For best results, please define an asymmetric grid.";
+    @error "Calc output style is designed to be used with asymmetric grids, especially with a mix of fixed and fluid columns. Please define an asymmetric grid or use another output style.";
   }
 
   $Start-Row: map-get($Span-Map, 'start row');
