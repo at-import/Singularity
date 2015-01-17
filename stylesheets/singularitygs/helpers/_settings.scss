@@ -37,6 +37,10 @@
   $sgs-change: sgs-set($setting, $value);
 }
 
+@mixin sgs-set($setting, $value) {
+  @include sgs-change($setting, $value);
+}
+
 //////////////////////////////
 // Remove Setting
 //////////////////////////////
