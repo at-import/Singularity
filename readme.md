@@ -1,4 +1,4 @@
-# Singularity.gs [![Gem Version](https://badge.fury.io/rb/singularitygs.png)](http://badge.fury.io/rb/singularitygs) [![Build Status](https://travis-ci.org/at-import/Singularity.png?branch=1.x.x)](https://travis-ci.org/at-import/Singularity)
+# Singularity.gs [![Gem Version](https://badge.fury.io/rb/singularitygs.svg)](http://badge.fury.io/rb/singularitygs) [![Build Status](https://travis-ci.org/at-import/Singularity.svg?branch=1.x.x)](https://travis-ci.org/at-import/Singularity)
 
 **Grids Without Limits**
 
