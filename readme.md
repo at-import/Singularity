@@ -137,6 +137,6 @@ Having been designed to be extensible, the ability to create plugins for Singula
 
 * [Singularity Extras](https://github.com/Team-Sass/Singularity-Extras)
 
-## Licence
+## License
 
-Dual licence MIT/GPL-3.0
+Dual license MIT/GPL-3.0
