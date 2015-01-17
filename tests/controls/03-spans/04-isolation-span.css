@@ -1,6 +1,6 @@
 .settings {
-  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("grids": ((-1px: 3, 500px: 5, 700px: 1 3 5 7)), "gutters": ((-1px: 0.25, 500px: 10px, 700px: 1em)), "gutter styles": ((-1px: "split", 700px: "opposite")))';
+  _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
+  _user-settings: '("grids": (-1px: 3, 500px: 5, 700px: 1 3 5 7), "gutters": (-1px: 0.25, 500px: 10px, 700px: 1em), "gutter styles": (-1px: "split", 700px: "opposite"))';
 }
 
 .isolation-span {

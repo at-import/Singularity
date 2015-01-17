@@ -1,6 +1,6 @@
 .settings {
-  _default-settings: '("grids": ((-1px: 12)), "gutters": ((-1px: 0.25)), "gutter styles": ((-1px: "opposite")), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("debug": true, "grids": ((-1px: 3, 500px: 5, 700px: 1 3 5)), "gutters": ((-1px: 0.25, 450px: 0.35, 650px: 1em)), "gutter styles": ((-1px: "split", 400px: "fixed", 600px: "opposite fixed")))';
+  _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
+  _user-settings: '("debug": true, "grids": (-1px: 3, 500px: 5, 700px: 1 3 5), "gutters": (-1px: 0.25, 450px: 0.35, 650px: 1em), "gutter styles": (-1px: "split", 400px: "fixed", 600px: "opposite fixed"))';
 }
 
 .background {
