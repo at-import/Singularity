@@ -43,7 +43,7 @@
 
       @if length($breakpoint-mq) > 1 {
         @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Context set to -1px.";
-        $parse-mq: 1px;
+        $parse-mq: -1px;
       }
       @else if length($breakpoint-mq) < 1 {
         @warn "No " + if($Mobile-First, 'min-width', 'max-width') + ' context found. Please use a media query with the correct context. Context set to -1px.';
