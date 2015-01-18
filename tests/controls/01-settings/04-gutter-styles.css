@@ -5,8 +5,7 @@
   _gutter-style: "@include add-gutter-style(fixed at 500px)";
   _gutter-style: "@include add-gutter-style(opposite fixed at 700px)";
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("gutter styles": (-1px: "split", 500px: "fixed", 700px: "opposite fixed"))';
-}
+  _user-settings: '("gutter styles": (-1px: "split", 500px: "fixed", 700px: "opposite fixed"))'; }
 
 .add-gutter-style-breakpoint {
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
@@ -15,5 +14,4 @@
   _gutter-style: "@include add-gutter-style(fixed at 500px min-resolution 1.5dppx)";
   _gutter-style: "@include add-gutter-style(opposite fixed at 700px, no-query .no-mq)";
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("gutter styles": (-1px: "split", 500px: "fixed", 700px: "opposite fixed"))';
-}
+  _user-settings: '("gutter styles": (-1px: "split", 500px: "fixed", 700px: "opposite fixed"))'; }

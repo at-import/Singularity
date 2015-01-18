@@ -1,38 +1,24 @@
 .settings {
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("debug": true, "grids": (-1px: 3, 500px: 5, 700px: 1 3 5), "gutters": (-1px: 0.25, 450px: 0.35, 650px: 1em), "gutter styles": (-1px: "split", 400px: "fixed", 600px: "opposite fixed"))';
-}
+  _user-settings: '("debug": true, "grids": (-1px: 3, 500px: 5, 700px: 1 3 5), "gutters": (-1px: 0.25, 450px: 0.35, 650px: 1em), "gutter styles": (-1px: "split", 400px: "fixed", 600px: "opposite fixed"))'; }
 
 .background {
-  background-image: linear-gradient(to right, #dd8e56, #dd8e56 3.33333%, chocolate 3.33333%, chocolate 30%, #dd8e56 30%, #dd8e56 36.66667%, chocolate 36.66667%, chocolate 63.33333%, #dd8e56 63.33333%, #dd8e56 70%, chocolate 70%, chocolate 96.66667%, #dd8e56 96.66667%, #dd8e56 100%);
-}
-@media (min-width: 400px) {
-  .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 33.33333%, #dd8e56 33.33333%, #dd8e56 33.58333%, #b25919 33.58333%, #b25919 66.91667%, #dd8e56 66.91667%, #dd8e56 67.16667%, chocolate 67.16667%, chocolate);
-  }
-}
-@media (min-width: 450px) {
-  .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 33.33333%, #dd8e56 33.33333%, #dd8e56 33.68333%, #b25919 33.68333%, #b25919 67.01667%, #dd8e56 67.01667%, #dd8e56 67.36667%, chocolate 67.36667%, chocolate);
-  }
-}
-@media (min-width: 500px) {
-  .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 20%, #dd8e56 20%, #dd8e56 20.35%, #b25919 20.35%, #b25919 40.35%, #dd8e56 40.35%, #dd8e56 40.7%, chocolate 40.7%, chocolate 60.7%, #dd8e56 60.7%, #dd8e56 61.05%, #b25919 61.05%, #b25919 81.05%, #dd8e56 81.05%, #dd8e56 81.4%, chocolate 81.4%, chocolate);
-  }
-}
-@media (min-width: 600px) {
-  .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 15.625%, #dd8e56 15.625%, #dd8e56 21.09375%, chocolate 21.09375%, chocolate 36.71875%, #dd8e56 36.71875%, #dd8e56 42.1875%, chocolate 42.1875%, chocolate 57.8125%, #dd8e56 57.8125%, #dd8e56 63.28125%, chocolate 63.28125%, chocolate 78.90625%, #dd8e56 78.90625%, #dd8e56 84.375%, chocolate 84.375%, chocolate);
-  }
-}
-@media (min-width: 650px) {
-  .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 20%, #dd8e56 20%, #dd8e56 20%, #b25919 20%, #b25919 40%, #dd8e56 40%, #dd8e56 40%, chocolate 40%, chocolate 60%, #dd8e56 60%, #dd8e56 60%, #b25919 60%, #b25919 80%, #dd8e56 80%, #dd8e56 80%, chocolate 80%, chocolate);
-  }
-}
-@media (min-width: 700px) {
-  .background {
-    background-image: linear-gradient(to right, chocolate 0%, chocolate 11.11111%, #dd8e56 11.11111%, #dd8e56 11.11111%, #b25919 11.11111%, #b25919 44.44444%, #dd8e56 44.44444%, #dd8e56 44.44444%, chocolate 44.44444%, chocolate);
-  }
-}
+  background-image: linear-gradient(to right, #dd8e56, #dd8e56 3.33333%, chocolate 3.33333%, chocolate 30%, #dd8e56 30%, #dd8e56 36.66667%, chocolate 36.66667%, chocolate 63.33333%, #dd8e56 63.33333%, #dd8e56 70%, chocolate 70%, chocolate 96.66667%, #dd8e56 96.66667%, #dd8e56 100%); }
+  @media (min-width: 400px) {
+    .background {
+      background-image: linear-gradient(to right, chocolate 0%, chocolate 33.33333%, #dd8e56 33.33333%, #dd8e56 33.58333%, #b25919 33.58333%, #b25919 66.91667%, #dd8e56 66.91667%, #dd8e56 67.16667%, chocolate 67.16667%, chocolate); } }
+  @media (min-width: 450px) {
+    .background {
+      background-image: linear-gradient(to right, chocolate 0%, chocolate 33.33333%, #dd8e56 33.33333%, #dd8e56 33.68333%, #b25919 33.68333%, #b25919 67.01667%, #dd8e56 67.01667%, #dd8e56 67.36667%, chocolate 67.36667%, chocolate); } }
+  @media (min-width: 500px) {
+    .background {
+      background-image: linear-gradient(to right, chocolate 0%, chocolate 20%, #dd8e56 20%, #dd8e56 20.35%, #b25919 20.35%, #b25919 40.35%, #dd8e56 40.35%, #dd8e56 40.7%, chocolate 40.7%, chocolate 60.7%, #dd8e56 60.7%, #dd8e56 61.05%, #b25919 61.05%, #b25919 81.05%, #dd8e56 81.05%, #dd8e56 81.4%, chocolate 81.4%, chocolate); } }
+  @media (min-width: 600px) {
+    .background {
+      background-image: linear-gradient(to right, chocolate 0%, chocolate 15.625%, #dd8e56 15.625%, #dd8e56 21.09375%, chocolate 21.09375%, chocolate 36.71875%, #dd8e56 36.71875%, #dd8e56 42.1875%, chocolate 42.1875%, chocolate 57.8125%, #dd8e56 57.8125%, #dd8e56 63.28125%, chocolate 63.28125%, chocolate 78.90625%, #dd8e56 78.90625%, #dd8e56 84.375%, chocolate 84.375%, chocolate); } }
+  @media (min-width: 650px) {
+    .background {
+      background-image: linear-gradient(to right, chocolate 0%, chocolate 20%, #dd8e56 20%, #dd8e56 20%, #b25919 20%, #b25919 40%, #dd8e56 40%, #dd8e56 40%, chocolate 40%, chocolate 60%, #dd8e56 60%, #dd8e56 60%, #b25919 60%, #b25919 80%, #dd8e56 80%, #dd8e56 80%, chocolate 80%, chocolate); } }
+  @media (min-width: 700px) {
+    .background {
+      background-image: linear-gradient(to right, chocolate 0%, chocolate 11.11111%, #dd8e56 11.11111%, #dd8e56 11.11111%, #b25919 11.11111%, #b25919 44.44444%, #dd8e56 44.44444%, #dd8e56 44.44444%, chocolate 44.44444%, chocolate); } }

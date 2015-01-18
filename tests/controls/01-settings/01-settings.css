@@ -2,8 +2,7 @@
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
   _user-settings: "()";
   _test: "sgs-get('output')";
-  _result: "isolation";
-}
+  _result: "isolation"; }
 
 .setting-set {
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
@@ -12,8 +11,7 @@
   _test: "@include sgs-change('direction', 'rtl')";
   _new: "rtl";
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("direction": "rtl")';
-}
+  _user-settings: '("direction": "rtl")'; }
 
 .setting-has {
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
@@ -21,8 +19,7 @@
   _test: "sgs-has('output')";
   _result: false;
   _test: "sgs-has('direction')";
-  _result: true;
-}
+  _result: true; }
 
 .setting-reset {
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
@@ -30,17 +27,15 @@
   _test: "@include sgs-reset('direction')";
   _exists: false;
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: "()";
-}
-.setting-reset--multiple {
-  _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: "()";
-  _test: "@include add-grid('2 4 6')";
-  _test: "@include add-gutter('.25')";
-  _test: "@include sgs-change('direction', 'rtl')";
-  _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("grids": (-1px: "2 4 6"), "gutters": (-1px: ".25"), "direction": "rtl")';
-  _test: "@include sgs-reset('grids', 'gutters')";
-  _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("direction": "rtl")';
-}
+  _user-settings: "()"; }
+  .setting-reset--multiple {
+    _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
+    _user-settings: "()";
+    _test: "@include add-grid('2 4 6')";
+    _test: "@include add-gutter('.25')";
+    _test: "@include sgs-change('direction', 'rtl')";
+    _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
+    _user-settings: '("grids": (-1px: "2 4 6"), "gutters": (-1px: ".25"), "direction": "rtl")';
+    _test: "@include sgs-reset('grids', 'gutters')";
+    _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
+    _user-settings: '("direction": "rtl")'; }
