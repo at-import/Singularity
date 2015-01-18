@@ -129,12 +129,16 @@
       }
     }
 
-    $Min-Map: ('min-width': ('webkit' : -webkit-calc(#{unquote($Min-Width)}), 'standard': calc(#{unquote($Min-Width)}) ));
-    $Span-Map: ('width': ('webkit': -webkit-calc(#{unquote($Width)}), 'standard': calc(#{unquote($Width)}) ) );
+    // Min width handling
+    @if $Min-Width != ')' {
+      $Min-Map: ('min-width': ('webkit' : -webkit-calc(#{unquote($Min-Width)}), 'standard': calc(#{unquote($Min-Width)}) ));
 
-    @if sgs-get('calc include min-width') {
-      $Return: map-merge($Return, $Min-Map);
+      @if sgs-get('calc include min-width') {
+        $Return: map-merge($Return, $Min-Map);
+      }
     }
+
+    $Span-Map: ('width': ('webkit': -webkit-calc(#{unquote($Width)}), 'standard': calc(#{unquote($Width)}) ) );
     $Return: map-merge($Return, $Span-Map);
   }
 
