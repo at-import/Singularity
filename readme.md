@@ -127,6 +127,8 @@ The second way to provide responsive grids is with either of the use of the [Con
 }
 ```
 
+**Responsive grid contexts do not output anything by themsleves**. Singularity's Responsive Grids feature allows you to change the *context of a called `grid-span`*. In order for you to see the context change, you still need to call `grid-span` to apply your grid.
+
 ## Contributing to Singularity
 
 We love contributors! Yes we do! If you would like to contribute to Singularity, please follow the [Contributing Guidelines](https://github.com/at-import/Singularity/blob/1.x.x/CONTRIBUTING.md)
