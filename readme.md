@@ -76,6 +76,8 @@ Singularity provides a couple of different ways to have `grid-span` use a differ
 
 To use, simply call `add-grid` multiple times, each time telling it when you would like to change. **Be Aware** this will *only work with `min-width` media queries!* Sass and Singularity cannot know runtime conditions and provide wiggle room between media queries with anything other than simple `min-width` queries. While a full Breakpoint style media query can be used in these definitions, Singularity will only look for the `min-width` value.
 
+**Responsive grid contexts do not output anything by themsleves**. Singularity's Responsive Grids feature allows you to change the *context of a called `grid-span`*. In order for you to see the context change, you still need to call `grid-span` to apply your grid.
+
 ```scss
 // Singularity 1.2 Syntax
 @include add-grid(3);
@@ -126,8 +128,6 @@ The second way to provide responsive grids is with either of the use of the [Con
   }
 }
 ```
-
-**Responsive grid contexts do not output anything by themsleves**. Singularity's Responsive Grids feature allows you to change the *context of a called `grid-span`*. In order for you to see the context change, you still need to call `grid-span` to apply your grid.
 
 ## Contributing to Singularity
 
