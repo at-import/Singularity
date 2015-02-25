@@ -1,5 +1,9 @@
 # Singularity Changelog
 
+## v1.6.0
+### February 25, 2015
+* **Change** Moved from Linear Gradient backgrounds to SVG backgrounds based on the awesome work done over in [Susy](https://github.com/ericam/susy/issues/436)
+
 ## v1.5.0
 ### January 17, 2015
 * **New** Moved [Calc Output Style](http://snugug.com/musings/bulletproof-combo-fixed-and-fluid-grids-css3-calc) from [Singularity Extras](https://github.com/at-import/singularity-extras) into Core
