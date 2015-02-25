@@ -1,6 +1,6 @@
 {
   "name": "singularity",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "main": "stylesheets/_singularitygs.scss",
   "ignore": [
     "**/.*",
