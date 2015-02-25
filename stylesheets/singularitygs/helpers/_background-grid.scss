@@ -35,6 +35,8 @@
 // -----------------------------------------------
 // Grid Background
 
+@import 'str-replace';
+
 @mixin background-grid(
   $columns: null,
   $gutter: null,
@@ -172,7 +174,7 @@
 
     $Grid-Count: column-count($Grid);
 
-    $Gradient: ();
+    $SVG: '<svg xmlns="http://www.w3.org/2000/svg">';
 
     $Gutter-Width: gutter-span($Gutter, $Grid, $Style);
     @if unit($Gutter-Width) != '%' and unit($Gutter-Width) != '' {
@@ -191,7 +193,7 @@
 
       @if index($Style, 'split') and $i == 1 {
         $Counter-Width: ($Gutter-Width / 2);
-        $Gradient: append($Gradient, ($Gutter-Color, $Gutter-Color $Counter-Width), 'comma');
+        $SVG: $SVG + '<rect x="#{$Counter-Width}" fill="#{$Gutter-Color}" width="#{$Gutter-Width / 2}" height="100%"/>';
       }
 
       $Loop-Color: $Column-Color;
@@ -201,9 +203,9 @@
 
       @if $i != $Grid-Count {
         @if unit($Counter-Width) == unit($Loop-Width) {
-          $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
+          $SVG: $SVG + '<rect x="#{$Counter-Width}" fill="#{$Loop-Color}" width="#{$Loop-Width}" height="100%"/>';
           $Counter-Width: $Counter-Width + $Loop-Width;
-          $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
+          $SVG: $SVG + '<rect x="#{$Counter-Width}" fill="#{$Gutter-Color}" width="#{$Gutter-Width}" height="100%"/>';
           $Counter-Width: $Counter-Width + $Gutter-Width;
         }
         @else {
@@ -213,7 +215,8 @@
       }
       @else if $i == 1 {
         @if unit($Counter-Width) == unit($Loop-Width) {
-          $Gradient: append($Gradient, ($Loop-Color, $Loop-Color $Counter-Width, $Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + $Gutter-Width)), 'comma');
+          $SVG: $SVG + '<rect x="#{$Counter-Width}" fill="#{$Loop-Color}" width="#{$Loop-Width}" height="100%"/>';
+          $SVG: $SVG + '<rect x="#{$Loop-Width}" fill="#{$Gutter-Color}" width="#{$Gutter-Width}" height="100%"/>';
           $Counter-Width: $Counter-Width + $Loop-Width + $Gutter-Width;
         }
         @else {
@@ -223,31 +226,35 @@
       }
       @else if $i == $Grid-Count and index($Style, 'split') {
         @if unit($Counter-Width) == unit($Loop-Width) {
-          $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color ($Counter-Width + $Loop-Width)), 'comma');
+          $SVG: $SVG + '<rect x="#{$Counter-Width}" fill="#{$Loop-Color}" width="#{$Loop-Width}" height="100%"/>';
           $Counter-Width: $Counter-Width + $Loop-Width;
-          $Gradient: append($Gradient, ($Gutter-Color $Counter-Width, $Gutter-Color ($Counter-Width + ($Gutter-Width / 2))), 'comma');
+          $SVG: $SVG + '<rect x="#{$Counter-Width}" fill="#{$Gutter-Color}" width="#{$Gutter-Width / 2}" height="100%"/>';
         }
         @else {
           $Display: false;
         }
       }
       @else {
-        $Gradient: append($Gradient, ($Loop-Color $Counter-Width, $Loop-Color), 'comma');
+        $SVG: $SVG + '<rect x="#{$Counter-Width}" fill="#{$Loop-Color}" width="#{$Loop-Width}" height="100%"/>';
       }
     }
 
+    $SVG: $SVG + '</svg>';
+    $SVG: url-encode($SVG);
+
     @if $Display {
+
       @if $bkpt != -1px {
         @include breakpoint($bkpt) {
-          background-image: unquote('linear-gradient(to #{opposite-direction($Direction)}, #{$Gradient})');
+          background-image: url('data:image/svg+xml,' + $SVG);
         }
       }
       @else {
-        background-image: unquote('linear-gradient(to #{opposite-direction($Direction)}, #{$Gradient})');
+        background-image: url('data:image/svg+xml,' + $SVG);
       }
     }
     @else {
-      @warn 'Cannot generate a CSS gradient for grid `#{$Grid}` with gutters `#{$Gutter}` and gutter style `#{$Style}`';
+      @warn 'Cannot generate a Background Grid for grid `#{$Grid}` with gutters `#{$Gutter}` and gutter style `#{$Style}`';
     }
   }
 }

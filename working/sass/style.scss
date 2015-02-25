@@ -2,35 +2,70 @@
 @import "breakpoint";
 @import "singularitygs";
 
-// $singularity: (
-//   'output': 'float'
-// );
+// // $singularity: (
+// //   'output': 'float'
+// // );
 
-.container {
-  max-width: 90%;
-  background: red;
-  margin: 0 auto;
-  @include clearfix();
-}
+// .container {
+//   max-width: 90%;
+//   background: red;
+//   margin: 0 auto;
+//   @include clearfix();
+// }
 
-.thumbnail {
-  min-height: 45vh;
-  background: blue;
-  margin-bottom: 5vh;
-}
+// .thumbnail {
+//   min-height: 45vh;
+//   background: blue;
+//   margin-bottom: 5vh;
+// }
 
-@include add-grid(5);
-@include add-gutter(1);
-@include add-gutter-style('split');
+@include add-grid(2 4 6);
+@include add-grid(3 at 700px);
+@include add-gutter(.5);
+// @include add-gutter-style('split');
 @include sgs-change('debug', true);
 
-.thumbnail {
-  @for $i from 1 through 5 {
-    &:nth-of-type(5n + #{$i}) {
-      @include grid-span(1, $i);
-      @if $i == 1 {
-        clear: both;
-      }
-    }
+// .thumbnail {
+//   @for $i from 1 through 5 {
+//     &:nth-of-type(5n + #{$i}) {
+//       @include grid-span(1, $i);
+//       @if $i == 1 {
+//         clear: both;
+//       }
+//     }
+//   }
+// }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.one {
+  @include grid-span(1, 2);
+  background: rgba(red, .5);
+}
+
+.two {
+  @include grid-span(1, 3);
+  background: rgba(blue, .5);
+}
+
+.three {
+  @include grid-span(1, 1);
+  background: rgba(yellow, .5);
+}
+
+.container {
+  @include background-grid;
+  height: 100vh;
+  width: 100vw;
+
+  div {
+    height: 50vh;
   }
 }
