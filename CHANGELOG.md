@@ -1,8 +1,9 @@
 # Singularity Changelog
 
-## v1.6.0
+## v1.6.1
 ### February 25, 2015
 * **Change** Moved from Linear Gradient backgrounds to SVG backgrounds based on the awesome work done over in [Susy](https://github.com/ericam/susy/issues/436)
+* **Fix** `@error` issue with current version of Libsass
 
 ## v1.5.0
 ### January 17, 2015
