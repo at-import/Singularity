@@ -10,12 +10,25 @@
   $Style: map-get($Span-Map, 'style');
 
   @if unitless($Gutter) {
-    @error "Calc output style uses fixed gutters (gutters with units). Please define fixed gutters to use calc";
+    $ERROR-MESSAGE: "Calc output style uses fixed gutters (gutters with units). Please define fixed gutters to use calc";
+    @if feature-exists(at-error) {
+      @error $ERROR-MESSAGE;
+    }
+    @else {
+      @warn $ERROR-MESSAGE;
+    }
     @return $Return;
   }
 
   @if type-of($Grid) == 'number' {
-    @error "Calc output style is designed to be used with asymmetric grids, especially with a mix of fixed and fluid columns. Please define an asymmetric grid or use another output style.";
+    $ERROR-MESSAGE: "Calc output style is designed to be used with asymmetric grids, especially with a mix of fixed and fluid columns. Please define an asymmetric grid or use another output style.";
+    @if feature-exists(at-error) {
+      @error $ERROR-MESSAGE;
+    }
+    @else {
+      @warn $ERROR-MESSAGE;
+    }
+    @return $Return;
   }
 
   $Start-Row: map-get($Span-Map, 'start row');
