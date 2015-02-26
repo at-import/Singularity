@@ -1,5 +1,9 @@
 # Singularity Changelog
 
+## v1.6.2
+### February 26, 2015
+* **Fix** First gutter in a split gutter grid now displays properly in SVG backgrounds
+
 ## v1.6.1
 ### February 25, 2015
 * **Change** Moved from Linear Gradient backgrounds to SVG backgrounds based on the awesome work done over in [Susy](https://github.com/ericam/susy/issues/436)

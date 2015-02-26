@@ -19,10 +19,9 @@
 //   margin-bottom: 5vh;
 // }
 
-@include add-grid(2 4 6);
-@include add-grid(3 at 700px);
-@include add-gutter(.5);
-// @include add-gutter-style('split');
+@include add-grid(12);
+@include add-gutter(1/3);
+@include add-gutter-style('split');
 @include sgs-change('debug', true);
 
 // .thumbnail {

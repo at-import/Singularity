@@ -8,44 +8,39 @@ body {
 }
 
 .one {
-  -sgs-span-settings: ("span": 1, "location": 2, "grid": 2 4 6, "gutter": 0.5, "style": "opposite", "start row": false, "end row": false, "fixed gutter": false, "split gutter": null, "gutter property": "margin", "options": (null: null));
-  width: 30.76923%;
+  -sgs-span-settings: ("span": 1, "location": 2, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
+  width: 6.25%;
   float: left;
   margin-right: -100%;
-  margin-left: 19.23077%;
+  margin-left: 9.375%;
   clear: none;
   background: rgba(255, 0, 0, 0.5);
 }
 
 .two {
-  -sgs-span-settings: ("span": 1, "location": 3, "grid": 2 4 6, "gutter": 0.5, "style": "opposite", "start row": false, "end row": true, "fixed gutter": false, "split gutter": null, "gutter property": "margin", "options": (null: null));
-  width: 46.15385%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
+  -sgs-span-settings: ("span": 1, "location": 3, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
+  width: 6.25%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 17.70833%;
   clear: none;
   background: rgba(0, 0, 255, 0.5);
 }
 
 .three {
-  -sgs-span-settings: ("span": 1, "location": 1, "grid": 2 4 6, "gutter": 0.5, "style": "opposite", "start row": true, "end row": false, "fixed gutter": false, "split gutter": null, "gutter property": "margin", "options": (null: null));
-  width: 15.38462%;
+  -sgs-span-settings: ("span": 1, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
+  width: 6.25%;
   float: left;
   margin-right: -100%;
-  margin-left: 0;
+  margin-left: 1.04167%;
   clear: none;
   background: rgba(255, 255, 0, 0.5);
 }
 
 .container {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Crect%20x%3D%220%25%22%20fill%3D%22chocolate%22%20width%3D%2215%2E38462%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2215%2E38462%25%22%20fill%3D%22%23dd8e56%22%20width%3D%223%2E84615%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2219%2E23077%25%22%20fill%3D%22chocolate%22%20width%3D%2230%2E76923%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2250%25%22%20fill%3D%22%23dd8e56%22%20width%3D%223%2E84615%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2253%2E84615%25%22%20fill%3D%22chocolate%22%20width%3D%2246%2E15385%25%22%20height%3D%22100%25%22%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Crect%20x%3D%220%25%22%20fill%3D%22%23dd8e56%22%20width%3D%221%2E04167%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%221%2E04167%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%227%2E29167%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%229%2E375%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2215%2E625%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2217%2E70833%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2223%2E95833%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2226%2E04167%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2232%2E29167%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2234%2E375%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2240%2E625%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2242%2E70833%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2248%2E95833%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2251%2E04167%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2257%2E29167%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2259%2E375%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2265%2E625%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2267%2E70833%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2273%2E95833%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2276%2E04167%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2282%2E29167%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2284%2E375%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2290%2E625%25%22%20fill%3D%22%23dd8e56%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2292%2E70833%25%22%20fill%3D%22chocolate%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2298%2E95833%25%22%20fill%3D%22%23dd8e56%22%20width%3D%221%2E04167%25%22%20height%3D%22100%25%22%2F%3E%3C%2Fsvg%3E");
   height: 100vh;
   width: 100vw;
-}
-@media (min-width: 700px) {
-  .container {
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Crect%20x%3D%220%25%22%20fill%3D%22chocolate%22%20width%3D%2225%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2225%25%22%20fill%3D%22%23dd8e56%22%20width%3D%2212%2E5%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2237%2E5%25%22%20fill%3D%22chocolate%22%20width%3D%2225%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2262%2E5%25%22%20fill%3D%22%23dd8e56%22%20width%3D%2212%2E5%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2275%25%22%20fill%3D%22chocolate%22%20width%3D%2225%25%22%20height%3D%22100%25%22%2F%3E%3C%2Fsvg%3E");
-  }
 }
 .container div {
   height: 50vh;
