@@ -1,78 +1,106 @@
 .settings {
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("grids": (-1px: 3, 500px: 5, 700px: 1 3 5), "gutters": (-1px: 0.25, 500px: 0.35, 700px: 0.55), "gutter styles": (-1px: "split", 500px: "fixed", 700px: "opposite fixed"))'; }
+  _user-settings: '("grids": (-1px: 3, 500px: 5, 700px: 1 3 5), "gutters": (-1px: 0.25, 500px: 0.35, 700px: 0.55), "gutter styles": (-1px: "split", 500px: "fixed", 700px: "opposite fixed"))';
+}
 
 .find-grid {
   _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
   _find-no-override: "3";
-  _find-override: "2 4 6"; }
-  @media (min-width: 499px) {
-    .find-grid {
-      _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
-      _find-no-override: "3";
-      _find-override: "2 4 6"; } }
-  @media (min-width: 500px) {
-    .find-grid {
-      _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
-      _find-no-override: "5";
-      _find-override: "2 4 6"; } }
-  @media (min-width: 699px) {
-    .find-grid {
-      _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
-      _find-no-override: "5";
-      _find-override: "2 4 6"; } }
-  @media (min-width: 700px) {
-    .find-grid {
-      _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
-      _find-no-override: "1 3 5";
-      _find-override: "2 4 6"; } }
+  _find-override: "2 4 6";
+}
+@media (min-width: 499px) {
+  .find-grid {
+    _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
+    _find-no-override: "3";
+    _find-override: "2 4 6";
+  }
+}
+@media (min-width: 500px) {
+  .find-grid {
+    _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
+    _find-no-override: "5";
+    _find-override: "2 4 6";
+  }
+}
+@media (min-width: 699px) {
+  .find-grid {
+    _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
+    _find-no-override: "5";
+    _find-override: "2 4 6";
+  }
+}
+@media (min-width: 700px) {
+  .find-grid {
+    _grid: "(-1px: 3, 500px: 5, 700px: 1 3 5)";
+    _find-no-override: "1 3 5";
+    _find-override: "2 4 6";
+  }
+}
 
 .find-gutter {
   _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
   _find-no-override: "0.25";
-  _find-override: "0.4"; }
-  @media (min-width: 499px) {
-    .find-gutter {
-      _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
-      _find-no-override: "0.25";
-      _find-override: "0.4"; } }
-  @media (min-width: 500px) {
-    .find-gutter {
-      _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
-      _find-no-override: "0.35";
-      _find-override: "0.4"; } }
-  @media (min-width: 699px) {
-    .find-gutter {
-      _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
-      _find-no-override: "0.35";
-      _find-override: "0.4"; } }
-  @media (min-width: 700px) {
-    .find-gutter {
-      _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
-      _find-no-override: "0.55";
-      _find-override: "0.4"; } }
+  _find-override: "0.4";
+}
+@media (min-width: 499px) {
+  .find-gutter {
+    _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
+    _find-no-override: "0.25";
+    _find-override: "0.4";
+  }
+}
+@media (min-width: 500px) {
+  .find-gutter {
+    _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
+    _find-no-override: "0.35";
+    _find-override: "0.4";
+  }
+}
+@media (min-width: 699px) {
+  .find-gutter {
+    _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
+    _find-no-override: "0.35";
+    _find-override: "0.4";
+  }
+}
+@media (min-width: 700px) {
+  .find-gutter {
+    _gutter: "(-1px: 0.25, 500px: 0.35, 700px: 0.55)";
+    _find-no-override: "0.55";
+    _find-override: "0.4";
+  }
+}
 
 .find-gutter-style {
   _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
   _find-no-override: "split";
-  _find-override: "split fixed"; }
-  @media (min-width: 499px) {
-    .find-gutter-style {
-      _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
-      _find-no-override: "split";
-      _find-override: "split fixed"; } }
-  @media (min-width: 500px) {
-    .find-gutter-style {
-      _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
-      _find-no-override: "fixed";
-      _find-override: "split fixed"; } }
-  @media (min-width: 699px) {
-    .find-gutter-style {
-      _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
-      _find-no-override: "fixed";
-      _find-override: "split fixed"; } }
-  @media (min-width: 700px) {
-    .find-gutter-style {
-      _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
-      _find-no-override: "opposite fixed";
-      _find-override: "split fixed"; } }
+  _find-override: "split fixed";
+}
+@media (min-width: 499px) {
+  .find-gutter-style {
+    _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
+    _find-no-override: "split";
+    _find-override: "split fixed";
+  }
+}
+@media (min-width: 500px) {
+  .find-gutter-style {
+    _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
+    _find-no-override: "fixed";
+    _find-override: "split fixed";
+  }
+}
+@media (min-width: 699px) {
+  .find-gutter-style {
+    _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
+    _find-no-override: "fixed";
+    _find-override: "split fixed";
+  }
+}
+@media (min-width: 700px) {
+  .find-gutter-style {
+    _gutter-style: '(-1px: "split", 500px: "fixed", 700px: "opposite fixed")';
+    _find-no-override: "opposite fixed";
+    _find-override: "split fixed";
+  }
+}

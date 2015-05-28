@@ -1,6 +1,7 @@
 .settings {
   _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
-  _user-settings: '("grids": (-1px: 3, 500px: 5, 700px: 1 3 5 7), "gutters": (-1px: 0.25, 500px: 0.35, 700px: 0.55), "gutter styles": (-1px: "split", 500px: "split fixed", 700px: "opposite fixed"))'; }
+  _user-settings: '("grids": (-1px: 3, 500px: 5, 700px: 1 3 5 7), "gutters": (-1px: 0.25, 500px: 0.35, 700px: 0.55), "gutter styles": (-1px: "split", 500px: "split fixed", 700px: "opposite fixed"))';
+}
 
 /**
   * Returns the percentage of columns plus inner gutters (if any)
@@ -12,43 +13,52 @@
   _column-end: "column-span(1, 3)";
   _column-end: 26.66667%;
   _column-multiple: "column-span(2, 1)";
-  _column-multiple: 60%; }
-  @media (min-width: 499px) {
-    .column-span {
-      _grid: 3;
-      _column-start: "column-span(1, 1)";
-      _column-start: 26.66667%;
-      _column-end: "column-span(1, 3)";
-      _column-end: 26.66667%;
-      _column-multiple: "column-span(2, 2)";
-      _column-multiple: 60%; } }
-  @media (min-width: 500px) {
-    .column-span {
-      _grid: 5;
-      _column-start: "column-span(1, 1)";
-      _column-start: 15.625%;
-      _column-end: "column-span(1, 5)";
-      _column-end: 15.625%;
-      _column-multiple: "column-span(2, 2)";
-      _column-multiple: 36.71875%; } }
-  @media (min-width: 699px) {
-    .column-span {
-      _grid: 5;
-      _column-start: "column-span(1, 1)";
-      _column-start: 15.625%;
-      _column-end: "column-span(1, 5)";
-      _column-end: 15.625%;
-      _column-multiple: "column-span(2, 2)";
-      _column-multiple: 36.71875%; } }
-  @media (min-width: 700px) {
-    .column-span {
-      _grid: 1 3 5 7;
-      _column-start: "column-span(1, 1)";
-      _column-start: 5.66572%;
-      _column-end: "column-span(1, 4)";
-      _column-end: 39.66006%;
-      _column-multiple: "column-span(2, 2)";
-      _column-multiple: 48.44193%; } }
+  _column-multiple: 60%;
+}
+@media (min-width: 499px) {
+  .column-span {
+    _grid: 3;
+    _column-start: "column-span(1, 1)";
+    _column-start: 26.66667%;
+    _column-end: "column-span(1, 3)";
+    _column-end: 26.66667%;
+    _column-multiple: "column-span(2, 2)";
+    _column-multiple: 60%;
+  }
+}
+@media (min-width: 500px) {
+  .column-span {
+    _grid: 5;
+    _column-start: "column-span(1, 1)";
+    _column-start: 15.625%;
+    _column-end: "column-span(1, 5)";
+    _column-end: 15.625%;
+    _column-multiple: "column-span(2, 2)";
+    _column-multiple: 36.71875%;
+  }
+}
+@media (min-width: 699px) {
+  .column-span {
+    _grid: 5;
+    _column-start: "column-span(1, 1)";
+    _column-start: 15.625%;
+    _column-end: "column-span(1, 5)";
+    _column-end: 15.625%;
+    _column-multiple: "column-span(2, 2)";
+    _column-multiple: 36.71875%;
+  }
+}
+@media (min-width: 700px) {
+  .column-span {
+    _grid: 1 3 5 7;
+    _column-start: "column-span(1, 1)";
+    _column-start: 5.66572%;
+    _column-end: "column-span(1, 4)";
+    _column-end: 39.66006%;
+    _column-multiple: "column-span(2, 2)";
+    _column-multiple: 48.44193%;
+  }
+}
 
 /**
   * Returns the percentage of a single gutter
@@ -60,43 +70,52 @@
   _gutter-end: "gutter-span(1, 3)";
   _gutter-end: 16.66667%;
   _gutter-multiple: "gutter-span(2, 1)";
-  _gutter-multiple: 66.66667%; }
-  @media (min-width: 499px) {
-    .gutter-span {
-      _grid: 3;
-      _gutter-start: "gutter-span(1, 1)";
-      _gutter-start: 50%;
-      _gutter-end: "gutter-span(1, 3)";
-      _gutter-end: 16.66667%;
-      _gutter-multiple: "gutter-span(2, 2)";
-      _gutter-multiple: 33.33333%; } }
-  @media (min-width: 500px) {
-    .gutter-span {
-      _grid: 5;
-      _gutter-start: "gutter-span(1, 1)";
-      _gutter-start: 100%;
-      _gutter-end: "gutter-span(1, 5)";
-      _gutter-end: 11.11111%;
-      _gutter-multiple: "gutter-span(2, 2)";
-      _gutter-multiple: 50%; } }
-  @media (min-width: 699px) {
-    .gutter-span {
-      _grid: 5;
-      _gutter-start: "gutter-span(1, 1)";
-      _gutter-start: 100%;
-      _gutter-end: "gutter-span(1, 5)";
-      _gutter-end: 11.11111%;
-      _gutter-multiple: "gutter-span(2, 2)";
-      _gutter-multiple: 50%; } }
-  @media (min-width: 700px) {
-    .gutter-span {
-      _grid: 1 3 5 7;
-      _gutter-start: "gutter-span(1, 1)";
-      _gutter-start: 100%;
-      _gutter-end: "gutter-span(1, 4)";
-      _gutter-end: 14.28571%;
-      _gutter-multiple: "gutter-span(2, 2)";
-      _gutter-multiple: 50%; } }
+  _gutter-multiple: 66.66667%;
+}
+@media (min-width: 499px) {
+  .gutter-span {
+    _grid: 3;
+    _gutter-start: "gutter-span(1, 1)";
+    _gutter-start: 50%;
+    _gutter-end: "gutter-span(1, 3)";
+    _gutter-end: 16.66667%;
+    _gutter-multiple: "gutter-span(2, 2)";
+    _gutter-multiple: 33.33333%;
+  }
+}
+@media (min-width: 500px) {
+  .gutter-span {
+    _grid: 5;
+    _gutter-start: "gutter-span(1, 1)";
+    _gutter-start: 100%;
+    _gutter-end: "gutter-span(1, 5)";
+    _gutter-end: 11.11111%;
+    _gutter-multiple: "gutter-span(2, 2)";
+    _gutter-multiple: 50%;
+  }
+}
+@media (min-width: 699px) {
+  .gutter-span {
+    _grid: 5;
+    _gutter-start: "gutter-span(1, 1)";
+    _gutter-start: 100%;
+    _gutter-end: "gutter-span(1, 5)";
+    _gutter-end: 11.11111%;
+    _gutter-multiple: "gutter-span(2, 2)";
+    _gutter-multiple: 50%;
+  }
+}
+@media (min-width: 700px) {
+  .gutter-span {
+    _grid: 1 3 5 7;
+    _gutter-start: "gutter-span(1, 1)";
+    _gutter-start: 100%;
+    _gutter-end: "gutter-span(1, 4)";
+    _gutter-end: 14.28571%;
+    _gutter-multiple: "gutter-span(2, 2)";
+    _gutter-multiple: 50%;
+  }
+}
 
 /**
   * Returns the percentage of columns plus inner gutters (if any) plus one additional gutter (if not the last item)
@@ -108,40 +127,49 @@
   _grid-end: "grid-span(1, 3)";
   _grid-end: 33.33333%;
   _grid-multiple: "grid-span(2, 1)";
-  _grid-multiple: 66.66667%; }
-  @media (min-width: 499px) {
-    .grid-span {
-      _grid: 3;
-      _grid-start: "grid-span(1, 1)";
-      _grid-start: 33.33333%;
-      _grid-end: "grid-span(1, 3)";
-      _grid-end: 33.33333%;
-      _grid-multiple: "grid-span(2, 2)";
-      _grid-multiple: 66.66667%; } }
-  @media (min-width: 500px) {
-    .grid-span {
-      _grid: 5;
-      _grid-start: "grid-span(1, 1)";
-      _grid-start: 21.09375%;
-      _grid-end: "grid-span(1, 5)";
-      _grid-end: 21.09375%;
-      _grid-multiple: "grid-span(2, 2)";
-      _grid-multiple: 42.1875%; } }
-  @media (min-width: 699px) {
-    .grid-span {
-      _grid: 5;
-      _grid-start: "grid-span(1, 1)";
-      _grid-start: 21.09375%;
-      _grid-end: "grid-span(1, 5)";
-      _grid-end: 21.09375%;
-      _grid-multiple: "grid-span(2, 2)";
-      _grid-multiple: 42.1875%; } }
-  @media (min-width: 700px) {
-    .grid-span {
-      _grid: 1 3 5 7;
-      _grid-start: "grid-span(1, 1)";
-      _grid-start: 8.78187%;
-      _grid-end: "grid-span(1, 4)";
-      _grid-end: 42.7762%;
-      _grid-multiple: "grid-span(2, 2)";
-      _grid-multiple: 51.55807%; } }
+  _grid-multiple: 66.66667%;
+}
+@media (min-width: 499px) {
+  .grid-span {
+    _grid: 3;
+    _grid-start: "grid-span(1, 1)";
+    _grid-start: 33.33333%;
+    _grid-end: "grid-span(1, 3)";
+    _grid-end: 33.33333%;
+    _grid-multiple: "grid-span(2, 2)";
+    _grid-multiple: 66.66667%;
+  }
+}
+@media (min-width: 500px) {
+  .grid-span {
+    _grid: 5;
+    _grid-start: "grid-span(1, 1)";
+    _grid-start: 21.09375%;
+    _grid-end: "grid-span(1, 5)";
+    _grid-end: 21.09375%;
+    _grid-multiple: "grid-span(2, 2)";
+    _grid-multiple: 42.1875%;
+  }
+}
+@media (min-width: 699px) {
+  .grid-span {
+    _grid: 5;
+    _grid-start: "grid-span(1, 1)";
+    _grid-start: 21.09375%;
+    _grid-end: "grid-span(1, 5)";
+    _grid-end: 21.09375%;
+    _grid-multiple: "grid-span(2, 2)";
+    _grid-multiple: 42.1875%;
+  }
+}
+@media (min-width: 700px) {
+  .grid-span {
+    _grid: 1 3 5 7;
+    _grid-start: "grid-span(1, 1)";
+    _grid-start: 8.78187%;
+    _grid-end: "grid-span(1, 4)";
+    _grid-end: 42.7762%;
+    _grid-multiple: "grid-span(2, 2)";
+    _grid-multiple: 51.55807%;
+  }
+}
