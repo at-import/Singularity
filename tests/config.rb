@@ -12,7 +12,7 @@ line_comments         = false
 # preferred_syntax      = :sass
 
 # CSS output style - :nested, :expanded, :compact, or :compressed
-output_style          = :nested
+output_style          = :expanded
 
 # Determine whether Compass asset helper functions generate relative
 # or absolute paths
