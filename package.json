@@ -38,8 +38,5 @@
   "bugs": {
     "url": "https://github.com/Team-Sass/Singularity/issues"
   },
-  "homepage": "https://github.com/Team-Sass/Singularity",
-  "peerDependencies": {
-    "breakpoint-sass": "^2.6.1"
-  }
+  "homepage": "https://github.com/Team-Sass/Singularity"
 }
