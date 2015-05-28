@@ -1,28 +1,42 @@
 {
-  "name": "breakpoint",
-  "version": "1.0.0",
-  "description": "**Really Simple Media Queries with Sass**",
-  "main": "index.js",
+  "name": "singularitygs",
+  "version": "1.6.2",
+  "description": "A next generation grid framework built from the ground up to be responsive.",
+  "main": "stylesheets/_singularitygs.scss",
   "directories": {
     "test": "tests"
+  },
+  "eyeglass": {
+    "exports": "eyeglass-exports.js",
+    "name": "breakpoint"
+  },
+  "devDependencies": {
+    "diff": "^1.2.1",
+    "fs-extra": "^0.14.0",
+    "glob": "^4.3.2",
+    "node-sass": "^3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Team-Sass/breakpoint.git"
+    "url": "https://github.com/Team-Sass/Singularity.git"
   },
+  "keywords": [
+    "sass",
+    "responsive",
+    "rwd",
+    "eyeglass-module",
+    "singularity",
+    "layout",
+    "grid",
+    "semantic"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Team-Sass/breakpoint/issues"
+    "url": "https://github.com/Team-Sass/Singularity/issues"
   },
-  "homepage": "https://github.com/Team-Sass/breakpoint",
-  "devDependencies": {
-    "diff": "^1.2.1",
-    "fs-extra": "^0.14.0",
-    "glob": "^4.3.2",
-    "node-sass": "^2.0.0-beta"
-  }
+  "homepage": "https://github.com/Team-Sass/Singularity"
 }
