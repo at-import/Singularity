@@ -1,6 +1,6 @@
 {
   "name": "singularitygs",
-  "version": "1.6.2",
+  "version": "1.6.2-beta.1",
   "description": "A next generation grid framework built from the ground up to be responsive.",
   "main": "stylesheets/_singularitygs.scss",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "eyeglass": {
     "exports": "eyeglass-exports.js",
-    "name": "breakpoint"
+    "name": "singularitygs"
   },
   "devDependencies": {
     "diff": "^1.2.1",
@@ -38,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/Team-Sass/Singularity/issues"
   },
-  "homepage": "https://github.com/Team-Sass/Singularity"
+  "homepage": "https://github.com/Team-Sass/Singularity",
+  "peerDependencies": {
+    "breakpoint-sass": "^2.6.1"
+  }
 }
