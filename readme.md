@@ -20,6 +20,7 @@ Singularity is a next generation grid framework built from the ground up to be r
 
 * Singularity should be [installed and compiled](https://github.com/at-import/Singularity/wiki/Installation#installation) through [Bundler](http://bundler.io/) if compiling with Ruby
 * Alternatively, Singularity can be installed with Bower (`bower install singularity --save`)
+* It can even be installed as an [Eyeglass](https://github.com/sass-eyeglass/eyeglass) module! (`npm install singularitygs --save-dev`)
 * Singularity requires a Sass compiler with full feature parity with the Ruby Sass 3.3 implementation in order to work
 
 ### Setting Up a Basic Grid
