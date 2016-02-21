@@ -1,8 +1,6 @@
 // -----------------------------------------------
 // Grid Background
 
-@import 'str-replace';
-
 @mixin background-grid(
   $columns: null,
   $gutter: null,
@@ -133,6 +131,20 @@
   $Gutter-Color: mix(white, $color, 25%);
   $Direction: named-direction(sgs-get('direction'));
 
+  $encodeMap:(
+    '%"':'%25%22',
+    '<':'%3C',
+    ' ':'%20',
+    '=':'%3D',
+    '\"':'%22',
+    ':':'%3A',
+    '/':'%2F',
+    '.':'%2E',
+    '>':'%3E',
+    '#':'%23',
+    '-':'%2D'
+  );
+
   @each $bkpt, $def in $Background-Map {
     $Grid: map-get($def, 'grid');
     $Gutter: map-get($def, 'gutter');
@@ -206,7 +218,15 @@
     }
 
     $SVG: $SVG + '</svg>';
-    $SVG: url-encode($SVG);
+
+    @each $char, $code in $encodeMap {
+      $index: str-index($SVG, $char);
+      @while $index {
+        $index: str-index($SVG, $char);
+        $SVG: str-slice($SVG, 1, $index - 1) + $code + str-slice($SVG, $index + str-length($char));
+        $index: str-index($SVG, $char);
+      }
+    }
 
     @if $Display {
 
