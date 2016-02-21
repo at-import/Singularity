@@ -38,25 +38,25 @@
     @return nth($haystack, 1);
   }
 
-  // Grab Breakpoint Context
-  @if not function-exists(breakpoint-get-context) {
-    @warn "Responsive contexts require Breakpoint (https://github.com/Team-Sass/breakpoint). Please ensure that Breakpoint is imported and available for Singularity to use. First item used.";
-    @return map-get($haystack, -1px);
-  }
-  // Get Breakpoint Contexts
-  $Query-Min: breakpoint-get-context('min-width');
-  $Query-Max: breakpoint-get-context('max-width');
-
-  @if length($Query-Min) == 1 {
-    $Query-Min: nth($Query-Min, 1);
-  }
-  @else if length($Query-Min) > 1 {
-    @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Default context is used.";
-    @return map-get($haystack, -1px);
-  }
-
-
   @if $Length > 1 {
+    // Grab Breakpoint Context
+    @if not function-exists(breakpoint-get-context) {
+      @warn "Responsive contexts require Breakpoint (https://github.com/Team-Sass/breakpoint). Please ensure that Breakpoint is imported and available for Singularity to use. First item used.";
+      @return map-get($haystack, -1px);
+    }
+    // Get Breakpoint Contexts
+    $Query-Min: breakpoint-get-context('min-width');
+    $Query-Max: breakpoint-get-context('max-width');
+
+    @if length($Query-Min) == 1 {
+      $Query-Min: nth($Query-Min, 1);
+    }
+    @else if length($Query-Min) > 1 {
+      @warn "Responsive contexts are not available for `or` queries as which query to use is ambiguous. Please only use single context queries. Default context is used.";
+      @return map-get($haystack, -1px);
+    }
+
+
     @if length($Query-Max) == 1 {
       $Query-Max: nth($Query-Max, 1);
     }
