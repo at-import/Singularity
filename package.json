@@ -1,6 +1,6 @@
 {
   "name": "singularitygs",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "description": "A next generation grid framework built from the ground up to be responsive.",
   "main": "stylesheets/_singularitygs.scss",
   "directories": {
