@@ -1,0 +1,12 @@
+$basic-settings: true;
+
+$add-grid: 3, 5 at 500px, 1 3 5 7 at 700px, 300px 2 1 at 900px;
+$add-gutter: .25, .35 at 500px, .55 at 700px, 1em at 900px;
+$add-gutter-style: 'split', 'split fixed' at 500px, 'opposite fixed' at 700px, 'split' at 900px;
+
+@import "../shared";
+@import "../../stylesheets/singularitygs/css-grid";
+
+.container {
+  @include grid-container();
+}
