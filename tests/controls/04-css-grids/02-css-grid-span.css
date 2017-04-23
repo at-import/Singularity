@@ -1,0 +1,61 @@
+.settings {
+  _default-settings: '("grids": (-1px: 12), "gutters": (-1px: 0.25), "gutter styles": (-1px: "opposite"), "output": "isolation", "direction": "ltr", "mobile first": true, "include border box": false, "include clearfix": false, "background grid color": chocolate, "asymmetric output": "isolation", "calc include min-width": true, "debug": false)';
+  _user-settings: '("grids": (-1px: 3, 500px: 5, 700px: 1 3 5 7, 900px: 300px 2 1), "gutters": (-1px: 0.25, 500px: 0.35, 700px: 0.55, 900px: 1em), "gutter styles": (-1px: "split", 500px: "split fixed", 700px: "opposite fixed", 900px: "split"))';
+}
+
+.item {
+  width: 60%;
+  clear: right;
+  float: left;
+  margin-left: 3.33333%;
+  margin-right: 3.33333%;
+}
+@supports (display: grid) {
+  .item {
+    grid-columns: span 2;
+  }
+}
+@media (min-width: 550px) {
+  .item {
+    width: 57.8125%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 21.09375%;
+    clear: none;
+  }
+  @supports (display: grid) {
+    .item {
+      grid-columns: 2/span 3;
+    }
+  }
+}
+@media (min-width: 750px) {
+  .item {
+    width: 39.66006%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+  @supports (display: grid) {
+    .item {
+      grid-columns: 4/span 1;
+    }
+  }
+}
+@media (min-width: 900px) {
+  .item {
+    min-width: -webkit-calc((300px + 1em - 1em));
+    min-width: calc((300px + 1em - 1em));
+    width: -webkit-calc((300px + 1em) + (((100% - (300px + 3em)) / (3)) * 2));
+    width: calc((300px + 1em) + (((100% - (300px + 3em)) / (3)) * 2));
+    float: left;
+    margin-right: -100%;
+    margin-left: 0.5em;
+  }
+  @supports (display: grid) {
+    .item {
+      grid-columns: 1/span 2;
+    }
+  }
+}

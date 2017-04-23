@@ -4,11 +4,22 @@
 
 Singularity is a next generation grid framework built from the ground up to be responsive. What makes Singularity different? Well, a lot of things. Singularity is based on internal ratios instead of context based which allows for better gutter consistency across breakpoints. Ratio based math also allows for non-uniform grids in *any* unit you want to use.
 
+## CSS Grids and Singularity
+
+Layout on the web has changed significantly since [Scott's first push](https://github.com/at-import/Singularity/commit/d13cd4b1907802708a1e40e61a531bca5d409405) back on March 7, 2012. First came Flexbox, then [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout). CSS Grid provides layout functionality that covers all of Singularity's usecases and then quite a few more that we were never really able to support.
+
+With the release of Singularity 1.8, two new mixins, `grid-container` and `css-grid-span`. These two mixins are not included by default when importing Singularity, and will need to be included separately by doing `@import 'singularity/css-grid'` after following the [install instructions](#installation).
+
+**These Mixins Are Not Meant To Be Used As A Replacement For CSS Grid**
+
+The purpose of these mixins is to provide users with a way to **transition off of Singularity and start using CSS Grid directly**. CSS Grid is powerful, and doesn't need a framework like Singularity, and we encourage our users to start using it directly whenever possible instead of Singularity. This also means _there will be no further updates to Singularity for the forseeable future_. We love all of our users, and thank you for your support over the past 5 years. Singularity will continue to work as normal, but further development will stop.
+
+Documentation for the CSS Grid mixins can be [found below](#css-grid);
+
 ## Getting Help with Singularity
 
 * For help with Singularity, please ask a question on [Stack Overflow](http://stackoverflow.com/questions/ask) tagged with `singularitygs`.
 * To file an issue with Singularity, be it a feature request or a bug report, please use our [Issue Queue](https://github.com/at-import/Singularity/issues).
-* If you are in IRC, the maintainers and many fellow users tend to hang out in the `#sass` and `#compass` rooms on `irc.freenode.net`. Asking in there may get you a quick answer to your question, but we still encourage you to file your inquiry in the appropriate place above to 
 
 ## Singularity Quickstart
 
@@ -21,7 +32,7 @@ Singularity is a next generation grid framework built from the ground up to be r
 * Singularity should be [installed and compiled](https://github.com/at-import/Singularity/wiki/Installation#installation) through [Bundler](http://bundler.io/) if compiling with Ruby
 * Alternatively, Singularity can be installed with Bower (`bower install singularity --save`)
 * It can even be installed as an [Eyeglass](https://github.com/sass-eyeglass/eyeglass) module! (`npm install singularitygs --save-dev`)
-* Singularity requires a Sass compiler with full feature parity with the Ruby Sass 3.3 implementation in order to work
+* Singularity requires a Sass compiler with full feature parity with the Ruby Sass 3.4.23 implementation in order to work
 
 ### Setting Up a Basic Grid
 
@@ -128,6 +139,29 @@ The second way to provide responsive grids is with either of the use of the [Con
     // Also available: 'gutter style' and 'output'
   }
 }
+```
+
+### CSS Grid
+
+Singularity 1.8 introduces the following optional mixins to use current grid definitions to provide [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) layouts for browsers that support it, and fall back to Singularity layouts for browsers that do not.
+
+```scss
+@import "breakpoint";
+@import "singularitygs";
+@import "singularitygs/css-grids"; // Optional module, needs to be imported separately
+
+.container {
+  @include grid-container; // Will write  grid-template-columns, grid-gap, and padding definitions (wrapped in @supports) based on grid definitions previously defined
+}
+
+.item {
+  @include css-grid-span(3) // Spans with no location only work for symmetric grids. Will write a float-based span as a fallback to grid-columns
+}
+
+.item-2 {
+  @include css-grid-span(2, 1) // Spans with a location will work with asymmetric grids. Will write either an isolation or calc based span as a fallback to grid-columns (depending on the defined grid)
+}
+
 ```
 
 ## Contributing to Singularity

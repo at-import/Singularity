@@ -1,0 +1,141 @@
+@import 'breakpoint';
+
+@function _css-gridtemplate-conversion($grid) {
+  @if type-of($grid) == 'number' or length($grid) == 1 {
+    @return unquote('repeat(#{$grid}, 1fr)');
+  }
+  @else if type-of($grid) == 'list' or length($grid) > 1 {
+    $holder: '';
+    @each $column in $grid {
+      @if unitless($column) {
+        $holder: $holder + '#{$column}fr ';
+      }
+      @else {
+        $holder: $holder + $column + ' ';
+      }
+    }
+
+    $holder: str-slice($holder, 0, str-length($holder) - 1);
+
+    @return unquote($holder);
+  }
+
+  @return $grid;
+}
+
+@function _css-grid-gap-conversion($gutter) {
+  @if unitless(nth($gutter, 1)) {
+    @return unquote('#{$gutter}fr');
+  }
+
+  @return $gutter;
+}
+
+@mixin _css-grid-container-padding-conversation($style) {
+  @if length($style) == 1 {
+    $style: nth($style, 1);
+  }
+
+  @if str-index($style, 'split') != null {
+    $gutter: find-gutter() / 2;
+    $padding: _css-grid-gap-conversion($gutter);
+
+    padding: {
+      left: $padding;
+      right: $padding;
+    }
+  }
+  @else {
+    padding: {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+@mixin grid-container() {
+  $grids: sgs-get('grids');
+  $gutters: sgs-get('gutters');
+  $gutter-styles: sgs-get('gutter styles');
+
+  @supports (display: grid) {
+    display: grid;
+
+    // Build Column Templates
+    @each $mq, $grid in $grids {
+      @if $mq == -1px {
+        grid-template-columns: _css-gridtemplate-conversion($grid);
+      }
+      @else {
+        @include mq($mq) {
+          grid-template-columns: _css-gridtemplate-conversion($grid);
+        }
+      }
+    }
+
+    // Build Gaps
+    @each $mq, $gutter in $gutters {
+      @if $mq == -1px {
+        grid-gap: _css-grid-gap-conversion($gutter);
+      }
+      @else {
+        @include mq($mq) {
+          grid-gap: _css-grid-gap-conversion($gutter);
+        }
+      }
+    }
+
+    // Build Padding
+    @each $mq, $style in $gutter-styles {
+      @if $mq == -1px {
+        @include _css-grid-container-padding-conversation($style);
+      }
+      @else {
+        @include mq($mq) {
+          @include _css-grid-container-padding-conversation($style);
+        }
+      }
+    }
+  }
+}
+
+@mixin css-grid-span($Span, $Location: false) {
+  $grid: find-grid();
+
+  @if type-of($grid) == 'number' or length($grid) == 1 {
+    // If we have a symmetric grid _and_ no location, Float Span makes most sense
+    @if $Location == false {
+      @include float-span($Span, $Location);
+    }
+    // If we have an symmetric grid _and_ a location, Isolation Span makes most sense
+    @else {
+      @include isolation-span($Span, $Location);
+    }
+  }
+  @else if type-of($grid) == 'list' or length($grid) > 1 {
+    $calc: false;
+    @each $column in $grid {
+      @if not unitless($column) {
+        $calc: true;
+      }
+    }
+
+    // If we have an asymmetric grid _and_ it includes united numbers, needs to be Calc
+    @if ($calc) {
+      @include calc-span($Span, $Location);
+    }
+    // If we have an asymmetric grid _and_ it doesn't include united numbers, Islotion's better
+    @else {
+      @include isolation-span($Span, $Location);
+    }
+  }
+
+  @supports (display: grid) {
+    @if $Location {
+      grid-columns: $Location / span $Span;
+    }
+    @else {
+      grid-columns: span $Span;
+    }
+  }
+}
