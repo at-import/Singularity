@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.authors = ["Scott Kellum", "Sam Richard"]
   s.email = ["scott@scottkellum.com", "snugug@gmail.com"]
   s.homepage = "http://singularity.gs"
-  s.licenses = ["MIT", "GPL-3.0"]
+  s.licenses = ["MIT"]
 
   # Project Description
   s.description = "Advanced responsive grid system for Sass and Compass"
