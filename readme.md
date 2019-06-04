@@ -1,3 +1,5 @@
+# Singularity is [no longer maintained](https://snugug.com/musings/saying-goodbye-to-singularity/). [CSS Grid is nice](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout), you should use that instead.
+
 # Singularity.gs [![Gem Version](https://badge.fury.io/rb/singularitygs.svg)](http://badge.fury.io/rb/singularitygs) [![Build Status](https://travis-ci.org/at-import/Singularity.svg?branch=1.x.x)](https://travis-ci.org/at-import/Singularity)
 
 **Grids Without Limits**
